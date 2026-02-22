@@ -547,7 +547,25 @@ const translations = {
     js_contact_phone_label: "ఫోన్",
     js_contact_email_label: "ఇమెయిల్",
     js_contact_subject_label: "విషయం",
-    js_contact_message_label: "సందేశం"
+    js_contact_message_label: "సందేశం",
+
+    // ===== SEO META =====
+    meta_description: "శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయం, కొత్త మాధవరం, ఆంధ్రప్రదేశ్. 125+ సంవత్సరాల పురాతన హిందూ ఆలయం. పూజా సమయాలు, సేవలు, విరాళాలు, ఉత్సవాలు మరియు ఫోటో గ్యాలరీ.",
+    meta_keywords: "భావనారాయణ స్వామి, కొత్త మాధవరం ఆలయం, హిందూ ఆలయం ఆంధ్రప్రదేశ్, పద్మశాలీ ఆలయం, బ్రహ్మోత్సవాలు, పూజా సమయాలు, విరాళాలు, ఒంటిమిట్ట",
+    skip_to_content: "ప్రధాన విషయానికి వెళ్ళండి",
+
+    // ===== COMMITTEE MEMBER ALT TEXTS =====
+    committee_member_1_alt: "శ్రీ మల్లూరు బాలాజీ - అధ్యక్షుడు",
+    committee_member_2_alt: "శ్రీ అవ్వారు గోపాల కృష్ణ మూర్తి - ఉపాధ్యక్షుడు",
+    committee_member_3_alt: "శ్రీ చెపూరి నరసింహా రావు - కార్యదర్శి",
+    committee_member_4_alt: "శ్రీ ప్రసాద్ గౌడ - కోశాధికారి",
+    committee_member_5_alt: "శ్రీ శ్రీధర్ తిరువీధుల - సభ్యుడు",
+    committee_member_6_alt: "శ్రీ శ్రీనివాసులు మేరువ - సభ్యుడు",
+    committee_member_7_alt: "శ్రీ నరసింహా రావు మేరువ - సభ్యుడు",
+    committee_member_8_alt: "శ్రీ వెంకటేసు బోడగల - సభ్యుడు",
+    committee_member_9_alt: "శ్రీ కృష్ణయ్య మునగపాటి - సభ్యుడు",
+    committee_member_10_alt: "శ్రీ సత్య ప్రసాద్ గౌడ - సభ్యుడు",
+    committee_member_11_alt: "శ్రీ పెద్ద రెడ్డయ్య అవ్వారు - సభ్యుడు"
   },
 
   en: {
@@ -1098,7 +1116,25 @@ const translations = {
     js_contact_phone_label: "Phone",
     js_contact_email_label: "Email",
     js_contact_subject_label: "Subject",
-    js_contact_message_label: "Message"
+    js_contact_message_label: "Message",
+
+    // ===== SEO META =====
+    meta_description: "Sri Bhadravathi Bhavanarayana Swamy Temple, Kotha Madhavaram, Andhra Pradesh. 125+ year old Hindu temple. Puja timings, sevas, donations, festivals, and photo gallery.",
+    meta_keywords: "Bhavanarayana Swamy, Kotha Madhavaram temple, Hindu temple Andhra Pradesh, Padmasali temple, Brahmotsavam, puja timings, donations, Vontimitta",
+    skip_to_content: "Skip to main content",
+
+    // ===== COMMITTEE MEMBER ALT TEXTS =====
+    committee_member_1_alt: "Sri Malluru Balaji - President",
+    committee_member_2_alt: "Sri Avvaru Gopala Krishna Murthy - Vice President",
+    committee_member_3_alt: "Sri Chepuri Narasimha Rao - Secretary",
+    committee_member_4_alt: "Sri Prasad Goud - Treasurer",
+    committee_member_5_alt: "Sri Sridhar Tiruvidula - Member",
+    committee_member_6_alt: "Sri Srinivasulu Meruva - Member",
+    committee_member_7_alt: "Sri Narasimha Rao Meruva - Member",
+    committee_member_8_alt: "Sri Venkatesu Bodagala - Member",
+    committee_member_9_alt: "Sri Krishnaiah Munagapati - Member",
+    committee_member_10_alt: "Sri Satya Prasad Goud - Member",
+    committee_member_11_alt: "Sri Pedda Reddaiah Avvaru - Member"
   }
 };
 

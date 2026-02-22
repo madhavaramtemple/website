@@ -46,6 +46,11 @@ function updatePageContent() {
   if (langText) langText.textContent = currentLang === 'te' ? 'English' : 'తెలుగు';
   // 6. HTML lang attribute
   document.documentElement.setAttribute('lang', currentLang);
+  // 7. Update meta description and keywords for SEO
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) metaDesc.setAttribute('content', t('meta_description'));
+  const metaKw = document.querySelector('meta[name="keywords"]');
+  if (metaKw) metaKw.setAttribute('content', t('meta_keywords'));
 }
 
 document.addEventListener('DOMContentLoaded', async () => {

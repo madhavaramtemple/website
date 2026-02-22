@@ -1003,3 +1003,86 @@ footer { background:var(--deep-red); color:rgba(255,240,200,.8); padding:44px 16
   .album-modal { margin:16px auto; }
   .album-modal-body { padding:16px; }
 }
+
+
+/* ===== SKIP TO CONTENT (Accessibility) ===== */
+.skip-to-content {
+  position:absolute; top:-100%; left:16px; z-index:9999;
+  background:var(--deep-red); color:var(--bright-gold);
+  padding:12px 24px; border-radius:0 0 8px 8px;
+  font-family:'Noto Sans Telugu',sans-serif; font-size:14px; font-weight:700;
+  text-decoration:none; box-shadow:0 4px 16px rgba(0,0,0,.4);
+  transition:top .2s;
+}
+.skip-to-content:focus { top:0; }
+
+
+/* ===== FOCUS STYLES (Accessibility) ===== */
+.nav-links li a:focus-visible,
+.lang-toggle:focus-visible,
+.nav-toggle:focus-visible {
+  outline:2px solid var(--bright-gold); outline-offset:2px;
+}
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.header-donate-btn:focus-visible,
+.donate-now-btn:focus-visible,
+.float-donate:focus-visible,
+.scroll-top:focus-visible,
+.modal-close:focus-visible,
+.modal-submit:focus-visible,
+.form-submit:focus-visible,
+.album-modal-close:focus-visible,
+.contribute-cta-box .btn-gold:focus-visible,
+.map-link:focus-visible,
+.nearby-temple-link:focus-visible {
+  outline:3px solid var(--bright-gold); outline-offset:2px;
+}
+.gallery-item:focus-visible,
+.seva-card:focus-visible,
+.donation-card:focus-visible,
+.subalbum-card:focus-visible,
+.album-photo-item:focus-visible {
+  outline:3px solid var(--gold); outline-offset:2px;
+  box-shadow:0 0 0 4px rgba(201,151,58,.3);
+}
+.social-btn:focus-visible,
+.footer-col ul li a:focus-visible,
+.read-more:focus-visible {
+  outline:2px solid var(--bright-gold); outline-offset:2px;
+}
+
+
+/* ===== REDUCED MOTION (Accessibility) ===== */
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation-duration:0.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important;
+  }
+  html { scroll-behavior:auto; }
+  .ticker-inner { animation:none; }
+  .hero-logo-img { animation:none; filter:drop-shadow(0 0 20px rgba(201,151,58,.5)) drop-shadow(0 4px 12px rgba(0,0,0,.4)); }
+  .temple-emblem { animation:none; }
+  .header-donate-btn,.btn-secondary,.donate-now-btn,.float-donate,.contribute-cta-box .btn-gold { animation:none; }
+  .header-donate-btn::after,.donate-now-btn::after,.float-donate::after,.float-donate::before,.contribute-cta-box .btn-gold::after { animation:none; }
+}
+
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  nav,.ticker-bar,.border-pattern,.float-donate,.scroll-top,
+  .modal-overlay,.album-overlay,#galleryLightbox,
+  .header-donate-btn,.hero-cta-group,.donate-now-btn,.btn-secondary,
+  .social-btn,.footer-social,.map-section iframe,
+  .gallery-section,.contact-form-box,.skip-to-content { display:none !important; }
+
+  body { background:#fff; color:#000; font-size:12pt; }
+  header,.hero,.stats-band,.donation-section,.deity-meaning-box,
+  .nearby-temple-card,footer,.contribute-cta-box { background:#fff !important; color:#000 !important; }
+  header *,.hero *,.stats-band *,.donation-section *,.deity-meaning-box *,
+  .nearby-temple-card *,footer *,.contribute-cta-box * { color:#000 !important; }
+  img { max-width:100% !important; }
+  section { page-break-inside:avoid; }
+  a[href^="http"]::after { content:" (" attr(href) ")"; font-size:10pt; color:#555; }
+}

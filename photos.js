@@ -37,8 +37,16 @@
 
 const photoConfig = {
 
-  /* ── Google Drive API Key ── */
-  // Get yours at: https://console.cloud.google.com/apis/credentials
+  /* ── Google Drive API Key ──
+   * SECURITY NOTE: This API key is intentionally in client-side code.
+   * This is the standard approach for static sites using Google APIs.
+   * The key MUST be restricted in Google Cloud Console:
+   *   1. Application restrictions → HTTP referrers →
+   *      add: madhavaramtemple.github.io/* (and any custom domain)
+   *   2. API restrictions → Restrict key → select only "Google Drive API"
+   * This ensures the key only works from this website and only for Drive API.
+   * See: https://cloud.google.com/docs/authentication/api-keys#securing
+   */
   googleDriveApiKey: 'AIzaSyAz8AKbGMR6ubpU0eSguQMSTkJJNfam7QY',
 
   /* ── Google Drive Folder IDs ── */
