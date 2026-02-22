@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/jpeg" href="favicon.jpg" />
-  <title>శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయం - కొత్త మాధవరం</title>
+  <title data-i18n="page_title">శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయం - కొత్త మాధవరం</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Telugu:wght@300;400;500;600;700;900&family=Noto+Sans+Telugu:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -15,27 +15,27 @@
 <!-- TICKER -->
 <div class="ticker-bar" aria-label="Live announcements">
   <div class="ticker-inner">
-    <span>🙏 జై శ్రీ భావనారాయణ స్వామి</span><span>&nbsp;❈&nbsp;</span>
-    <span>🔔 ఈ వారం ప్రత్యేక పూజలు: శుక్రవారం సాయంత్రం 7:00 గంటలకు</span><span>&nbsp;❈&nbsp;</span>
-    <span>🌸 శ్రీ రామ నవమి ఉత్సవాలు - మార్చి 28-29</span><span>&nbsp;❈&nbsp;</span>
-    <span>💛 ఆలయ నిర్మాణ నిధికి మీ దానం అందించండి</span><span>&nbsp;❈&nbsp;</span>
-    <span>📢 అన్నదాన పథకంలో పాల్గొనండి - ప్రతి ఆదివారం</span><span>&nbsp;❈&nbsp;</span>
-    <span>🙏 జై శ్రీ భావనారాయణ స్వామి</span><span>&nbsp;❈&nbsp;</span>
-    <span>🔔 ఈ వారం ప్రత్యేక పూజలు: శుక్రవారం సాయంత్రం 7:00 గంటలకు</span>
+    <span data-i18n="ticker_1">🙏 జై శ్రీ భావనారాయణ స్వామి</span><span>&nbsp;❈&nbsp;</span>
+    <span data-i18n="ticker_2">🔔 ఈ వారం ప్రత్యేక పూజలు: శుక్రవారం సాయంత్రం 7:00 గంటలకు</span><span>&nbsp;❈&nbsp;</span>
+    <span data-i18n="ticker_3">🌸 శ్రీ రామ నవమి ఉత్సవాలు - మార్చి 28-29</span><span>&nbsp;❈&nbsp;</span>
+    <span data-i18n="ticker_4">💛 ఆలయ నిర్మాణ నిధికి మీ విరాళం అందించండి</span><span>&nbsp;❈&nbsp;</span>
+    <span data-i18n="ticker_5">📢 ప్రతి నెల పౌర్ణమి రోజు అన్నదానం నిర్వహించబడుతుంది</span><span>&nbsp;❈&nbsp;</span>
+    <span data-i18n="ticker_1">🙏 జై శ్రీ భావనారాయణ స్వామి</span><span>&nbsp;❈&nbsp;</span>
+    <span data-i18n="ticker_2">🔔 ఈ వారం ప్రత్యేక పూజలు: శుక్రవారం సాయంత్రం 7:00 గంటలకు</span>
   </div>
 </div>
 
 <!-- HEADER -->
 <header>
   <div class="header-top">
-    <div class="temple-emblem"><img src="images/image_1.jpg" alt="శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయం లోగో" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
+    <div class="temple-emblem"><img src="images/image_1.jpg" alt="శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయం లోగో" data-i18n-alt="header_logo_alt" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
     <div class="header-titles">
-      <div class="om-symbol">ఓం నమో నారాయణాయ</div>
-      <div class="temple-main-title">శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయం</div>
-      <div class="temple-sub-title">Shri Bhadravathi Bhavanarayana Swamy Temple</div>
-      <div class="temple-location">📍 కొత్త మాధవరం, ఒంటిమిట్ట మండలం, కడప జిల్లా, ఆంధ్రప్రదేశ్ - 516247 | 📞 +91 94405 62447</div>
+      <div class="om-symbol" data-i18n="header_om">ఓం నమో నారాయణాయ</div>
+      <div class="temple-main-title" data-i18n="header_title">శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయం</div>
+      <div class="temple-sub-title" data-i18n="header_subtitle">Shri Bhadravathi Bhavanarayana Swamy Temple</div>
+      <div class="temple-location" data-i18n="header_location">📍 కొత్త మాధవరం, ఒంటిమిట్ట మండలం, కడప జిల్లా, ఆంధ్రప్రదేశ్ - 516247 | 📞 +91 94405 62447</div>
     </div>
-    <button class="header-donate-btn" onclick="openDonateModal()">💛 దానం చేయండి</button>
+    <button class="header-donate-btn" onclick="openDonateModal()" data-i18n="header_donate_btn">💛 విరాళం ఇవ్వండి</button>
   </div>
   <div class="gold-divider"></div>
 </header>
@@ -43,46 +43,49 @@
 <!-- NAV -->
 <nav role="navigation">
   <div class="nav-container">
-    <button class="nav-toggle" id="navToggle" aria-label="మెను తెరవండి" aria-expanded="false" onclick="toggleNav()">
+    <button class="nav-toggle" id="navToggle" data-i18n-aria="nav_toggle_aria" aria-label="మెను తెరవండి" aria-expanded="false" onclick="toggleNav()">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#about" onclick="closeNav()">ఆలయం గురించి</a></li>
-      <li><a href="#timings" onclick="closeNav()">పూజా సమయాలు</a></li>
-      <li><a href="#events" onclick="closeNav()">ఉత్సవాలు</a></li>
-      <li><a href="#sevas" onclick="closeNav()">సేవలు</a></li>
-      <li><a href="#donation" onclick="closeNav()">దానాలు</a></li>
-      <li><a href="#deity-history" onclick="closeNav()">స్వామి చరిత్ర</a></li>
-      <li><a href="#gallery" onclick="closeNav()">గ్యాలరీ</a></li>
-      <li><a href="#updates" onclick="closeNav()">నవీకరణలు</a></li>
-      <li><a href="#contribute" onclick="closeNav()">సహాయం</a></li>
-      <li><a href="#committee" onclick="closeNav()">కమిటీ</a></li>
-      <li><a href="#contact" onclick="closeNav()">సంప్రదించండి</a></li>
+      <li><a href="#about" onclick="closeNav()" data-i18n="nav_about">ఆలయం గురించి</a></li>
+      <li><a href="#timings" onclick="closeNav()" data-i18n="nav_timings">పూజా సమయాలు</a></li>
+      <li><a href="#events" onclick="closeNav()" data-i18n="nav_events">ఉత్సవాలు</a></li>
+      <li><a href="#sevas" onclick="closeNav()" data-i18n="nav_sevas">సేవలు</a></li>
+      <li><a href="#donation" onclick="closeNav()" data-i18n="nav_donation">విరాళాలు</a></li>
+      <li><a href="#deity-history" onclick="closeNav()" data-i18n="nav_deity_history">స్వామి చరిత్ర</a></li>
+      <li><a href="#gallery" onclick="closeNav()" data-i18n="nav_gallery">గ్యాలరీ</a></li>
+      <li><a href="#updates" onclick="closeNav()" data-i18n="nav_updates">నవీకరణలు</a></li>
+      <li><a href="#contribute" onclick="closeNav()" data-i18n="nav_contribute">సహాయం</a></li>
+      <li><a href="#committee" onclick="closeNav()" data-i18n="nav_committee">కమిటీ</a></li>
+      <li><a href="#contact" onclick="closeNav()" data-i18n="nav_contact">సంప్రదించండి</a></li>
     </ul>
+    <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()">
+      <span>🌐</span> <span id="langToggleText">English</span>
+    </button>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero" aria-label="ఆలయ స్వాగతం">
-  
-  <div class="hero-temple-art" aria-hidden="true"><img src="images/image_2.png" alt="ఆలయ గోపురం" style="height:clamp(100px,18vw,160px);width:auto;object-fit:contain;display:block;margin:0 auto;" /></div>
-  <h1>శ్రీ భావనారాయణ స్వామి చరణాలకు నమస్కారం</h1>
-  <p class="hero-verse">
+<section class="hero" data-i18n-aria="hero_aria" aria-label="ఆలయ స్వాగతం">
+
+  <div class="hero-temple-art" aria-hidden="true"><img src="images/temple-logo.png" alt="ఆలయ గోపురం" data-i18n-alt="hero_logo_alt" class="hero-logo-img" /></div>
+  <h1 data-i18n="hero_title">ఓం నమో భావనారాయణాయ — కొత్త మాధవరం క్షేత్రానికి స్వాగతం</h1>
+  <p class="hero-verse" data-i18n="hero_verse">
     "నారాయణాయ విద్మహే వాసుదేవాయ ధీమహి<br/>తన్నో విష్ణుః ప్రచోదయాత్"
   </p>
   <div class="hero-cta-group">
-    <a href="#timings" class="btn-primary">🕐 పూజా సమయాలు తెలుసుకోండి</a>
-    <button onclick="openDonateModal()" class="btn-secondary">💛 ఆలయ నిధికి దానం చేయండి</button>
+    <a href="#timings" class="btn-primary" data-i18n="hero_cta_timings">🕐 పూజా సమయాలు తెలుసుకోండి</a>
+    <button onclick="openDonateModal()" class="btn-secondary" data-i18n="hero_cta_donate">💛 ఆలయ నిధికి విరాళం ఇవ్వండి</button>
   </div>
 </section>
 
 <!-- STATS -->
 <div class="stats-band">
   <div class="stats-grid">
-    <div class="stat-item"><span class="stat-number">500+</span><div class="stat-label">ప్రతి రోజూ భక్తులు</div></div>
-    <div class="stat-item"><span class="stat-number">50+</span><div class="stat-label">వార్షిక ఉత్సవాలు</div></div>
-    <div class="stat-item"><span class="stat-number">12</span><div class="stat-label">నిత్య సేవలు</div></div>
-    <div class="stat-item"><span class="stat-number">100+</span><div class="stat-label">సంవత్సరాల చరిత్ర</div></div>
+    <div class="stat-item"><span class="stat-number" data-i18n="stats_devotees_number">500+</span><div class="stat-label" data-i18n="stats_devotees">ప్రతి రోజూ భక్తులు</div></div>
+    <div class="stat-item"><span class="stat-number" data-i18n="stats_festivals_number">50+</span><div class="stat-label" data-i18n="stats_festivals">వార్షిక ఉత్సవాలు</div></div>
+    <div class="stat-item"><span class="stat-number" data-i18n="stats_sevas_number">12</span><div class="stat-label" data-i18n="stats_sevas">నిత్య సేవలు</div></div>
+    <div class="stat-item"><span class="stat-number" data-i18n="stats_history_number">100+</span><div class="stat-label" data-i18n="stats_history">సంవత్సరాల చరిత్ర</div></div>
   </div>
 </div>
 
@@ -90,34 +93,34 @@
 <section class="about-section" id="about">
   <div class="container">
     <div class="section-header">
-      <div class="small-label">ఆలయ చరిత్ర</div>
-      <h2>ఆలయం గురించి</h2>
+      <div class="small-label" data-i18n="about_label">ఆలయ చరిత్ర</div>
+      <h2 data-i18n="about_heading">ఆలయం గురించి</h2>
       <div class="underline"></div>
     </div>
     <div class="about-grid">
       <div class="about-image-box">
-        <span class="deity-icon">🪷</span>
-        <div class="deity-name">శ్రీ భావనారాయణ స్వామి</div>
-        <div class="deity-epithet">పద్మశాలీ సమాజ ఆరాధ్య దైవం<br/>125 సంవత్సరాల పవిత్ర వారసత్వం</div>
+        <img src="images/deity-logo.jpg" alt="శ్రీ భద్రావతీ భావనారాయణ స్వామి" data-i18n-alt="about_deity_logo_alt" class="deity-logo-img" />
+        <div class="deity-name" data-i18n="about_deity_name">శ్రీ భావనారాయణ స్వామి</div>
+        <div class="deity-epithet" data-i18n="about_epithet">పద్మశాలీ సమాజ ఆరాధ్య దైవం<br/>125 సంవత్సరాల పవిత్ర వారసత్వం</div>
       </div>
       <div class="about-text">
-        <h3>🏛️ ఆలయ చరిత్ర — 125 సంవత్సరాల పవిత్ర వారసత్వం</h3>
+        <h3 data-i18n="about_content_heading">🏛️ ఆలయ చరిత్ర — 125 సంవత్సరాల పవిత్ర వారసత్వం</h3>
 
-        <p>శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయం దాదాపు <strong>125 సంవత్సరాల</strong> క్రితం ఒంటిమిట్ట మండలంలోని మాధవరం గ్రామంలో స్థాపించబడింది. ఈ పవిత్ర ఆలయ నిర్మాణానికి నాంది పలికిన మహానుభావుడు — <strong>శ్రీ మేరువ పాపయ్య గారి వెంకటయ్య గారు</strong>. వారి ఆధ్యాత్మిక దృష్టి, అచంచలమైన భక్తి వల్లనే ఈ క్షేత్రం ఆనాటి నుండి గ్రామస్తుల హృదయాలలో నిలిచిపోయింది.</p>
+        <p data-i18n="about_p1">శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయం దాదాపు <strong>125 సంవత్సరాల</strong> క్రితం ఒంటిమిట్ట మండలంలోని మాధవరం గ్రామంలో స్థాపించబడింది. ఈ పవిత్ర ఆలయ నిర్మాణానికి నాంది పలికిన మహానుభావుడు — <strong>శ్రీ మేరువ పాపయ్య గారి వెంకటయ్య గారు</strong>. వారి ఆధ్యాత్మిక దృష్టి, అచంచలమైన భక్తి వల్లనే ఈ క్షేత్రం ఆనాటి నుండి గ్రామస్తుల హృదయాలలో నిలిచిపోయింది.</p>
 
-        <p>కాలగతిలో ఒక విషాద సంఘటన సంభవించింది — <strong>1987వ సంవత్సరంలో సోమశిల ప్రాజెక్టు</strong> కారణంగా మాధవరం గ్రామం జలాశయ ముంపు ప్రాంతంలోకి వచ్చింది. గ్రామస్తులు తమ ఇళ్ళను, తమ జీవితాలను వదలి వెళ్ళవలసి వచ్చింది — కానీ తమ ఆరాధ్య దైవాన్ని మాత్రం వదల్లేదు. అన్నీ కోల్పోయినా, స్వామిని తమతో తీసుకొని కొత్త నేలపై అడుగుపెట్టారు.</p>
+        <p data-i18n="about_p2">కాలగతిలో ఒక విషాద సంఘటన సంభవించింది — <strong>1987వ సంవత్సరంలో సోమశిల ప్రాజెక్టు</strong> కారణంగా మాధవరం గ్రామం జలాశయ ముంపు ప్రాంతంలోకి వచ్చింది. గ్రామస్తులు తమ ఇళ్ళను, తమ జీవితాలను వదలి వెళ్ళవలసి వచ్చింది — కానీ తమ ఆరాధ్య దైవాన్ని మాత్రం వదల్లేదు. అన్నీ కోల్పోయినా, స్వామిని తమతో తీసుకొని కొత్త నేలపై అడుగుపెట్టారు.</p>
 
-        <p>గ్రామస్తులందరూ ఏకమై <strong>కొత్త మాధవరం</strong> అనే కొత్త ప్రదేశంలో పునరావాసం ఏర్పరచుకున్నారు. కేవలం తమ గృహాలు నిర్మించుకోవడమే కాకుండా, వారు తమ ఆలయాన్ని కూడా కొత్త స్థలంలో నిర్మించారు. <strong>1.36 ఎకరాల విశాల భూమిలో</strong> ఈ నూతన ఆలయం నిర్మించబడింది — ఆ భూమిని నిస్వార్థంగా దానం చేసిన మహోదారులు, <strong>శ్రీ సామ గోవిందయ్య &amp; sons</strong> కుటుంబం. వారి త్యాగం ఈ ఆలయ చరిత్రలో చిరస్థాయిగా నిలిచిపోతుంది.</p>
+        <p data-i18n="about_p3">గ్రామస్తులందరూ ఏకమై <strong>కొత్త మాధవరం</strong> అనే కొత్త ప్రదేశంలో పునరావాసం ఏర్పరచుకున్నారు. కేవలం తమ గృహాలు నిర్మించుకోవడమే కాకుండా, వారు తమ ఆలయాన్ని కూడా కొత్త స్థలంలో నిర్మించారు. <strong>1.36 ఎకరాల విశాల భూమిలో</strong> ఈ నూతన ఆలయం నిర్మించబడింది — ఆ భూమిని నిస్వార్థంగా విరాళం ఇచ్చిన మహోదారులు, <strong>శ్రీ సామ గోవిందయ్య &amp; sons</strong> కుటుంబం. వారి త్యాగం ఈ ఆలయ చరిత్రలో చిరస్థాయిగా నిలిచిపోతుంది.</p>
 
-        <p>ఈ ఆలయం కేవలం ఒక పూజాస్థలం మాత్రమే కాదు — ఇది గ్రామంలోని <strong>పద్మశాలీ సమాజ భక్తులందరికీ</strong> ఆత్మీయమైన ఆధ్యాత్మిక కేంద్రం. ప్రతి సంవత్సరం <strong>వైశాఖ మాసంలో (ఏప్రిల్ / మే)</strong> నిర్వహించే <strong>10 రోజుల బ్రహ్మోత్సవాలు</strong> ఈ గ్రామానికి అత్యంత పవిత్రమైన పర్వదినాలు. ఈ సంప్రదాయం 125 సంవత్సరాలుగా అవిచ్ఛిన్నంగా కొనసాగుతోంది — ఇది ఈ భక్తుల విశ్వాసానికి, ఐక్యతకు జీవంత సాక్ష్యం.</p>
+        <p data-i18n="about_p4">ఈ ఆలయం కేవలం ఒక పూజాస్థలం మాత్రమే కాదు — ఇది గ్రామంలోని <strong>పద్మశాలీ సమాజ భక్తులందరికీ</strong> ఆత్మీయమైన ఆధ్యాత్మిక కేంద్రం. ప్రతి సంవత్సరం <strong>వైశాఖ మాసంలో (ఏప్రిల్ / మే)</strong> నిర్వహించే <strong>10 రోజుల బ్రహ్మోత్సవాలు</strong> ఈ గ్రామానికి అత్యంత పవిత్రమైన పర్వదినాలు. ఈ సంప్రదాయం 125 సంవత్సరాలుగా అవిచ్ఛిన్నంగా కొనసాగుతోంది — ఇది ఈ భక్తుల విశ్వాసానికి, ఐక్యతకు జీవంత సాక్ష్యం.</p>
 
         <div class="about-highlights">
-          <span class="highlight-tag">🕰️ 125 సంవత్సరాల చరిత్ర</span>
-          <span class="highlight-tag">🌊 సోమశిల ప్రాజెక్టు నుండి పునర్జన్మ</span>
-          <span class="highlight-tag">🏡 1.36 ఎకరాల క్షేత్రం</span>
-          <span class="highlight-tag">🎊 10 రోజుల బ్రహ్మోత్సవాలు</span>
-          <span class="highlight-tag">🧵 పద్మశాలీ సమాజ కేంద్రం</span>
-          <span class="highlight-tag">🙏 నిత్య సేవా కార్యక్రమాలు</span>
+          <span class="highlight-tag" data-i18n="about_highlight_1">🕰️ 125 సంవత్సరాల చరిత్ర</span>
+          <span class="highlight-tag" data-i18n="about_highlight_2">🌊 సోమశిల ప్రాజెక్టు నుండి పునర్జన్మ</span>
+          <span class="highlight-tag" data-i18n="about_highlight_3">🏡 1.36 ఎకరాల క్షేత్రం</span>
+          <span class="highlight-tag" data-i18n="about_highlight_4">🎊 10 రోజుల బ్రహ్మోత్సవాలు</span>
+          <span class="highlight-tag" data-i18n="about_highlight_5">🧵 పద్మశాలీ సమాజ కేంద్రం</span>
+          <span class="highlight-tag" data-i18n="about_highlight_6">🙏 నిత్య సేవా కార్యక్రమాలు</span>
         </div>
       </div>
     </div>
@@ -129,41 +132,41 @@
 <section class="timings-section" id="timings">
   <div class="container">
     <div class="section-header">
-      <div class="small-label">దర్శన సమయాలు</div>
-      <h2>పూజా &amp; దర్శన సమయాలు</h2>
+      <div class="small-label" data-i18n="timings_label">దర్శన సమయాలు</div>
+      <h2 data-i18n="timings_heading">పూజా &amp; దర్శన సమయాలు</h2>
       <div class="underline"></div>
     </div>
     <div class="timings-grid">
       <div class="timing-card">
-        <div class="timing-card-header"><span class="timing-icon">🌅</span><div class="timing-title">ఉదయం సేవలు</div></div>
+        <div class="timing-card-header"><span class="timing-icon">🌅</span><div class="timing-title" data-i18n="timings_morning_title">ఉదయం సేవలు</div></div>
         <div class="timing-card-body">
-          <div class="timing-row"><span class="timing-seva">సుప్రభాత సేవ</span><span class="timing-time">5:30 AM</span></div>
-          <div class="timing-row"><span class="timing-seva">అభిషేకం</span><span class="timing-time">6:00 AM</span></div>
-          <div class="timing-row"><span class="timing-seva">అలంకరణ</span><span class="timing-time">7:00 AM</span></div>
-          <div class="timing-row"><span class="timing-seva">నిత్య పూజ</span><span class="timing-time">7:30 AM</span></div>
-          <div class="timing-row"><span class="timing-seva">మహా నైవేద్యం</span><span class="timing-time">9:00 AM</span></div>
-          <div class="timing-row"><span class="timing-seva">ఉదయ దర్శనం</span><span class="timing-time">6:00 – 11:00 AM</span></div>
+          <div class="timing-row"><span class="timing-seva" data-i18n="timings_morning_1_seva">సుప్రభాత సేవ</span><span class="timing-time" data-i18n="timings_morning_1_time">5:30 AM</span></div>
+          <div class="timing-row"><span class="timing-seva" data-i18n="timings_morning_2_seva">అభిషేకం</span><span class="timing-time" data-i18n="timings_morning_2_time">6:00 AM</span></div>
+          <div class="timing-row"><span class="timing-seva" data-i18n="timings_morning_3_seva">అలంకరణ</span><span class="timing-time" data-i18n="timings_morning_3_time">7:00 AM</span></div>
+          <div class="timing-row"><span class="timing-seva" data-i18n="timings_morning_4_seva">నిత్య పూజ</span><span class="timing-time" data-i18n="timings_morning_4_time">7:30 AM</span></div>
+          <div class="timing-row"><span class="timing-seva" data-i18n="timings_morning_5_seva">మహా నైవేద్యం</span><span class="timing-time" data-i18n="timings_morning_5_time">9:00 AM</span></div>
+          <div class="timing-row"><span class="timing-seva" data-i18n="timings_morning_6_seva">ఉదయ దర్శనం</span><span class="timing-time" data-i18n="timings_morning_6_time">6:00 – 11:00 AM</span></div>
         </div>
       </div>
       <div class="timing-card">
-        <div class="timing-card-header"><span class="timing-icon">🌆</span><div class="timing-title">సాయంత్రం సేవలు</div></div>
+        <div class="timing-card-header"><span class="timing-icon">🌆</span><div class="timing-title" data-i18n="timings_evening_title">సాయంత్రం సేవలు</div></div>
         <div class="timing-card-body">
-          <div class="timing-row"><span class="timing-seva">సాయంత్రం దర్శనం</span><span class="timing-time">4:00 PM</span></div>
-          <div class="timing-row"><span class="timing-seva">ఉష:కాల పూజ</span><span class="timing-time">5:00 PM</span></div>
-          <div class="timing-row"><span class="timing-seva">ఆర్తి</span><span class="timing-time">6:30 PM</span></div>
-          <div class="timing-row"><span class="timing-seva">ప్రసాద వితరణ</span><span class="timing-time">7:00 PM</span></div>
-          <div class="timing-row"><span class="timing-seva">సాయంత్రం దర్శనం</span><span class="timing-time">5:00 – 8:30 PM</span></div>
-          <div class="timing-row"><span class="timing-seva">ఏకాంత సేవ</span><span class="timing-time">8:30 PM</span></div>
+          <div class="timing-row"><span class="timing-seva" data-i18n="timings_evening_1_seva">సాయంత్రం దర్శనం</span><span class="timing-time" data-i18n="timings_evening_1_time">4:00 PM</span></div>
+          <div class="timing-row"><span class="timing-seva" data-i18n="timings_evening_2_seva">ఉష:కాల పూజ</span><span class="timing-time" data-i18n="timings_evening_2_time">5:00 PM</span></div>
+          <div class="timing-row"><span class="timing-seva" data-i18n="timings_evening_3_seva">ఆర్తి</span><span class="timing-time" data-i18n="timings_evening_3_time">6:30 PM</span></div>
+          <div class="timing-row"><span class="timing-seva" data-i18n="timings_evening_4_seva">ప్రసాద వితరణ</span><span class="timing-time" data-i18n="timings_evening_4_time">7:00 PM</span></div>
+          <div class="timing-row"><span class="timing-seva" data-i18n="timings_evening_5_seva">సాయంత్రం దర్శనం</span><span class="timing-time" data-i18n="timings_evening_5_time">5:00 – 8:30 PM</span></div>
+          <div class="timing-row"><span class="timing-seva" data-i18n="timings_evening_6_seva">ఏకాంత సేవ</span><span class="timing-time" data-i18n="timings_evening_6_time">8:30 PM</span></div>
         </div>
       </div>
       <div class="timing-card">
-        <div class="timing-card-header"><span class="timing-icon">⭐</span><div class="timing-title">ప్రత్యేక సమయాలు</div></div>
+        <div class="timing-card-header"><span class="timing-icon">⭐</span><div class="timing-title" data-i18n="timings_special_title">ప్రత్యేక పూజలు</div></div>
         <div class="timing-card-body">
-          <div class="timing-row"><span class="timing-seva">శనివారం రాత్రి దర్శనం</span><span class="timing-time">5:00 – 10:30 PM</span></div>
-          <div class="timing-row"><span class="timing-seva">ఏకాదశి ఉత్సవం</span><span class="timing-time">5:30 AM–9 PM</span></div>
-          <div class="timing-row"><span class="timing-seva">పూర్ణిమ ప్రసాదం</span><span class="timing-time">10:00 AM</span></div>
-          <div class="timing-row"><span class="timing-seva">అన్నదానం (ఆది)</span><span class="timing-time">12:00 PM</span></div>
-          <div class="timing-row"><span class="timing-seva">ఉత్సవాల రోజు</span><span class="timing-time">5:30 AM–10 PM</span></div>
+          <div class="timing-row special-pooja-heading"><span class="timing-seva" data-i18n="timings_special_heading">🙏 సత్యనారాయణ వ్రతం</span></div>
+          <div class="timing-row"><span class="timing-seva" data-i18n="timings_special_schedule">📅 ప్రతి నెల పౌర్ణమి</span></div>
+          <div class="timing-row"><span class="timing-seva" data-i18n="timings_special_1_seva">వ్రతం</span><span class="timing-time" data-i18n="timings_special_1_time">10:00 AM – 12:30 PM</span></div>
+          <div class="timing-row"><span class="timing-seva" data-i18n="timings_special_2_seva">అన్నదానం</span><span class="timing-time" data-i18n="timings_special_2_time">1:00 PM</span></div>
+          <div class="timing-row special-pooja-note"><span class="timing-seva" data-i18n="timings_special_note">💰 ఆసక్తి ఉన్న దంపతులు ₹516 చెల్లించి పాల్గొనవచ్చు. పూజ సామగ్రి ఆలయం అందిస్తుంది.</span></div>
         </div>
       </div>
     </div>
@@ -174,41 +177,106 @@
 <section class="events-section" id="events">
   <div class="container">
     <div class="section-header">
-      <div class="small-label">ఉత్సవాలు &amp; పండుగలు</div>
-      <h2>రాబోయే ఉత్సవాలు</h2>
+      <div class="small-label" data-i18n="events_label">ఉత్సవాలు &amp; పండుగలు</div>
+      <h2 data-i18n="events_heading">రాబోయే ఉత్సవాలు</h2>
       <div class="underline"></div>
     </div>
     <div class="events-list">
       <div class="event-card">
-        <div class="event-date-box"><div class="event-day">28</div><div class="event-month">మార్చి</div></div>
+        <div class="event-date-box"><div class="event-day" data-i18n="events_1_day">28</div><div class="event-month" data-i18n="events_1_month">మార్చి</div></div>
         <div class="event-info">
-          <h4>🌸 శ్రీ రామ నవమి మహోత్సవం</h4>
-          <p>శ్రీ రామచంద్ర స్వామి జయంతి సందర్భంగా 2 రోజుల మహోత్సవం. రామాయణ పారాయణం, భజన కార్యక్రమాలు, అన్నదానం నిర్వహించబడతాయి.</p>
-          <span class="event-badge">2 రోజులు</span>
+          <h4 data-i18n="events_1_title">🌸 శ్రీ రామ నవమి మహోత్సవం</h4>
+          <p data-i18n="events_1_desc">శ్రీ రామచంద్ర స్వామి జయంతి సందర్భంగా 2 రోజుల మహోత్సవం. రామాయణ పారాయణం, భజన కార్యక్రమాలు, అన్నదానం నిర్వహించబడతాయి.</p>
+          <span class="event-badge" data-i18n="events_1_badge">2 రోజులు</span>
         </div>
       </div>
       <div class="event-card">
-        <div class="event-date-box"><div class="event-day">14</div><div class="event-month">ఏప్రిల్</div></div>
+        <div class="event-date-box"><div class="event-day" data-i18n="events_2_day">14</div><div class="event-month" data-i18n="events_2_month">ఏప్రిల్</div></div>
         <div class="event-info">
-          <h4>🎊 తెలుగు నూతన సంవత్సరం (ఉగాది)</h4>
-          <p>ఉగాది పండుగ సందర్భంగా ప్రత్యేక పంచాంగ శ్రవణం, ఉగాది పచ్చడి వితరణ, ప్రత్యేక అభిషేకాలు జరుగుతాయి.</p>
-          <span class="event-badge">ప్రత్యేక ఉత్సవం</span>
+          <h4 data-i18n="events_2_title">🎊 తెలుగు నూతన సంవత్సరం (ఉగాది)</h4>
+          <p data-i18n="events_2_desc">ఉగాది పండుగ సందర్భంగా ప్రత్యేక పంచాంగ శ్రవణం, ఉగాది పచ్చడి వితరణ, ప్రత్యేక అభిషేకాలు జరుగుతాయి.</p>
+          <span class="event-badge" data-i18n="events_2_badge">ప్రత్యేక ఉత్సవం</span>
+        </div>
+      </div>
+      <!-- Brahmotsavam Daily Schedule (April 19-28) -->
+      <div class="event-card">
+        <div class="event-date-box"><div class="event-day" data-i18n="events_3_day">19</div><div class="event-month" data-i18n="events_3_month">ఏప్రిల్</div></div>
+        <div class="event-info">
+          <h4 data-i18n="events_3_title">✨ పుట్ట బంగారం</h4>
+          <p data-i18n="events_3_desc">బ్రహ్మోత్సవాలు — Day 1: రాత్రి 8:00 గంటలకు పుట్ట బంగారం ఉత్సవం.</p>
+          <span class="event-badge" data-i18n="events_3_badge">బ్రహ్మోత్సవాలు</span>
         </div>
       </div>
       <div class="event-card">
-        <div class="event-date-box"><div class="event-day">02</div><div class="event-month">మే</div></div>
+        <div class="event-date-box"><div class="event-day" data-i18n="events_4_day">20</div><div class="event-month" data-i18n="events_4_month">ఏప్రిల్</div></div>
         <div class="event-info">
-          <h4>🪔 ఆలయ బ్రహ్మోత్సవాలు</h4>
-          <p>ఆలయ స్థాపన బ్రహ్మోత్సవాలు ఘనంగా నిర్వహించబడుతుంది. మహాభిషేకం, కళ్యాణోత్సవం, అన్నదాన మహాయజ్ఞం జరుగుతాయి.</p>
-          <span class="event-badge">బ్రహ్మోత్సవాలు</span>
+          <h4 data-i18n="events_4_title">🚩 ధ్వజారోహణం &amp; శేష వాహనం</h4>
+          <p data-i18n="events_4_desc">బ్రహ్మోత్సవాలు — Day 2: ఉదయం 8:00 గంటలకు ధ్వజారోహణం, సాయంత్రం 7:00 గంటలకు శేష వాహనం.</p>
+          <span class="event-badge" data-i18n="events_4_badge">బ్రహ్మోత్సవాలు</span>
         </div>
       </div>
       <div class="event-card">
-        <div class="event-date-box"><div class="event-day">15</div><div class="event-month">జూన్</div></div>
+        <div class="event-date-box"><div class="event-day" data-i18n="events_5_day">21</div><div class="event-month" data-i18n="events_5_month">ఏప్రిల్</div></div>
         <div class="event-info">
-          <h4>✨ విష్ణు సహస్రనామ మహోత్సవం</h4>
-          <p>వేయి నామాల పారాయణతో శ్రీ భావనారాయణ స్వామి వారికి విశేష సేవలు అర్పించబడతాయి.</p>
-          <span class="event-badge">ధార్మిక కార్యక్రమం</span>
+          <h4 data-i18n="events_5_title">🦢 హంస వాహనం</h4>
+          <p data-i18n="events_5_desc">బ్రహ్మోత్సవాలు — Day 3: సాయంత్రం 7:00 గంటలకు హంస వాహనం.</p>
+          <span class="event-badge" data-i18n="events_5_badge">బ్రహ్మోత్సవాలు</span>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-date-box"><div class="event-day" data-i18n="events_6_day">22</div><div class="event-month" data-i18n="events_6_month">ఏప్రిల్</div></div>
+        <div class="event-info">
+          <h4 data-i18n="events_6_title">🌙 చంద్ర ప్రభ ఉత్సవం</h4>
+          <p data-i18n="events_6_desc">బ్రహ్మోత్సవాలు — Day 4: సాయంత్రం 7:00 గంటలకు చంద్ర ప్రభ ఉత్సవం.</p>
+          <span class="event-badge" data-i18n="events_6_badge">బ్రహ్మోత్సవాలు</span>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-date-box"><div class="event-day" data-i18n="events_7_day">23</div><div class="event-month" data-i18n="events_7_month">ఏప్రిల్</div></div>
+        <div class="event-info">
+          <h4 data-i18n="events_7_title">☀️ సూర్య ప్రభ &amp; పులి వాహనం ఊరేగింపు</h4>
+          <p data-i18n="events_7_desc">బ్రహ్మోత్సవాలు — Day 5: ఉదయం 8:00 గంటలకు సూర్య ప్రభ ఊరేగింపు, సాయంత్రం 6:00 గంటలకు పులి వాహనం ఊరేగింపు.</p>
+          <span class="event-badge" data-i18n="events_7_badge">బ్రహ్మోత్సవాలు</span>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-date-box"><div class="event-day" data-i18n="events_8_day">24</div><div class="event-month" data-i18n="events_8_month">ఏప్రిల్</div></div>
+        <div class="event-info">
+          <h4 data-i18n="events_8_title">💃 మోహినీ ఊరేగింపు</h4>
+          <p data-i18n="events_8_desc">బ్రహ్మోత్సవాలు — Day 6: తెల్లవారుజామున 4:00 గంటలకు మోహినీ ఊరేగింపు.</p>
+          <span class="event-badge" data-i18n="events_8_badge">బ్రహ్మోత్సవాలు</span>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-date-box"><div class="event-day" data-i18n="events_9_day">25</div><div class="event-month" data-i18n="events_9_month">ఏప్రిల్</div></div>
+        <div class="event-info">
+          <h4 data-i18n="events_9_title">🐘 గజ వాహనం ఊరేగింపు &amp; కళ్యాణోత్సవం</h4>
+          <p data-i18n="events_9_desc">బ్రహ్మోత్సవాలు — Day 7: ఉదయం 6:00 గంటలకు గజ వాహనం ఊరేగింపు, సాయంత్రం 7:00 గంటలకు కళ్యాణోత్సవం.</p>
+          <span class="event-badge" data-i18n="events_9_badge">బ్రహ్మోత్సవాలు</span>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-date-box"><div class="event-day" data-i18n="events_10_day">26</div><div class="event-month" data-i18n="events_10_month">ఏప్రిల్</div></div>
+        <div class="event-info">
+          <h4 data-i18n="events_10_title">🛞 రథోత్సవం</h4>
+          <p data-i18n="events_10_desc">బ్రహ్మోత్సవాలు — Day 8: సాయంత్రం 5:00 గంటలకు రథోత్సవం.</p>
+          <span class="event-badge" data-i18n="events_10_badge">బ్రహ్మోత్సవాలు</span>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-date-box"><div class="event-day" data-i18n="events_11_day">27</div><div class="event-month" data-i18n="events_11_month">ఏప్రిల్</div></div>
+        <div class="event-info">
+          <h4 data-i18n="events_11_title">🍚 మహా నైవేద్యాలు &amp; అశ్వ వాహనం</h4>
+          <p data-i18n="events_11_desc">బ్రహ్మోత్సవాలు — Day 9: మధ్యాహ్నం 3:00 గంటలకు మహా నైవేద్యాలు, సాయంత్రం 6:00 గంటలకు అశ్వ వాహనం.</p>
+          <span class="event-badge" data-i18n="events_11_badge">బ్రహ్మోత్సవాలు</span>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-date-box"><div class="event-day" data-i18n="events_12_day">28</div><div class="event-month" data-i18n="events_12_month">ఏప్రిల్</div></div>
+        <div class="event-info">
+          <h4 data-i18n="events_12_title">🪷 ప్రసాదాలు, చక్ర స్నానం &amp; ధ్వజావరోహణం</h4>
+          <p data-i18n="events_12_desc">బ్రహ్మోత్సవాలు — Day 10: మధ్యాహ్నం 3:00 గంటలకు ప్రసాదాలు, రాత్రి 8:00 గంటలకు చక్ర స్నానం &amp; ధ్వజావరోహణం.</p>
+          <span class="event-badge" data-i18n="events_12_badge">బ్రహ్మోత్సవాలు</span>
         </div>
       </div>
     </div>
@@ -219,19 +287,19 @@
 <section class="sevas-section" id="sevas">
   <div class="container">
     <div class="section-header">
-      <div class="small-label">సేవా కార్యక్రమాలు</div>
-      <h2>సేవలు &amp; అర్చనలు</h2>
+      <div class="small-label" data-i18n="sevas_label">సేవా కార్యక్రమాలు</div>
+      <h2 data-i18n="sevas_heading">సేవలు &amp; అర్చనలు</h2>
       <div class="underline"></div>
     </div>
     <div class="sevas-grid">
-      <div class="seva-card"><span class="seva-icon">🌺</span><div class="seva-name">అష్టోత్తర పూజ</div><div class="seva-price">₹ 51/-</div><div class="seva-desc">108 నామాలతో అర్చన</div></div>
-      <div class="seva-card"><span class="seva-icon">🫙</span><div class="seva-name">అభిషేకం</div><div class="seva-price">₹ 116/-</div><div class="seva-desc">పంచామృత అభిషేకం</div></div>
-      <div class="seva-card"><span class="seva-icon">🪷</span><div class="seva-name">కళ్యాణోత్సవం</div><div class="seva-price">₹ 501/-</div><div class="seva-desc">స్వామి కళ్యాణ సేవ</div></div>
-      <div class="seva-card"><span class="seva-icon">🔔</span><div class="seva-name">నవగ్రహ పూజ</div><div class="seva-price">₹ 251/-</div><div class="seva-desc">నవగ్రహ శాంతి పూజ</div></div>
-      <div class="seva-card"><span class="seva-icon">🍚</span><div class="seva-name">అన్నదానం</div><div class="seva-price">₹ 1,001/-</div><div class="seva-desc">100 మందికి భోజన దానం</div></div>
-      <div class="seva-card"><span class="seva-icon">🕯️</span><div class="seva-name">సహస్ర దీపోత్సవం</div><div class="seva-price">₹ 1,116/-</div><div class="seva-desc">వేయి దీపాల సేవ</div></div>
-      <div class="seva-card"><span class="seva-icon">🌸</span><div class="seva-name">పుష్ప సేవ</div><div class="seva-price">₹ 151/-</div><div class="seva-desc">పువ్వుల అలంకరణ</div></div>
-      <div class="seva-card"><span class="seva-icon">📖</span><div class="seva-name">గోవిందనామ స్మరణ</div><div class="seva-price">₹ 101/-</div><div class="seva-desc">సంకీర్తన కార్యక్రమం</div></div>
+      <div class="seva-card"><span class="seva-icon">🌺</span><div class="seva-name" data-i18n="seva_1_name">అష్టోత్తర పూజ</div><div class="seva-price" data-i18n="seva_1_price">₹ 51/-</div><div class="seva-desc" data-i18n="seva_1_desc">108 నామాలతో అర్చన</div></div>
+      <div class="seva-card"><span class="seva-icon">🫙</span><div class="seva-name" data-i18n="seva_2_name">అభిషేకం</div><div class="seva-price" data-i18n="seva_2_price">₹ 116/-</div><div class="seva-desc" data-i18n="seva_2_desc">పంచామృత అభిషేకం</div></div>
+      <div class="seva-card"><span class="seva-icon">🪷</span><div class="seva-name" data-i18n="seva_3_name">కళ్యాణోత్సవం</div><div class="seva-price" data-i18n="seva_3_price">₹ 501/-</div><div class="seva-desc" data-i18n="seva_3_desc">స్వామి కళ్యాణ సేవ</div></div>
+      <div class="seva-card"><span class="seva-icon">🙏</span><div class="seva-name" data-i18n="seva_4_name">సత్యనారాయణ వ్రతం</div><div class="seva-price" data-i18n="seva_4_price">₹ 516/-</div><div class="seva-desc" data-i18n="seva_4_desc">ప్రతి పౌర్ణమి 10:00 AM</div></div>
+      <div class="seva-card"><span class="seva-icon">🍚</span><div class="seva-name" data-i18n="seva_5_name">అన్నదానం</div><div class="seva-price" data-i18n="seva_5_price">₹ 1,001/-</div><div class="seva-desc" data-i18n="seva_5_desc">100 మందికి భోజన విరాళం</div></div>
+      <div class="seva-card"><span class="seva-icon">🕯️</span><div class="seva-name" data-i18n="seva_6_name">సహస్ర దీపోత్సవం</div><div class="seva-price" data-i18n="seva_6_price">₹ 1,116/-</div><div class="seva-desc" data-i18n="seva_6_desc">వేయి దీపాల సేవ</div></div>
+      <div class="seva-card"><span class="seva-icon">🌸</span><div class="seva-name" data-i18n="seva_7_name">పుష్ప సేవ</div><div class="seva-price" data-i18n="seva_7_price">₹ 151/-</div><div class="seva-desc" data-i18n="seva_7_desc">పువ్వుల అలంకరణ</div></div>
+      <div class="seva-card"><span class="seva-icon">📖</span><div class="seva-name" data-i18n="seva_8_name">గోవిందనామ స్మరణ</div><div class="seva-price" data-i18n="seva_8_price">₹ 101/-</div><div class="seva-desc" data-i18n="seva_8_desc">సంకీర్తన కార్యక్రమం</div></div>
     </div>
   </div>
 </section>
@@ -240,25 +308,26 @@
 <section class="donation-section" id="donation">
   <div class="container">
     <div class="section-header">
-      <div class="small-label">దానధర్మాలు</div>
-      <h2>ఆలయ నిర్మాణ నిధి</h2>
+      <div class="small-label" data-i18n="donation_label">విరాళాలు</div>
+      <h2 data-i18n="donation_heading">ఆలయ నిర్మాణ నిధి</h2>
       <div class="underline"></div>
     </div>
-    <p class="donation-subtitle">"దానం మహాపుణ్యం" — మీ దానం ఆలయ అభివృద్ధికి, సేవా కార్యక్రమాలకు ఉపయోగపడుతుంది. మీ భక్తి మీకు శ్రేయస్సు, ఆరోగ్యం, ఆనందం తెస్తుంది.</p>
+    <p class="donation-subtitle" data-i18n="donation_subtitle">"విరాళం మహాపుణ్యం" — మీ విరాళం ఆలయ అభివృద్ధికి, సేవా కార్యక్రమాలకు ఉపయోగపడుతుంది. మీ భక్తి మీకు శ్రేయస్సు, ఆరోగ్యం, ఆనందం తెస్తుంది.</p>
     <div class="donation-cards">
-      <div class="donation-card"><span class="donation-amount">₹500</span><div class="donation-card-title">వ్యక్తిగత దానం</div><div class="donation-card-desc">ఒక భక్తుడి పేరున ప్రత్యేక పూజ అర్పించబడుతుంది</div></div>
-      <div class="donation-card featured"><span class="donation-amount">₹5,000</span><div class="donation-card-title">ఆలయ నిర్మాణ నిధి</div><div class="donation-card-desc">ఆలయ నవీకరణ, నిర్మాణ కార్యక్రమాలకు తోడ్పాటు</div></div>
-      <div class="donation-card"><span class="donation-amount">₹1,001</span><div class="donation-card-title">అన్నదాన నిధి</div><div class="donation-card-desc">నిరుపేద భక్తులకు ఉచిత భోజన కార్యక్రమానికి</div></div>
-      <div class="donation-card"><span class="donation-amount">₹10,000+</span><div class="donation-card-title">మహాదాత</div><div class="donation-card-desc">ప్రత్యేక గౌరవం, ఆలయ స్తంభంపై పేరు చెక్కబడుతుంది</div></div>
+      <div class="donation-card"><span class="donation-amount" data-i18n="donation_card_1_amount">₹500</span><div class="donation-card-title" data-i18n="donation_card_1_title">వ్యక్తిగత విరాళం</div><div class="donation-card-desc" data-i18n="donation_card_1_desc">ఒక భక్తుడి పేరున ప్రత్యేక పూజ అర్పించబడుతుంది</div></div>
+      <div class="donation-card featured"><span class="donation-amount" data-i18n="donation_card_2_amount">₹5,000</span><div class="donation-card-title" data-i18n="donation_card_2_title">ఆలయ నిర్మాణ నిధి</div><div class="donation-card-desc" data-i18n="donation_card_2_desc">ఆలయ నవీకరణ, నిర్మాణ కార్యక్రమాలకు తోడ్పాటు</div></div>
+      <div class="donation-card"><span class="donation-amount" data-i18n="donation_card_3_amount">₹1,001</span><div class="donation-card-title" data-i18n="donation_card_3_title">అన్నదాన నిధి</div><div class="donation-card-desc" data-i18n="donation_card_3_desc">నిరుపేద భక్తులకు ఉచిత భోజన కార్యక్రమానికి</div></div>
+      <div class="donation-card"><span class="donation-amount" data-i18n="donation_card_4_amount">₹10,000+</span><div class="donation-card-title" data-i18n="donation_card_4_title">మహాదాత</div><div class="donation-card-desc" data-i18n="donation_card_4_desc">ప్రత్యేక గౌరవం, ఆలయ స్తంభంపై పేరు చెక్కబడుతుంది</div></div>
     </div>
-    <button class="donate-now-btn" onclick="openDonateModal()">💛 ఇప్పుడే దానం చేయండి</button>
+    <button class="donate-now-btn" onclick="openDonateModal()" data-i18n="donation_btn">💛 ఇప్పుడే విరాళం ఇవ్వండి</button>
     <div class="bank-details">
-      <h3>🏦 బ్యాంక్ వివరాలు</h3>
-      <div class="bank-row"><span class="bank-label">ఖాతా పేరు</span><span class="bank-value">శ్రీ భావనారాయణ స్వామి ఆలయ ట్రస్ట్</span></div>
-      <div class="bank-row"><span class="bank-label">ఖాతా నంబర్</span><span class="bank-value">44532968082</span></div>
-      <div class="bank-row"><span class="bank-label">IFSC కోడ్</span><span class="bank-value">516002763</span></div>
-      <div class="bank-row"><span class="bank-label">బ్యాంక్ పేరు</span><span class="bank-value">State Bank of India</span></div>
-      <div class="upi-section"><div class="upi-label">UPI ద్వారా దానం చేయండి</div><div class="upi-id">📱 madhavaramtemple@sbi</div></div>
+      <h3 data-i18n="donation_bank_heading">🏦 బ్యాంక్ వివరాలు</h3>
+      <div class="bank-row"><span class="bank-label" data-i18n="donation_bank_account_label">ఖాతా పేరు</span><span class="bank-value" data-i18n="donation_bank_account_value">శ్రీ భావనారాయణ స్వామి ఆలయ ట్రస్ట్</span></div>
+      <div class="bank-row"><span class="bank-label" data-i18n="donation_bank_number_label">ఖాతా నంబర్</span><span class="bank-value" data-i18n="donation_bank_number_value">44532968082</span></div>
+      <div class="bank-row"><span class="bank-label" data-i18n="donation_bank_ifsc_label">IFSC కోడ్</span><span class="bank-value" data-i18n="donation_bank_ifsc_value">516002763</span></div>
+      <div class="bank-row"><span class="bank-label" data-i18n="donation_bank_name_label">బ్యాంక్ పేరు</span><span class="bank-value" data-i18n="donation_bank_name_value">State Bank of India</span></div>
+      <div class="bank-row"><span class="bank-label" data-i18n="donation_bank_location_label">బ్యాంక్ శాఖ</span><span class="bank-value" data-i18n="donation_bank_location_value">కొత్త మాధవరం</span></div>
+      <div class="upi-section"><div class="upi-label" data-i18n="donation_upi_label">UPI ద్వారా విరాళం ఇవ్వండి</div><div class="upi-id" data-i18n="donation_upi_id">📱 madhavaramtemple@sbi</div></div>
     </div>
   </div>
 </section>
@@ -267,43 +336,43 @@
 <section class="deity-history-section" id="deity-history">
   <div class="container">
     <div class="section-header">
-      <div class="small-label">దైవ మహిమ &amp; పురాణ కథ</div>
-      <h2>శ్రీ భద్రావతీ భావనారాయణ స్వామి వారి చరిత్ర</h2>
-      <p style="font-family:'Noto Sans Telugu',sans-serif;font-size:15px;color:var(--text-mid);max-width:680px;margin:12px auto 0;line-height:2;">మార్కండేయ మహర్షి నుండి భావన మహర్షి వరకు — పద్మశాలీ సమాజానికి ఈ స్వామి ఎందుకు ఇంత ప్రత్యేకమైనవాడో తెలుసుకోండి</p>
+      <div class="small-label" data-i18n="deity_label">దైవ మహిమ &amp; పురాణ కథ</div>
+      <h2 data-i18n="deity_heading">శ్రీ భద్రావతీ భావనారాయణ స్వామి వారి చరిత్ర</h2>
+      <p style="font-family:'Noto Sans Telugu',sans-serif;font-size:15px;color:var(--text-mid);max-width:680px;margin:12px auto 0;line-height:2;" data-i18n="deity_subtitle">మార్కండేయ మహర్షి నుండి భావన మహర్షి వరకు — పద్మశాలీ సమాజానికి ఈ స్వామి ఎందుకు ఇంత ప్రత్యేకమైనవాడో తెలుసుకోండి</p>
       <div class="underline"></div>
     </div>
 
     <!-- Meaning Box -->
     <div class="deity-meaning-box">
-      <h4>🌺 "భావనారాయణ" — నామమహిమ</h4>
-      <p>"భావన" అంటే మనస్సులో స్మరించడం, "నారాయణ" అంటే సర్వుల ఆధారమైన విష్ణుమూర్తి. <strong>భావనారాయణుడు</strong> అంటే — <em>మనసులో ఒక్కసారి స్మరించినా మోక్షాన్ని ప్రసాదించే దయాస్వరూపి.</em> స్వయంగా పరమాత్మ చెప్పినట్లు — "ఈ క్షేత్రంలో కేవలం మూడు రాత్రులు నివసించినా వంద అశ్వమేధ యాగాల పుణ్యం లభిస్తుంది."</p>
+      <h4 data-i18n="deity_meaning_title">🌺 "భావనారాయణ" — నామమహిమ</h4>
+      <p data-i18n="deity_meaning_text">"భావన" అంటే మనస్సులో స్మరించడం, "నారాయణ" అంటే సర్వుల ఆధారమైన విష్ణుమూర్తి. <strong>భావనారాయణుడు</strong> అంటే — <em>మనసులో ఒక్కసారి స్మరించినా మోక్షాన్ని ప్రసాదించే దయాస్వరూపి.</em> స్వయంగా పరమాత్మ చెప్పినట్లు — "ఈ క్షేత్రంలో కేవలం మూడు రాత్రులు నివసించినా వంద అశ్వమేధ యాగాల పుణ్యం లభిస్తుంది."</p>
     </div>
 
     <!-- Story Cards -->
     <div class="deity-history-grid">
 
       <div class="deity-story-card">
-        <span class="deity-story-icon"><img src="images/image_3.jpg" alt="మార్కండేయ మహర్షి" style="width:auto;height:80px;object-fit:contain;" /></span>
-        <h4>మార్కండేయ మహర్షి — పద్మశాలీల మూలగురువు</h4>
-        <p>మార్కండేయ మహర్షి ఒక అసాధారణ మహాత్ముడు — మృకండు మహర్షి కుమారుడు. చిన్నతనంలోనే యముని శాపం ఎదుర్కొని, శివుని అనుగ్రహంతో <strong>చిరంజీవి</strong> అయ్యాడు. మార్కండేయ పురాణం, దేవీ భాగవతం వంటి గ్రంథాలు రచించిన పరమ జ్ఞాని. పద్మశాలీ సమాజానికి మార్కండేయ మహర్షే <strong>మూలగురువు, ఆద్యపురుషుడు</strong>. శివుని ఆదేశంతో మార్కండేయుడు లోక కల్యాణం కోసం ఒక మహాయజ్ఞం నిర్వహించాడు — ఆ యజ్ఞకుండం నుండే భావన మహర్షి ఆవిర్భవించాడు. అందుకే ప్రతి పద్మశాలీ ఇంటిలో మార్కండేయుని పేరు పవిత్రంగా స్మరించబడుతుంది.</p>
+        <span class="deity-story-icon"><img src="images/image_3.jpg" alt="మార్కండేయ మహర్షి" data-i18n-alt="deity_story_1_alt" style="width:auto;height:80px;object-fit:contain;" /></span>
+        <h4 data-i18n="deity_story_1_title">మార్కండేయ మహర్షి — పద్మశాలీల మూలగురువు</h4>
+        <p data-i18n="deity_story_1_text">మార్కండేయ మహర్షి ఒక అసాధారణ మహాత్ముడు — మృకండు మహర్షి కుమారుడు. చిన్నతనంలోనే యముని శాపం ఎదుర్కొని, శివుని అనుగ్రహంతో <strong>చిరంజీవి</strong> అయ్యాడు. మార్కండేయ పురాణం, దేవీ భాగవతం వంటి గ్రంథాలు రచించిన పరమ జ్ఞాని. పద్మశాలీ సమాజానికి మార్కండేయ మహర్షే <strong>మూలగురువు, ఆద్యపురుషుడు</strong>. శివుని ఆదేశంతో మార్కండేయుడు లోక కల్యాణం కోసం ఒక మహాయజ్ఞం నిర్వహించాడు — ఆ యజ్ఞకుండం నుండే భావన మహర్షి ఆవిర్భవించాడు. అందుకే ప్రతి పద్మశాలీ ఇంటిలో మార్కండేయుని పేరు పవిత్రంగా స్మరించబడుతుంది.</p>
       </div>
 
       <div class="deity-story-card crimson-top">
-        <span class="deity-story-icon"><img src="images/image_4.jpg" alt="శ్రీ భావన మహర్షి" style="width:auto;height:80px;object-fit:contain;" /></span>
-        <h4>శ్రీ భావన మహర్షి — పద్మశాలీల జనకుడు</h4>
-        <p>మార్కండేయుని మహాయజ్ఞం నుండి హస్తంలో పద్మం (తామర పువ్వు) పట్టుకొని <strong>భావన మహర్షి</strong> ఆవిర్భవించాడు. ఆయన శ్రీమన్నారాయణుని వద్దకు వెళ్ళగా, నారాయణుడు తన నాభి నుండి వెలువడే పద్మనాళం ఇచ్చి దానితో వస్త్రం నేయమని కోరాడు. భావన మహర్షి ఆ దివ్య పద్మనాళంతో వస్త్రం నేసి నారాయణునికి అర్పించాడు. సంతుష్టుడైన నారాయణుడు <strong>"నీ సంతానం 101 గోత్రాలుగా విస్తరించి పద్మశాలీలుగా ప్రసిద్ధులవుతారు"</strong> అని ఆశీర్వదించాడు. భావన మహర్షి భార్య <strong>భద్రావతీ దేవి</strong> — అందుకే ఈ స్వామి "భద్రావతీ భావనారాయణ స్వామి" అని పిలువబడ్డాడు. భావన మహర్షికి 101 మంది sons జన్మించారు — వారే నేటి పద్మశాలీ సమాజం యొక్క 101 గోత్రాల పూర్వీకులు.</p>
+        <span class="deity-story-icon"><img src="images/image_4.jpg" alt="శ్రీ భావన మహర్షి" data-i18n-alt="deity_story_2_alt" style="width:auto;height:80px;object-fit:contain;" /></span>
+        <h4 data-i18n="deity_story_2_title">శ్రీ భావన మహర్షి — పద్మశాలీల జనకుడు</h4>
+        <p data-i18n="deity_story_2_text">మార్కండేయుని మహాయజ్ఞం నుండి హస్తంలో పద్మం (తామర పువ్వు) పట్టుకొని <strong>భావన మహర్షి</strong> ఆవిర్భవించాడు. ఆయన శ్రీమన్నారాయణుని వద్దకు వెళ్ళగా, నారాయణుడు తన నాభి నుండి వెలువడే పద్మనాళం ఇచ్చి దానితో వస్త్రం నేయమని కోరాడు. భావన మహర్షి ఆ దివ్య పద్మనాళంతో వస్త్రం నేసి నారాయణునికి అర్పించాడు. సంతుష్టుడైన నారాయణుడు <strong>"నీ సంతానం 101 గోత్రాలుగా విస్తరించి పద్మశాలీలుగా ప్రసిద్ధులవుతారు"</strong> అని ఆశీర్వదించాడు. భావన మహర్షి భార్య <strong>భద్రావతీ దేవి</strong> — అందుకే ఈ స్వామి "భద్రావతీ భావనారాయణ స్వామి" అని పిలువబడ్డాడు. భావన మహర్షికి 101 మంది sons జన్మించారు — వారే నేటి పద్మశాలీ సమాజం యొక్క 101 గోత్రాల పూర్వీకులు.</p>
       </div>
 
       <div class="deity-story-card">
         <span class="deity-story-icon"><img src="images/image_5.png" alt="handloom" style="width:72px;height:72px;object-fit:contain;" /></span>
-        <h4>పద్మశాలీలు — దైవీయ వస్త్రకళ వారసులు</h4>
-        <p>"పద్మ" అంటే తామర, "శాలి" అంటే నేత పని చేసేవారు — <strong>పద్మశాలీలు అంటే పద్మనాళంతో వస్త్రం నేసిన దివ్య వంశీయులు</strong>. మార్కండేయ పురాణం, విష్ణు పురాణం, వాయు పురాణాలన్నీ ఈ వంశ చరిత్రకు సాక్ష్యమిస్తున్నాయి. సూర్య భగవానుడు వారి కళకు మెచ్చి <strong>పద్మ వేదం</strong> అనే ఐదవ వేదాన్ని పద్మశాలీలకు అనుగ్రహించాడు. అందుకే పద్మశాలీలు "పద్మ బ్రాహ్మణులు" అని పిలువబడతారు — వారి పూజా విధానం, వివాహ సంప్రదాయాలు బ్రాహ్మణ సంప్రదాయాన్ని అనుసరిస్తాయి. కొత్త మాధవరం గ్రామంలోని <strong>శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయం</strong> ఈ పవిత్ర పద్మశాలీ సమాజానికి ఆత్మ, ఐక్యత, ఆధ్యాత్మిక శక్తి యొక్క కేంద్రం.</p>
+        <h4 data-i18n="deity_story_3_title">పద్మశాలీలు — దైవీయ వస్త్రకళ వారసులు</h4>
+        <p data-i18n="deity_story_3_text">"పద్మ" అంటే తామర, "శాలి" అంటే నేత పని చేసేవారు — <strong>పద్మశాలీలు అంటే పద్మనాళంతో వస్త్రం నేసిన దివ్య వంశీయులు</strong>. మార్కండేయ పురాణం, విష్ణు పురాణం, వాయు పురాణాలన్నీ ఈ వంశ చరిత్రకు సాక్ష్యమిస్తున్నాయి. సూర్య భగవానుడు వారి కళకు మెచ్చి <strong>పద్మ వేదం</strong> అనే ఐదవ వేదాన్ని పద్మశాలీలకు అనుగ్రహించాడు. అందుకే పద్మశాలీలు "పద్మ బ్రాహ్మణులు" అని పిలువబడతారు — వారి పూజా విధానం, వివాహ సంప్రదాయాలు బ్రాహ్మణ సంప్రదాయాన్ని అనుసరిస్తాయి. కొత్త మాధవరం గ్రామంలోని <strong>శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయం</strong> ఈ పవిత్ర పద్మశాలీ సమాజానికి ఆత్మ, ఐక్యత, ఆధ్యాత్మిక శక్తి యొక్క కేంద్రం.</p>
       </div>
 
       <div class="deity-story-card crimson-top">
         <span class="deity-story-icon"><img src="images/image_6.png" alt="కొత్త మాధవరం ఆలయం" style="width:auto;height:90px;object-fit:contain;" /></span>
-        <h4>కొత్త మాధవరం — వస్త్రాలకు జన్మభూమి, దీవెనలకు పుణ్యక్షేత్రం</h4>
-        <p>
+        <h4 data-i18n="deity_story_4_title">కొత్త మాధవరం — వస్త్రాలకు జన్మభూమి, దీవెనలకు పుణ్యక్షేత్రం</h4>
+        <p data-i18n="deity_story_4_text">
           మాధవరం అంటే కేవలం ఒక గ్రామం కాదు — అది <strong>చేనేత చీరల పుట్టినిల్లు</strong>. ఈ నేల నుండి పుట్టిన ప్రతి నూలు పోగు, ప్రతి పట్టు చీర, ప్రతి హ్యాండ్‌లూమ్ వస్త్రం వెనకాల శ్రీ భావనారాయణ స్వామి దీవెన దాగి ఉంది.
           <br /><br />
           ఎందుకంటే — <strong>స్వయంగా శ్రీమన్నారాయణుడికి వస్త్రం నేసి అర్పించిన భావన మహర్షే ఈ స్వామి!</strong> దేవతలకూ, మానవులకూ వస్త్రధారణ సాధించిన ఆ దివ్య హస్తాలు ఈ క్షేత్రంలో వెలిచాయి.
@@ -320,46 +389,100 @@
     <div class="deity-attributes">
       <div class="deity-attr-item">
         <span class="deity-attr-icon">🪷</span>
-        <div class="deity-attr-label">మూల స్వరూపం</div>
-        <div class="deity-attr-value">శ్రీ మహావిష్ణువు</div>
+        <div class="deity-attr-label" data-i18n="deity_attr_1_label">మూల స్వరూపం</div>
+        <div class="deity-attr-value" data-i18n="deity_attr_1_value">శ్రీ మహావిష్ణువు</div>
       </div>
       <div class="deity-attr-item">
         <span class="deity-attr-icon">👸</span>
-        <div class="deity-attr-label">అమ్మవారు</div>
-        <div class="deity-attr-value">శ్రీ భద్రావతీ దేవి</div>
+        <div class="deity-attr-label" data-i18n="deity_attr_2_label">అమ్మవారు</div>
+        <div class="deity-attr-value" data-i18n="deity_attr_2_value">శ్రీ భద్రావతీ దేవి</div>
       </div>
       <div class="deity-attr-item">
         <span class="deity-attr-icon">📖</span>
-        <div class="deity-attr-label">పురాణ ప్రమాణం</div>
-        <div class="deity-attr-value">మార్కండేయ పురాణం</div>
+        <div class="deity-attr-label" data-i18n="deity_attr_3_label">పురాణ ప్రమాణం</div>
+        <div class="deity-attr-value" data-i18n="deity_attr_3_value">మార్కండేయ పురాణం</div>
       </div>
       <div class="deity-attr-item">
         <span class="deity-attr-icon">🧵</span>
-        <div class="deity-attr-label">సమాజ సంబంధం</div>
-        <div class="deity-attr-value">పద్మశాలీల ఆరాధ్య దైవం</div>
+        <div class="deity-attr-label" data-i18n="deity_attr_4_label">సమాజ సంబంధం</div>
+        <div class="deity-attr-value" data-i18n="deity_attr_4_value">పద్మశాలీల ఆరాధ్య దైవం</div>
       </div>
       <div class="deity-attr-item">
         <span class="deity-attr-icon">🌺</span>
-        <div class="deity-attr-label">వంశ జనకుడు</div>
-        <div class="deity-attr-value">భావన మహర్షి</div>
+        <div class="deity-attr-label" data-i18n="deity_attr_5_label">వంశ జనకుడు</div>
+        <div class="deity-attr-value" data-i18n="deity_attr_5_value">భావన మహర్షి</div>
       </div>
       <div class="deity-attr-item">
         <span class="deity-attr-icon">🧘</span>
-        <div class="deity-attr-label">మూలగురువు</div>
-        <div class="deity-attr-value">మార్కండేయ మహర్షి</div>
+        <div class="deity-attr-label" data-i18n="deity_attr_6_label">మూలగురువు</div>
+        <div class="deity-attr-value" data-i18n="deity_attr_6_value">మార్కండేయ మహర్షి</div>
       </div>
       <div class="deity-attr-item">
         <span class="deity-attr-icon">📜</span>
-        <div class="deity-attr-label">పవిత్ర వేదం</div>
-        <div class="deity-attr-value">పద్మ వేదం (5వ వేదం)</div>
+        <div class="deity-attr-label" data-i18n="deity_attr_7_label">పవిత్ర వేదం</div>
+        <div class="deity-attr-value" data-i18n="deity_attr_7_value">పద్మ వేదం (5వ వేదం)</div>
       </div>
       <div class="deity-attr-item">
         <span class="deity-attr-icon">🌟</span>
-        <div class="deity-attr-label">గోత్రాలు</div>
-        <div class="deity-attr-value">101 పద్మశాలీ గోత్రాలు</div>
+        <div class="deity-attr-label" data-i18n="deity_attr_8_label">గోత్రాలు</div>
+        <div class="deity-attr-value" data-i18n="deity_attr_8_value">101 పద్మశాలీ గోత్రాలు</div>
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- NEARBY VISITS -->
+<section class="nearby-temple-section" id="nearby-visits">
+  <div class="container">
+    <div class="section-header">
+      <div class="small-label" data-i18n="nearby_label">సమీప సందర్శనాలు</div>
+      <h2 data-i18n="nearby_heading">సమీపంలో చూడదగ్గ ప్రదేశాలు</h2>
+      <div class="underline"></div>
+    </div>
+    <div class="nearby-visits-grid">
+
+      <!-- Vontimitta Temple -->
+      <div class="nearby-temple-card">
+        <div class="nearby-temple-badge" data-i18n="nearby_1_badge">📍 1.5 కి.మీ దూరం</div>
+        <div class="nearby-temple-body">
+          <div class="nearby-temple-icon-area">
+            <img src="images/vontimitta-temple-logo.jpg" alt="వొంటిమిట్ట ఆలయం" data-i18n-alt="nearby_1_logo_alt" class="nearby-temple-logo-img nearby-logo-dark-bg" />
+          </div>
+          <div class="nearby-temple-info">
+            <h3 data-i18n="nearby_1_title">ఒంటిమిట్ట శ్రీ కోదండ రామస్వామి ఆలయం</h3>
+            <p data-i18n="nearby_1_desc">మన శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయం, ప్రసిద్ధ <strong>ఒంటిమిట్ట శ్రీ కోదండ రామస్వామి ఆలయానికి</strong> కేవలం 1.5 కి.మీ దూరంలో ఉంది. ఒంటిమిట్ట ఆలయం విజయనగర కాలం నాటి అద్భుత శిల్పకళకు పేరుగాంచిన ప్రాచీన దేవాలయం. భక్తులు రెండు ఆలయాలను ఒకే యాత్రలో సందర్శించవచ్చు.</p>
+            <div class="nearby-temple-tags">
+              <span class="highlight-tag" data-i18n="nearby_1_tag_1">🛕 ప్రాచీన ఆలయం</span>
+              <span class="highlight-tag" data-i18n="nearby_1_tag_2">🎨 విజయనగర శిల్పకళ</span>
+              <span class="highlight-tag" data-i18n="nearby_1_tag_3">📿 శ్రీ రామ క్షేత్రం</span>
+            </div>
+            <a href="https://maps.google.com/?q=Vontimitta+Kodanda+Rama+Swamy+Temple" target="_blank" rel="noopener" class="nearby-temple-link" data-i18n="nearby_1_link">📍 Google Maps లో చూడండి →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Handloom Sarees -->
+      <div class="nearby-temple-card">
+        <div class="nearby-temple-badge" data-i18n="nearby_2_badge">🧵 ప్రపంచ ప్రసిద్ధ చేనేత</div>
+        <div class="nearby-temple-body">
+          <div class="nearby-temple-icon-area">
+            <img src="images/handloom-logo.png" alt="మాధవరం చేనేత చీరలు" data-i18n-alt="nearby_2_logo_alt" class="nearby-temple-logo-img nearby-logo-dark-bg" />
+          </div>
+          <div class="nearby-temple-info">
+            <h3 data-i18n="nearby_2_title">మాధవరం చేనేత చీరలు</h3>
+            <p data-i18n="nearby_2_desc">మాధవరం <strong>ప్రపంచ ప్రసిద్ధ చేనేత చీరల తయారీ కేంద్రం</strong>. ఇక్కడి నేత కార్మికులు తరతరాలుగా అందమైన హ్యాండ్‌లూమ్ చీరలను నేస్తున్నారు. భక్తులు ఆలయ దర్శనంతో పాటు అద్భుతమైన చేనేత చీరలను కొనుగోలు చేయవచ్చు — ఒకే యాత్రలో దైవ దర్శనం మరియు చేనేత షాపింగ్!</p>
+            <div class="nearby-temple-tags">
+              <span class="highlight-tag" data-i18n="nearby_2_tag_1">🧶 చేనేత చీరలు</span>
+              <span class="highlight-tag" data-i18n="nearby_2_tag_2">🌍 ప్రపంచ ప్రసిద్ధం</span>
+              <span class="highlight-tag" data-i18n="nearby_2_tag_3">🛍️ షాపింగ్</span>
+            </div>
+            <a href="https://maps.google.com/?q=14.408091730097194,79.00729675001361" target="_blank" rel="noopener" class="nearby-temple-link" data-i18n="nearby_2_link">📍 Google Maps లో చూడండి →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -367,25 +490,23 @@
 <section class="gallery-section" id="gallery">
   <div class="container">
     <div class="section-header">
-      <div class="small-label">చిత్రాలు</div>
-      <h2>ఆలయ గ్యాలరీ</h2>
+      <div class="small-label" data-i18n="gallery_label">చిత్రాలు</div>
+      <h2 data-i18n="gallery_heading">ఆలయ గ్యాలరీ</h2>
       <div class="underline"></div>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item" onclick="openLightbox('', '🛕', 'ఆలయ ముఖద్వారం')"><div class="gallery-placeholder"><span class="gallery-img-icon">🛕</span><span class="gallery-img-label">ఆలయ ముఖద్వారం</span></div></div>
+      <div class="gallery-item" onclick="openAlbum('temple-facilities')" title="ఆలయ సౌకర్యాలు ఆల్బమ్ చూడండి" data-i18n-title="gallery_1_title"><div class="gallery-placeholder"><span class="gallery-img-icon">🛕</span><span class="gallery-img-label" data-i18n="gallery_1_label">ఆలయ సౌకర్యాలు 📂</span></div></div>
       <div class="gallery-item" onclick="openLightbox('images/image_7.jpg', '', 'పాత మాధవరం ఆలయం')" style="position:relative;cursor:pointer;">
-        <img src="images/image_7.jpg" alt="పాత మాధవరం ఆలయం" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;" />
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:10px 8px 8px;color:#fff;font-family:'Noto Sans Telugu',sans-serif;font-size:13px;font-weight:600;text-align:center;">పాత మాధవరం ఆలయం</div>
+        <img src="images/image_7.jpg" alt="పాత మాధవరం ఆలయం" data-i18n-alt="gallery_2_alt" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;" />
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:10px 8px 8px;color:#fff;font-family:'Noto Sans Telugu',sans-serif;font-size:13px;font-weight:600;text-align:center;" data-i18n="gallery_2_label">పాత మాధవరం ఆలయం</div>
       </div>
-      <div class="gallery-item" onclick="openLightbox('', '🌺', 'ఉత్సవం')"><div class="gallery-placeholder"><span class="gallery-img-icon">🌺</span><span class="gallery-img-label">ఉత్సవం</span></div></div>
-      <div class="gallery-item" onclick="openLightbox('', '🎊', 'బ్రహ్మోత్సవాలు')"><div class="gallery-placeholder"><span class="gallery-img-icon">🎊</span><span class="gallery-img-label">బ్రహ్మోత్సవాలు</span></div></div>
-      <div class="gallery-item" onclick="openLightbox('', '🌸', 'పుష్ప అలంకరణ')"><div class="gallery-placeholder"><span class="gallery-img-icon">🌸</span><span class="gallery-img-label">పుష్ప అలంకరణ</span></div></div>
-      <div class="gallery-item" onclick="openLightbox('', '🙏', 'భక్తుల దర్శనం')"><div class="gallery-placeholder"><span class="gallery-img-icon">🙏</span><span class="gallery-img-label">భక్తుల దర్శనం</span></div></div>
-      <div class="gallery-item" onclick="openLightbox('', '🍚', 'అన్నదానం')"><div class="gallery-placeholder"><span class="gallery-img-icon">🍚</span><span class="gallery-img-label">అన్నదానం</span></div></div>
-      <div class="gallery-item" onclick="openLightbox('', '⭐', 'ప్రత్యేక పూజ')"><div class="gallery-placeholder"><span class="gallery-img-icon">⭐</span><span class="gallery-img-label">ప్రత్యేక పూజ</span></div></div>
+      <div class="gallery-item" onclick="openAlbum('daily-poojas')" title="నిత్య పూజలు ఆల్బమ్ చూడండి" data-i18n-title="gallery_3_title"><div class="gallery-placeholder"><span class="gallery-img-icon">🪔</span><span class="gallery-img-label" data-i18n="gallery_3_label">నిత్య పూజలు 📂</span></div></div>
+      <div class="gallery-item" onclick="openAlbum('brahmotsavalu')" title="బ్రహ్మోత్సవాలు ఆల్బమ్ చూడండి" data-i18n-title="gallery_4_title"><div class="gallery-placeholder"><span class="gallery-img-icon">🎊</span><span class="gallery-img-label" data-i18n="gallery_4_label">బ్రహ్మోత్సవాలు 📂</span></div></div>
+      <div class="gallery-item" onclick="openAlbum('devotees')" title="భక్తులు ఆల్బమ్ చూడండి" data-i18n-title="gallery_5_title"><div class="gallery-placeholder"><span class="gallery-img-icon">🙏</span><span class="gallery-img-label" data-i18n="gallery_5_label">భక్తులు 📂</span></div></div>
+      <div class="gallery-item" onclick="openAlbum('development-activities')" title="అభివృద్ధి కార్యక్రమాలు ఆల్బమ్ చూడండి" data-i18n-title="gallery_6_title"><div class="gallery-placeholder"><span class="gallery-img-icon">🏗️</span><span class="gallery-img-label" data-i18n="gallery_6_label">అభివృద్ధి కార్యక్రమాలు 📂</span></div></div>
     </div>
     </div>
-    <p style="text-align:center;margin-top:18px;font-family:'Noto Sans Telugu',sans-serif;font-size:13px;color:#999;">📷 మీ ఆలయ చిత్రాలు పంపడానికి: madhavaramtemple@gmail.com</p>
+    <p style="text-align:center;margin-top:18px;font-family:'Noto Sans Telugu',sans-serif;font-size:13px;color:#999;" data-i18n="gallery_send_photos">📷 మీ ఆలయ చిత్రాలు పంపడానికి: madhavaramtemple@gmail.com</p>
   </div>
 </section>
 
@@ -393,22 +514,22 @@
 <section class="updates-section" id="updates">
   <div class="container">
     <div class="section-header">
-      <div class="small-label">తాజా వార్తలు</div>
-      <h2>ఆలయ నవీకరణలు</h2>
+      <div class="small-label" data-i18n="updates_label">తాజా వార్తలు</div>
+      <h2 data-i18n="updates_heading">ఆలయ నవీకరణలు</h2>
       <div class="underline"></div>
     </div>
     <div class="updates-grid">
       <div class="update-card">
-        <div class="update-card-top"><span class="update-type-icon">🏗️</span><div><div class="update-type-label">నిర్మాణ నవీకరణ</div><div class="update-date-small">మార్చి 10, 2025</div></div></div>
-        <div class="update-card-body"><h4>ఆలయ రాజగోపురం నిర్మాణం ప్రారంభం</h4><p>భక్తుల సహకారంతో కొత్త రాజగోపురం నిర్మాణం ప్రారంభమైంది. మొదటి దశలో ₹15 లక్షలు సేకరించబడ్డాయి.</p><a href="#" class="read-more">మరింత చదవండి →</a></div>
+        <div class="update-card-top"><span class="update-type-icon">🏗️</span><div><div class="update-type-label" data-i18n="updates_1_type">నిర్మాణ నవీకరణ</div><div class="update-date-small" data-i18n="updates_1_date">మార్చి 10, 2025</div></div></div>
+        <div class="update-card-body"><h4 data-i18n="updates_1_title">ఆలయ రాజగోపురం నిర్మాణం ప్రారంభం</h4><p data-i18n="updates_1_desc">భక్తుల సహకారంతో కొత్త రాజగోపురం నిర్మాణం ప్రారంభమైంది. మొదటి దశలో ₹15 లక్షలు సేకరించబడ్డాయి.</p><a href="#" class="read-more" data-i18n="updates_1_readmore">మరింత చదవండి →</a></div>
       </div>
       <div class="update-card">
-        <div class="update-card-top"><span class="update-type-icon">📢</span><div><div class="update-type-label">ముఖ్యమైన ప్రకటన</div><div class="update-date-small">మార్చి 5, 2025</div></div></div>
-        <div class="update-card-body"><h4>ఉగాది సందర్భంగా ప్రత్యేక పూజలు</h4><p>ఉగాది పండుగ రోజు ఉదయం 5:30 గంటలకు ప్రత్యేక పంచాంగ శ్రవణం, పూర్ణాహుతి నిర్వహించబడతాయి.</p><a href="#" class="read-more">మరింత చదవండి →</a></div>
+        <div class="update-card-top"><span class="update-type-icon">📢</span><div><div class="update-type-label" data-i18n="updates_2_type">ముఖ్యమైన ప్రకటన</div><div class="update-date-small" data-i18n="updates_2_date">మార్చి 5, 2025</div></div></div>
+        <div class="update-card-body"><h4 data-i18n="updates_2_title">ఉగాది సందర్భంగా ప్రత్యేక పూజలు</h4><p data-i18n="updates_2_desc">ఉగాది పండుగ రోజు ఉదయం 5:30 గంటలకు ప్రత్యేక పంచాంగ శ్రవణం, పూర్ణాహుతి నిర్వహించబడతాయి.</p><a href="#" class="read-more" data-i18n="updates_2_readmore">మరింత చదవండి →</a></div>
       </div>
       <div class="update-card">
-        <div class="update-card-top"><span class="update-type-icon">🍚</span><div><div class="update-type-label">సేవా కార్యక్రమం</div><div class="update-date-small">ఫిబ్రవరి 28, 2025</div></div></div>
-        <div class="update-card-body"><h4>అన్నదాన కార్యక్రమం విస్తరణ</h4><p>ప్రతి ఆదివారం 200 మందికి అన్నదానం అందించాలనే లక్ష్యంతో కార్యక్రమం విస్తరించబడింది.</p><a href="#" class="read-more">మరింత చదవండి →</a></div>
+        <div class="update-card-top"><span class="update-type-icon">🍚</span><div><div class="update-type-label" data-i18n="updates_3_type">సేవా కార్యక్రమం</div><div class="update-date-small" data-i18n="updates_3_date">ఫిబ్రవరి 28, 2025</div></div></div>
+        <div class="update-card-body"><h4 data-i18n="updates_3_title">అన్నదాన కార్యక్రమం విస్తరణ</h4><p data-i18n="updates_3_desc">ప్రతి ఆదివారం 200 మందికి అన్నదానం అందించాలనే లక్ష్యంతో కార్యక్రమం విస్తరించబడింది.</p><a href="#" class="read-more" data-i18n="updates_3_readmore">మరింత చదవండి →</a></div>
       </div>
     </div>
   </div>
@@ -418,13 +539,13 @@
 <div class="map-section">
   <div class="container">
     <div class="section-header" style="margin-bottom:20px;">
-      <div class="small-label" style="color:var(--saffron);">మార్గం</div>
-      <h2 style="color:var(--crimson);">ఆలయం ఎలా చేరుకోవాలి</h2>
+      <div class="small-label" style="color:var(--saffron);" data-i18n="map_label">మార్గం</div>
+      <h2 style="color:var(--crimson);" data-i18n="map_heading">ఆలయం ఎలా చేరుకోవాలి</h2>
       <div class="underline"></div>
     </div>
     <div style="border-radius:12px;overflow:hidden;border:3px solid var(--border-gold);box-shadow:0 8px 32px rgba(0,0,0,0.15);">
       <iframe
-        title="శ్రీ భావనారాయణ స్వామి ఆలయం - కొత్త మాధవరం"
+        title="శ్రీ భావనారాయణ స్వామి ఆలయం - కొత్త మాధవరం" data-i18n-title="map_iframe_title"
         src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d243.43!2d79.00804832679445!3d14.406397548669661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDI0JzIzLjAiTiA3OcKwMDAnMjkuMCJF!5e1!3m2!1ste!2sin!4v1700000000000"
         width="100%"
         height="380"
@@ -437,18 +558,18 @@
     <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:16px;justify-content:center;">
       <a href="https://www.google.com/maps?q=14.406397548669661,79.00804832679445" target="_blank" rel="noopener"
          style="background:var(--crimson);color:#FFE8A0;padding:10px 22px;border-radius:6px;text-decoration:none;font-family:'Noto Sans Telugu',sans-serif;font-size:14px;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:background .3s;">
-        🗺️ Google Maps లో తెరవండి
+        <span data-i18n="map_open_gmaps">🗺️ Google Maps లో తెరవండి</span>
       </a>
       <a href="https://www.google.com/maps/dir/?api=1&destination=14.406397548669661,79.00804832679445&destination_place_id=14.406397548669661,79.00804832679445&travelmode=driving" target="_blank" rel="noopener"
          style="background:var(--saffron);color:#fff;padding:10px 22px;border-radius:6px;text-decoration:none;font-family:'Noto Sans Telugu',sans-serif;font-size:14px;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:background .3s;">
-        🚗 దారి చూపించండి (Directions)
+        <span data-i18n="map_directions">🚗 దారి చూపించండి (Directions)</span>
       </a>
       <a href="tel:+919440562447"
          style="background:var(--deep-red);color:#FFE8A0;padding:10px 22px;border-radius:6px;text-decoration:none;font-family:'Noto Sans Telugu',sans-serif;font-size:14px;font-weight:700;display:inline-flex;align-items:center;gap:8px;">
-        📞 +91 94405 62447
+        <span data-i18n="map_phone">📞 +91 94405 62447</span>
       </a>
     </div>
-    <div style="text-align:center;margin-top:12px;font-family:'Noto Sans Telugu',sans-serif;font-size:13px;color:#888;">
+    <div style="text-align:center;margin-top:12px;font-family:'Noto Sans Telugu',sans-serif;font-size:13px;color:#888;" data-i18n="map_address">
       కొత్త మాధవరం, ఒంటిమిట్ట మండలం, కడప జిల్లా, ఆంధ్రప్రదేశ్ - 516247 | 📞 +91 94405 62447
     </div>
   </div>
@@ -460,12 +581,12 @@
 <section class="contribute-section" id="contribute">
   <div class="container">
     <div class="section-header">
-      <div class="small-label">మీ సహకారం</div>
-      <h2>🤝 మీరు ఎక్కడ ఉన్నా సహాయం చేయవచ్చు</h2>
+      <div class="small-label" data-i18n="contribute_label">మీ సహకారం</div>
+      <h2 data-i18n="contribute_heading">🤝 మీరు ఎక్కడ ఉన్నా సహాయం చేయవచ్చు</h2>
       <div class="underline"></div>
     </div>
 
-    <p class="contribute-intro">
+    <p class="contribute-intro" data-i18n="contribute_intro">
       మాధవరం మన పుట్టినిల్లు కావచ్చు — కానీ నేడు మనం హైదరాబాద్‌లో, చెన్నైలో, బెంగళూరులో, అమెరికాలో, లేదా ప్రపంచంలో ఎక్కడైనా ఉండవచ్చు. <strong>దూరం ఉన్నా, భక్తి తగ్గదు.</strong> ఈ ఆలయం మన వారందరిది — మీకు సాధ్యమైన విధంగా పాలుపంచుకోండి.
     </p>
 
@@ -473,63 +594,99 @@
 
       <div class="contribute-card highlight">
         <span class="contribute-card-icon">💰</span>
-        <h4>ఆర్థిక సహాయం</h4>
-        <p>నిత్య పూజలు, ఉత్సవాలు, ఆలయ నిర్మాణానికి UPI / Bank Transfer ద్వారా నేరుగా దానం చేయవచ్చు. ₹101 నుండి ఎంత అయినా స్వీకరిస్తాం — ప్రతి రూపాయీ స్వామి సేవకే వెళ్ళుతుంది.</p>
+        <h4 data-i18n="contribute_1_title">ఆర్థిక సహాయం</h4>
+        <p data-i18n="contribute_1_desc">నిత్య పూజలు, ఉత్సవాలు, ఆలయ నిర్మాణానికి UPI / Bank Transfer ద్వారా నేరుగా విరాళం ఇవ్వవచ్చు. ₹101 నుండి ఎంత అయినా స్వీకరిస్తాం — ప్రతి రూపాయీ స్వామి సేవకే వెళ్ళుతుంది.</p>
       </div>
 
       <div class="contribute-card">
         <span class="contribute-card-icon">🎊</span>
-        <h4>పండుగలు స్పాన్సర్ చేయండి</h4>
-        <p>మీ పుట్టినరోజు, వివాహ వార్షికోత్సవం, లేదా కుటుంబ శుభకార్యం సందర్భంగా ఒక రోజు పూజ, అన్నదానం లేదా ఉత్సవాన్ని sponsor చేయవచ్చు. మీ పేరు ఆలయంలో ప్రకటించబడుతుంది.</p>
+        <h4 data-i18n="contribute_2_title">పండుగలు స్పాన్సర్ చేయండి</h4>
+        <p data-i18n="contribute_2_desc">మీ పుట్టినరోజు, వివాహ వార్షికోత్సవం, లేదా కుటుంబ శుభకార్యం సందర్భంగా ఒక రోజు పూజ, అన్నదానం లేదా ఉత్సవాన్ని sponsor చేయవచ్చు. మీ పేరు ఆలయంలో ప్రకటించబడుతుంది.</p>
       </div>
 
       <div class="contribute-card">
         <span class="contribute-card-icon">🔔</span>
-        <h4>ఘంట, విగ్రహాలు, పరికరాలు</h4>
-        <p>ఆలయానికి అవసరమైన ఘంట, దీపస్తంభాలు, పూజా పరికరాలు, లౌడ్‌స్పీకర్లు లేదా CCTV వంటివి కొని అర్పించవచ్చు. మీ పేరు మీద శాశ్వతంగా నమోదు చేయబడుతుంది.</p>
+        <h4 data-i18n="contribute_3_title">ఘంట, విగ్రహాలు, పరికరాలు</h4>
+        <p data-i18n="contribute_3_desc">ఆలయానికి అవసరమైన ఘంట, దీపస్తంభాలు, పూజా పరికరాలు, లౌడ్‌స్పీకర్లు లేదా CCTV వంటివి కొని అర్పించవచ్చు. మీ పేరు మీద శాశ్వతంగా నమోదు చేయబడుతుంది.</p>
       </div>
 
       <div class="contribute-card">
         <span class="contribute-card-icon">🌿</span>
-        <h4>అన్నదాన సేవ</h4>
-        <p>బ్రహ్మోత్సవాల సమయంలో వేలాది భక్తులకు అన్నదానం నిర్వహించబడుతుంది. మీరు దూరంగా ఉన్నా, ఒక రోజు భోజన ఖర్చులు sponsor చేయవచ్చు — ఇది అత్యంత పుణ్యదాయకమైన సేవ.</p>
+        <h4 data-i18n="contribute_4_title">అన్నదాన సేవ</h4>
+        <p data-i18n="contribute_4_desc">బ్రహ్మోత్సవాల సమయంలో వేలాది భక్తులకు అన్నదానం నిర్వహించబడుతుంది. మీరు దూరంగా ఉన్నా, ఒక రోజు భోజన ఖర్చులు sponsor చేయవచ్చు — ఇది అత్యంత పుణ్యదాయకమైన సేవ.</p>
       </div>
 
       <div class="contribute-card">
         <span class="contribute-card-icon">📢</span>
-        <h4>ప్రచారం చేయండి</h4>
-        <p>ఈ website ని మీ WhatsApp groups, Facebook, Instagram లో share చేయండి. మీ బంధువులకు, పద్మశాలీ సమాజానికి ఈ ఆలయం గురించి చెప్పండి — ఇది కూడా మహా సేవే!</p>
+        <h4 data-i18n="contribute_5_title">ప్రచారం చేయండి</h4>
+        <p data-i18n="contribute_5_desc">ఈ website ని మీ WhatsApp groups, Facebook, Instagram లో share చేయండి. మీ బంధువులకు, పద్మశాలీ సమాజానికి ఈ ఆలయం గురించి చెప్పండి — ఇది కూడా మహా సేవే!</p>
       </div>
 
       <div class="contribute-card">
         <span class="contribute-card-icon">🏗️</span>
-        <h4>నిర్మాణ సహాయం</h4>
-        <p>ఆలయ విస్తరణ, రాజగోపురం నిర్మాణం, యాత్రికుల విశ్రాంతి హాలు నిర్మాణానికి మీరు నిపుణులైతే (ఇంజనీర్, ఆర్కిటెక్ట్) వారి సేవలు అందించవచ్చు. లేదా నిర్మాణ సామగ్రి దానం చేయవచ్చు.</p>
+        <h4 data-i18n="contribute_6_title">నిర్మాణ సహాయం</h4>
+        <p data-i18n="contribute_6_desc">ఆలయ విస్తరణ, రాజగోపురం నిర్మాణం, యాత్రికుల విశ్రాంతి హాలు నిర్మాణానికి మీరు నిపుణులైతే (ఇంజనీర్, ఆర్కిటెక్ట్) వారి సేవలు అందించవచ్చు. లేదా నిర్మాణ సామగ్రి విరాళం ఇవ్వవచ్చు.</p>
       </div>
 
       <div class="contribute-card">
         <span class="contribute-card-icon">🎓</span>
-        <h4>విద్యార్థులకు సహాయం</h4>
-        <p>మాధవరం గ్రామంలోని పేద విద్యార్థులకు పుస్తకాలు, uniforms, scholarships అందించవచ్చు. స్వామి దీవెన పొందిన మీరు, తదుపరి తరానికి దారి చూపించవచ్చు.</p>
+        <h4 data-i18n="contribute_7_title">విద్యార్థులకు సహాయం</h4>
+        <p data-i18n="contribute_7_desc">మాధవరం గ్రామంలోని పేద విద్యార్థులకు పుస్తకాలు, uniforms, scholarships అందించవచ్చు. స్వామి దీవెన పొందిన మీరు, తదుపరి తరానికి దారి చూపించవచ్చు.</p>
       </div>
 
       <div class="contribute-card">
         <span class="contribute-card-icon">📸</span>
-        <h4>ఫోటోలు & Videos</h4>
-        <p>మీ దగ్గర పాత మాధవరం, ఉత్సవాల ఫోటోలు ఉంటే పంపించండి — ఈ website లో చేర్చుతాం. ఆలయ చరిత్రను భవిష్యత్తు తరాలకు అందించడానికి మీ సహకారం అమూల్యం.</p>
+        <h4 data-i18n="contribute_8_title">ఫోటోలు & Videos</h4>
+        <p data-i18n="contribute_8_desc">మీ దగ్గర పాత మాధవరం, ఉత్సవాల ఫోటోలు ఉంటే పంపించండి — ఈ website లో చేర్చుతాం. ఆలయ చరిత్రను భవిష్యత్తు తరాలకు అందించడానికి మీ సహకారం అమూల్యం.</p>
       </div>
 
     </div>
 
     <div class="contribute-cta-box">
-      <h3>🙏 సహాయం చేయడానికి సిద్ధంగా ఉన్నారా?</h3>
-      <p>దానం చేయడానికి, sponsor చేయడానికి, లేదా ఏ విధంగా సహాయపడాలో తెలుసుకోవడానికి ఇప్పుడే సంప్రదించండి.</p>
+      <h3 data-i18n="contribute_cta_heading">🙏 సహాయం చేయడానికి సిద్ధంగా ఉన్నారా?</h3>
+      <p data-i18n="contribute_cta_text">విరాళం ఇవ్వడానికి, sponsor చేయడానికి, లేదా ఏ విధంగా సహాయపడాలో తెలుసుకోవడానికి ఇప్పుడే సంప్రదించండి.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <button onclick="openDonateModal()" class="btn-gold">💛 ఇప్పుడే దానం చేయండి</button>
-        <a href="https://wa.me/919440562447?text=నమస్కారం, నేను ఆలయ సేవలో సహాయం చేయాలనుకుంటున్నాను." target="_blank" class="btn-gold" style="background:#25D366;color:#fff;">📱 WhatsApp చేయండి</a>
+        <button onclick="openDonateModal()" class="btn-gold" data-i18n="contribute_cta_donate">💛 ఇప్పుడే విరాళం ఇవ్వండి</button>
+        <a href="https://wa.me/919440562447?text=నమస్కారం, నేను ఆలయ సేవలో సహాయం చేయాలనుకుంటున్నాను." target="_blank" class="btn-gold" style="background:#25D366;color:#fff;" data-i18n="contribute_cta_whatsapp">📱 WhatsApp చేయండి</a>
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- TRIBUTE TO FOUNDERS -->
+<section class="tribute-section" id="tribute">
+  <div class="container">
+    <div class="section-header">
+      <div class="small-label" data-i18n="tribute_label">125 సంవత్సరాల వారసత్వం</div>
+      <h2 data-i18n="tribute_heading">🙏 ఆలయ సంస్థాపకులకు నివాళి</h2>
+      <div class="underline"></div>
+      <!-- <p class="tribute-subtitle" data-i18n="tribute_subtitle">...</p> -->
+    </div>
+
+    <!-- Founder Highlight -->
+    <div class="tribute-founder-box">
+      <img src="images/founder-photo.png" alt="కీ||శే|| శ్రీ మేరువ పాపయ్య గారి వెంకటయ్య" data-i18n-alt="tribute_founder_photo_alt" class="tribute-founder-photo" />
+      <div class="tribute-founder-name" data-i18n="tribute_founder_name">కీ||శే|| శ్రీ మేరువ పాపయ్య గారి వెంకటయ్య</div>
+      <div class="tribute-founder-title" data-i18n="tribute_founder_title">ఆలయ సంస్థాపకుడు</div>
+      <p class="tribute-founder-desc" data-i18n="tribute_founder_desc">సుమారు 125 సంవత్సరాల క్రితం ఈ పవిత్ర ఆలయాన్ని స్థాపించి, భావనారాయణ స్వామి వారి సేవకు బాటలు వేసిన సంస్థాపకులకు మా వినమ్ర నివాళి. వారి దూరదృష్టి, భక్తి మరియు త్యాగం వల్లనే నేడు ఈ ఆలయం భక్తులకు ఆధ్యాత్మిక కేంద్రంగా నిలుస్తోంది.</p>
+    </div>
+
+    <!-- Contributors (hidden) -->
+    <!--
+    <h3 class="tribute-contributors-heading" data-i18n="tribute_contributors_heading">🕉️ ఆలయ నిర్మాణ సేవకులు</h3>
+    <div class="tribute-grid">
+      <div class="tribute-card"><span class="tribute-avatar">🙏</span><div class="tribute-name" data-i18n="tribute_contributor_1_name">కీ||శే|| శ్రీ M.T. వెంకట సుబ్బయ్య</div></div>
+      <div class="tribute-card"><span class="tribute-avatar">🙏</span><div class="tribute-name" data-i18n="tribute_contributor_2_name">కీ||శే|| శ్రీ జొన్నాదుల పెద్ద సుబ్బారాయుడు</div></div>
+      <div class="tribute-card"><span class="tribute-avatar">🙏</span><div class="tribute-name" data-i18n="tribute_contributor_3_name">కీ||శే|| శ్రీ మేరువ సెట్టి చెంచయ్య</div></div>
+      <div class="tribute-card"><span class="tribute-avatar"><img src="images/bl-ramaiah.png" alt="కీ||శే|| శ్రీ బి.ఎల్. రామయ్య" data-i18n-alt="tribute_contributor_4_photo_alt" class="tribute-card-photo" /></span><div class="tribute-name" data-i18n="tribute_contributor_4_name">కీ||శే|| శ్రీ బి.ఎల్. రామయ్య</div></div>
+      <div class="tribute-card"><span class="tribute-avatar">🙏</span><div class="tribute-name" data-i18n="tribute_contributor_5_name">కీ||శే|| శ్రీ సామ సుబ్బారాయులు</div></div>
+      <div class="tribute-card"><span class="tribute-avatar">🙏</span><div class="tribute-name" data-i18n="tribute_contributor_6_name">కీ||శే|| శ్రీ శ్రీరాందాస్ ముణియా</div></div>
+      <div class="tribute-card"><span class="tribute-avatar">🙏</span><div class="tribute-name" data-i18n="tribute_contributor_7_name">కీ||శే|| శ్రీ బోడిచెర్ల కృష్ణయ్య</div></div>
+      <div class="tribute-card"><span class="tribute-avatar">🙏</span><div class="tribute-name" data-i18n="tribute_contributor_8_name">కీ||శే|| శ్రీ మేరువ ముసలయ్య గారి వెంకటయ్య</div></div>
+      <div class="tribute-card"><span class="tribute-avatar">🙏</span><div class="tribute-name" data-i18n="tribute_contributor_9_name">కీ||శే|| శ్రీ K.C. నారాయణ</div></div>
+    </div>
+    -->
   </div>
 </section>
 
@@ -537,10 +694,10 @@
 <section class="committee-section" id="committee">
   <div class="container">
     <div class="section-header">
-      <div class="small-label">ఆలయ నిర్వహణ</div>
-      <h2>🏛️ ఆలయ కమిటీ సభ్యులు</h2>
+      <div class="small-label" data-i18n="committee_label">ఆలయ నిర్వహణ</div>
+      <h2 data-i18n="committee_heading">🏛️ ఆలయ కమిటీ సభ్యులు</h2>
       <div class="underline"></div>
-      <p style="font-family:'Noto Sans Telugu',sans-serif;font-size:14px;color:var(--text-mid);margin-top:10px;">శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయ నిర్వాహక కమిటీ</p>
+      <p style="font-family:'Noto Sans Telugu',sans-serif;font-size:14px;color:var(--text-mid);margin-top:10px;" data-i18n="committee_subtitle">శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయ నిర్వాహక కమిటీ</p>
     </div>
 
     <div class="committee-grid">
@@ -548,72 +705,72 @@
       <!-- President -->
       <div class="committee-card president">
         <div class="committee-avatar"><img src="images/image_8.jpg" alt="" /></div>
-        <div class="committee-name">శ్రీ మల్లూరు బాలాజీ</div>
-        <span class="committee-role">అధ్యక్షుడు</span>
+        <div class="committee-name" data-i18n="committee_member_1_name">శ్రీ మల్లూరు బాలాజీ</div>
+        <span class="committee-role" data-i18n="committee_member_1_role">అధ్యక్షుడు</span>
       </div>
 
       <!-- Vice President -->
       <div class="committee-card vice-president">
         <div class="committee-avatar"><img src="images/image_9.jpg" alt="" /></div>
-        <div class="committee-name">శ్రీ అవ్వారు గోపాల కృష్ణ మూర్తి</div>
-        <span class="committee-role">ఉపాధ్యక్షుడు</span>
+        <div class="committee-name" data-i18n="committee_member_2_name">శ్రీ అవ్వారు గోపాల కృష్ణ మూర్తి</div>
+        <span class="committee-role" data-i18n="committee_member_2_role">ఉపాధ్యక్షుడు</span>
       </div>
 
       <!-- Secretary -->
       <div class="committee-card secretary">
         <div class="committee-avatar"><img src="images/image_10.jpg" alt="" /></div>
-        <div class="committee-name">శ్రీ చెపూరి నరసింహా రావు</div>
-        <span class="committee-role">కార్యదర్శి (షెట్టి)</span>
+        <div class="committee-name" data-i18n="committee_member_3_name">శ్రీ చెపూరి నరసింహా రావు</div>
+        <span class="committee-role" data-i18n="committee_member_3_role">కార్యదర్శి (షెట్టి)</span>
       </div>
 
       <!-- Treasurer -->
       <div class="committee-card treasurer">
         <div class="committee-avatar"><img src="images/image_11.jpg" alt="" /></div>
-        <div class="committee-name">శ్రీ ప్రసాద్ గౌడ</div>
-        <span class="committee-role">కోశాధికారి (ధర్మకర్త)</span>
+        <div class="committee-name" data-i18n="committee_member_4_name">శ్రీ ప్రసాద్ గౌడ</div>
+        <span class="committee-role" data-i18n="committee_member_4_role">కోశాధికారి (ధర్మకర్త)</span>
       </div>
 
       <!-- Members -->
       <div class="committee-card">
         <div class="committee-avatar"><img src="images/image_12.jpg" alt="" /></div>
-        <div class="committee-name">శ్రీ శ్రీధర్ తిరువీధుల</div>
-        <span class="committee-role">సభ్యుడు</span>
+        <div class="committee-name" data-i18n="committee_member_5_name">శ్రీ శ్రీధర్ తిరువీధుల</div>
+        <span class="committee-role" data-i18n="committee_member_5_role">సభ్యుడు</span>
       </div>
 
       <div class="committee-card">
         <div class="committee-avatar"><img src="images/image_13.jpg" alt="" /></div>
-        <div class="committee-name">శ్రీ శ్రీనివాసులు మేరువ</div>
-        <span class="committee-role">సభ్యుడు</span>
+        <div class="committee-name" data-i18n="committee_member_6_name">శ్రీ శ్రీనివాసులు మేరువ</div>
+        <span class="committee-role" data-i18n="committee_member_6_role">సభ్యుడు</span>
       </div>
 
       <div class="committee-card">
         <div class="committee-avatar"><img src="images/image_14.jpg" alt="" /></div>
-        <div class="committee-name">శ్రీ నరసింహా రావు మేరువ</div>
-        <span class="committee-role">సభ్యుడు</span>
+        <div class="committee-name" data-i18n="committee_member_7_name">శ్రీ నరసింహా రావు మేరువ</div>
+        <span class="committee-role" data-i18n="committee_member_7_role">సభ్యుడు</span>
       </div>
 
       <div class="committee-card">
         <div class="committee-avatar"><img src="images/image_15.jpg" alt="" /></div>
-        <div class="committee-name">శ్రీ వెంకటేసు బోడగల</div>
-        <span class="committee-role">సభ్యుడు</span>
+        <div class="committee-name" data-i18n="committee_member_8_name">శ్రీ వెంకటేసు బోడగల</div>
+        <span class="committee-role" data-i18n="committee_member_8_role">సభ్యుడు</span>
       </div>
 
       <div class="committee-card">
         <div class="committee-avatar"><img src="images/image_16.jpg" alt="" /></div>
-        <div class="committee-name">శ్రీ కృష్ణయ్య మునగపాటి</div>
-        <span class="committee-role">సభ్యుడు</span>
+        <div class="committee-name" data-i18n="committee_member_9_name">శ్రీ కృష్ణయ్య మునగపాటి</div>
+        <span class="committee-role" data-i18n="committee_member_9_role">సభ్యుడు</span>
       </div>
 
       <div class="committee-card">
         <div class="committee-avatar"><img src="images/image_17.jpg" alt="" /></div>
-        <div class="committee-name">శ్రీ సత్య ప్రసాద్ గౌడ</div>
-        <span class="committee-role">సభ్యుడు</span>
+        <div class="committee-name" data-i18n="committee_member_10_name">శ్రీ సత్య ప్రసాద్ గౌడ</div>
+        <span class="committee-role" data-i18n="committee_member_10_role">సభ్యుడు</span>
       </div>
 
       <div class="committee-card">
         <div class="committee-avatar"><img src="images/image_18.jpg" alt="" /></div>
-        <div class="committee-name">శ్రీ పెద్ద రెడ్డయ్య అవ్వారు</div>
-        <span class="committee-role">సభ్యుడు</span>
+        <div class="committee-name" data-i18n="committee_member_11_name">శ్రీ పెద్ద రెడ్డయ్య అవ్వారు</div>
+        <span class="committee-role" data-i18n="committee_member_11_role">సభ్యుడు</span>
       </div>
 
     </div>
@@ -624,28 +781,28 @@
 <section class="contact-section" id="contact">
   <div class="container">
     <div class="section-header">
-      <div class="small-label">సంప్రదించండి</div>
-      <h2>ఆలయాన్ని సంప్రదించండి</h2>
+      <div class="small-label" data-i18n="contact_label">సంప్రదించండి</div>
+      <h2 data-i18n="contact_heading">ఆలయాన్ని సంప్రదించండి</h2>
       <div class="underline"></div>
     </div>
     <div class="contact-grid">
       <div class="contact-info">
-        <h3>సంప్రదింపు వివరాలు</h3>
-        <div class="contact-item"><div class="contact-icon">📍</div><div class="contact-detail"><h5>చిరునామా</h5><p>శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయం<br/>కొత్త మాధవరం, ఒంటిమిట్ట మండలం<br/>కడప జిల్లా, ఆంధ్రప్రదేశ్ - 516247<br/>📞 ఫోన్: +91 94405 62447</p></div></div>
-        <div class="contact-item"><div class="contact-icon">📞</div><div class="contact-detail"><h5>ఫోన్ నంబర్</h5><p><a href="tel:+919440562447" style="color:inherit;text-decoration:none;">+91 94405 62447</a></p></div></div>
-        <div class="contact-item"><div class="contact-icon">📧</div><div class="contact-detail"><h5>ఇమెయిల్</h5><p>madhavaramtemple@gmail.com</p></div></div>
-        <div class="contact-item"><div class="contact-icon">⏰</div><div class="contact-detail"><h5>ఆలయ దర్శన సమయాలు</h5><p>సోమ – శుక్ర: 6:00 AM – 11:00 AM &amp; 5:00 PM – 8:30 PM<br/>శనివారం: 6:00 AM – 11:00 AM &amp; 5:00 PM – 10:30 PM<br/>ఆదివారం: 6:00 AM – 11:00 AM &amp; 5:00 PM – 8:30 PM</p></div></div>
+        <h3 data-i18n="contact_info_heading">సంప్రదింపు వివరాలు</h3>
+        <div class="contact-item"><div class="contact-icon">📍</div><div class="contact-detail"><h5 data-i18n="contact_address_label">చిరునామా</h5><p data-i18n="contact_address_value">శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయం<br/>కొత్త మాధవరం, ఒంటిమిట్ట మండలం<br/>కడప జిల్లా, ఆంధ్రప్రదేశ్ - 516247<br/>📞 ఫోన్: +91 94405 62447</p></div></div>
+        <div class="contact-item"><div class="contact-icon">📞</div><div class="contact-detail"><h5 data-i18n="contact_phone_label">ఫోన్ నంబర్</h5><p data-i18n="contact_phone_value"><a href="tel:+919440562447" style="color:inherit;text-decoration:none;">+91 94405 62447</a></p></div></div>
+        <div class="contact-item"><div class="contact-icon">📧</div><div class="contact-detail"><h5 data-i18n="contact_email_label">ఇమెయిల్</h5><p data-i18n="contact_email_value">madhavaramtemple@gmail.com</p></div></div>
+        <div class="contact-item"><div class="contact-icon">⏰</div><div class="contact-detail"><h5 data-i18n="contact_timings_label">ఆలయ దర్శన సమయాలు</h5><p data-i18n="contact_timings_value">సోమ – శుక్ర: 6:00 AM – 11:00 AM &amp; 5:00 PM – 8:30 PM<br/>శనివారం: 6:00 AM – 11:00 AM &amp; 5:00 PM – 10:30 PM<br/>ఆదివారం: 6:00 AM – 11:00 AM &amp; 5:00 PM – 8:30 PM</p></div></div>
       </div>
       <div class="contact-form-box">
-        <h3>🙏 మాకు సందేశం పంపండి</h3>
-        <div class="form-group"><label>మీ పేరు</label><input type="text" placeholder="మీ పూర్తి పేరు రాయండి" /></div>
-        <div class="form-group"><label>ఫోన్ నంబర్</label><input type="tel" placeholder="మీ ఫోన్ నంబర్" /></div>
-        <div class="form-group"><label>ఇమెయిల్</label><input type="email" placeholder="మీ ఇమెయిల్ చిరునామా" /></div>
-        <div class="form-group"><label>విషయం</label>
-          <select><option>సేవా బుకింగ్</option><option>దానం సంబంధిత విచారణ</option><option>ఉత్సవ సమాచారం</option><option>ఇతర విషయం</option></select>
+        <h3 data-i18n="contact_form_heading">🙏 మాకు సందేశం పంపండి</h3>
+        <div class="form-group"><label data-i18n="contact_form_name_label">మీ పేరు</label><input type="text" placeholder="మీ పూర్తి పేరు రాయండి" data-i18n-placeholder="contact_form_name_placeholder" /></div>
+        <div class="form-group"><label data-i18n="contact_form_phone_label">ఫోన్ నంబర్</label><input type="tel" placeholder="మీ ఫోన్ నంబర్" data-i18n-placeholder="contact_form_phone_placeholder" /></div>
+        <div class="form-group"><label data-i18n="contact_form_email_label">ఇమెయిల్</label><input type="email" placeholder="మీ ఇమెయిల్ చిరునామా" data-i18n-placeholder="contact_form_email_placeholder" /></div>
+        <div class="form-group"><label data-i18n="contact_form_subject_label">విషయం</label>
+          <select><option data-i18n="contact_form_subject_1">సేవా బుకింగ్</option><option data-i18n="contact_form_subject_2">విరాళం సంబంధిత విచారణ</option><option data-i18n="contact_form_subject_3">ఉత్సవ సమాచారం</option><option data-i18n="contact_form_subject_4">ఇతర విషయం</option></select>
         </div>
-        <div class="form-group"><label>సందేశం</label><textarea placeholder="మీ సందేశం ఇక్కడ రాయండి..."></textarea></div>
-        <button class="form-submit" id="contactSubmitBtn">📨 సందేశం పంపండి</button>
+        <div class="form-group"><label data-i18n="contact_form_message_label">సందేశం</label><textarea placeholder="మీ సందేశం ఇక్కడ రాయండి..." data-i18n-placeholder="contact_form_message_placeholder"></textarea></div>
+        <button class="form-submit" id="contactSubmitBtn" data-i18n="contact_form_submit">📨 సందేశం పంపండి</button>
       </div>
     </div>
   </div>
@@ -656,89 +813,101 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="images/image_1.jpg" alt="ఆలయం లోగో" class="footer-logo" style="width:60px;height:60px;object-fit:cover;border-radius:50%;border:2px solid var(--gold);margin-bottom:10px;" />
-      <h3>శ్రీ భావనారాయణ స్వామి ఆలయం</h3>
-      <p>కొత్త మాధవరంలో భగవంతుని సేవకు అంకితమైన పవిత్ర క్షేత్రం. భక్తుల విశ్వాసం, దానం, ప్రార్థనతో ఈ ఆలయం నిత్యం వర్ధిల్లుతుంది.</p>
+      <img src="images/image_1.jpg" alt="ఆలయం లోగో" data-i18n-alt="footer_logo_alt" class="footer-logo" style="width:60px;height:60px;object-fit:cover;border-radius:50%;border:2px solid var(--gold);margin-bottom:10px;" />
+      <h3 data-i18n="footer_brand_title">శ్రీ భావనారాయణ స్వామి ఆలయం</h3>
+      <p data-i18n="footer_brand_desc">కొత్త మాధవరంలో భగవంతుని సేవకు అంకితమైన పవిత్ర క్షేత్రం. భక్తుల విశ్వాసం, విరాళం, ప్రార్థనతో ఈ ఆలయం నిత్యం వర్ధిల్లుతుంది.</p>
     </div>
-    <div class="footer-col"><h4>త్వరిత లింకులు</h4><ul><li><a href="#about">ఆలయం గురించి</a></li><li><a href="#timings">పూజా సమయాలు</a></li><li><a href="#events">ఉత్సవాలు</a></li><li><a href="#sevas">సేవలు</a></li><li><a href="#gallery">గ్యాలరీ</a></li></ul></div>
-    <div class="footer-col"><h4>సేవలు</h4><ul><li><a href="#sevas">అభిషేకం</a></li><li><a href="#sevas">అష్టోత్తర పూజ</a></li><li><a href="#sevas">కళ్యాణోత్సవం</a></li><li><a href="#sevas">అన్నదానం</a></li><li><a href="#sevas">నవగ్రహ పూజ</a></li></ul></div>
-    <div class="footer-col"><h4>సంప్రదింపు</h4><ul><li><a href="tel:+919440562447">📞 +91 94405 62447</a></li><li><a href="mailto:madhavaramtemple@gmail.com">📧 madhavaramtemple@gmail.com</a></li><li><a href="https://www.google.com/maps?q=14.406397548669661,79.00804832679445" target="_blank" rel="noopener">📍 కొత్త మాధవరం</a></li><li><a href="#donation">💛 దానం చేయండి</a></li></ul></div>
+    <div class="footer-col"><h4 data-i18n="footer_quick_links">త్వరిత లింకులు</h4><ul><li><a href="#about" data-i18n="footer_link_about">ఆలయం గురించి</a></li><li><a href="#timings" data-i18n="footer_link_timings">పూజా సమయాలు</a></li><li><a href="#events" data-i18n="footer_link_events">ఉత్సవాలు</a></li><li><a href="#sevas" data-i18n="footer_link_sevas">సేవలు</a></li><li><a href="#gallery" data-i18n="footer_link_gallery">గ్యాలరీ</a></li></ul></div>
+    <div class="footer-col"><h4 data-i18n="footer_sevas_col">సేవలు</h4><ul><li><a href="#sevas" data-i18n="footer_link_abhishekam">అభిషేకం</a></li><li><a href="#sevas" data-i18n="footer_link_ashtottaram">అష్టోత్తర పూజ</a></li><li><a href="#sevas" data-i18n="footer_link_kalyanotsavam">కళ్యాణోత్సవం</a></li><li><a href="#sevas" data-i18n="footer_link_annadanam">అన్నదానం</a></li><li><a href="#sevas" data-i18n="footer_link_navagraha">నవగ్రహ పూజ</a></li></ul></div>
+    <div class="footer-col"><h4 data-i18n="footer_contact_col">సంప్రదింపు</h4><ul><li><a href="tel:+919440562447">📞 +91 94405 62447</a></li><li><a href="mailto:madhavaramtemple@gmail.com">📧 madhavaramtemple@gmail.com</a></li><li><a href="https://www.google.com/maps?q=14.406397548669661,79.00804832679445" target="_blank" rel="noopener" data-i18n="footer_link_location">📍 కొత్త మాధవరం</a></li><li><a href="#donation" data-i18n="footer_link_donate">💛 విరాళం ఇవ్వండి</a></li></ul></div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copyright">© 2025 శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయ ట్రస్ట్, కొత్త మాధవరం</div>
+    <div class="footer-copyright" data-i18n="footer_copyright">© 2025 శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయ ట్రస్ట్, కొత్త మాధవరం</div>
     <div class="footer-social">
-      <a class="social-btn" href="#" title="Facebook">📘</a>
-      <a class="social-btn" href="#" title="YouTube">📺</a>
-      <a class="social-btn" href="#" title="WhatsApp">💬</a>
-      <a class="social-btn" href="#" title="Instagram">📷</a>
+      <a class="social-btn social-fb" href="#" title="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a class="social-btn social-yt" href="https://www.youtube.com/@bhavanarayanaswamy" target="_blank" title="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      <a class="social-btn social-wa" href="https://wa.me/919440562447" target="_blank" title="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+      <a class="social-btn social-ig" href="#" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 1 0 0-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 1 1-2.882 0 1.441 1.441 0 0 1 2.882 0z"/></svg></a>
     </div>
   </div>
 </footer>
 
 <!-- DONATE MODAL -->
-<div class="modal-overlay" id="donateModal" role="dialog" aria-modal="true" aria-label="దానం చేయండి">
+<div class="modal-overlay" id="donateModal" role="dialog" aria-modal="true" data-i18n-aria="modal_aria" aria-label="విరాళం ఇవ్వండి">
   <div class="modal-box">
     <div class="modal-header">
-      <h3>💛 ఆలయ నిధికి దానం చేయండి</h3>
-      <button class="modal-close" onclick="closeDonateModal()" aria-label="మూయండి">✕</button>
+      <h3 data-i18n="modal_heading">💛 ఆలయ నిధికి విరాళం ఇవ్వండి</h3>
+      <button class="modal-close" onclick="closeDonateModal()" data-i18n-aria="modal_close_aria" aria-label="మూయండి">✕</button>
     </div>
     <div class="modal-body">
-      <p style="font-family:'Noto Sans Telugu',sans-serif;font-size:14px;color:#666;margin-bottom:16px;line-height:1.7;">మీ దానం ఆలయ నిర్మాణం, నిత్య పూజలు, అన్నదాన కార్యక్రమాలకు ఉపయోగపడుతుంది.</p>
+      <p style="font-family:'Noto Sans Telugu',sans-serif;font-size:14px;color:#666;margin-bottom:16px;line-height:1.7;" data-i18n="modal_desc">మీ విరాళం ఆలయ నిర్మాణం, నిత్య పూజలు, అన్నదాన కార్యక్రమాలకు ఉపయోగపడుతుంది.</p>
 
       <!-- Amount Options -->
       <div class="amount-options">
-        <div class="amount-opt selected" onclick="selectAmount(this)" data-amount="501"><span class="amt">₹501</span><span class="purpose">అభిషేకం</span></div>
-        <div class="amount-opt" onclick="selectAmount(this)" data-amount="1001"><span class="amt">₹1,001</span><span class="purpose">అన్నదానం</span></div>
-        <div class="amount-opt" onclick="selectAmount(this)" data-amount="5001"><span class="amt">₹5,001</span><span class="purpose">నిర్మాణం</span></div>
-        <div class="amount-opt" onclick="selectAmount(this)" data-amount="10000"><span class="amt">₹10,000</span><span class="purpose">మహాదాత</span></div>
-        <div class="amount-opt" onclick="selectAmount(this)" data-amount="25000"><span class="amt">₹25,000</span><span class="purpose">ప్రత్యేక</span></div>
-        <div class="amount-opt" onclick="selectAmount(this)" data-amount="custom"><span class="amt">ఇతర</span><span class="purpose">మీ ఇష్టం</span></div>
+        <div class="amount-opt selected" onclick="selectAmount(this)" data-amount="501"><span class="amt">₹501</span><span class="purpose" data-i18n="modal_amt_501_purpose">అభిషేకం</span></div>
+        <div class="amount-opt" onclick="selectAmount(this)" data-amount="1001"><span class="amt">₹1,001</span><span class="purpose" data-i18n="modal_amt_1001_purpose">అన్నదానం</span></div>
+        <div class="amount-opt" onclick="selectAmount(this)" data-amount="5001"><span class="amt">₹5,001</span><span class="purpose" data-i18n="modal_amt_5001_purpose">నిర్మాణం</span></div>
+        <div class="amount-opt" onclick="selectAmount(this)" data-amount="10000"><span class="amt">₹10,000</span><span class="purpose" data-i18n="modal_amt_10000_purpose">మహాదాత</span></div>
+        <div class="amount-opt" onclick="selectAmount(this)" data-amount="25000"><span class="amt">₹25,000</span><span class="purpose" data-i18n="modal_amt_25000_purpose">ప్రత్యేక</span></div>
+        <div class="amount-opt" onclick="selectAmount(this)" data-amount="custom"><span class="amt" data-i18n="modal_amt_custom">ఇతర</span><span class="purpose" data-i18n="modal_amt_custom_purpose">మీ ఇష్టం</span></div>
       </div>
 
       <!-- Custom amount (shown when "ఇతర" is selected) -->
       <div id="customAmountBox" style="display:none;margin-bottom:12px;">
-        <label style="font-family:'Noto Sans Telugu',sans-serif;font-size:13px;color:#555;display:block;margin-bottom:6px;">మీ దానం మొత్తం (₹)</label>
-        <input type="number" id="customAmountInput" placeholder="ఉదా: 2000" min="10"
+        <label style="font-family:'Noto Sans Telugu',sans-serif;font-size:13px;color:#555;display:block;margin-bottom:6px;" data-i18n="modal_custom_label">మీ విరాళం మొత్తం (₹)</label>
+        <input type="number" id="customAmountInput" placeholder="ఉదా: 2000" data-i18n-placeholder="modal_custom_placeholder" min="10"
           style="width:100%;padding:10px 14px;border:1.5px solid #C9973A;border-radius:8px;font-size:16px;outline:none;box-sizing:border-box;" />
       </div>
 
       <!-- Donor Details -->
       <div class="form-group">
-        <label>మీ పేరు <span style="color:#c00">*</span></label>
-        <input type="text" id="donorName" placeholder="దాత పూర్తి పేరు" />
+        <label data-i18n="modal_name_label">మీ పేరు <span style="color:#c00">*</span></label>
+        <input type="text" id="donorName" placeholder="దాత పూర్తి పేరు" data-i18n-placeholder="modal_name_placeholder" />
       </div>
       <div class="form-group">
-        <label>ఫోన్ నంబర్ <span style="color:#c00">*</span></label>
-        <input type="tel" id="donorPhone" placeholder="10 అంకెల నంబర్" maxlength="10" />
+        <label data-i18n="modal_phone_label">ఫోన్ నంబర్ <span style="color:#c00">*</span></label>
+        <input type="tel" id="donorPhone" placeholder="10 అంకెల నంబర్" data-i18n-placeholder="modal_phone_placeholder" maxlength="10" />
       </div>
       <div class="form-group">
-        <label>ఇమెయిల్ (ఐచ్ఛికం)</label>
-        <input type="email" id="donorEmail" placeholder="receipt కోసం ఇమెయిల్" />
+        <label data-i18n="modal_email_label">ఇమెయిల్ (ఐచ్ఛికం)</label>
+        <input type="email" id="donorEmail" placeholder="receipt కోసం ఇమెయిల్" data-i18n-placeholder="modal_email_placeholder" />
       </div>
 
       <!-- Pay Button -->
-      <button class="modal-submit" id="rzpPayBtn" onclick="startRazorpayPayment()">
+      <button class="modal-submit" id="rzpPayBtn" onclick="startRazorpayPayment()" data-i18n="modal_pay_btn">
         💳 Razorpay తో చెల్లించండి (UPI / Card / Net Banking)
       </button>
 
       <!-- Divider -->
       <div style="display:flex;align-items:center;gap:10px;margin:14px 0;">
         <div style="flex:1;height:1px;background:#ddd;"></div>
-        <span style="font-size:12px;color:#aaa;font-family:sans-serif;">లేదా</span>
+        <span style="font-size:12px;color:#aaa;font-family:sans-serif;" data-i18n="modal_or">లేదా</span>
         <div style="flex:1;height:1px;background:#ddd;"></div>
       </div>
 
       <!-- UPI fallback -->
       <div style="background:#FFF6E6;border:1px dashed #C9973A;border-radius:8px;padding:14px;text-align:center;">
-        <div style="font-family:'Noto Sans Telugu',sans-serif;font-size:13px;color:#7B3A00;margin-bottom:6px;">📱 నేరుగా UPI ద్వారా చెల్లించండి:</div>
-        <div style="font-size:18px;font-weight:700;color:#7B0D1E;letter-spacing:1px;">madhavaramtemple@sbi</div>
-        <div style="font-family:'Noto Sans Telugu',sans-serif;font-size:12px;color:#999;margin-top:4px;">Google Pay / PhonePe / Paytm / BHIM అన్నీ పనిచేస్తాయి</div>
+        <div style="font-family:'Noto Sans Telugu',sans-serif;font-size:13px;color:#7B3A00;margin-bottom:6px;" data-i18n="modal_upi_label">📱 నేరుగా UPI ద్వారా చెల్లించండి:</div>
+        <div style="font-size:18px;font-weight:700;color:#7B0D1E;letter-spacing:1px;" data-i18n="modal_upi_id">madhavaramtemple@sbi</div>
+        <div style="font-family:'Noto Sans Telugu',sans-serif;font-size:12px;color:#999;margin-top:4px;" data-i18n="modal_upi_apps">Google Pay / PhonePe / Paytm / BHIM అన్నీ పనిచేస్తాయి</div>
       </div>
 
     </div>
   </div>
 </div>
 
+
+<!-- ALBUM MODAL -->
+<div class="album-overlay" id="albumOverlay" onclick="if(event.target===this)closeAlbum()">
+  <div class="album-modal">
+    <div class="album-modal-header">
+      <h3 id="albumModalTitle"></h3>
+      <button class="album-modal-close" onclick="closeAlbum()">✕</button>
+    </div>
+    <div class="album-breadcrumb" id="albumBreadcrumb"></div>
+    <div class="album-modal-body" id="albumModalBody"></div>
+  </div>
+</div>
 
 <!-- LIGHTBOX -->
 <div id="galleryLightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;flex-direction:column;padding:20px;box-sizing:border-box;" onclick="if(event.target===this)closeLightbox()">
@@ -746,15 +915,17 @@
   <div id="lightboxEmoji" style="font-size:120px;margin-bottom:16px;"></div>
   <img id="lightboxImg" src="" alt="" style="max-width:90vw;max-height:75vh;border-radius:10px;object-fit:contain;box-shadow:0 8px 40px rgba(0,0,0,.6);display:none;" />
   <div id="lightboxCaption" style="margin-top:16px;color:#FFE8A0;font-family:'Noto Sans Telugu',sans-serif;font-size:18px;font-weight:700;text-align:center;"></div>
-  <div style="color:rgba(255,255,255,0.4);font-size:12px;margin-top:8px;font-family:sans-serif;">మూయడానికి బయట క్లిక్ చేయండి లేదా ✕ నొక్కండి</div>
+  <div style="color:rgba(255,255,255,0.4);font-size:12px;margin-top:8px;font-family:sans-serif;" data-i18n="lightbox_close_hint">మూయడానికి బయట క్లిక్ చేయండి లేదా ✕ నొక్కండి</div>
 </div>
 
 <!-- FLOATING DONATE (mobile) -->
-<button class="float-donate" id="floatDonate" onclick="openDonateModal()">💛 దానం చేయండి</button>
+<button class="float-donate" id="floatDonate" onclick="openDonateModal()" data-i18n="float_donate">💛 విరాళం ఇవ్వండి</button>
 
 <!-- SCROLL TO TOP -->
-<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="పై కి వెళ్ళండి">▲</button>
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" data-i18n-aria="scroll_top_aria" aria-label="పై కి వెళ్ళండి">▲</button>
 
+<script src="photos.js"></script>
+<script src="translations.js"></script>
 <script src="script.js"></script>
 
 <!-- Razorpay SDK -->

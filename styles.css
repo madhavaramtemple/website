@@ -43,8 +43,9 @@ header::before { content:''; position:absolute; inset:0; background-image:radial
 .temple-main-title { color:#FFE8A0; font-size:clamp(17px,3.2vw,34px); font-weight:900; line-height:1.25; text-shadow:2px 2px 8px rgba(0,0,0,.5); }
 .temple-sub-title { color:var(--bright-gold); font-size:clamp(11px,1.8vw,18px); font-weight:500; margin-top:4px; }
 .temple-location { color:rgba(255,240,200,.8); font-size:clamp(10px,1.3vw,14px); margin-top:4px; font-family:'Noto Sans Telugu',sans-serif; }
-.header-donate-btn { background:linear-gradient(135deg,var(--saffron),var(--gold)); color:#fff; border:none; padding:11px 20px; border-radius:6px; font-family:'Noto Serif Telugu',serif; font-size:14px; font-weight:700; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,.3); transition:all .3s; white-space:nowrap; text-decoration:none; display:inline-block; flex-shrink:0; }
-.header-donate-btn:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,.4); }
+.header-donate-btn { background:linear-gradient(135deg,var(--saffron),var(--gold)); color:#fff; border:none; padding:11px 20px; border-radius:6px; font-family:'Noto Serif Telugu',serif; font-size:14px; font-weight:700; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,.3); transition:all .3s; white-space:nowrap; text-decoration:none; display:inline-block; flex-shrink:0; animation:donatePulse 2.5s ease-in-out infinite; position:relative; overflow:hidden; }
+.header-donate-btn::after { content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent); animation:donateShimmer 3s ease-in-out infinite; }
+.header-donate-btn:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,.4); animation:none; }
 .gold-divider { height:4px; background:linear-gradient(90deg,transparent,var(--gold),var(--bright-gold),var(--gold),transparent); }
 
 /* NAV */
@@ -61,16 +62,56 @@ nav { background:var(--crimson); position:sticky; top:0; z-index:200; box-shadow
 .nav-links li a:hover { color:var(--bright-gold); }
 .nav-links li a:hover::after { left:14px; right:14px; }
 
+/* LANG TOGGLE */
+.lang-toggle {
+  background:rgba(201,151,58,.15);
+  border:1.5px solid var(--gold);
+  color:var(--bright-gold);
+  padding:8px 16px;
+  border-radius:6px;
+  font-family:'Noto Sans Telugu',sans-serif;
+  font-size:13px; font-weight:600;
+  cursor:pointer; transition:all .3s;
+  margin-left:auto; white-space:nowrap;
+  flex-shrink:0;
+}
+.lang-toggle:hover {
+  background:rgba(201,151,58,.3);
+  border-color:var(--bright-gold);
+}
+
 /* HERO */
 .hero { background:linear-gradient(180deg,#3A0000 0%,var(--deep-red) 40%,var(--crimson) 100%); padding:60px 24px; text-align:center; position:relative; overflow:hidden; }
 .hero::before { content:''; position:absolute; inset:0; background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9973A' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
-.hero-temple-art { font-size:clamp(64px,12vw,100px); line-height:1; margin-bottom:20px; filter:drop-shadow(0 0 20px rgba(201,151,58,.5)); animation:float 4s ease-in-out infinite; position:relative; }
+.hero-temple-art { line-height:1; margin-bottom:20px; position:relative; }
+.hero-logo-img {
+  height:clamp(120px,22vw,200px); width:auto;
+  object-fit:contain; display:block; margin:0 auto;
+  mix-blend-mode:screen;
+  filter:drop-shadow(0 0 24px rgba(201,151,58,.6)) drop-shadow(0 4px 12px rgba(0,0,0,.4));
+  animation:heroFloat 4s ease-in-out infinite, heroGlow 3s ease-in-out infinite alternate, heroRotate 8s ease-in-out infinite;
+}
+@keyframes heroFloat {
+  0%,100% { transform:translateY(0); }
+  50%     { transform:translateY(-14px); }
+}
+@keyframes heroGlow {
+  0%   { filter:drop-shadow(0 0 20px rgba(201,151,58,.5)) drop-shadow(0 4px 12px rgba(0,0,0,.4)); }
+  50%  { filter:drop-shadow(0 0 45px rgba(232,184,75,.9)) drop-shadow(0 0 80px rgba(255,215,0,.3)) drop-shadow(0 8px 20px rgba(0,0,0,.3)); }
+  100% { filter:drop-shadow(0 0 30px rgba(201,151,58,.7)) drop-shadow(0 0 60px rgba(255,200,50,.2)) drop-shadow(0 6px 16px rgba(0,0,0,.35)); }
+}
+@keyframes heroRotate {
+  0%,100% { transform:translateY(0) rotate(0deg); }
+  25%     { transform:translateY(-10px) rotate(1.5deg); }
+  50%     { transform:translateY(-14px) rotate(0deg); }
+  75%     { transform:translateY(-10px) rotate(-1.5deg); }
+}
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
 .hero h1 { color:#FFE8A0; font-size:clamp(19px,4vw,44px); font-weight:900; text-shadow:0 2px 20px rgba(0,0,0,.5); margin-bottom:14px; position:relative; line-height:1.3; }
 .hero-verse { color:rgba(255,230,180,.85); font-size:clamp(13px,1.8vw,17px); max-width:560px; margin:0 auto 28px; line-height:1.9; font-style:italic; position:relative; }
 .hero-cta-group { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; position:relative; }
 .btn-primary { background:linear-gradient(135deg,var(--saffron),#C8650A); color:#fff; padding:13px 28px; border:none; border-radius:6px; font-family:'Noto Serif Telugu',serif; font-size:15px; font-weight:700; cursor:pointer; box-shadow:0 6px 20px rgba(0,0,0,.35); transition:all .3s; text-decoration:none; display:inline-block; }
-.btn-secondary { background:transparent; color:var(--bright-gold); padding:13px 28px; border:2px solid var(--gold); border-radius:6px; font-family:'Noto Serif Telugu',serif; font-size:15px; font-weight:700; cursor:pointer; transition:all .3s; text-decoration:none; display:inline-block; }
+.btn-secondary { background:transparent; color:var(--bright-gold); padding:13px 28px; border:2px solid var(--gold); border-radius:6px; font-family:'Noto Serif Telugu',serif; font-size:15px; font-weight:700; cursor:pointer; transition:all .3s; text-decoration:none; display:inline-block; animation:donateBorderPulse 2.5s ease-in-out infinite; }
 .btn-primary:hover { transform:translateY(-3px); }
 .btn-secondary:hover { background:rgba(201,151,58,.15); transform:translateY(-3px); }
 
@@ -92,9 +133,10 @@ section { padding:56px 16px; }
 /* ABOUT */
 .about-section { background:var(--ivory); }
 .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:center; }
-.about-image-box { background:linear-gradient(145deg,var(--crimson),var(--deep-red)); border-radius:12px; padding:36px 28px; text-align:center; box-shadow:0 12px 40px rgba(0,0,0,.2); border:2px solid var(--border-gold); position:relative; }
+.about-image-box { background:linear-gradient(145deg,var(--crimson),var(--deep-red)); border-radius:12px; padding:36px 28px; text-align:center; box-shadow:0 12px 40px rgba(0,0,0,.2); border:2px solid var(--border-gold); position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; }
 .about-image-box::before { content:''; position:absolute; inset:8px; border:1px solid rgba(201,151,58,.4); border-radius:8px; pointer-events:none; }
 .deity-icon { font-size:clamp(64px,10vw,100px); display:block; margin-bottom:14px; }
+.deity-logo-img { display:block; width:clamp(140px,22vw,200px); height:auto; border-radius:50%; margin:0 auto 14px; border:3px solid var(--border-gold); box-shadow:0 4px 20px rgba(201,151,58,.35); }
 .deity-name { color:var(--bright-gold); font-size:20px; font-weight:700; }
 .deity-epithet { color:rgba(255,240,200,.7); font-size:13px; font-family:'Noto Sans Telugu',sans-serif; margin-top:6px; }
 .about-text h3 { color:var(--crimson); font-size:clamp(19px,2.5vw,26px); font-weight:800; margin-bottom:14px; }
@@ -115,10 +157,17 @@ section { padding:56px 16px; }
 .timing-row:last-child { border-bottom:none; }
 .timing-seva { font-family:'Noto Sans Telugu',sans-serif; font-size:13px; color:var(--text-mid); }
 .timing-time { font-weight:700; color:var(--crimson); font-size:13px; white-space:nowrap; }
+.special-pooja-heading .timing-seva { font-size:15px; font-weight:800; color:var(--crimson); }
+.special-pooja-note { border-bottom:none; }
+.special-pooja-note .timing-seva { font-size:12px; color:var(--gold); line-height:1.6; font-style:italic; }
 
 /* EVENTS */
 .events-section { background:var(--ivory); }
-.events-list { display:flex; flex-direction:column; gap:18px; }
+.events-list { display:flex; flex-direction:column; gap:18px; max-height:480px; overflow-y:auto; padding-right:6px; scroll-behavior:smooth; }
+.events-list::-webkit-scrollbar { width:6px; }
+.events-list::-webkit-scrollbar-track { background:rgba(0,0,0,.04); border-radius:3px; }
+.events-list::-webkit-scrollbar-thumb { background:var(--gold); border-radius:3px; }
+.events-list::-webkit-scrollbar-thumb:hover { background:var(--bright-gold); }
 .event-card { display:flex; gap:18px; align-items:flex-start; background:#fff; border-radius:10px; padding:18px 20px; box-shadow:0 4px 16px rgba(0,0,0,.07); border-left:5px solid var(--crimson); transition:all .3s; }
 .event-card:hover { transform:translateX(4px); box-shadow:0 6px 24px rgba(0,0,0,.12); }
 .event-date-box { background:linear-gradient(145deg,var(--crimson),var(--deep-red)); color:#fff; border-radius:8px; min-width:58px; padding:10px 8px; text-align:center; flex-shrink:0; }
@@ -152,8 +201,9 @@ section { padding:56px 16px; }
 .donation-amount { font-size:clamp(24px,3vw,36px); font-weight:900; color:var(--bright-gold); display:block; margin-bottom:6px; }
 .donation-card-title { color:#FFE8A0; font-size:16px; font-weight:700; margin-bottom:8px; }
 .donation-card-desc { font-family:'Noto Sans Telugu',sans-serif; font-size:12px; color:rgba(255,240,200,.7); line-height:1.7; }
-.donate-now-btn { display:block; margin:36px auto 0; background:linear-gradient(135deg,var(--bright-gold),var(--saffron)); color:var(--deep-red); font-family:'Noto Serif Telugu',serif; font-size:17px; font-weight:900; padding:15px 44px; border:none; border-radius:8px; cursor:pointer; box-shadow:0 6px 24px rgba(0,0,0,.3); transition:all .3s; max-width:300px; width:100%; text-decoration:none; text-align:center; position:relative; }
-.donate-now-btn:hover { transform:translateY(-3px); box-shadow:0 10px 36px rgba(0,0,0,.4); }
+.donate-now-btn { display:block; margin:36px auto 0; background:linear-gradient(135deg,var(--bright-gold),var(--saffron)); color:var(--deep-red); font-family:'Noto Serif Telugu',serif; font-size:17px; font-weight:900; padding:15px 44px; border:none; border-radius:8px; cursor:pointer; box-shadow:0 6px 24px rgba(0,0,0,.3); transition:all .3s; max-width:300px; width:100%; text-decoration:none; text-align:center; position:relative; overflow:hidden; animation:donateGlow 2s ease-in-out infinite; }
+.donate-now-btn::after { content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent); animation:donateShimmer 2.5s ease-in-out infinite; }
+.donate-now-btn:hover { transform:translateY(-3px); box-shadow:0 10px 36px rgba(0,0,0,.4); animation:none; }
 .bank-details { background:rgba(255,255,255,.07); border:1px solid rgba(201,151,58,.3); border-radius:12px; padding:24px; max-width:560px; margin:36px auto 0; position:relative; }
 .bank-details h3 { color:var(--bright-gold); font-size:17px; font-weight:700; margin-bottom:14px; text-align:center; }
 .bank-row { display:flex; justify-content:space-between; align-items:flex-start; padding:8px 0; border-bottom:1px dashed rgba(201,151,58,.2); font-family:'Noto Sans Telugu',sans-serif; font-size:13px; gap:12px; }
@@ -239,14 +289,57 @@ footer { background:var(--deep-red); color:rgba(255,240,200,.8); padding:44px 16
 .footer-bottom { max-width:1100px; margin:20px auto 0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
 .footer-copyright { font-family:'Noto Sans Telugu',sans-serif; font-size:12px; opacity:.7; }
 .footer-social { display:flex; gap:8px; }
-.social-btn { width:36px; height:36px; background:rgba(255,255,255,.1); border-radius:6px; display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:16px; transition:background .3s; }
-.social-btn:hover { background:rgba(201,151,58,.3); }
+.social-btn { width:36px; height:36px; background:rgba(255,255,255,.1); border-radius:6px; display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:16px; transition:background .3s, transform .2s; }
+.social-btn svg { width:20px; height:20px; fill:rgba(255,255,255,.8); transition:fill .3s; }
+.social-btn:hover { transform:translateY(-2px); }
+.social-fb:hover { background:#1877F2; }
+.social-fb:hover svg { fill:#fff; }
+.social-yt:hover { background:#FF0000; }
+.social-yt:hover svg { fill:#fff; }
+.social-wa:hover { background:#25D366; }
+.social-wa:hover svg { fill:#fff; }
+.social-ig:hover { background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+.social-ig:hover svg { fill:#fff; }
 
 /* MODAL */
 .modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.75); z-index:1000; align-items:center; justify-content:center; padding:16px; overflow-y:auto; }
 .modal-overlay.open { display:flex; }
 .modal-box { background:var(--ivory); border-radius:16px; max-width:500px; width:100%; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.5); animation:modal-in .3s ease; margin:auto; }
 @keyframes modal-in { from{transform:scale(.9);opacity:0} to{transform:scale(1);opacity:1} }
+
+/* Donate button animations */
+@keyframes donatePulse {
+  0%, 100% { box-shadow:0 4px 14px rgba(0,0,0,.3); }
+  50% { box-shadow:0 4px 14px rgba(0,0,0,.3), 0 0 20px rgba(224,123,32,.5); }
+}
+@keyframes donateShimmer {
+  0% { left:-100%; }
+  50%, 100% { left:100%; }
+}
+@keyframes donateGlow {
+  0%, 100% { box-shadow:0 6px 24px rgba(0,0,0,.3); }
+  50% { box-shadow:0 6px 24px rgba(0,0,0,.3), 0 0 30px rgba(232,184,75,.5), 0 0 60px rgba(232,184,75,.2); }
+}
+@keyframes floatDonateBounce {
+  0%, 100% { transform:translateX(-50%) translateY(0); }
+  15% { transform:translateX(-50%) translateY(-8px); }
+  30% { transform:translateX(-50%) translateY(0); }
+  45% { transform:translateX(-50%) translateY(-5px); }
+  60% { transform:translateX(-50%) translateY(0); }
+}
+@keyframes floatDonateGlow {
+  0%, 100% { box-shadow:0 6px 24px rgba(0,0,0,.35); }
+  50% { box-shadow:0 6px 24px rgba(0,0,0,.35), 0 0 24px rgba(224,123,32,.55), 0 0 48px rgba(201,151,58,.3); }
+}
+@keyframes floatDonateRing {
+  0% { background-position:0% 50%; }
+  50% { background-position:100% 50%; }
+  100% { background-position:0% 50%; }
+}
+@keyframes donateBorderPulse {
+  0%, 100% { border-color:var(--gold); box-shadow:none; }
+  50% { border-color:var(--bright-gold); box-shadow:0 0 16px rgba(232,184,75,.35), inset 0 0 16px rgba(232,184,75,.1); }
+}
 .modal-header { background:linear-gradient(135deg,var(--crimson),var(--deep-red)); padding:20px 24px; display:flex; justify-content:space-between; align-items:center; }
 .modal-header h3 { color:var(--bright-gold); font-size:18px; font-weight:800; }
 .modal-close { background:none; border:none; color:rgba(255,240,200,.8); font-size:22px; cursor:pointer; padding:4px 8px; }
@@ -265,7 +358,9 @@ footer { background:var(--deep-red); color:rgba(255,240,200,.8); padding:44px 16
 .scroll-top:hover { transform:translateY(-3px); }
 
 /* FLOATING DONATE — mobile only */
-.float-donate { display:none; position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg,var(--saffron),var(--gold)); color:#fff; font-family:'Noto Serif Telugu',serif; font-size:15px; font-weight:700; padding:13px 36px; border:none; border-radius:50px; box-shadow:0 6px 24px rgba(0,0,0,.35); cursor:pointer; z-index:98; white-space:nowrap; }
+.float-donate { display:none; position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg,var(--saffron),var(--gold)); color:#fff; font-family:'Noto Serif Telugu',serif; font-size:15px; font-weight:700; padding:13px 36px; border:none; border-radius:50px; box-shadow:0 6px 24px rgba(0,0,0,.35); cursor:pointer; z-index:98; white-space:nowrap; animation:floatDonateBounce 2s ease-in-out infinite, floatDonateGlow 2s ease-in-out infinite; position:relative; overflow:hidden; }
+.float-donate::before { content:''; position:absolute; top:-2px; left:-2px; right:-2px; bottom:-2px; background:linear-gradient(45deg,var(--saffron),var(--bright-gold),var(--gold),var(--saffron)); border-radius:50px; z-index:-1; animation:floatDonateRing 3s linear infinite; background-size:300% 300%; }
+.float-donate::after { content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent); animation:donateShimmer 2s ease-in-out infinite; border-radius:50px; }
 
 /* ======= TABLET ≤ 1024px ======= */
 @media (max-width:1024px) {
@@ -287,6 +382,7 @@ footer { background:var(--deep-red); color:rgba(255,240,200,.8); padding:44px 16
   /* Hamburger nav */
   .nav-container { position:relative; min-height:var(--nav-h); justify-content:flex-start; }
   .nav-toggle { display:flex; }
+  .lang-toggle { position:absolute; top:50%; transform:translateY(-50%); right:16px; padding:6px 12px; font-size:12px; }
   .nav-links { display:none; flex-direction:column; position:absolute; top:var(--nav-h); left:0; right:0; background:var(--deep-red); z-index:300; padding:8px 0 16px; box-shadow:0 8px 24px rgba(0,0,0,.4); border-top:1px solid rgba(201,151,58,.2); }
   .nav-links.open { display:flex; }
   .nav-links li { width:100%; }
@@ -397,65 +493,193 @@ footer { background:var(--deep-red); color:rgba(255,240,200,.8); padding:44px 16
   .deity-attributes { grid-template-columns:repeat(2,1fr); }
 }
 
+/* ===== TRIBUTE SECTION ===== */
+.tribute-section {
+  background: linear-gradient(180deg, #FFF8EE 0%, #FDF0E0 100%);
+  padding: 60px 16px;
+}
+.tribute-subtitle {
+  text-align: center;
+  max-width: 680px;
+  margin: -20px auto 36px;
+  font-family: 'Noto Sans Telugu', sans-serif;
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.9;
+}
+.tribute-founder-box {
+  background: linear-gradient(145deg, var(--deep-red), var(--crimson));
+  border-radius: 18px;
+  padding: 36px 28px;
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 44px;
+  border: 2px solid var(--border-gold);
+  box-shadow: 0 12px 40px rgba(0,0,0,.18);
+  position: relative;
+  overflow: hidden;
+}
+.tribute-founder-box::before {
+  content: ''; position: absolute; inset: 8px;
+  border: 1px solid rgba(201,151,58,.35);
+  border-radius: 12px; pointer-events: none;
+}
+.tribute-founder-photo {
+  width: clamp(100px, 18vw, 140px);
+  height: clamp(100px, 18vw, 140px);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  margin: 0 auto 14px;
+  border: 3px solid var(--border-gold);
+  box-shadow: 0 0 0 4px rgba(201,151,58,.25), 0 6px 20px rgba(0,0,0,.3);
+}
+.tribute-founder-name {
+  color: var(--bright-gold); font-size: clamp(18px, 3vw, 24px);
+  font-weight: 900; margin-bottom: 6px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,.3);
+}
+.tribute-founder-title {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--bright-gold), var(--gold));
+  color: var(--deep-red);
+  font-family: 'Noto Sans Telugu', sans-serif;
+  font-size: 13px; font-weight: 800;
+  padding: 5px 18px; border-radius: 20px;
+  margin-bottom: 12px;
+}
+.tribute-founder-desc {
+  color: rgba(255,240,200,.85);
+  font-family: 'Noto Sans Telugu', sans-serif;
+  font-size: 14px; line-height: 1.9;
+}
+.tribute-contributors-heading {
+  text-align: center;
+  font-size: clamp(18px, 2.5vw, 24px);
+  color: var(--crimson);
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+.tribute-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.tribute-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px 16px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,.08);
+  border-top: 5px solid var(--gold);
+  transition: transform .28s, box-shadow .28s;
+}
+.tribute-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(0,0,0,.15);
+}
+.tribute-avatar {
+  width: 72px; height: 72px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 30px; margin: 0 auto 14px;
+  background: linear-gradient(135deg, #8B6914, #C9973A);
+  box-shadow: 0 4px 14px rgba(139,105,20,.3);
+  overflow: hidden;
+}
+.tribute-card-photo {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  border-radius: 50%;
+}
+.tribute-name {
+  font-size: 15px; font-weight: 800;
+  color: var(--deep-red); margin-bottom: 8px;
+  line-height: 1.5;
+  font-family: 'Noto Sans Telugu', sans-serif;
+}
+.tribute-role {
+  display: inline-block;
+  font-family: 'Noto Sans Telugu', sans-serif;
+  font-size: 11px; font-weight: 700;
+  padding: 4px 14px; border-radius: 20px;
+  background: rgba(139,105,20,.08);
+  color: #8B6914;
+  border: 1px solid rgba(139,105,20,.25);
+}
+@media (max-width: 1024px) {
+  .tribute-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}
+@media (max-width: 600px) {
+  .tribute-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .tribute-card { padding: 18px 12px; }
+  .tribute-avatar { width: 56px; height: 56px; font-size: 24px; }
+  .tribute-name { font-size: 14px; }
+  .tribute-founder-box { padding: 28px 20px; }
+  .tribute-founder-photo { width: 90px; height: 90px; }
+}
+
 /* ===== COMMITTEE SECTION ===== */
-.committee-section { background: linear-gradient(180deg, #fff4e6 0%, #fff 100%); padding: 60px 0; }
+.committee-section { background: linear-gradient(180deg, #fff4e6 0%, #fff 100%); padding: 40px 0; }
 .committee-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
-  margin-top: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
 }
 .committee-card {
   background: #fff;
-  border-radius: 18px;
-  padding: 32px 24px 28px;
+  border-radius: 12px;
+  padding: 18px 12px 16px;
   text-align: center;
-  box-shadow: 0 6px 28px rgba(0,0,0,0.10);
-  border-top: 6px solid var(--gold);
+  box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+  border-top: 4px solid var(--gold);
   transition: transform .28s, box-shadow .28s;
   position: relative;
 }
-.committee-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.16); }
+.committee-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,0,0,0.13); }
 .committee-card.president { border-top-color: var(--crimson); background: linear-gradient(160deg,#fff5f5,#fff); }
 .committee-card.vice-president { border-top-color: var(--deep-red); background: linear-gradient(160deg,#fff8f5,#fff); }
 .committee-card.secretary { border-top-color: #1a5c00; background: linear-gradient(160deg,#f5fff5,#fff); }
 .committee-card.treasurer { border-top-color: #003070; background: linear-gradient(160deg,#f5f8ff,#fff); }
 .committee-avatar {
-  width: 100px; height: 100px; border-radius: 50%;
+  width: 68px; height: 68px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 36px; margin: 0 auto 18px;
+  font-size: 28px; margin: 0 auto 10px;
   background: linear-gradient(135deg, var(--saffron), var(--gold));
-  box-shadow: 0 6px 18px rgba(201,151,58,0.35);
+  box-shadow: 0 4px 12px rgba(201,151,58,0.3);
   overflow: hidden;
 }
 .committee-avatar img {
   width: 100%; height: 100%; object-fit: cover; object-position: center top;
   border-radius: 50%;
 }
-.committee-card.president .committee-avatar { background: linear-gradient(135deg, var(--crimson), var(--deep-red)); box-shadow: 0 6px 18px rgba(123,13,30,0.35); }
-.committee-card.vice-president .committee-avatar { background: linear-gradient(135deg, var(--deep-red), #a01020); box-shadow: 0 6px 18px rgba(100,0,20,0.3); }
-.committee-card.secretary .committee-avatar { background: linear-gradient(135deg, #1a5c00, #3a8c20); box-shadow: 0 6px 18px rgba(26,92,0,0.3); }
-.committee-card.treasurer .committee-avatar { background: linear-gradient(135deg, #003070, #1050a0); box-shadow: 0 6px 18px rgba(0,48,112,0.3); }
+.committee-card.president .committee-avatar { background: linear-gradient(135deg, var(--crimson), var(--deep-red)); box-shadow: 0 4px 12px rgba(123,13,30,0.3); }
+.committee-card.vice-president .committee-avatar { background: linear-gradient(135deg, var(--deep-red), #a01020); box-shadow: 0 4px 12px rgba(100,0,20,0.25); }
+.committee-card.secretary .committee-avatar { background: linear-gradient(135deg, #1a5c00, #3a8c20); box-shadow: 0 4px 12px rgba(26,92,0,0.25); }
+.committee-card.treasurer .committee-avatar { background: linear-gradient(135deg, #003070, #1050a0); box-shadow: 0 4px 12px rgba(0,48,112,0.25); }
 .committee-name {
-  font-size: 19px; font-weight: 800; color: var(--deep-red);
-  margin-bottom: 10px; line-height: 1.5;
+  font-size: 15px; font-weight: 800; color: var(--deep-red);
+  margin-bottom: 6px; line-height: 1.4;
   font-family: 'Noto Sans Telugu', sans-serif;
 }
 .committee-role {
   display: inline-block;
   font-family: 'Noto Sans Telugu', sans-serif;
-  font-size: 14px; font-weight: 700;
-  padding: 6px 18px; border-radius: 24px;
+  font-size: 11px; font-weight: 700;
+  padding: 4px 12px; border-radius: 20px;
   background: var(--cream); color: var(--crimson);
   border: 1.5px solid var(--border-gold);
-  margin-bottom: 4px; letter-spacing: 0.3px;
+  margin-bottom: 2px; letter-spacing: 0.3px;
 }
-.committee-card.president .committee-role { background: var(--crimson); color: #FFE8A0; border-color: var(--crimson); font-size: 15px; padding: 7px 20px; }
+.committee-card.president .committee-role { background: var(--crimson); color: #FFE8A0; border-color: var(--crimson); font-size: 12px; padding: 5px 14px; }
 .committee-card.vice-president .committee-role { background: var(--deep-red); color: #FFE8A0; border-color: var(--deep-red); }
 .committee-card.secretary .committee-role { background: #1a5c00; color: #fff; border-color: #1a5c00; }
 .committee-card.treasurer .committee-role { background: #003070; color: #fff; border-color: #003070; }
-@media (max-width: 1024px) { .committee-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; } }
-@media (max-width: 600px) { .committee-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } .committee-card { padding: 22px 14px 18px; } .committee-name { font-size: 16px; } .committee-role { font-size: 12px; padding: 5px 12px; } .committee-avatar { width: 64px; height: 64px; font-size: 28px; } }
+@media (max-width: 1024px) { .committee-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; } }
+@media (max-width: 600px) { .committee-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } .committee-card { padding: 14px 10px 12px; } .committee-name { font-size: 13px; } .committee-role { font-size: 10px; padding: 3px 10px; } .committee-avatar { width: 52px; height: 52px; font-size: 22px; } }
 
 /* ===== CONTRIBUTE SECTION ===== */
 .contribute-section { background: linear-gradient(180deg, #fff 0%, #fff8f0 100%); }
@@ -520,6 +744,262 @@ footer { background:var(--deep-red); color:rgba(255,240,200,.8); padding:44px 16
   font-family: 'Noto Sans Telugu', sans-serif;
   transition: transform .2s, box-shadow .2s;
   box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  position:relative; overflow:hidden;
+  animation:donateGlow 2.5s ease-in-out infinite;
 }
-.contribute-cta-box .btn-gold:hover { transform: scale(1.05); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+.contribute-cta-box .btn-gold::after { content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent); animation:donateShimmer 3s ease-in-out infinite; border-radius:30px; }
+.contribute-cta-box .btn-gold:hover { transform: scale(1.05); box-shadow: 0 8px 24px rgba(0,0,0,0.3); animation:none; }
 @media (max-width: 600px) { .contribute-grid { grid-template-columns: 1fr; } }
+
+/* ===== NEARBY TEMPLE HIGHLIGHT ===== */
+.nearby-temple-section {
+  padding:56px 16px;
+  background:linear-gradient(180deg,var(--cream) 0%,#FDF0E0 100%);
+}
+.nearby-visits-grid {
+  display:grid; grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
+.nearby-temple-card {
+  background:linear-gradient(145deg,var(--deep-red),var(--crimson),#A0181A);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 40px rgba(0,0,0,.2);
+  border:2px solid var(--border-gold);
+  position:relative;
+}
+.nearby-temple-card::before {
+  content:''; position:absolute; inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C9973A' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events:none;
+}
+.nearby-temple-badge {
+  background:linear-gradient(135deg,var(--bright-gold),var(--gold));
+  color:var(--deep-red);
+  font-family:'Noto Sans Telugu',sans-serif;
+  font-size:13px; font-weight:800;
+  padding:10px 24px;
+  text-align:center;
+  letter-spacing:1px;
+}
+.nearby-temple-body {
+  display:flex; align-items:center; gap:24px;
+  padding:28px 24px;
+  position:relative; z-index:1;
+}
+.nearby-temple-icon-area {
+  flex-shrink:0; text-align:center;
+}
+.nearby-temple-emoji {
+  font-size:clamp(56px,10vw,80px); display:block;
+  filter:drop-shadow(0 0 16px rgba(201,151,58,.4));
+  animation:float 4s ease-in-out infinite;
+}
+.nearby-temple-logo-img {
+  width:clamp(90px,14vw,120px);
+  height:clamp(90px,14vw,120px);
+  object-fit:contain;
+  border-radius:0;
+  mix-blend-mode:screen;
+  opacity:.9;
+  filter:drop-shadow(0 2px 8px rgba(0,0,0,.15));
+  animation:float 4s ease-in-out infinite;
+  transition:opacity .3s, filter .3s;
+}
+.nearby-temple-card:hover .nearby-temple-logo-img {
+  opacity:1;
+  filter:drop-shadow(0 4px 14px rgba(0,0,0,.25));
+}
+.nearby-temple-distance {
+  display:block; margin-top:8px;
+  color:var(--bright-gold);
+  font-family:'Noto Sans Telugu',sans-serif;
+  font-size:13px; font-weight:700;
+}
+.nearby-temple-info h3 {
+  color:#FFE8A0;
+  font-size:clamp(18px,3vw,26px);
+  font-weight:900;
+  margin-bottom:12px;
+  text-shadow:1px 1px 6px rgba(0,0,0,.3);
+}
+.nearby-temple-info p {
+  color:rgba(255,240,200,.85);
+  font-family:'Noto Sans Telugu',sans-serif;
+  font-size:14px; line-height:2;
+  margin-bottom:16px;
+}
+.nearby-temple-tags {
+  display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;
+}
+.nearby-temple-tags .highlight-tag {
+  background:rgba(255,255,255,.1);
+  border-color:rgba(201,151,58,.4);
+  color:var(--bright-gold);
+}
+.nearby-temple-link {
+  display:inline-block;
+  background:linear-gradient(135deg,var(--bright-gold),var(--gold));
+  color:var(--deep-red);
+  font-family:'Noto Sans Telugu',sans-serif;
+  font-size:14px; font-weight:800;
+  padding:10px 24px;
+  border-radius:8px;
+  text-decoration:none;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);
+  transition:all .3s;
+}
+.nearby-temple-link:hover {
+  transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(0,0,0,.35);
+}
+@media (max-width:1024px) {
+  .nearby-temple-body { flex-direction:column; text-align:center; gap:16px; padding:24px 20px; }
+  .nearby-temple-tags { justify-content:center; }
+}
+@media (max-width:768px) {
+  .nearby-visits-grid { grid-template-columns:1fr; }
+}
+
+/* ===== ALBUM MODAL ===== */
+.album-overlay {
+  display:none; position:fixed; inset:0;
+  background:rgba(0,0,0,.85); z-index:1000;
+  overflow-y:auto; padding:20px;
+}
+.album-overlay.open { display:block; }
+.album-modal {
+  max-width:900px; margin:40px auto;
+  background:var(--ivory); border-radius:16px;
+  overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.5);
+  animation:modal-in .3s ease;
+}
+.album-modal-header {
+  background:linear-gradient(135deg,var(--crimson),var(--deep-red));
+  padding:20px 24px; display:flex;
+  justify-content:space-between; align-items:center;
+}
+.album-modal-header h3 { color:var(--bright-gold); font-size:20px; font-weight:900; }
+.album-modal-close {
+  background:none; border:none; color:rgba(255,240,200,.8);
+  font-size:24px; cursor:pointer; padding:4px 8px;
+}
+.album-breadcrumb {
+  padding:14px 24px; background:var(--cream);
+  border-bottom:1px solid rgba(201,151,58,.2);
+  font-family:'Noto Sans Telugu',sans-serif; font-size:13px;
+  color:var(--text-mid); display:flex; align-items:center; gap:8px;
+}
+.album-breadcrumb a {
+  color:var(--crimson); text-decoration:none; font-weight:600; cursor:pointer;
+}
+.album-breadcrumb a:hover { text-decoration:underline; }
+.album-breadcrumb .sep { color:var(--gold); }
+.album-modal-body { padding:24px; }
+
+/* Sub-album grid */
+.subalbum-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:18px;
+}
+.subalbum-card {
+  background:#fff; border-radius:12px; overflow:hidden;
+  box-shadow:0 4px 16px rgba(0,0,0,.08);
+  border:2px solid rgba(201,151,58,.2);
+  cursor:pointer; transition:all .3s;
+}
+.subalbum-card:hover {
+  transform:translateY(-4px);
+  box-shadow:0 8px 28px rgba(0,0,0,.15);
+  border-color:var(--gold);
+}
+.subalbum-thumb {
+  width:100%; aspect-ratio:4/3;
+  display:flex; align-items:center; justify-content:center;
+  font-size:48px;
+  background:linear-gradient(145deg,var(--crimson),var(--deep-red));
+}
+.subalbum-thumb img {
+  width:100%; height:100%; object-fit:cover;
+}
+.subalbum-info {
+  padding:12px 14px; text-align:center;
+}
+.subalbum-info h5 {
+  font-size:14px; font-weight:700; color:var(--crimson);
+  margin-bottom:4px;
+}
+.subalbum-info span {
+  font-family:'Noto Sans Telugu',sans-serif;
+  font-size:12px; color:#999;
+}
+
+/* Photo grid inside sub-album */
+.album-photo-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+  gap:12px;
+}
+.album-photo-item {
+  aspect-ratio:1; border-radius:8px; overflow:hidden;
+  cursor:pointer; box-shadow:0 2px 10px rgba(0,0,0,.1);
+  border:2px solid rgba(201,151,58,.15);
+  transition:all .3s; position:relative;
+}
+.album-photo-item:hover {
+  transform:scale(1.03);
+  box-shadow:0 6px 20px rgba(0,0,0,.18);
+  border-color:var(--gold);
+}
+.album-photo-item img {
+  width:100%; height:100%; object-fit:cover;
+}
+.album-photo-placeholder {
+  width:100%; height:100%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:40px;
+  background:linear-gradient(145deg,rgba(123,13,30,.08),rgba(201,151,58,.08));
+}
+.album-empty-msg {
+  text-align:center; padding:40px 20px;
+  font-family:'Noto Sans Telugu',sans-serif;
+  color:#999; font-size:14px; line-height:1.8;
+}
+.album-loading-msg {
+  text-align:center; padding:48px 20px;
+  font-family:'Noto Sans Telugu',sans-serif;
+  color:var(--text-mid); font-size:14px;
+}
+.drive-spinner {
+  width:36px; height:36px;
+  border:3px solid rgba(201,151,58,.2);
+  border-top-color:var(--gold);
+  border-radius:50%;
+  animation:driveSpinnerSpin .8s linear infinite;
+  margin:0 auto 14px;
+}
+@keyframes driveSpinnerSpin { to { transform:rotate(360deg); } }
+.view-full-album {
+  text-align:center; padding:18px 0 6px; margin-top:12px;
+}
+.view-full-album a {
+  display:inline-block;
+  padding:10px 24px;
+  background:linear-gradient(135deg, var(--deep-red), var(--crimson));
+  color:#fff; font-family:'Noto Sans Telugu',sans-serif;
+  font-size:14px; font-weight:600;
+  border-radius:8px; text-decoration:none;
+  transition:all .3s ease;
+  box-shadow:0 2px 8px rgba(123,13,30,.25);
+}
+.view-full-album a:hover {
+  background:linear-gradient(135deg, var(--crimson), var(--saffron));
+  box-shadow:0 4px 16px rgba(123,13,30,.35);
+  transform:translateY(-1px);
+}
+
+@media (max-width:600px) {
+  .subalbum-grid { grid-template-columns:repeat(2,1fr); gap:12px; }
+  .album-photo-grid { grid-template-columns:repeat(2,1fr); gap:8px; }
+  .album-modal { margin:16px auto; }
+  .album-modal-body { padding:16px; }
+}
