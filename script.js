@@ -100,6 +100,33 @@ function closeDonateModal() { document.getElementById('donateModal').classList.r
 document.getElementById('donateModal').addEventListener('click', e => { if(e.target===e.currentTarget) closeDonateModal(); });
 document.addEventListener('keydown', e => { if(e.key==='Escape') closeDonateModal(); });
 
+/* Quick donate from card click — opens modal with amount pre-selected */
+function quickDonate(amount) {
+  openDonateModal();
+  // Find the matching amount option and select it
+  const opts = document.querySelectorAll('.amount-opt');
+  let matched = false;
+  opts.forEach(function(opt) {
+    opt.classList.remove('selected');
+    if (parseInt(opt.getAttribute('data-amount')) === amount) {
+      opt.classList.add('selected');
+      matched = true;
+    }
+  });
+  // If no exact match (e.g. card shows ₹500 but modal has ₹501), use custom amount
+  if (!matched) {
+    opts.forEach(function(opt) {
+      if (opt.getAttribute('data-amount') === 'custom') {
+        opt.classList.add('selected');
+        document.getElementById('customAmountBox').style.display = 'block';
+        document.getElementById('customAmountInput').value = amount;
+      }
+    });
+  } else {
+    document.getElementById('customAmountBox').style.display = 'none';
+  }
+}
+
 /* Amount select */
 function selectAmount(el) {
   document.querySelectorAll('.amount-opt').forEach(o => o.classList.remove('selected'));
