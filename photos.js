@@ -64,6 +64,7 @@ const photoConfig = {
     'daily-poojas':              '1nji09QCxlXuU2HZ5yhIPqImKocBqZZNC',   // Daily poojas
     'devotees':                  '1SYLYujx5EK-lDa9ww04WUmbC1UmPYWo-',   // Devotees
     'development-activities':    '1wFnWUN-XDbW0n3ONAtOypmTlCVEnb0eO',   // Development activities
+    'old-madhavaram':            'PASTE_FOLDER_ID_HERE',                  // Old Madhavaram Temple (replace with actual folder ID)
   },
 
   /* ── Shared album links (for "View Full Album" buttons) ── */

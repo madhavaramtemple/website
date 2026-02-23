@@ -177,6 +177,55 @@ function startRazorpayPayment() {
   }
 }
 
+/* ===== ₹99 MONTHLY QUICK DONATE ===== */
+function donate99() {
+  const name = prompt(t('monthly99_prompt_name'));
+  if (!name || !name.trim()) return;
+
+  const phone = prompt(t('monthly99_prompt_phone'));
+  if (!phone || phone.trim().length < 10) {
+    alert(t('alert_enter_phone'));
+    return;
+  }
+
+  const options = {
+    key: RAZORPAY_KEY,
+    amount: 9900,  // ₹99 in paise
+    currency: 'INR',
+    name: t('razorpay_name'),
+    description: t('monthly99_razorpay_desc'),
+    image: '',
+    prefill: {
+      name: name.trim(),
+      contact: '+91' + phone.trim().replace(/^\+?91/, '')
+    },
+    notes: {
+      donor_name: name.trim(),
+      donation_type: 'monthly_99',
+      temple: 'Sri Bhadravathi Bhavanarayana Swamy Temple, Kotha Madhavaram'
+    },
+    theme: { color: '#C9973A' },
+    modal: { ondismiss: function() { console.log('₹99 payment dismissed'); } },
+    handler: function(response) {
+      alert(
+        t('monthly99_success_prefix') + name.trim() + t('monthly99_success_suffix') + '\n' +
+        'Payment ID: ' + response.razorpay_payment_id + '\n\n' +
+        t('monthly99_success_reminder')
+      );
+    }
+  };
+
+  try {
+    const rzp = new Razorpay(options);
+    rzp.on('payment.failed', function(response) {
+      alert(t('alert_payment_failed_prefix') + response.error.description + t('alert_payment_failed_suffix'));
+    });
+    rzp.open();
+  } catch(e) {
+    alert(t('alert_razorpay_load_error'));
+  }
+}
+
 
 /* ===== ALBUM SYSTEM ===== */
 
@@ -248,6 +297,12 @@ const albumData = {
   'development-activities': {
     titleKey: 'album_development_activities',
     icon: '🏗️',
+    singleAlbum: true,
+    photos: []
+  },
+  'old-madhavaram': {
+    titleKey: 'album_old_madhavaram',
+    icon: '🏚️',
     singleAlbum: true,
     photos: []
   }
@@ -575,3 +630,43 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
+
+/* ===== EVENTS LIST: SCROLL BOUNDARY PASSTHROUGH (mobile fix) ===== */
+(function() {
+  const eventsList = document.querySelector('.events-list');
+  if (!eventsList) return;
+
+  let lastTouchY = 0;
+
+  eventsList.addEventListener('touchstart', function(e) {
+    lastTouchY = e.touches[0].clientY;
+  }, { passive: true });
+
+  eventsList.addEventListener('touchmove', function(e) {
+    const currentY = e.touches[0].clientY;
+    const deltaY = lastTouchY - currentY; // positive = scrolling down
+    const { scrollTop, scrollHeight, clientHeight } = eventsList;
+    const atTop = scrollTop <= 0;
+    const atBottom = scrollTop + clientHeight >= scrollHeight - 1;
+
+    // At top and trying to scroll up → release to let page scroll
+    if (atTop && deltaY < 0) {
+      eventsList.style.overflowY = 'hidden';
+      requestAnimationFrame(function() {
+        setTimeout(function() { eventsList.style.overflowY = 'auto'; }, 100);
+      });
+      return;
+    }
+
+    // At bottom and trying to scroll down → release to let page scroll
+    if (atBottom && deltaY > 0) {
+      eventsList.style.overflowY = 'hidden';
+      requestAnimationFrame(function() {
+        setTimeout(function() { eventsList.style.overflowY = 'auto'; }, 100);
+      });
+      return;
+    }
+
+    lastTouchY = currentY;
+  }, { passive: true });
+})();
