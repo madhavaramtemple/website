@@ -49,6 +49,7 @@ const DrivePhotoLoader = {
 
   CACHE_KEY_PREFIX: 'temple_drive_',
   CACHE_DURATION_MS: 30 * 60 * 1000,  // 30 minutes
+  _inflight: {},  // de-duplicate concurrent API requests for same folder
 
   // Convert a Drive file ID to a displayable image URL
   fileIdToImageUrl: function(fileId, width) {
@@ -105,6 +106,7 @@ const DrivePhotoLoader = {
 
   // Discover a folder's contents: separates subfolders from images
   // Returns { folders: [{id, name}], images: [{id, name, url}] }
+  // De-duplicates concurrent requests for the same folder ID
   discoverFolder: function(folderId) {
     var self = this;
     var apiKey = photoConfig.googleDriveApiKey;
@@ -116,7 +118,12 @@ const DrivePhotoLoader = {
       return Promise.resolve(cached);
     }
 
-    return self.fetchFolderContents(folderId, apiKey).then(function(files) {
+    // De-duplicate: if a request for this folder is already in-flight, reuse it
+    if (self._inflight[folderId]) {
+      return self._inflight[folderId];
+    }
+
+    var promise = self.fetchFolderContents(folderId, apiKey).then(function(files) {
       var folders = [];
       var images = [];
 
@@ -138,40 +145,51 @@ const DrivePhotoLoader = {
 
       var result = { folders: folders, images: images };
       self.setCache(cacheKey, result);
+      delete self._inflight[folderId];
       return result;
+    }).catch(function(err) {
+      delete self._inflight[folderId];
+      throw err;
     });
+
+    self._inflight[folderId] = promise;
+    return promise;
   },
 
   // Peek at a folder's first image (for cover thumbnails)
-  // Recursively digs into subfolders up to maxDepth levels to find a photo
+  // Recursively digs into ALL subfolders up to maxDepth levels to find a photo
+  // Tries each subfolder sequentially until one yields an image
   // Returns image URL string or null
   peekFirstImage: function(folderId, depth) {
     var self = this;
     depth = depth || 0;
     var maxDepth = 3; // search up to 3 levels deep for a cover image
 
-    var cacheKey = 'folder_' + folderId;
-
-    // If folder already cached, grab from there
-    var cached = self.getCached(cacheKey);
-    if (cached) {
-      if (cached.images && cached.images.length > 0) return Promise.resolve(cached.images[0].url);
-      // No images at top level — try subfolders recursively
-      if (cached.folders && cached.folders.length > 0 && depth < maxDepth) {
-        return self.peekFirstImage(cached.folders[0].id, depth + 1);
-      }
-      return Promise.resolve(null);
-    }
-
-    // Fetch folder and check
     return self.discoverFolder(folderId).then(function(result) {
-      if (result.images && result.images.length > 0) return result.images[0].url;
-      // No images at top level — dig into first subfolder recursively
-      if (result.folders && result.folders.length > 0 && depth < maxDepth) {
-        return self.peekFirstImage(result.folders[0].id, depth + 1);
+      // If this folder has images, return the first one
+      if (result.images && result.images.length > 0) {
+        return result.images[0].url;
       }
+
+      // No images here — try each subfolder sequentially until we find one
+      if (result.folders && result.folders.length > 0 && depth < maxDepth) {
+        var trySubfolder = function(index) {
+          if (index >= result.folders.length) return null;
+          return self.peekFirstImage(result.folders[index].id, depth + 1)
+            .then(function(url) {
+              if (url) return url;
+              // This subfolder had nothing — try the next one
+              return trySubfolder(index + 1);
+            });
+        };
+        return trySubfolder(0);
+      }
+
       return null;
-    }).catch(function() { return null; });
+    }).catch(function(err) {
+      console.warn('[Gallery] peekFirstImage error for folder', folderId, err);
+      return null;
+    });
   },
 
   // Count total images in a folder (including all subfolders, recursive)
