@@ -306,7 +306,6 @@ function renderGalleryGrid(container, folderData) {
     var safeName = escapeHtml(folder.name).replace(/'/g, "\\'");
     html += '<div class="gallery-item" onclick="openDynamicAlbum(\'' + folder.id + '\',\'' + safeName + '\')">'
       + '<div class="gallery-placeholder" id="gcard_' + folder.id + '" style="background:linear-gradient(145deg,' + colors[0] + ',' + colors[1] + ')">'
-      + '<span class="gallery-img-icon gallery-img-icon--fade">📷</span>'
       + '<span class="gallery-img-label">' + escapeHtml(folder.name) + '</span>'
       + '</div></div>';
     folderIds.push(folder.id);
@@ -414,7 +413,7 @@ function renderAlbumContents(body, folderData, folderName) {
     html += '<div class="subalbum-grid">';
     folderData.folders.forEach(function(subfolder) {
       html += '<div class="subalbum-card" onclick="openDynamicAlbum(\'' + subfolder.id + '\',\'' + escapeHtml(subfolder.name).replace(/'/g, "\\'") + '\')">'
-        + '<div class="subalbum-thumb" id="scard_' + subfolder.id + '">📷</div>'
+        + '<div class="subalbum-thumb" id="scard_' + subfolder.id + '"></div>'
         + '<div class="subalbum-info"><h5>' + escapeHtml(subfolder.name) + '</h5>'
         + '</div></div>';
       subfolderIds.push(subfolder.id);

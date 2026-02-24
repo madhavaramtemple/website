@@ -241,8 +241,8 @@ section { padding:56px 16px; }
 .gallery-item { aspect-ratio:1; border-radius:10px; overflow:hidden; cursor:pointer; box-shadow:0 4px 16px rgba(0,0,0,.1); border:2px solid rgba(201,151,58,.2); }
 .gallery-placeholder {
   width:100%; height:100%;
-  display:flex; flex-direction:column; align-items:center; justify-content:flex-end;
-  gap:8px; transition:transform .3s;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  transition:transform .3s;
   position:relative;
 }
 .gallery-item:hover .gallery-placeholder { transform:scale(1.05); }
@@ -257,20 +257,19 @@ section { padding:56px 16px; }
   border-radius:0 0 8px 8px;
 }
 
-/* Placeholder icon — shows while thumbnail loads */
-.gallery-img-icon { font-size:clamp(28px,5vw,48px); margin-bottom:auto; margin-top:auto; }
-.gallery-img-icon--fade { opacity:.6; transition:opacity .3s; }
+/* When cover loaded, push label to bottom */
+.gallery-cover-loaded { justify-content:flex-end; }
 
-/* Album name label — positioned at bottom over the gradient overlay */
+/* Album name label */
 .gallery-img-label {
   color:#fff;
-  font-size:clamp(12px,1.5vw,14px);
+  font-size:clamp(13px,1.8vw,16px);
   font-family:'Noto Sans Telugu',sans-serif;
   font-weight:700;
   text-align:center;
-  padding:10px 10px 12px;
+  padding:10px 12px 14px;
   position:relative; z-index:1;
-  text-shadow:0 1px 4px rgba(0,0,0,.6);
+  text-shadow:0 1px 6px rgba(0,0,0,.5);
   line-height:1.4;
   width:100%;
 }
