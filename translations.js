@@ -322,6 +322,12 @@ const translations = {
     gallery_send_photos: "📷 మీ ఆలయ చిత్రాలు పంపడానికి: madhavaramtemple@gmail.com",
     gallery_upload_text: "📸 మీ ఆలయ చిత్రాలను భక్తులందరితో పంచుకోండి",
     gallery_upload_btn: "📤 చిత్రాలు అప్‌లోడ్ చేయండి",
+    gallery_upload_uploading: "అప్‌లోడ్ అవుతోంది...",
+    gallery_upload_success: "చిత్రాలు విజయవంతంగా అప్‌లోడ్ అయ్యాయి!",
+    gallery_upload_error: "అప్‌లోడ్ విఫలమైంది",
+    gallery_upload_invalid: "దయచేసి చిత్రాలను మాత్రమే ఎంచుకోండి",
+    gallery_upload_too_large: "ఫైల్ 10MB కంటే చిన్నదిగా ఉండాలి",
+    gallery_upload_not_configured: "అప్‌లోడ్ సేవ ఇంకా అందుబాటులో లేదు",
 
     // ===== UPDATES =====
     updates_label: "తాజా వార్తలు",
@@ -918,6 +924,12 @@ const translations = {
     gallery_send_photos: "📷 To send your temple photos: madhavaramtemple@gmail.com",
     gallery_upload_text: "📸 Share your temple photos with all devotees",
     gallery_upload_btn: "📤 Upload Photos",
+    gallery_upload_uploading: "Uploading...",
+    gallery_upload_success: "photos uploaded successfully!",
+    gallery_upload_error: "Upload failed",
+    gallery_upload_invalid: "Please select images only",
+    gallery_upload_too_large: "File must be smaller than 10MB",
+    gallery_upload_not_configured: "Upload service not available yet",
 
     // ===== UPDATES =====
     updates_label: "Latest News",

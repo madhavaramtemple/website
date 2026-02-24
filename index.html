@@ -35,7 +35,7 @@
   <meta name="ICBM" content="14.406397, 79.008048" />
 
   <!-- Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://checkout.razorpay.com https://www.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://lh3.googleusercontent.com https://www.googleapis.com https://*.google.com https://*.gstatic.com; frame-src https://www.google.com https://api.razorpay.com; connect-src 'self' https://www.googleapis.com https://lumberjack.razorpay.com https://api.razorpay.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://checkout.razorpay.com https://www.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://lh3.googleusercontent.com https://www.googleapis.com https://*.google.com https://*.gstatic.com; frame-src https://www.google.com https://api.razorpay.com; connect-src 'self' https://www.googleapis.com https://lumberjack.razorpay.com https://api.razorpay.com https://script.google.com https://script.googleusercontent.com;" />
 
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Telugu:wght@300;400;500;600;700;900&family=Noto+Sans+Telugu:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css?v=3" />
@@ -614,11 +614,12 @@
         <span data-i18n="gallery_loading">ఆల్బమ్‌లు లోడ్ అవుతున్నాయి...</span>
       </div>
     </div>
-    </div>
     <!-- User Photo Upload Banner -->
     <div class="gallery-upload-banner">
       <span class="gallery-upload-text" data-i18n="gallery_upload_text">📸 మీ ఆలయ చిత్రాలను భక్తులందరితో పంచుకోండి</span>
-      <a href="https://drive.google.com/drive/folders/16UxIG97sBeqWKOd66nOqCr2vAYYUrj5P" target="_blank" rel="noopener noreferrer" class="gallery-upload-btn" data-i18n="gallery_upload_btn">📤 చిత్రాలు అప్‌లోడ్ చేయండి</a>
+      <label class="gallery-upload-btn" for="uploadFileInput" data-i18n="gallery_upload_btn">📤 చిత్రాలు అప్‌లోడ్ చేయండి</label>
+      <input type="file" id="uploadFileInput" multiple accept="image/*" hidden />
+      <span class="gallery-upload-status" id="uploadStatus"></span>
     </div>
   </div>
 </section>

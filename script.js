@@ -64,7 +64,95 @@ function updatePageContent() {
 document.addEventListener('DOMContentLoaded', async () => {
   await loadPhotosFromConfig();
   updatePageContent();
+  initPhotoUpload();
 });
+
+/* ===== PHOTO UPLOAD ===== */
+function initPhotoUpload() {
+  var input = document.getElementById('uploadFileInput');
+  var status = document.getElementById('uploadStatus');
+  var btn = document.querySelector('.gallery-upload-btn');
+  if (!input || !status) return;
+
+  input.addEventListener('change', function() {
+    var files = Array.from(input.files);
+    if (!files.length) return;
+
+    // Validate: images only, max 10MB each
+    var MAX_SIZE = 10 * 1024 * 1024;
+    var valid = [];
+    for (var i = 0; i < files.length; i++) {
+      if (!files[i].type.startsWith('image/')) {
+        status.textContent = t('gallery_upload_invalid');
+        status.className = 'gallery-upload-status upload-error';
+        input.value = '';
+        return;
+      }
+      if (files[i].size > MAX_SIZE) {
+        status.textContent = t('gallery_upload_too_large');
+        status.className = 'gallery-upload-status upload-error';
+        input.value = '';
+        return;
+      }
+      valid.push(files[i]);
+    }
+
+    // Check if upload is configured
+    if (!photoConfig.uploadScriptUrl) {
+      status.textContent = t('gallery_upload_not_configured');
+      status.className = 'gallery-upload-status upload-error';
+      input.value = '';
+      return;
+    }
+
+    // Disable button during upload
+    btn.classList.add('uploading');
+    var completed = 0;
+    var failed = 0;
+    var total = valid.length;
+
+    status.textContent = t('gallery_upload_uploading') + ' (0/' + total + ')';
+    status.className = 'gallery-upload-status upload-progress';
+
+    // Upload files sequentially to avoid overwhelming the server
+    var chain = Promise.resolve();
+    valid.forEach(function(file) {
+      chain = chain.then(function() {
+        return DrivePhotoLoader.uploadFile(file).then(function(result) {
+          if (result && result.success) {
+            completed++;
+          } else {
+            failed++;
+          }
+        }).catch(function() {
+          failed++;
+        }).then(function() {
+          status.textContent = t('gallery_upload_uploading') + ' (' + (completed + failed) + '/' + total + ')';
+        });
+      });
+    });
+
+    chain.then(function() {
+      btn.classList.remove('uploading');
+      input.value = '';
+      if (failed === 0) {
+        status.textContent = '✓ ' + completed + ' ' + t('gallery_upload_success');
+        status.className = 'gallery-upload-status upload-success';
+      } else if (completed > 0) {
+        status.textContent = '✓ ' + completed + ' ' + t('gallery_upload_success') + ' · ' + failed + ' ' + t('gallery_upload_error');
+        status.className = 'gallery-upload-status upload-partial';
+      } else {
+        status.textContent = t('gallery_upload_error');
+        status.className = 'gallery-upload-status upload-error';
+      }
+      // Clear status after 6 seconds
+      setTimeout(function() {
+        status.textContent = '';
+        status.className = 'gallery-upload-status';
+      }, 6000);
+    });
+  });
+}
 
 /* Scroll to top */
 window.addEventListener('scroll', () => {

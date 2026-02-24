@@ -33,7 +33,14 @@ const photoConfig = {
    * Folder ID is the last part of the Drive folder URL:
    *   https://drive.google.com/drive/folders/FOLDER_ID_HERE
    */
-  rootFolderId: '1VWHRsqb3dCWRfVAkx11ENB3JUCXw5pP5'
+  rootFolderId: '1VWHRsqb3dCWRfVAkx11ENB3JUCXw5pP5',
+
+  /* ── Upload Script URL ──
+   * Deploy the Google Apps Script (see google-apps-script.js) and
+   * paste the web app URL here. Leave empty to disable uploads.
+   * Looks like: https://script.google.com/macros/s/XXXX.../exec
+   */
+  uploadScriptUrl: ''
 };
 
 
@@ -168,5 +175,34 @@ const DrivePhotoLoader = {
   // Convenience: discover root folder
   discoverRoot: function() {
     return this.discoverFolder(photoConfig.rootFolderId);
+  },
+
+  // Upload a single file to the user-content Drive folder via Apps Script
+  // file: a File object from <input type="file">
+  // Returns a promise: { success: true/false }
+  uploadFile: function(file) {
+    var url = photoConfig.uploadScriptUrl;
+    if (!url) return Promise.reject(new Error('Upload not configured'));
+
+    return new Promise(function(resolve, reject) {
+      var reader = new FileReader();
+      reader.onload = function() {
+        // reader.result is "data:<mime>;base64,<data>"
+        var base64 = reader.result.split(',')[1];
+        fetch(url, {
+          method: 'POST',
+          body: JSON.stringify({
+            fileName: file.name,
+            mimeType: file.type,
+            data: base64
+          })
+        })
+        .then(function(response) { return response.json(); })
+        .then(function(result) { resolve(result); })
+        .catch(function(err) { reject(err); });
+      };
+      reader.onerror = function() { reject(new Error('Failed to read file')); };
+      reader.readAsDataURL(file);
+    });
   }
 };

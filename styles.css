@@ -308,10 +308,11 @@ section { padding:56px 16px; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 14px;
   background: linear-gradient(135deg, var(--crimson), var(--deep-red));
   border-radius: 10px;
-  padding: 14px 24px;
+  padding: 12px 24px;
+  flex-wrap: wrap;
 }
 .gallery-upload-text {
   font-family: 'Noto Sans Telugu', sans-serif;
@@ -328,16 +329,31 @@ section { padding:56px 16px; }
   font-weight: 700;
   padding: 8px 20px;
   border-radius: 20px;
-  text-decoration: none;
   white-space: nowrap;
+  cursor: pointer;
   transition: transform .2s, box-shadow .2s;
 }
 .gallery-upload-btn:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 16px rgba(0,0,0,.2);
 }
+.gallery-upload-btn.uploading {
+  opacity: .6;
+  pointer-events: none;
+}
+.gallery-upload-status {
+  font-family: 'Noto Sans Telugu', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.gallery-upload-status:empty { display: none; }
+.upload-progress { color: rgba(255,255,255,.8); }
+.upload-success { color: #90EE90; }
+.upload-partial { color: #FFD700; }
+.upload-error { color: #FFB0B0; }
 @media(max-width:600px) {
-  .gallery-upload-banner { flex-direction: column; gap: 10px; text-align: center; padding: 14px 18px; }
+  .gallery-upload-banner { flex-direction: column; gap: 10px; text-align: center; padding: 12px 18px; }
 }
 
 /* UPDATES */
