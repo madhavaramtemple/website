@@ -40,7 +40,7 @@ const photoConfig = {
    * paste the web app URL here. Leave empty to disable uploads.
    * Looks like: https://script.google.com/macros/s/XXXX.../exec
    */
-  uploadScriptUrl: ''
+  uploadScriptUrl: 'https://script.google.com/macros/s/AKfycbw7GR5Axqyd65w4rZheWv8mdg3M4OftMx9OIp-ViAcRJmCR8dsOieTcMm9fWykvDukx/exec'
 };
 
 
