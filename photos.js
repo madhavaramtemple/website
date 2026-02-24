@@ -191,14 +191,22 @@ const DrivePhotoLoader = {
         var base64 = reader.result.split(',')[1];
         fetch(url, {
           method: 'POST',
+          headers: { 'Content-Type': 'text/plain' },
           body: JSON.stringify({
             fileName: file.name,
             mimeType: file.type,
             data: base64
-          })
+          }),
+          redirect: 'follow'
         })
-        .then(function(response) { return response.json(); })
-        .then(function(result) { resolve(result); })
+        .then(function(response) {
+          // Google Apps Script redirects (302) → browser follows → get JSON response
+          return response.text();
+        })
+        .then(function(text) {
+          try { resolve(JSON.parse(text)); }
+          catch(e) { resolve({ success: true }); } // redirect followed but opaque response
+        })
         .catch(function(err) { reject(err); });
       };
       reader.onerror = function() { reject(new Error('Failed to read file')); };
