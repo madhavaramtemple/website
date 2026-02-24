@@ -557,6 +557,11 @@ const translations = {
     album_send_photos: "📧 చిత్రాలు పంపండి: madhavaramtemple@gmail.com",
     album_view_full: "📷 Google Photos లో పూర్తి ఆల్బమ్ చూడండి",
     album_photos_loading: "చిత్రాలు లోడ్ అవుతున్నాయి...",
+    album_others: "ఇతరాలు",
+    album_load_error: "చిత్రాలు లోడ్ చేయడంలో లోపం. దయచేసి మళ్ళీ ప్రయత్నించండి.",
+    gallery_loading: "ఆల్బమ్‌లు లోడ్ అవుతున్నాయి...",
+    gallery_error: "గ్యాలరీ లోడ్ చేయడంలో లోపం.",
+    gallery_empty: "చిత్రాలు ఇంకా అందుబాటులో లేవు.",
 
     // ===== CONTACT FORM JS (mailto template) =====
     js_contact_default_name: "పేరు తెలియదు",
@@ -1146,6 +1151,11 @@ const translations = {
     album_send_photos: "📧 Send photos to: madhavaramtemple@gmail.com",
     album_view_full: "📷 View Full Album on Google Photos",
     album_photos_loading: "Loading photos...",
+    album_others: "Others",
+    album_load_error: "Failed to load photos. Please try again.",
+    gallery_loading: "Loading albums...",
+    gallery_error: "Failed to load gallery.",
+    gallery_empty: "No photos available yet.",
 
     // ===== CONTACT FORM JS (mailto template) =====
     js_contact_default_name: "Name not provided",

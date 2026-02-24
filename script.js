@@ -254,201 +254,231 @@ function donate99() {
 }
 
 
-/* ===== ALBUM SYSTEM ===== */
+/* ===== DYNAMIC ALBUM SYSTEM ===== */
+/* Albums are auto-discovered from Google Drive folder structure */
 
-/* Helper: 10-day Brahmotsavam sub-albums */
-function makeDaySubAlbums() {
-  return [
-    { id: 'day1',  titleKey: 'album_day1',  icon: '🚩', thumb: '', photos: [] },
-    { id: 'day2',  titleKey: 'album_day2',  icon: '🦅', thumb: '', photos: [] },
-    { id: 'day3',  titleKey: 'album_day3',  icon: '🐒', thumb: '', photos: [] },
-    { id: 'day4',  titleKey: 'album_day4',  icon: '🐘', thumb: '', photos: [] },
-    { id: 'day5',  titleKey: 'album_day5',  icon: '☀️', thumb: '', photos: [] },
-    { id: 'day6',  titleKey: 'album_day6',  icon: '🌙', thumb: '', photos: [] },
-    { id: 'day7',  titleKey: 'album_day7',  icon: '🛞', thumb: '', photos: [] },
-    { id: 'day8',  titleKey: 'album_day8',  icon: '🐎', thumb: '', photos: [] },
-    { id: 'day9',  titleKey: 'album_day9',  icon: '💐', thumb: '', photos: [] },
-    { id: 'day10', titleKey: 'album_day10', icon: '🪷', thumb: '', photos: [] }
-  ];
+/* Utility: escape HTML special characters in Drive folder names */
+function escapeHtml(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 }
 
-const albumData = {
-  'brahmotsavalu': {
-    titleKey: 'album_brahmotsavalu',
-    icon: '🎊',
-    years: [
-      {
-        id: 'before-2025',
-        labelKey: 'album_before_2025',
-        icon: '📜',
-        thumb: '',
-        hasSubAlbums: false,
-        photos: []
-      },
-      {
-        id: '2025',
-        label: '2025',
-        icon: '🪔',
-        thumb: '',
-        hasSubAlbums: true,
-        subAlbums: makeDaySubAlbums()
-      },
-      {
-        id: '2026',
-        label: '2026',
-        icon: '✨',
-        thumb: '',
-        hasSubAlbums: true,
-        subAlbums: makeDaySubAlbums()
-      }
-    ]
-  },
-  'temple-facilities': {
-    titleKey: 'album_temple_facilities',
-    icon: '🛕',
-    singleAlbum: true,
-    photos: []
-  },
-  'daily-poojas': {
-    titleKey: 'album_daily_poojas',
-    icon: '🪔',
-    singleAlbum: true,
-    photos: []
-  },
-  'devotees': {
-    titleKey: 'album_devotees',
-    icon: '🙏',
-    singleAlbum: true,
-    photos: []
-  },
-  'development-activities': {
-    titleKey: 'album_development_activities',
-    icon: '🏗️',
-    singleAlbum: true,
-    photos: []
-  },
-  'old-madhavaram': {
-    titleKey: 'album_old_madhavaram',
-    icon: '🏚️',
-    singleAlbum: true,
-    photos: []
-  }
-};
+/* Color palette for dynamic gallery cards */
+var GALLERY_COLORS = [
+  ['#7B0D1E','#B02030'], ['#7B3A00','#C06020'], ['#1A5C00','#3A8C20'],
+  ['#003070','#1050A0'], ['#5C1A7B','#8C40A0'], ['#8B2252','#C04848'],
+  ['#2A3D00','#4A6C10'], ['#4A1A00','#7A3010']
+];
 
-/* --- Load photos from photoConfig (photos.js) + Google Drive --- */
+/* Breadcrumb navigation state */
+var _albumBreadcrumbs = [];
+var _albumFolderCache = {};
+
+/* --- Load gallery from Google Drive root folder --- */
 async function loadPhotosFromConfig() {
-  if (typeof photoConfig === 'undefined') return;
+  if (typeof photoConfig === 'undefined' || typeof DrivePhotoLoader === 'undefined') return;
+  if (!photoConfig.googleDriveApiKey || !photoConfig.rootFolderId) return;
 
-  // Phase 1: Apply any manual photo URLs immediately
-  applyPhotoConfigToAlbumData();
+  var galleryGrid = document.querySelector('.gallery-grid');
+  if (!galleryGrid) return;
 
-  // Phase 2: Fetch photos from Google Drive if configured
-  if (typeof DrivePhotoLoader !== 'undefined' &&
-      photoConfig.googleDriveApiKey &&
-      photoConfig.driveFolders) {
-    photoConfig._driveLoading = true;
-    try {
-      await DrivePhotoLoader.loadAll();
-    } catch (err) {
-      console.warn('[Photos] Drive loading failed:', err);
-    }
-    photoConfig._driveLoading = false;
-
-    // Re-apply config (now includes Drive photos appended to manual ones)
-    applyPhotoConfigToAlbumData();
+  try {
+    var result = await DrivePhotoLoader.discoverRoot();
+    _albumFolderCache[photoConfig.rootFolderId] = result;
+    renderGalleryGrid(galleryGrid, result);
+  } catch (err) {
+    console.warn('[Gallery] Failed to discover root folder:', err);
+    galleryGrid.innerHTML = '<div class="gallery-error">'
+      + '<span>📂</span><span>' + t('gallery_error') + '</span></div>';
   }
 }
 
-/* Populate albumData from photoConfig.photos */
-function applyPhotoConfigToAlbumData() {
-  if (!photoConfig.photos) return;
-  Object.keys(albumData).forEach(albumKey => {
-    const album = albumData[albumKey];
+/* Render top-level gallery grid from Drive folder discovery */
+function renderGalleryGrid(container, folderData) {
+  var html = '';
+  var colorIndex = 0;
 
-    // Single-album (flat photo grid, no year/day hierarchy)
-    if (album.singleAlbum) {
-      if (photoConfig.photos[albumKey] && photoConfig.photos[albumKey].length > 0) {
-        album.photos = photoConfig.photos[albumKey];
-      }
-      return;
-    }
+  // Render a card for each subfolder
+  folderData.folders.forEach(function(folder) {
+    var colors = GALLERY_COLORS[colorIndex % GALLERY_COLORS.length];
+    html += '<div class="gallery-item" onclick="openDynamicAlbum(\'' + folder.id + '\',\'' + escapeHtml(folder.name).replace(/'/g, "\\'") + '\')">'
+      + '<div class="gallery-placeholder" style="background:linear-gradient(145deg,' + colors[0] + ',' + colors[1] + ')">'
+      + '<span class="gallery-img-icon">📁</span>'
+      + '<span class="gallery-img-label">' + escapeHtml(folder.name) + ' 📂</span>'
+      + '</div></div>';
+    colorIndex++;
+  });
 
-    // Multi-year album (Brahmotsavams etc.)
-    if (!album.years) return;
-    album.years.forEach(year => {
-      const yearPath = albumKey + '/' + year.id;
-      if (photoConfig.photos[yearPath] && photoConfig.photos[yearPath].length > 0) {
-        year.photos = photoConfig.photos[yearPath];
-      }
-      if (year.hasSubAlbums && year.subAlbums) {
-        year.subAlbums.forEach(sub => {
-          const subPath = albumKey + '/' + year.id + '/' + sub.id;
-          if (photoConfig.photos[subPath] && photoConfig.photos[subPath].length > 0) {
-            sub.photos = photoConfig.photos[subPath];
-          }
-        });
-      }
+  // If there are loose images AND also subfolders, add an "Others" card
+  if (folderData.images.length > 0 && folderData.folders.length > 0) {
+    var colors = GALLERY_COLORS[colorIndex % GALLERY_COLORS.length];
+    html += '<div class="gallery-item" onclick="openLooseImages()">'
+      + '<div class="gallery-placeholder" style="background:linear-gradient(145deg,' + colors[0] + ',' + colors[1] + ')">'
+      + '<span class="gallery-img-icon">🖼️</span>'
+      + '<span class="gallery-img-label">' + t('album_others') + ' 📂</span>'
+      + '</div></div>';
+  }
+
+  // If ONLY images (no subfolders), show them directly as gallery cards
+  if (folderData.images.length > 0 && folderData.folders.length === 0) {
+    html = '';
+    folderData.images.forEach(function(img, i) {
+      html += '<div class="gallery-item">'
+        + '<div class="gallery-placeholder" style="background:#222;cursor:pointer;" '
+        + 'onclick="openLightbox(\'' + img.url + '\',\'\',\'' + escapeHtml(img.name).replace(/'/g, "\\'") + '\')">'
+        + '<img src="' + img.url + '" alt="' + escapeHtml(img.name) + '" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:12px;" />'
+        + '</div></div>';
     });
+  }
+
+  if (!html && folderData.folders.length === 0 && folderData.images.length === 0) {
+    html = '<div class="gallery-empty">'
+      + '<span>📂</span><span>' + t('gallery_empty') + '</span></div>';
+  }
+
+  container.innerHTML = html;
+}
+
+/* --- Dynamic album navigation (works at any nesting depth) --- */
+
+function openDynamicAlbum(folderId, folderName) {
+  var overlay = document.getElementById('albumOverlay');
+  var body = document.getElementById('albumModalBody');
+  var crumb = document.getElementById('albumBreadcrumb');
+
+  document.getElementById('albumModalTitle').textContent = folderName;
+
+  // Manage breadcrumb stack
+  if (!overlay.classList.contains('open')) {
+    // Fresh open from gallery grid
+    _albumBreadcrumbs = [];
+  }
+  _albumBreadcrumbs.push({ id: folderId, name: folderName });
+
+  renderBreadcrumbs(crumb);
+
+  // Show loading state
+  body.innerHTML = '<div class="album-loading-msg">'
+    + '<div class="drive-spinner"></div>'
+    + '<span>' + t('album_photos_loading') + '</span></div>';
+
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  // Fetch folder contents (lazy loading with cache)
+  DrivePhotoLoader.discoverFolder(folderId).then(function(result) {
+    _albumFolderCache[folderId] = result;
+    renderAlbumContents(body, result, folderName);
+  }).catch(function(err) {
+    console.warn('[Album] Failed to load folder:', err);
+    body.innerHTML = '<div class="album-empty-msg">'
+      + '<span>' + t('album_load_error') + '</span></div>';
   });
 }
 
-/* Helper: build "View Full Album" link HTML */
-function getViewFullAlbumLink(path) {
-  if (typeof photoConfig === 'undefined' || !photoConfig.albumLinks) return '';
-  const link = photoConfig.albumLinks[path];
-  if (!link) return '';
-  return '<div class="view-full-album">'
-    + '<a href="' + link + '" target="_blank" rel="noopener noreferrer">'
-    + t('album_view_full')
-    + '</a></div>';
-}
+/* Generic album content renderer — works at any nesting level */
+function renderAlbumContents(body, folderData, folderName) {
+  var html = '';
+  var hasSubfolders = folderData.folders.length > 0;
+  var hasImages = folderData.images.length > 0;
 
-/* --- Album navigation --- */
-
-function openAlbum(albumKey) {
-  const album = albumData[albumKey];
-  if (!album) return;
-  const overlay = document.getElementById('albumOverlay');
-  const body    = document.getElementById('albumModalBody');
-  const crumb   = document.getElementById('albumBreadcrumb');
-  document.getElementById('albumModalTitle').textContent = t(album.titleKey);
-  overlay.dataset.currentAlbum = albumKey;
-
-  // Single-album: show flat photo grid directly
-  if (album.singleAlbum) {
-    const albumTitle = t(album.titleKey);
-    crumb.innerHTML = '<span>' + albumTitle + '</span>';
-    const albumLink = getViewFullAlbumLink(albumKey);
-
-    if (photoConfig._driveLoading && (!album.photos || album.photos.length === 0)) {
-      body.innerHTML = '<div class="album-loading-msg">'
-        + '<div class="drive-spinner"></div>'
-        + '<span>' + t('album_photos_loading') + '</span></div>';
-    } else if (!album.photos || album.photos.length === 0) {
-      body.innerHTML = '<div class="album-empty-msg">'
-        + '<div style="font-size:48px;margin-bottom:12px;">' + album.icon + '</div>'
-        + '<strong>' + albumTitle + '</strong><br>'
-        + t('album_photos_upload_soon') + '<br>'
-        + '<span style="font-size:12px;color:#bbb;">' + t('album_send_photos') + '</span></div>'
-        + albumLink;
-    } else {
-      let html = '<div class="album-photo-grid">';
-      album.photos.forEach((photo, i) => {
-        html += '<div class="album-photo-item" onclick="openLightbox(\'' + photo + '\',\'\',\'' + albumTitle + ' — ' + (i + 1) + '\')">'
-          + '<img src="' + photo + '" alt="' + albumTitle + ' ' + (i + 1) + '" loading="lazy" /></div>';
-      });
-      html += '</div>';
-      html += albumLink;
-      body.innerHTML = html;
-    }
-
-    overlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    return;
+  // Show subfolder cards
+  if (hasSubfolders) {
+    html += '<div class="subalbum-grid">';
+    folderData.folders.forEach(function(subfolder) {
+      html += '<div class="subalbum-card" onclick="openDynamicAlbum(\'' + subfolder.id + '\',\'' + escapeHtml(subfolder.name).replace(/'/g, "\\'") + '\')">'
+        + '<div class="subalbum-thumb">📁</div>'
+        + '<div class="subalbum-info"><h5>' + escapeHtml(subfolder.name) + '</h5>'
+        + '</div></div>';
+    });
+    html += '</div>';
   }
 
-  // Multi-year album (Brahmotsavams): show year grid
-  renderYearGrid(album, body, crumb);
+  // Show images
+  if (hasImages) {
+    // If also has subfolders, label as "Others"
+    if (hasSubfolders) {
+      html += '<div class="album-others-section">'
+        + '<h4 class="album-others-heading">' + t('album_others')
+        + ' (' + folderData.images.length + ' ' + t('album_photos_count') + ')</h4>';
+    }
+
+    html += '<div class="album-photo-grid">';
+    var safeFolder = escapeHtml(folderName).replace(/'/g, "\\'");
+    folderData.images.forEach(function(img, i) {
+      html += '<div class="album-photo-item" onclick="openLightbox(\'' + img.url + '\',\'\',\'' + safeFolder + ' — ' + (i + 1) + '\')">'
+        + '<img src="' + img.url + '" alt="' + escapeHtml(img.name) + '" loading="lazy" /></div>';
+    });
+    html += '</div>';
+
+    if (hasSubfolders) {
+      html += '</div>'; // close .album-others-section
+    }
+  }
+
+  // Empty folder
+  if (!hasSubfolders && !hasImages) {
+    html = '<div class="album-empty-msg">'
+      + '<div style="font-size:48px;margin-bottom:12px;">📂</div>'
+      + '<strong>' + escapeHtml(folderName) + '</strong><br>'
+      + t('album_photos_upload_soon') + '</div>';
+  }
+
+  body.innerHTML = html;
+}
+
+/* Render breadcrumb navigation */
+function renderBreadcrumbs(crumbEl) {
+  if (_albumBreadcrumbs.length <= 1) {
+    crumbEl.innerHTML = '<span>' + escapeHtml(_albumBreadcrumbs[0].name) + '</span>';
+    return;
+  }
+  var html = '';
+  _albumBreadcrumbs.forEach(function(item, index) {
+    if (index < _albumBreadcrumbs.length - 1) {
+      html += '<a onclick="navigateToBreadcrumb(' + index + ')">'
+        + escapeHtml(item.name) + '</a>'
+        + ' <span class="sep">›</span> ';
+    } else {
+      html += '<span>' + escapeHtml(item.name) + '</span>';
+    }
+  });
+  crumbEl.innerHTML = html;
+}
+
+/* Navigate back to a breadcrumb level */
+function navigateToBreadcrumb(index) {
+  var target = _albumBreadcrumbs[index];
+  _albumBreadcrumbs = _albumBreadcrumbs.slice(0, index);
+  openDynamicAlbum(target.id, target.name);
+}
+
+/* Open "Others" — loose images from root folder */
+function openLooseImages() {
+  var overlay = document.getElementById('albumOverlay');
+  var body = document.getElementById('albumModalBody');
+  var crumb = document.getElementById('albumBreadcrumb');
+  var title = t('album_others');
+
+  document.getElementById('albumModalTitle').textContent = title;
+  _albumBreadcrumbs = [{ id: 'others', name: title }];
+  renderBreadcrumbs(crumb);
+
+  var cached = _albumFolderCache[photoConfig.rootFolderId];
+  if (cached && cached.images.length > 0) {
+    var html = '<div class="album-photo-grid">';
+    var safeTitle = escapeHtml(title).replace(/'/g, "\\'");
+    cached.images.forEach(function(img, i) {
+      html += '<div class="album-photo-item" onclick="openLightbox(\'' + img.url + '\',\'\',\'' + safeTitle + ' — ' + (i + 1) + '\')">'
+        + '<img src="' + img.url + '" alt="' + escapeHtml(img.name) + '" loading="lazy" /></div>';
+    });
+    html += '</div>';
+    body.innerHTML = html;
+  } else {
+    body.innerHTML = '<div class="album-empty-msg">' + t('album_photos_upload_soon') + '</div>';
+  }
+
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -456,141 +486,7 @@ function openAlbum(albumKey) {
 function closeAlbum() {
   document.getElementById('albumOverlay').classList.remove('open');
   document.body.style.overflow = '';
-}
-
-/* Level 1: Year cards */
-function renderYearGrid(album, body, crumb) {
-  const albumTitle = t(album.titleKey);
-  crumb.innerHTML = '<span>🏠</span> <span class="sep">›</span> <span>' + albumTitle + '</span>';
-  let html = '<div class="subalbum-grid">';
-  album.years.forEach(yr => {
-    const yrLabel = yr.labelKey ? t(yr.labelKey) : yr.label;
-    const thumbHtml = yr.thumb ? '<img src="' + yr.thumb + '" alt="' + yrLabel + '" />' : yr.icon;
-    const countText = yr.hasSubAlbums
-      ? yr.subAlbums.length + ' ' + t('album_days_count')
-      : (yr.photos.length > 0 ? yr.photos.length + ' ' + t('album_photos_count') : t('album_photos_coming_soon'));
-    html += '<div class="subalbum-card" onclick="openYear(\'' + yr.id + '\')">'
-      + '<div class="subalbum-thumb">' + thumbHtml + '</div>'
-      + '<div class="subalbum-info"><h5>' + yrLabel + '</h5>'
-      + '<span>' + countText + '</span></div></div>';
-  });
-  html += '</div>';
-  // Add "View Full Album" link for the main album
-  const albumKey = document.getElementById('albumOverlay').dataset.currentAlbum;
-  html += getViewFullAlbumLink(albumKey);
-  body.innerHTML = html;
-}
-
-/* Level 2: Open a year — show day sub-albums or flat photos */
-function openYear(yearId) {
-  const albumKey = document.getElementById('albumOverlay').dataset.currentAlbum;
-  const album = albumData[albumKey];
-  const year  = album.years.find(y => y.id === yearId);
-  if (!year) return;
-  const body  = document.getElementById('albumModalBody');
-  const crumb = document.getElementById('albumBreadcrumb');
-  const albumTitle = t(album.titleKey);
-  const yrLabel = year.labelKey ? t(year.labelKey) : year.label;
-
-  if (year.hasSubAlbums) {
-    // Show day-wise sub-album grid
-    crumb.innerHTML = '<a onclick="backToYearGrid()">🏠 ' + albumTitle + '</a>'
-      + ' <span class="sep">›</span> <span>' + yrLabel + '</span>';
-    let html = '<div class="subalbum-grid">';
-    year.subAlbums.forEach(sub => {
-      const photoCount = sub.photos.length;
-      const subTitle = sub.titleKey ? t(sub.titleKey) : sub.title;
-      const thumbHtml  = sub.thumb ? '<img src="' + sub.thumb + '" alt="' + subTitle + '" />' : sub.icon;
-      html += '<div class="subalbum-card" onclick="openSubAlbum(\'' + yearId + '\',\'' + sub.id + '\')">'
-        + '<div class="subalbum-thumb">' + thumbHtml + '</div>'
-        + '<div class="subalbum-info"><h5>' + subTitle + '</h5>'
-        + '<span>' + (photoCount > 0 ? photoCount + ' ' + t('album_photos_count') : t('album_photos_coming_soon')) + '</span></div></div>';
-    });
-    html += '</div>';
-    html += getViewFullAlbumLink(albumKey + '/' + yearId);
-    body.innerHTML = html;
-  } else {
-    // Flat photo grid (no day sub-folders)
-    crumb.innerHTML = '<a onclick="backToYearGrid()">🏠 ' + albumTitle + '</a>'
-      + ' <span class="sep">›</span> <span>' + yrLabel + '</span>';
-    const yearAlbumLink = getViewFullAlbumLink(albumKey + '/' + yearId);
-    if (photoConfig._driveLoading && year.photos.length === 0) {
-      body.innerHTML = '<div class="album-loading-msg">'
-        + '<div class="drive-spinner"></div>'
-        + '<span>' + t('album_photos_loading') + '</span></div>';
-      return;
-    }
-    if (year.photos.length === 0) {
-      body.innerHTML = '<div class="album-empty-msg">'
-        + '<div style="font-size:48px;margin-bottom:12px;">' + year.icon + '</div>'
-        + '<strong>' + yrLabel + '</strong><br>'
-        + t('album_photos_upload_soon') + '<br>'
-        + '<span style="font-size:12px;color:#bbb;">' + t('album_send_photos') + '</span></div>'
-        + yearAlbumLink;
-    } else {
-      let html = '<div class="album-photo-grid">';
-      year.photos.forEach((photo, i) => {
-        html += '<div class="album-photo-item" onclick="openLightbox(\'' + photo + '\',\'\',\'' + yrLabel + ' — ' + (i + 1) + '\')">'
-          + '<img src="' + photo + '" alt="' + yrLabel + ' ' + (i + 1) + '" loading="lazy" /></div>';
-      });
-      html += '</div>';
-      html += yearAlbumLink;
-      body.innerHTML = html;
-    }
-  }
-}
-
-/* Level 3: Open a day sub-album within a year */
-function openSubAlbum(yearId, subAlbumId) {
-  const albumKey = document.getElementById('albumOverlay').dataset.currentAlbum;
-  const album = albumData[albumKey];
-  const year  = album.years.find(y => y.id === yearId);
-  const sub   = year.subAlbums.find(s => s.id === subAlbumId);
-  if (!sub) return;
-  const body  = document.getElementById('albumModalBody');
-  const crumb = document.getElementById('albumBreadcrumb');
-  const albumTitle = t(album.titleKey);
-  const yrLabel = year.labelKey ? t(year.labelKey) : year.label;
-  const subTitle = sub.titleKey ? t(sub.titleKey) : sub.title;
-
-  crumb.innerHTML = '<a onclick="backToYearGrid()">🏠 ' + albumTitle + '</a>'
-    + ' <span class="sep">›</span> <a onclick="openYear(\'' + yearId + '\')">' + yrLabel + '</a>'
-    + ' <span class="sep">›</span> <span>' + subTitle + '</span>';
-
-  const subAlbumLink = getViewFullAlbumLink(albumKey + '/' + yearId + '/' + subAlbumId);
-
-  if (photoConfig._driveLoading && sub.photos.length === 0) {
-    body.innerHTML = '<div class="album-loading-msg">'
-      + '<div class="drive-spinner"></div>'
-      + '<span>' + t('album_photos_loading') + '</span></div>';
-    return;
-  }
-
-  if (sub.photos.length === 0) {
-    body.innerHTML = '<div class="album-empty-msg">'
-      + '<div style="font-size:48px;margin-bottom:12px;">' + sub.icon + '</div>'
-      + '<strong>' + subTitle + '</strong><br>'
-      + t('album_photos_upload_soon') + '<br>'
-      + '<span style="font-size:12px;color:#bbb;">' + t('album_send_photos') + '</span></div>'
-      + subAlbumLink;
-    return;
-  }
-
-  let html = '<div class="album-photo-grid">';
-  sub.photos.forEach((photo, i) => {
-    html += '<div class="album-photo-item" onclick="openLightbox(\'' + photo + '\',\'\',\'' + subTitle + ' — ' + (i + 1) + '\')">'
-      + '<img src="' + photo + '" alt="' + subTitle + ' ' + (i + 1) + '" loading="lazy" /></div>';
-  });
-  html += '</div>';
-  html += subAlbumLink;
-  body.innerHTML = html;
-}
-
-/* Back to year grid (level 1) */
-function backToYearGrid() {
-  const albumKey = document.getElementById('albumOverlay').dataset.currentAlbum;
-  const album = albumData[albumKey];
-  renderYearGrid(album, document.getElementById('albumModalBody'), document.getElementById('albumBreadcrumb'));
+  _albumBreadcrumbs = [];
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAlbum(); });

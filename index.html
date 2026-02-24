@@ -38,7 +38,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://checkout.razorpay.com https://www.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://lh3.googleusercontent.com https://www.googleapis.com https://*.google.com https://*.gstatic.com; frame-src https://www.google.com https://api.razorpay.com; connect-src 'self' https://www.googleapis.com https://lumberjack.razorpay.com https://api.razorpay.com;" />
 
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Telugu:wght@300;400;500;600;700;900&family=Noto+Sans+Telugu:wght@300;400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 
   <!-- Structured Data: Hindu Temple -->
   <script type="application/ld+json">
@@ -608,12 +608,11 @@
       <div class="underline"></div>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item" onclick="openAlbum('temple-facilities')" title="ఆలయ సౌకర్యాలు ఆల్బమ్ చూడండి" data-i18n-title="gallery_1_title"><div class="gallery-placeholder"><span class="gallery-img-icon">🛕</span><span class="gallery-img-label" data-i18n="gallery_1_label">ఆలయ సౌకర్యాలు 📂</span></div></div>
-      <div class="gallery-item" onclick="openAlbum('old-madhavaram')" title="పాత మాధవరం ఆలయం ఆల్బమ్ చూడండి" data-i18n-title="gallery_2_title"><div class="gallery-placeholder"><span class="gallery-img-icon">🏚️</span><span class="gallery-img-label" data-i18n="gallery_2_label">పాత మాధవరం ఆలయం 📂</span></div></div>
-      <div class="gallery-item" onclick="openAlbum('daily-poojas')" title="నిత్య పూజలు ఆల్బమ్ చూడండి" data-i18n-title="gallery_3_title"><div class="gallery-placeholder"><span class="gallery-img-icon">🪔</span><span class="gallery-img-label" data-i18n="gallery_3_label">నిత్య పూజలు 📂</span></div></div>
-      <div class="gallery-item" onclick="openAlbum('brahmotsavalu')" title="బ్రహ్మోత్సవాలు ఆల్బమ్ చూడండి" data-i18n-title="gallery_4_title"><div class="gallery-placeholder"><span class="gallery-img-icon">🎊</span><span class="gallery-img-label" data-i18n="gallery_4_label">బ్రహ్మోత్సవాలు 📂</span></div></div>
-      <div class="gallery-item" onclick="openAlbum('devotees')" title="భక్తులు ఆల్బమ్ చూడండి" data-i18n-title="gallery_5_title"><div class="gallery-placeholder"><span class="gallery-img-icon">🙏</span><span class="gallery-img-label" data-i18n="gallery_5_label">భక్తులు 📂</span></div></div>
-      <div class="gallery-item" onclick="openAlbum('development-activities')" title="అభివృద్ధి కార్యక్రమాలు ఆల్బమ్ చూడండి" data-i18n-title="gallery_6_title"><div class="gallery-placeholder"><span class="gallery-img-icon">🏗️</span><span class="gallery-img-label" data-i18n="gallery_6_label">అభివృద్ధి కార్యక్రమాలు 📂</span></div></div>
+      <!-- Dynamic album cards loaded from Google Drive -->
+      <div class="gallery-loading">
+        <div class="drive-spinner"></div>
+        <span data-i18n="gallery_loading">ఆల్బమ్‌లు లోడ్ అవుతున్నాయి...</span>
+      </div>
     </div>
     </div>
     <p style="text-align:center;margin-top:18px;font-family:'Noto Sans Telugu',sans-serif;font-size:13px;color:#999;" data-i18n="gallery_send_photos">📷 మీ ఆలయ చిత్రాలు పంపడానికి: madhavaramtemple@gmail.com</p>
@@ -630,15 +629,15 @@
     </div>
     <div class="updates-grid">
       <div class="update-card">
-        <div class="update-card-top"><span class="update-type-icon"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFF3E0"/><path d="M9 17h6M10 19.5h4" stroke="#E8880F" stroke-width="2.5" stroke-linecap="round"/><path d="M12 3a6 6 0 0 0-3.5 10.9V15h7v-1.1A6 6 0 0 0 12 3z" fill="#E8880F" opacity="0.35"/><path d="M12 3a6 6 0 0 0-3.5 10.9V15h7v-1.1A6 6 0 0 0 12 3z" stroke="#E8880F" stroke-width="2.5" fill="none"/><line x1="12" y1="0.5" x2="12" y2="3" stroke="#E8880F" stroke-width="2.5" stroke-linecap="round"/><line x1="4.5" y1="4.5" x2="6.5" y2="6.5" stroke="#E8880F" stroke-width="2.5" stroke-linecap="round"/><line x1="19.5" y1="4.5" x2="17.5" y2="6.5" stroke="#E8880F" stroke-width="2.5" stroke-linecap="round"/></svg></span><div><div class="update-type-label" data-i18n="updates_1_type">లైటింగ్ నవీకరణ</div><div class="update-date-small" data-i18n="updates_1_date">మార్చి 10, 2025</div></div></div>
+        <div class="update-card-top"><span class="update-type-icon"><svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none"><path d="M9 17h6M10 19.5h4" stroke="#D4770B" stroke-width="2.5" stroke-linecap="round"/><path d="M12 3a6 6 0 0 0-3.5 10.9V15h7v-1.1A6 6 0 0 0 12 3z" fill="#E8880F" opacity="0.25"/><path d="M12 3a6 6 0 0 0-3.5 10.9V15h7v-1.1A6 6 0 0 0 12 3z" stroke="#D4770B" stroke-width="2.5" fill="none"/><line x1="12" y1="0.5" x2="12" y2="3" stroke="#D4770B" stroke-width="2.5" stroke-linecap="round"/><line x1="4.5" y1="4.5" x2="6.5" y2="6.5" stroke="#D4770B" stroke-width="2.5" stroke-linecap="round"/><line x1="19.5" y1="4.5" x2="17.5" y2="6.5" stroke="#D4770B" stroke-width="2.5" stroke-linecap="round"/></svg></span><div><div class="update-type-label" data-i18n="updates_1_type">లైటింగ్ నవీకరణ</div><div class="update-date-small" data-i18n="updates_1_date">మార్చి 10, 2025</div></div></div>
         <div class="update-card-body"><h4 data-i18n="updates_1_title">ఆలయ గోపురం లైటింగ్ పనులు జరుగుతున్నాయి</h4><p data-i18n="updates_1_desc">నేమ్ బోర్డ్ లైటింగ్ అమర్చబడింది. గోపురం శాశ్వత సీరియల్ లైటింగ్, డోమ్ లైట్ మరియు ఫోకస్ లైట్ల పనులు జరుగుతున్నాయి.</p><a href="#" class="read-more" data-i18n="updates_1_readmore">మరింత చదవండి →</a></div>
       </div>
       <div class="update-card">
-        <div class="update-card-top"><span class="update-type-icon"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFF3E0"/><path d="M18 4L12 9H7v6h5l6 5V4z" fill="#E8880F" opacity="0.4"/><path d="M18 4L12 9H7v6h5l6 5V4z" stroke="#E8880F" stroke-width="2.5" fill="none" stroke-linejoin="round"/><path d="M21 8c1.2 1.8 1.2 6.2 0 8" stroke="#E8880F" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span><div><div class="update-type-label" data-i18n="updates_2_type">ముఖ్యమైన ప్రకటన</div><div class="update-date-small" data-i18n="updates_2_date">మార్చి 5, 2025</div></div></div>
+        <div class="update-card-top"><span class="update-type-icon"><svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none"><path d="M18 4L12 9H7v6h5l6 5V4z" fill="#E8880F" opacity="0.2"/><path d="M18 4L12 9H7v6h5l6 5V4z" stroke="#D4770B" stroke-width="2.5" fill="none" stroke-linejoin="round"/><path d="M21 8c1.2 1.8 1.2 6.2 0 8" stroke="#D4770B" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span><div><div class="update-type-label" data-i18n="updates_2_type">ముఖ్యమైన ప్రకటన</div><div class="update-date-small" data-i18n="updates_2_date">మార్చి 5, 2025</div></div></div>
         <div class="update-card-body"><h4 data-i18n="updates_2_title">ఉగాది సందర్భంగా ప్రత్యేక పూజలు</h4><p data-i18n="updates_2_desc">ఉగాది పండుగ రోజు ఉదయం 5:30 గంటలకు ప్రత్యేక పంచాంగ శ్రవణం, పూర్ణాహుతి నిర్వహించబడతాయి.</p><a href="#" class="read-more" data-i18n="updates_2_readmore">మరింత చదవండి →</a></div>
       </div>
       <div class="update-card">
-        <div class="update-card-top"><span class="update-type-icon"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFF3E0"/><path d="M7 14h10c0 0 0 5-5 5s-5-5-5-5z" fill="#E8880F" opacity="0.4"/><path d="M7 14h10c0 0 0 5-5 5s-5-5-5-5z" stroke="#E8880F" stroke-width="2.5" fill="none" stroke-linejoin="round"/><path d="M5 14h14" stroke="#E8880F" stroke-width="2.5" stroke-linecap="round"/><path d="M10 10c0-1.2 .9-2 2-2s2 .8 2 2" stroke="#E8880F" stroke-width="2.5" fill="none"/><circle cx="12" cy="6.5" r="2" fill="#E8880F"/></svg></span><div><div class="update-type-label" data-i18n="updates_3_type">సేవా కార్యక్రమం</div><div class="update-date-small" data-i18n="updates_3_date">ఫిబ్రవరి 28, 2025</div></div></div>
+        <div class="update-card-top"><span class="update-type-icon"><svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none"><path d="M7 14h10c0 0 0 5-5 5s-5-5-5-5z" fill="#E8880F" opacity="0.2"/><path d="M7 14h10c0 0 0 5-5 5s-5-5-5-5z" stroke="#D4770B" stroke-width="2.5" fill="none" stroke-linejoin="round"/><path d="M5 14h14" stroke="#D4770B" stroke-width="2.5" stroke-linecap="round"/><path d="M10 10c0-1.2 .9-2 2-2s2 .8 2 2" stroke="#D4770B" stroke-width="2.5" fill="none"/><circle cx="12" cy="6.5" r="2" fill="#D4770B"/></svg></span><div><div class="update-type-label" data-i18n="updates_3_type">సేవా కార్యక్రమం</div><div class="update-date-small" data-i18n="updates_3_date">ఫిబ్రవరి 28, 2025</div></div></div>
         <div class="update-card-body"><h4 data-i18n="updates_3_title">అన్నదాన కార్యక్రమం విస్తరణ</h4><p data-i18n="updates_3_desc">ప్రతి పౌర్ణమి 200 మందికి అన్నదానం అందించాలనే లక్ష్యంతో కార్యక్రమం విస్తరించబడింది.</p><a href="#" class="read-more" data-i18n="updates_3_readmore">మరింత చదవండి →</a></div>
       </div>
     </div>
@@ -1039,9 +1038,9 @@
 <!-- SCROLL TO TOP -->
 <button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" data-i18n-aria="scroll_top_aria" aria-label="పై కి వెళ్ళండి">▲</button>
 
-<script src="photos.js?v=2"></script>
-<script src="translations.js?v=2"></script>
-<script src="script.js?v=2"></script>
+<script src="photos.js?v=3"></script>
+<script src="translations.js?v=3"></script>
+<script src="script.js?v=3"></script>
 
 <!-- Razorpay SDK -->
 <!-- Razorpay SDK: SRI not added because Razorpay CDN content can change. CSP restricts to checkout.razorpay.com only. -->

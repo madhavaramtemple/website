@@ -252,6 +252,34 @@ section { padding:56px 16px; }
 .gallery-img-icon { font-size:clamp(28px,5vw,48px); }
 .gallery-img-label { color:rgba(255,255,255,.8); font-size:11px; font-family:'Noto Sans Telugu',sans-serif; text-align:center; padding:0 6px; }
 
+/* Gallery dynamic loading states */
+.gallery-loading, .gallery-error, .gallery-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--text-mid);
+  font-size: 14px;
+  font-family: 'Noto Sans Telugu', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* "Others" section inside album modal */
+.album-others-section {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(201,151,58,.2);
+}
+.album-others-heading {
+  font-family: 'Noto Sans Telugu', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--crimson);
+  margin-bottom: 14px;
+}
+
 /* UPDATES */
 .updates-section { background:linear-gradient(180deg,var(--cream),#FDE8CC); }
 .updates-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
