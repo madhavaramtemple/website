@@ -215,7 +215,7 @@ const translations = {
     donation_card_4_title: "మహాదాత",
     donation_card_4_desc: "ప్రత్యేక గౌరవం, ఆలయ స్తంభంపై పేరు చెక్కబడుతుంది",
     donation_btn: "💛 ఇప్పుడే విరాళం ఇవ్వండి",
-    donation_bank_heading: "🏦 బ్యాంక్ వివరాలు",
+    donation_bank_heading: "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#E8880F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' style='vertical-align:middle;margin-right:8px;'><path d='M3 21h18'/><path d='M3 10h18'/><path d='M12 3l9 7H3l9-7z'/><path d='M5 10v8'/><path d='M9 10v8'/><path d='M15 10v8'/><path d='M19 10v8'/></svg> బ్యాంక్ వివరాలు",
     donation_bank_account_label: "ఖాతా పేరు",
     donation_bank_account_value: "శ్రీ భావనారాయణ స్వామి ఆలయ ట్రస్ట్",
     donation_bank_number_label: "ఖాతా నంబర్",
@@ -227,7 +227,7 @@ const translations = {
     donation_bank_location_label: "బ్యాంక్ శాఖ",
     donation_bank_location_value: "కొత్త మాధవరం",
     donation_upi_label: "UPI ద్వారా విరాళం ఇవ్వండి",
-    donation_upi_id: "📱 madhavaramtemple@sbi",
+    donation_upi_id: "<img src='images/upi.svg' alt='UPI' style='height:24px;object-fit:contain;vertical-align:middle;margin-right:8px;background:#fff;padding:3px 8px;border-radius:4px;' /> madhavaramtemple@sbi",
 
     // ===== ₹99 MONTHLY DONATION =====
     monthly99_badge: "నెలవారీ సేవ",
@@ -429,7 +429,7 @@ const translations = {
     contact_email_value: "madhavaramtemple@gmail.com",
     contact_timings_label: "ఆలయ దర్శన సమయాలు",
     contact_timings_value: "సోమ – శుక్ర: 6:00 AM – 11:00 AM &amp; 5:00 PM – 8:30 PM<br/>శనివారం: 6:00 AM – 11:00 AM &amp; 5:00 PM – 10:30 PM<br/>ఆదివారం: 6:00 AM – 11:00 AM &amp; 5:00 PM – 8:30 PM",
-    contact_form_heading: "🙏 మాకు సందేశం పంపండి",
+    contact_form_heading: "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#E8880F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' style='vertical-align:middle;margin-right:8px;'><path d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z'/><line x1='9' y1='9' x2='15' y2='9'/><line x1='9' y1='13' x2='13' y2='13'/></svg> మాకు సందేశం పంపండి",
     contact_form_name_label: "మీ పేరు",
     contact_form_name_placeholder: "మీ పూర్తి పేరు రాయండి",
     contact_form_phone_label: "ఫోన్ నంబర్",
@@ -488,8 +488,8 @@ const translations = {
     modal_email_placeholder: "receipt కోసం ఇమెయిల్",
     modal_pay_btn: "💳 Razorpay తో చెల్లించండి (UPI / Card / Net Banking)",
     modal_or: "లేదా",
-    modal_upi_label: "📱 నేరుగా UPI ద్వారా చెల్లించండి:",
-    modal_upi_id: "madhavaramtemple@sbi",
+    modal_upi_label: "నేరుగా UPI ద్వారా చెల్లించండి:",
+    modal_upi_id: "<img src='images/upi.svg' alt='UPI' style='height:24px;object-fit:contain;vertical-align:middle;margin-right:8px;background:#fff;padding:3px 8px;border-radius:4px;' /> madhavaramtemple@sbi",
     modal_upi_apps: "Google Pay / PhonePe / Paytm / BHIM అన్నీ పనిచేస్తాయి",
 
     // ===== LIGHTBOX =====
@@ -798,7 +798,7 @@ const translations = {
     donation_card_4_title: "Mahadaata (Grand Donor)",
     donation_card_4_desc: "Special honor, name engraved on temple pillar",
     donation_btn: "💛 Viraalam Now",
-    donation_bank_heading: "🏦 Bank Details",
+    donation_bank_heading: "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#E8880F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' style='vertical-align:middle;margin-right:8px;'><path d='M3 21h18'/><path d='M3 10h18'/><path d='M12 3l9 7H3l9-7z'/><path d='M5 10v8'/><path d='M9 10v8'/><path d='M15 10v8'/><path d='M19 10v8'/></svg> Bank Details",
     donation_bank_account_label: "Account Name",
     donation_bank_account_value: "Sri Bhavanarayana Swamy Alaya Trust",
     donation_bank_number_label: "Account Number",
@@ -809,8 +809,8 @@ const translations = {
     donation_bank_name_value: "State Bank of India",
     donation_bank_location_label: "Bank Branch",
     donation_bank_location_value: "Kotha Madhavaram",
-    donation_upi_label: "Viraalam via UPI",
-    donation_upi_id: "📱 madhavaramtemple@sbi",
+    donation_upi_label: "Donate via UPI",
+    donation_upi_id: "<img src='images/upi.svg' alt='UPI' style='height:24px;object-fit:contain;vertical-align:middle;margin-right:8px;background:#fff;padding:3px 8px;border-radius:4px;' /> madhavaramtemple@sbi",
 
     // ===== ₹99 MONTHLY DONATION =====
     monthly99_badge: "MONTHLY SEVA",
@@ -1012,7 +1012,7 @@ const translations = {
     contact_email_value: "madhavaramtemple@gmail.com",
     contact_timings_label: "Temple Darshan Timings",
     contact_timings_value: "Mon – Fri: 6:00 AM – 11:00 AM &amp; 5:00 PM – 8:30 PM<br/>Saturday: 6:00 AM – 11:00 AM &amp; 5:00 PM – 10:30 PM<br/>Sunday: 6:00 AM – 11:00 AM &amp; 5:00 PM – 8:30 PM",
-    contact_form_heading: "🙏 Send Us a Message",
+    contact_form_heading: "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#E8880F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' style='vertical-align:middle;margin-right:8px;'><path d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z'/><line x1='9' y1='9' x2='15' y2='9'/><line x1='9' y1='13' x2='13' y2='13'/></svg> Send Us a Message",
     contact_form_name_label: "Your Name",
     contact_form_name_placeholder: "Enter your full name",
     contact_form_phone_label: "Phone Number",
@@ -1071,8 +1071,8 @@ const translations = {
     modal_email_placeholder: "Email for receipt",
     modal_pay_btn: "💳 Pay with Razorpay (UPI / Card / Net Banking)",
     modal_or: "or",
-    modal_upi_label: "📱 Pay directly via UPI:",
-    modal_upi_id: "madhavaramtemple@sbi",
+    modal_upi_label: "Pay directly via UPI:",
+    modal_upi_id: "<img src='images/upi.svg' alt='UPI' style='height:24px;object-fit:contain;vertical-align:middle;margin-right:8px;background:#fff;padding:3px 8px;border-radius:4px;' /> madhavaramtemple@sbi",
     modal_upi_apps: "Google Pay / PhonePe / Paytm / BHIM — all supported",
 
     // ===== LIGHTBOX =====

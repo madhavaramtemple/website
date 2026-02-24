@@ -214,7 +214,7 @@ section { padding:56px 16px; }
 .bank-row:last-child { border-bottom:none; }
 .bank-label { color:rgba(255,240,200,.7); white-space:nowrap; }
 .bank-value { color:#FFE8A0; font-weight:600; text-align:right; }
-.upi-section { text-align:center; margin-top:14px; padding-top:14px; border-top:1px dashed rgba(201,151,58,.2); }
+.upi-section { text-align:center; margin-top:6px; padding-top:10px; border-top:1px dashed rgba(201,151,58,.2); }
 .upi-label { color:rgba(255,240,200,.7); font-family:'Noto Sans Telugu',sans-serif; font-size:13px; }
 .upi-id { color:var(--bright-gold); font-size:18px; font-weight:700; margin-top:4px; }
 
