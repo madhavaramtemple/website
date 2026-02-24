@@ -152,7 +152,8 @@ section { padding:56px 16px; }
 .timings-compact { background:#fff; border-radius:12px; box-shadow:0 6px 24px rgba(0,0,0,.08); border:1px solid rgba(201,151,58,.2); overflow:hidden; }
 .timings-main { display:grid; grid-template-columns:1fr auto 1fr; }
 .timing-col { padding:16px 20px; }
-.timing-col-header { font-family:'Noto Sans Telugu',sans-serif; font-size:14px; font-weight:700; color:var(--crimson); margin-bottom:8px; padding-bottom:8px; border-bottom:2px solid rgba(201,151,58,.3); }
+.timing-col-header { font-family:'Noto Sans Telugu',sans-serif; font-size:14px; font-weight:700; color:var(--crimson); margin-bottom:8px; padding-bottom:8px; border-bottom:2px solid rgba(201,151,58,.3); display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 8px; }
+.timing-col-sub { font-size:11px; font-weight:600; color:#fff; background:var(--crimson); padding:2px 8px; border-radius:10px; white-space:nowrap; }
 .timing-divider { width:1px; background:rgba(201,151,58,.25); }
 .timing-row { display:flex; justify-content:space-between; align-items:center; padding:5px 0; gap:8px; }
 .timing-row:not(:last-child) { border-bottom:1px dashed rgba(201,151,58,.15); }
