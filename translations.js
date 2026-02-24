@@ -598,7 +598,19 @@ const translations = {
     committee_member_8_alt: "శ్రీ వెంకటేసు బోడగల - సభ్యుడు",
     committee_member_9_alt: "శ్రీ కృష్ణయ్య మునగపాటి - సభ్యుడు",
     committee_member_10_alt: "శ్రీ సత్య ప్రసాద్ గౌడ - సభ్యుడు",
-    committee_member_11_alt: "శ్రీ పెద్ద రెడ్డయ్య అవ్వారు - సభ్యుడు"
+    committee_member_11_alt: "శ్రీ పెద్ద రెడ్డయ్య అవ్వారు - సభ్యుడు",
+
+    // ===== WHATSAPP GROUP =====
+    whatsapp_title: "ఆలయ WhatsApp గ్రూప్‌లో చేరండి",
+    whatsapp_group_name: "శ్రీ భావనారాయణ స్వామి ఆలయం — కొత్త మాధవరం",
+    whatsapp_desc: "పూజా సమయాలు, ఉత్సవాల ఫోటోలు, ముఖ్యమైన ప్రకటనలు — అన్ని అప్‌డేట్లు నేరుగా మీ ఫోన్‌కు వస్తాయి. మీ కుటుంబ సభ్యులను, స్నేహితులను కూడా ఆహ్వానించండి!",
+    whatsapp_benefit_1: "📸 ఉత్సవాల ఫోటోలు",
+    whatsapp_benefit_2: "🔔 పూజా రిమైండర్లు",
+    whatsapp_benefit_3: "📢 ముఖ్య ప్రకటనలు",
+    whatsapp_benefit_4: "🎊 బ్రహ్మోత్సవ అప్‌డేట్లు",
+    whatsapp_btn: "గ్రూప్ జాయిన్ అవ్వండి",
+    whatsapp_share_note: "🙏 ఈ లింక్ మీ కుటుంబం, బంధువులు, పద్మశాలీ మిత్రులకు షేర్ చేయండి",
+    contribute_cta_join_group: "💬 WhatsApp గ్రూప్ జాయిన్"
   },
 
   en: {
@@ -1200,7 +1212,19 @@ const translations = {
     committee_member_8_alt: "Sri Venkatesu Bodagala - Member",
     committee_member_9_alt: "Sri Krishnaiah Munagapati - Member",
     committee_member_10_alt: "Sri Satya Prasad Goud - Member",
-    committee_member_11_alt: "Sri Pedda Reddaiah Avvaru - Member"
+    committee_member_11_alt: "Sri Pedda Reddaiah Avvaru - Member",
+
+    // ===== WHATSAPP GROUP =====
+    whatsapp_title: "Join Our Temple WhatsApp Group",
+    whatsapp_group_name: "Sri Bhavanarayana Swamy Temple — Kotha Madhavaram",
+    whatsapp_desc: "Puja timings, festival photos, important announcements — all updates directly to your phone. Invite your family members and friends too!",
+    whatsapp_benefit_1: "📸 Festival Photos",
+    whatsapp_benefit_2: "🔔 Puja Reminders",
+    whatsapp_benefit_3: "📢 Important Notices",
+    whatsapp_benefit_4: "🎊 Brahmotsavam Updates",
+    whatsapp_btn: "Join Group",
+    whatsapp_share_note: "🙏 Share this link with your family, relatives, and Padmasali friends",
+    contribute_cta_join_group: "💬 Join WhatsApp Group"
   }
 };
 

@@ -1189,6 +1189,38 @@ footer { background:var(--deep-red); color:rgba(255,240,200,.8); padding:44px 16
 }
 
 
+/* ===== WHATSAPP GROUP INVITE ===== */
+.whatsapp-invite-section { padding:32px 0; background:linear-gradient(135deg,#e8f5e9 0%,#f1f8e9 100%); }
+.whatsapp-invite-card { max-width:560px; margin:0 auto; background:#fff; border-radius:16px; box-shadow:0 4px 24px rgba(37,211,102,.15),0 1px 4px rgba(0,0,0,.06); padding:28px 24px; text-align:center; border:2px solid #25D366; position:relative; overflow:hidden; }
+.whatsapp-invite-card::before { content:''; position:absolute; top:0; left:0; right:0; height:6px; background:linear-gradient(90deg,#25D366,#128C7E,#25D366); }
+.whatsapp-invite-header { display:flex; align-items:center; gap:14px; justify-content:center; margin-bottom:16px; }
+.whatsapp-group-icon { width:56px; height:56px; min-width:56px; background:linear-gradient(135deg,#25D366,#128C7E); border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 3px 12px rgba(37,211,102,.3); }
+.whatsapp-group-icon svg { width:30px; height:30px; }
+.whatsapp-group-info { text-align:left; }
+.whatsapp-group-info h3 { font-size:clamp(16px,2.2vw,20px); font-weight:800; color:#1a1a1a; margin:0; line-height:1.3; }
+.whatsapp-group-name { font-size:12px; color:#666; font-family:'Noto Sans Telugu',sans-serif; display:block; margin-top:2px; }
+.whatsapp-invite-desc { font-size:clamp(13px,1.5vw,14.5px); color:#444; line-height:1.7; margin-bottom:16px; font-family:'Noto Sans Telugu',sans-serif; }
+.whatsapp-invite-benefits { display:flex; justify-content:center; flex-wrap:wrap; gap:6px 12px; margin-bottom:20px; }
+.whatsapp-invite-benefits span { font-size:12px; font-family:'Noto Sans Telugu',sans-serif; background:rgba(37,211,102,.08); color:#1a7a3e; padding:4px 10px; border-radius:14px; border:1px solid rgba(37,211,102,.2); white-space:nowrap; }
+.whatsapp-join-btn { display:inline-block; background:linear-gradient(135deg,#25D366,#1da851); color:#fff; font-family:'Noto Sans Telugu',sans-serif; font-size:clamp(15px,1.8vw,17px); font-weight:700; padding:13px 40px; border-radius:50px; text-decoration:none; box-shadow:0 4px 16px rgba(37,211,102,.35); transition:all .3s; position:relative; overflow:hidden; }
+.whatsapp-join-btn::after { content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent); animation:waShimmer 3s ease-in-out infinite; }
+.whatsapp-join-btn:hover { transform:translateY(-2px); box-shadow:0 6px 24px rgba(37,211,102,.45); background:linear-gradient(135deg,#1da851,#128C7E); }
+@keyframes waShimmer { 0%{left:-100%} 50%{left:100%} 100%{left:100%} }
+.whatsapp-invite-share { font-size:12px; color:#888; margin-top:14px; font-family:'Noto Sans Telugu',sans-serif; line-height:1.5; }
+.whatsapp-group-cta { background:#128C7E !important; color:#fff !important; }
+.whatsapp-group-cta:hover { background:#0e7a6e !important; }
+
+@media(max-width:600px){
+  .whatsapp-invite-card { padding:20px 16px; }
+  .whatsapp-invite-header { flex-direction:column; text-align:center; gap:10px; }
+  .whatsapp-group-info { text-align:center; }
+  .whatsapp-group-icon { width:48px; height:48px; min-width:48px; }
+  .whatsapp-group-icon svg { width:26px; height:26px; }
+  .whatsapp-join-btn { padding:12px 32px; width:100%; }
+  .whatsapp-invite-benefits span { font-size:11px; }
+}
+
+
 /* ===== REDUCED MOTION (Accessibility) ===== */
 @media (prefers-reduced-motion:reduce) {
   *,*::before,*::after {
@@ -1200,8 +1232,8 @@ footer { background:var(--deep-red); color:rgba(255,240,200,.8); padding:44px 16
   .ticker-inner { animation:none; }
   .hero-logo-img { animation:none; filter:drop-shadow(0 0 20px rgba(201,151,58,.5)) drop-shadow(0 4px 12px rgba(0,0,0,.4)); }
   .temple-emblem { animation:none; }
-  .header-donate-btn,.btn-secondary,.donate-now-btn,.float-donate,.contribute-cta-box .btn-gold,.monthly99-hero,.monthly99-btn { animation:none; }
-  .header-donate-btn::after,.donate-now-btn::after,.float-donate::after,.float-donate::before,.contribute-cta-box .btn-gold::after,.monthly99-hero::before,.monthly99-btn::after { animation:none; }
+  .header-donate-btn,.btn-secondary,.donate-now-btn,.float-donate,.contribute-cta-box .btn-gold,.monthly99-hero,.monthly99-btn,.whatsapp-join-btn { animation:none; }
+  .header-donate-btn::after,.donate-now-btn::after,.float-donate::after,.float-donate::before,.contribute-cta-box .btn-gold::after,.monthly99-hero::before,.monthly99-btn::after,.whatsapp-join-btn::after { animation:none; }
 }
 
 
