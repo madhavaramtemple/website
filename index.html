@@ -279,13 +279,24 @@
       <h2 data-i18n="donation_heading">ఆలయ నిర్మాణ నిధి</h2>
       <div class="underline"></div>
     </div>
-    <!-- ₹99 MONTHLY — compact strip -->
-    <div class="monthly99-strip" id="monthly99Banner">
-      <span class="monthly99-strip-amt">₹99<small data-i18n="monthly99_per_month">/నెల</small></span>
-      <span class="monthly99-strip-text" data-i18n="monthly99_headline">నెలకు ₹99 — ఒక కప్పు కాఫీ కంటే తక్కువ, కానీ 125 ఏళ్ల ఆలయానికి మహా సేవ</span>
-      <button class="monthly99-strip-btn" onclick="donate99()" data-i18n="monthly99_btn_text">🙏 ₹99 విరాళం ఇవ్వండి</button>
+    <!-- ₹99 MONTHLY — hero banner -->
+    <div class="monthly99-hero" id="monthly99Banner">
+      <div class="monthly99-badge" data-i18n="monthly99_badge">నెలవారీ సేవ</div>
+      <div class="monthly99-amount">₹99<span class="monthly99-per" data-i18n="monthly99_per_month">/నెల</span></div>
+      <h3 class="monthly99-headline" data-i18n="monthly99_headline">నెలకు ₹99 — ఒక కప్పు కాఫీ కంటే తక్కువ, కానీ 125 ఏళ్ల ఆలయానికి మహా సేవ</h3>
+      <p class="monthly99-desc" data-i18n="monthly99_desc">ఉద్యోగులు, వ్యాపారులు, భక్తులారా — ఒక్కసారి నమోదు చేసుకుంటే ప్రతి నెల ₹99 ఆటోమేటిక్‌గా మీ ఖాతా నుండి డెబిట్ అవుతుంది. మీరు గుర్తుంచుకోవలసిన అవసరం లేదు! మీ చిన్న మొత్తం నిత్య పూజలకు, అన్నదానానికి, ఆలయ నిర్వహణకు పెద్ద శక్తిగా మారుతుంది.</p>
+      <div class="monthly99-benefits">
+        <span data-i18n="monthly99_benefit_1">🛕 నిత్య పూజలు</span>
+        <span data-i18n="monthly99_benefit_2">🍚 అన్నదానం</span>
+        <span data-i18n="monthly99_benefit_3">🏗 ఆలయ నిర్మాణం</span>
+        <span data-i18n="monthly99_benefit_4">🪔 ఉత్సవాలు</span>
+      </div>
+      <button class="monthly99-btn" onclick="donate99()" data-i18n="monthly99_btn_text">🙏 ₹99 నెలవారీ ఆటో-పే సెటప్ చేయండి</button>
+      <p class="monthly99-footnote" data-i18n="monthly99_footnote">🔄 ఒక్కసారి సెటప్ — ప్రతి నెల ₹99 ఆటోమేటిక్‌గా డెబిట్ అవుతుంది. ఎప్పుడైనా రద్దు చేసుకోవచ్చు.</p>
     </div>
 
+    <!-- One-time donation cards -->
+    <div class="donation-or-divider"><span data-i18n="donation_onetime_label">లేదా ఒకేసారి విరాళం ఇవ్వండి</span></div>
     <div class="donation-cards">
       <div class="donation-card" onclick="quickDonate(501)"><span class="donation-amount" data-i18n="donation_card_1_amount">₹500</span><div class="donation-card-title" data-i18n="donation_card_1_title">వ్యక్తిగత విరాళం</div></div>
       <div class="donation-card featured" onclick="quickDonate(5001)"><span class="donation-amount" data-i18n="donation_card_2_amount">₹5,000</span><div class="donation-card-title" data-i18n="donation_card_2_title">ఆలయ నిర్మాణ నిధి</div></div>
