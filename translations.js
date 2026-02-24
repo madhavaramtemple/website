@@ -214,7 +214,7 @@ const translations = {
     donation_card_4_title: "మహాదాత",
     donation_card_4_desc: "ప్రత్యేక గౌరవం, ఆలయ స్తంభంపై పేరు చెక్కబడుతుంది",
     donation_btn: "💛 ఇప్పుడే విరాళం ఇవ్వండి",
-    donation_bank_heading: "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#E8880F' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' style='vertical-align:middle;margin-right:8px;'><path d='M3 21h18'/><path d='M3 10h18'/><path d='M12 3l9 7H3l9-7z' fill='#E8880F' opacity='0.2'/><path d='M5 10v8' stroke-width='3'/><path d='M9.5 10v8' stroke-width='3'/><path d='M14.5 10v8' stroke-width='3'/><path d='M19 10v8' stroke-width='3'/></svg> బ్యాంక్ వివరాలు",
+    donation_bank_heading: "🏛 బ్యాంక్ వివరాలు",
     donation_bank_account_label: "ఖాతా పేరు",
     donation_bank_account_value: "శ్రీ భావనారాయణ స్వామి ఆలయ ట్రస్ట్",
     donation_bank_number_label: "ఖాతా నంబర్",
@@ -225,8 +225,9 @@ const translations = {
     donation_bank_name_value: "State Bank of India",
     donation_bank_location_label: "బ్యాంక్ శాఖ",
     donation_bank_location_value: "కొత్త మాధవరం",
-    donation_upi_label: "UPI ద్వారా విరాళం ఇవ్వండి",
+    donation_upi_label: "UPI:",
     donation_upi_id: "<img src='images/upi.svg' alt='UPI' style='height:24px;object-fit:contain;vertical-align:middle;margin-right:8px;background:#fff;padding:3px 8px;border-radius:4px;' /> madhavaramtemple@sbi",
+    donation_upi_id_short: "madhavaramtemple@sbi",
 
     // ===== ₹99 MONTHLY DONATION =====
     monthly99_badge: "నెలవారీ సేవ",
@@ -809,7 +810,7 @@ const translations = {
     donation_card_4_title: "Mahadaata (Grand Donor)",
     donation_card_4_desc: "Special honor, name engraved on temple pillar",
     donation_btn: "💛 Viraalam Now",
-    donation_bank_heading: "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#E8880F' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' style='vertical-align:middle;margin-right:8px;'><path d='M3 21h18'/><path d='M3 10h18'/><path d='M12 3l9 7H3l9-7z' fill='#E8880F' opacity='0.2'/><path d='M5 10v8' stroke-width='3'/><path d='M9.5 10v8' stroke-width='3'/><path d='M14.5 10v8' stroke-width='3'/><path d='M19 10v8' stroke-width='3'/></svg> Bank Details",
+    donation_bank_heading: "🏛 Bank Details",
     donation_bank_account_label: "Account Name",
     donation_bank_account_value: "Sri Bhavanarayana Swamy Alaya Trust",
     donation_bank_number_label: "Account Number",
@@ -820,8 +821,9 @@ const translations = {
     donation_bank_name_value: "State Bank of India",
     donation_bank_location_label: "Bank Branch",
     donation_bank_location_value: "Kotha Madhavaram",
-    donation_upi_label: "Donate via UPI",
+    donation_upi_label: "UPI:",
     donation_upi_id: "<img src='images/upi.svg' alt='UPI' style='height:24px;object-fit:contain;vertical-align:middle;margin-right:8px;background:#fff;padding:3px 8px;border-radius:4px;' /> madhavaramtemple@sbi",
+    donation_upi_id_short: "madhavaramtemple@sbi",
 
     // ===== ₹99 MONTHLY DONATION =====
     monthly99_badge: "MONTHLY SEVA",
