@@ -143,18 +143,22 @@ const DrivePhotoLoader = {
   },
 
   // Peek at a folder's first image (for cover thumbnails)
+  // Recursively digs into subfolders up to maxDepth levels to find a photo
   // Returns image URL string or null
-  peekFirstImage: function(folderId) {
+  peekFirstImage: function(folderId, depth) {
     var self = this;
+    depth = depth || 0;
+    var maxDepth = 3; // search up to 3 levels deep for a cover image
+
     var cacheKey = 'folder_' + folderId;
 
     // If folder already cached, grab from there
     var cached = self.getCached(cacheKey);
     if (cached) {
       if (cached.images && cached.images.length > 0) return Promise.resolve(cached.images[0].url);
-      // No images at top level — try first subfolder
-      if (cached.folders && cached.folders.length > 0) {
-        return self.peekFirstImage(cached.folders[0].id);
+      // No images at top level — try subfolders recursively
+      if (cached.folders && cached.folders.length > 0 && depth < maxDepth) {
+        return self.peekFirstImage(cached.folders[0].id, depth + 1);
       }
       return Promise.resolve(null);
     }
@@ -162,14 +166,34 @@ const DrivePhotoLoader = {
     // Fetch folder and check
     return self.discoverFolder(folderId).then(function(result) {
       if (result.images && result.images.length > 0) return result.images[0].url;
-      // No images at top level — try first subfolder (one level deep only)
-      if (result.folders && result.folders.length > 0) {
-        return self.discoverFolder(result.folders[0].id).then(function(sub) {
-          return (sub.images && sub.images.length > 0) ? sub.images[0].url : null;
-        });
+      // No images at top level — dig into first subfolder recursively
+      if (result.folders && result.folders.length > 0 && depth < maxDepth) {
+        return self.peekFirstImage(result.folders[0].id, depth + 1);
       }
       return null;
     }).catch(function() { return null; });
+  },
+
+  // Count total images in a folder (including all subfolders, recursive)
+  // Returns Promise<number>
+  countAllImages: function(folderId, depth) {
+    var self = this;
+    depth = depth || 0;
+    var maxDepth = 3;
+
+    return self.discoverFolder(folderId).then(function(result) {
+      var count = result.images ? result.images.length : 0;
+      if (result.folders && result.folders.length > 0 && depth < maxDepth) {
+        var promises = result.folders.map(function(f) {
+          return self.countAllImages(f.id, depth + 1);
+        });
+        return Promise.all(promises).then(function(counts) {
+          counts.forEach(function(c) { count += c; });
+          return count;
+        });
+      }
+      return count;
+    }).catch(function() { return 0; });
   },
 
   // Convenience: discover root folder

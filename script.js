@@ -457,24 +457,33 @@ function renderGalleryGrid(container, folderData) {
 
   container.innerHTML = html;
 
-  // Progressive thumbnail loading — fetch first image for each folder
+  // Progressive thumbnail loading + photo count for each folder
   folderIds.forEach(function(folderId) {
+    // Load cover image
     DrivePhotoLoader.peekFirstImage(folderId).then(function(url) {
       if (!url) return;
       var card = document.getElementById('gcard_' + folderId);
       if (!card) return;
-      // Preload image, then apply as cover
       var img = new Image();
       img.onload = function() {
         card.style.backgroundImage = 'url(\'' + url + '\')';
         card.style.backgroundSize = 'cover';
         card.style.backgroundPosition = 'center';
         card.classList.add('gallery-cover-loaded');
-        // Hide the placeholder icon
         var icon = card.querySelector('.gallery-img-icon');
         if (icon) icon.style.display = 'none';
       };
       img.src = url;
+    });
+    // Load photo count badge
+    DrivePhotoLoader.countAllImages(folderId).then(function(count) {
+      if (count <= 0) return;
+      var card = document.getElementById('gcard_' + folderId);
+      if (!card) return;
+      var badge = document.createElement('span');
+      badge.className = 'gallery-count-badge';
+      badge.textContent = count + ' 📷';
+      card.appendChild(badge);
     });
   });
 }
