@@ -499,7 +499,7 @@ const translations = {
     modal_upi_apps: "Google Pay / PhonePe / Paytm / BHIM అన్నీ పనిచేస్తాయి",
 
     // ===== LIGHTBOX =====
-    lightbox_close_hint: "మూయడానికి బయట క్లిక్ చేయండి లేదా ✕ నొక్కండి",
+    lightbox_close_hint: "మూయడానికి చిత్రం మీద లేదా బయట క్లిక్ చేయండి",
 
     // ===== FLOATING ELEMENTS =====
     float_donate: "💛 విరాళం ఇవ్వండి",
@@ -1093,7 +1093,7 @@ const translations = {
     modal_upi_apps: "Google Pay / PhonePe / Paytm / BHIM — all supported",
 
     // ===== LIGHTBOX =====
-    lightbox_close_hint: "Click outside to close or press ✕",
+    lightbox_close_hint: "Click image or outside to close",
 
     // ===== FLOATING ELEMENTS =====
     float_donate: "💛 Viraalam",

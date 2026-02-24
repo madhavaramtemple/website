@@ -1026,10 +1026,10 @@
   <button id="lbPrev" onclick="prevPhoto()" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.3);color:#fff;font-size:28px;cursor:pointer;width:48px;height:48px;border-radius:50%;display:none;align-items:center;justify-content:center;z-index:10;backdrop-filter:blur(4px);transition:background 0.2s;">‹</button>
   <button id="lbNext" onclick="nextPhoto()" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.3);color:#fff;font-size:28px;cursor:pointer;width:48px;height:48px;border-radius:50%;display:none;align-items:center;justify-content:center;z-index:10;backdrop-filter:blur(4px);transition:background 0.2s;">›</button>
   <div id="lightboxEmoji" style="font-size:120px;margin-bottom:16px;"></div>
-  <img id="lightboxImg" src="" alt="" style="max-width:90vw;max-height:75vh;border-radius:10px;object-fit:contain;box-shadow:0 8px 40px rgba(0,0,0,.6);display:none;" />
+  <img id="lightboxImg" src="" alt="" onclick="closeLightbox()" style="max-width:90vw;max-height:75vh;border-radius:10px;object-fit:contain;box-shadow:0 8px 40px rgba(0,0,0,.6);display:none;cursor:pointer;" />
   <div id="lightboxCaption" style="margin-top:16px;color:#FFE8A0;font-family:'Noto Sans Telugu',sans-serif;font-size:18px;font-weight:700;text-align:center;"></div>
   <div id="lbCounter" style="color:rgba(255,255,255,0.5);font-size:13px;margin-top:6px;font-family:sans-serif;display:none;"></div>
-  <div style="color:rgba(255,255,255,0.4);font-size:12px;margin-top:8px;font-family:sans-serif;" data-i18n="lightbox_close_hint">మూయడానికి బయట క్లిక్ చేయండి లేదా ✕ నొక్కండి</div>
+  <div style="color:rgba(255,255,255,0.4);font-size:12px;margin-top:8px;font-family:sans-serif;" data-i18n="lightbox_close_hint">మూయడానికి చిత్రం మీద లేదా బయట క్లిక్ చేయండి</div>
 </div>
 
 <!-- FLOATING DONATE (mobile) -->
