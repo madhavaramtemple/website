@@ -320,10 +320,8 @@ const translations = {
     gallery_6_label: "అభివృద్ధి కార్యక్రమాలు 📂",
     gallery_6_title: "అభివృద్ధి కార్యక్రమాలు ఆల్బమ్ చూడండి",
     gallery_send_photos: "📷 మీ ఆలయ చిత్రాలు పంపడానికి: madhavaramtemple@gmail.com",
-    gallery_upload_title: "మీ ఆలయ చిత్రాలను పంచుకోండి!",
-    gallery_upload_desc: "మీ దగ్గర ఆలయ చిత్రాలు ఉన్నాయా? వాటిని భక్తులందరితో పంచుకోండి!",
+    gallery_upload_text: "📸 మీ ఆలయ చిత్రాలను భక్తులందరితో పంచుకోండి",
     gallery_upload_btn: "📤 చిత్రాలు అప్‌లోడ్ చేయండి",
-    gallery_upload_hint: "Google Drive తెరవబడుతుంది — అక్కడ మీ చిత్రాలను అప్‌లోడ్ చేయండి",
 
     // ===== UPDATES =====
     updates_label: "తాజా వార్తలు",
@@ -918,10 +916,8 @@ const translations = {
     gallery_6_label: "Development Activities 📂",
     gallery_6_title: "View Development Activities Album",
     gallery_send_photos: "📷 To send your temple photos: madhavaramtemple@gmail.com",
-    gallery_upload_title: "Share Your Temple Photos!",
-    gallery_upload_desc: "Do you have temple photos? Share them with all devotees!",
+    gallery_upload_text: "📸 Share your temple photos with all devotees",
     gallery_upload_btn: "📤 Upload Photos",
-    gallery_upload_hint: "Opens Google Drive — upload your photos there",
 
     // ===== UPDATES =====
     updates_label: "Latest News",
