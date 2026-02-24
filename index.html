@@ -227,21 +227,21 @@
       <h2 data-i18n="timings_heading">పూజా &amp; దర్శన సమయాలు</h2>
       <div class="underline"></div>
     </div>
-    <div class="timings-grid">
-      <div class="timing-card">
-        <div class="timing-card-header"><span class="timing-icon"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--saffron)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="5" fill="var(--saffron)" opacity="0.35"/><line x1="12" y1="6" x2="12" y2="9"/><line x1="4.5" y1="8" x2="6.5" y2="10"/><line x1="19.5" y1="8" x2="17.5" y2="10"/><line x1="2" y1="14" x2="5" y2="14"/><line x1="19" y1="14" x2="22" y2="14"/><path d="M3 20h18" stroke="var(--saffron)" stroke-width="2.5"/></svg></span><div class="timing-title" data-i18n="timings_morning_title">ఉదయం సేవలు</div></div>
-        <div class="timing-card-body">
+    <div class="timings-compact">
+      <!-- Morning + Evening side by side -->
+      <div class="timings-main">
+        <div class="timing-col">
+          <div class="timing-col-header">☀️ <span data-i18n="timings_morning_title">ఉదయం సేవలు</span></div>
           <div class="timing-row"><span class="timing-seva" data-i18n="timings_morning_1_seva">సుప్రభాత సేవ</span><span class="timing-time" data-i18n="timings_morning_1_time">5:30 AM</span></div>
           <div class="timing-row"><span class="timing-seva" data-i18n="timings_morning_2_seva">అభిషేకం</span><span class="timing-time" data-i18n="timings_morning_2_time">6:00 AM</span></div>
           <div class="timing-row"><span class="timing-seva" data-i18n="timings_morning_3_seva">అలంకరణ</span><span class="timing-time" data-i18n="timings_morning_3_time">7:00 AM</span></div>
           <div class="timing-row"><span class="timing-seva" data-i18n="timings_morning_4_seva">నిత్య పూజ</span><span class="timing-time" data-i18n="timings_morning_4_time">7:30 AM</span></div>
           <div class="timing-row"><span class="timing-seva" data-i18n="timings_morning_5_seva">మహా నైవేద్యం</span><span class="timing-time" data-i18n="timings_morning_5_time">9:00 AM</span></div>
-          <div class="timing-row"><span class="timing-seva" data-i18n="timings_morning_6_seva">ఉదయ దర్శనం</span><span class="timing-time" data-i18n="timings_morning_6_time">6:00 – 11:00 AM</span></div>
+          <div class="timing-row timing-highlight"><span class="timing-seva" data-i18n="timings_morning_6_seva">ఉదయ దర్శనం</span><span class="timing-time" data-i18n="timings_morning_6_time">6:00 – 11:00 AM</span></div>
         </div>
-      </div>
-      <div class="timing-card">
-        <div class="timing-card-header"><span class="timing-icon"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--saffron)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="var(--saffron)" opacity="0.35"/><circle cx="16" cy="6" r="1.5" fill="var(--saffron)"/></svg></span><div class="timing-title" data-i18n="timings_evening_title">సాయంత్రం సేవలు</div></div>
-        <div class="timing-card-body">
+        <div class="timing-divider"></div>
+        <div class="timing-col">
+          <div class="timing-col-header">🌙 <span data-i18n="timings_evening_title">సాయంత్రం సేవలు</span></div>
           <div class="timing-row"><span class="timing-seva" data-i18n="timings_evening_1_seva">సాయంత్రం దర్శనం</span><span class="timing-time" data-i18n="timings_evening_1_time">5:00 PM</span></div>
           <div class="timing-row"><span class="timing-seva" data-i18n="timings_evening_2_seva">భజన</span><span class="timing-time" data-i18n="timings_evening_2_time">6:30 – 7:30 PM</span></div>
           <div class="timing-row"><span class="timing-seva" data-i18n="timings_evening_3_seva">ఆర్తి</span><span class="timing-time" data-i18n="timings_evening_3_time">8:00 PM</span></div>
@@ -250,15 +250,17 @@
           <div class="timing-row"><span class="timing-seva" data-i18n="timings_evening_6_seva">ఏకాంత సేవ</span><span class="timing-time" data-i18n="timings_evening_6_time">8:30 PM</span></div>
         </div>
       </div>
-      <div class="timing-card">
-        <div class="timing-card-header"><span class="timing-icon"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--saffron)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 20h8" stroke-width="2.5"/><path d="M8 20c0-2 0-4-2-6h12c-2 2-2 4-2 6" fill="var(--saffron)" opacity="0.3"/><path d="M8 20c0-2 0-4-2-6h12c-2 2-2 4-2 6" stroke-width="2.5"/><ellipse cx="12" cy="14" rx="6" ry="1" fill="var(--saffron)" opacity="0.3"/><circle cx="12" cy="6" r="3" fill="var(--saffron)" opacity="0.4" stroke-width="2.5"/><path d="M12 3v0" stroke-width="2.5"/><path d="M12 2c0 0-1 1.5-1 3s.45 2 1 2 1-.5 1-2S12 2 12 2z" fill="var(--saffron)"/></svg></span><div class="timing-title" data-i18n="timings_special_title">ప్రత్యేక పూజలు</div></div>
-        <div class="timing-card-body">
-          <div class="timing-row special-pooja-heading"><span class="timing-seva" data-i18n="timings_special_heading">🙏 సత్యనారాయణ వ్రతం</span></div>
-          <div class="timing-row"><span class="timing-seva" data-i18n="timings_special_schedule">📅 ప్రతి నెల పౌర్ణమి</span></div>
-          <div class="timing-row"><span class="timing-seva" data-i18n="timings_special_1_seva">వ్రతం</span><span class="timing-time" data-i18n="timings_special_1_time">10:00 AM – 12:30 PM</span></div>
-          <div class="timing-row"><span class="timing-seva" data-i18n="timings_special_2_seva">అన్నదానం</span><span class="timing-time" data-i18n="timings_special_2_time">1:00 PM</span></div>
-          <div class="timing-row special-pooja-note"><span class="timing-seva" data-i18n="timings_special_note">💰 ఆసక్తి ఉన్న దంపతులు ₹516 చెల్లించి పాల్గొనవచ్చు. పూజ సామగ్రి ఆలయం అందిస్తుంది.</span></div>
-        </div>
+      <!-- Special Poojas — compact strip -->
+      <div class="timings-special">
+        <span class="timings-special-title" data-i18n="timings_special_heading">🙏 సత్యనారాయణ వ్రతం</span>
+        <span class="timings-special-sep">·</span>
+        <span data-i18n="timings_special_schedule">📅 ప్రతి నెల పౌర్ణమి</span>
+        <span class="timings-special-sep">·</span>
+        <span><span data-i18n="timings_special_1_seva">వ్రతం</span> <strong data-i18n="timings_special_1_time">10:00 AM – 12:30 PM</strong></span>
+        <span class="timings-special-sep">·</span>
+        <span><span data-i18n="timings_special_2_seva">అన్నదానం</span> <strong data-i18n="timings_special_2_time">1:00 PM</strong></span>
+        <span class="timings-special-sep">·</span>
+        <span class="timings-special-note" data-i18n="timings_special_note">💰 ఆసక్తి ఉన్న దంపతులు ₹516 చెల్లించి పాల్గొనవచ్చు. పూజ సామగ్రి ఆలయం అందిస్తుంది.</span>
       </div>
     </div>
   </div>

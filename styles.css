@@ -147,22 +147,23 @@ section { padding:56px 16px; }
 .about-highlights { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
 .highlight-tag { background:rgba(123,13,30,.08); border:1px solid rgba(123,13,30,.2); color:var(--crimson); padding:5px 12px; border-radius:20px; font-family:'Noto Sans Telugu',sans-serif; font-size:12px; font-weight:600; }
 
-/* TIMINGS */
+/* TIMINGS — Compact layout */
 .timings-section { background:linear-gradient(180deg,#FDF0E0 0%,var(--cream) 100%); }
-.timings-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-.timing-card { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 6px 24px rgba(0,0,0,.08); border:1px solid rgba(201,151,58,.2); transition:transform .3s; }
-.timing-card:hover { transform:translateY(-4px); }
-.timing-card-header { background:linear-gradient(135deg,var(--crimson),var(--deep-red)); padding:14px 18px; display:flex; align-items:center; gap:10px; }
-.timing-icon { font-size:26px; }
-.timing-title { color:var(--bright-gold); font-size:17px; font-weight:700; }
-.timing-card-body { padding:18px; }
-.timing-row { display:flex; justify-content:space-between; align-items:center; padding:9px 0; border-bottom:1px dashed rgba(201,151,58,.25); gap:10px; }
-.timing-row:last-child { border-bottom:none; }
-.timing-seva { font-family:'Noto Sans Telugu',sans-serif; font-size:13px; color:var(--text-mid); }
-.timing-time { font-weight:700; color:var(--crimson); font-size:13px; white-space:nowrap; }
-.special-pooja-heading .timing-seva { font-size:15px; font-weight:800; color:var(--crimson); }
-.special-pooja-note { border-bottom:none; }
-.special-pooja-note .timing-seva { font-size:12px; color:var(--gold); line-height:1.6; font-style:italic; }
+.timings-compact { background:#fff; border-radius:12px; box-shadow:0 6px 24px rgba(0,0,0,.08); border:1px solid rgba(201,151,58,.2); overflow:hidden; }
+.timings-main { display:grid; grid-template-columns:1fr auto 1fr; }
+.timing-col { padding:16px 20px; }
+.timing-col-header { font-family:'Noto Sans Telugu',sans-serif; font-size:14px; font-weight:700; color:var(--crimson); margin-bottom:8px; padding-bottom:8px; border-bottom:2px solid rgba(201,151,58,.3); }
+.timing-divider { width:1px; background:rgba(201,151,58,.25); }
+.timing-row { display:flex; justify-content:space-between; align-items:center; padding:5px 0; gap:8px; }
+.timing-row:not(:last-child) { border-bottom:1px dashed rgba(201,151,58,.15); }
+.timing-highlight { background:rgba(201,151,58,.08); margin:4px -8px 0; padding:5px 8px; border-radius:6px; }
+.timing-seva { font-family:'Noto Sans Telugu',sans-serif; font-size:12.5px; color:var(--text-mid); }
+.timing-time { font-weight:700; color:var(--crimson); font-size:12.5px; white-space:nowrap; }
+.timings-special { background:linear-gradient(135deg,var(--crimson),var(--deep-red)); padding:10px 20px; display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:6px 4px; font-family:'Noto Sans Telugu',sans-serif; font-size:12px; color:rgba(255,255,255,.9); }
+.timings-special-title { font-weight:700; }
+.timings-special strong { color:#FFE8A0; }
+.timings-special-sep { opacity:.4; margin:0 4px; }
+.timings-special-note { font-size:11px; opacity:.75; font-style:italic; }
 
 /* EVENTS */
 .events-section { background:var(--ivory); }
@@ -517,7 +518,9 @@ footer { background:var(--deep-red); color:rgba(255,240,200,.8); padding:44px 16
 
   /* Sections */
   .about-grid { grid-template-columns:1fr; gap:24px; }
-  .timings-grid { grid-template-columns:1fr; }
+  .timings-main { grid-template-columns:1fr; }
+  .timing-divider { width:auto; height:1px; background:rgba(201,151,58,.25); }
+  .timings-special { text-align:center; padding:12px 16px; }
   .sevas-grid { grid-template-columns:repeat(2,1fr); }
   .donation-cards { grid-template-columns:repeat(2,1fr); }
   .donation-card.featured { transform:none; }
