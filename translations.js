@@ -48,7 +48,7 @@ const translations = {
     stats_festivals: "వార్షిక ఉత్సవాలు",
     stats_sevas_number: "12",
     stats_sevas: "నిత్య సేవలు",
-    stats_history_number: "100+",
+    stats_history_number: "125+",
     stats_history: "సంవత్సరాల చరిత్ర",
 
     // ===== ABOUT =====
@@ -320,6 +320,10 @@ const translations = {
     gallery_6_label: "అభివృద్ధి కార్యక్రమాలు 📂",
     gallery_6_title: "అభివృద్ధి కార్యక్రమాలు ఆల్బమ్ చూడండి",
     gallery_send_photos: "📷 మీ ఆలయ చిత్రాలు పంపడానికి: madhavaramtemple@gmail.com",
+    gallery_upload_title: "మీ ఆలయ చిత్రాలను పంచుకోండి!",
+    gallery_upload_desc: "మీ దగ్గర ఆలయ చిత్రాలు ఉన్నాయా? వాటిని భక్తులందరితో పంచుకోండి!",
+    gallery_upload_btn: "📤 చిత్రాలు అప్‌లోడ్ చేయండి",
+    gallery_upload_hint: "Google Drive తెరవబడుతుంది — అక్కడ మీ చిత్రాలను అప్‌లోడ్ చేయండి",
 
     // ===== UPDATES =====
     updates_label: "తాజా వార్తలు",
@@ -642,7 +646,7 @@ const translations = {
     stats_festivals: "Annual Festivals",
     stats_sevas_number: "12",
     stats_sevas: "Daily Sevas",
-    stats_history_number: "100+",
+    stats_history_number: "125+",
     stats_history: "Years of History",
 
     // ===== ABOUT =====
@@ -914,6 +918,10 @@ const translations = {
     gallery_6_label: "Development Activities 📂",
     gallery_6_title: "View Development Activities Album",
     gallery_send_photos: "📷 To send your temple photos: madhavaramtemple@gmail.com",
+    gallery_upload_title: "Share Your Temple Photos!",
+    gallery_upload_desc: "Do you have temple photos? Share them with all devotees!",
+    gallery_upload_btn: "📤 Upload Photos",
+    gallery_upload_hint: "Opens Google Drive — upload your photos there",
 
     // ===== UPDATES =====
     updates_label: "Latest News",
