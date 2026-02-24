@@ -264,6 +264,11 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
+/* Utility: strip file extension from filename for display */
+function stripExt(filename) {
+  return filename.replace(/\.[^.]+$/, '');
+}
+
 /* Color palette for dynamic gallery cards */
 var GALLERY_COLORS = [
   ['#7B0D1E','#B02030'], ['#7B3A00','#C06020'], ['#1A5C00','#3A8C20'],
@@ -329,8 +334,8 @@ function renderGalleryGrid(container, folderData) {
     folderData.images.forEach(function(img, i) {
       html += '<div class="gallery-item">'
         + '<div class="gallery-placeholder gallery-cover-loaded" style="background-image:url(\'' + img.url + '\');background-size:cover;background-position:center;cursor:pointer;" '
-        + 'onclick="openLightbox(\'' + img.url + '\',\'\',\'' + escapeHtml(img.name).replace(/'/g, "\\'") + '\')">'
-        + '<span class="gallery-img-label">' + escapeHtml(img.name) + '</span>'
+        + 'onclick="openLightbox(\'' + img.url + '\',\'\',\'' + escapeHtml(stripExt(img.name)).replace(/'/g, "\\'") + '\')">'
+        + '<span class="gallery-img-label">' + escapeHtml(stripExt(img.name)) + '</span>'
         + '</div></div>';
     });
   }
@@ -447,10 +452,10 @@ function renderAlbumContents(body, folderData, folderName) {
     }
 
     html += '<div class="album-photo-grid">';
-    var safeFolder = escapeHtml(folderName).replace(/'/g, "\\'");
     folderData.images.forEach(function(img, i) {
-      html += '<div class="album-photo-item" onclick="openLightbox(\'' + img.url + '\',\'\',\'' + safeFolder + ' — ' + (i + 1) + '\')">'
-        + '<img src="' + img.url + '" alt="' + escapeHtml(img.name) + '" loading="lazy" /></div>';
+      var safeCaption = escapeHtml(stripExt(img.name)).replace(/'/g, "\\'");
+      html += '<div class="album-photo-item" onclick="openLightbox(\'' + img.url + '\',\'\',\'' + safeCaption + '\')">'
+        + '<img src="' + img.url + '" alt="' + escapeHtml(stripExt(img.name)) + '" loading="lazy" /></div>';
     });
     html += '</div>';
 
@@ -510,10 +515,10 @@ function openLooseImages() {
   var cached = _albumFolderCache[photoConfig.rootFolderId];
   if (cached && cached.images.length > 0) {
     var html = '<div class="album-photo-grid">';
-    var safeTitle = escapeHtml(title).replace(/'/g, "\\'");
     cached.images.forEach(function(img, i) {
-      html += '<div class="album-photo-item" onclick="openLightbox(\'' + img.url + '\',\'\',\'' + safeTitle + ' — ' + (i + 1) + '\')">'
-        + '<img src="' + img.url + '" alt="' + escapeHtml(img.name) + '" loading="lazy" /></div>';
+      var safeCaption = escapeHtml(stripExt(img.name)).replace(/'/g, "\\'");
+      html += '<div class="album-photo-item" onclick="openLightbox(\'' + img.url + '\',\'\',\'' + safeCaption + '\')">'
+        + '<img src="' + img.url + '" alt="' + escapeHtml(stripExt(img.name)) + '" loading="lazy" /></div>';
     });
     html += '</div>';
     body.innerHTML = html;
@@ -536,20 +541,20 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAlbum()
 
 /* Gallery Lightbox with prev/next navigation */
 let _lbPhotos = [];
+let _lbCaptions = [];
 let _lbIndex = 0;
-let _lbPrefix = '';
 
 function openLightbox(imgSrc, emoji, caption) {
   // Auto-detect album photos from the current modal for navigation
   _lbPhotos = [];
+  _lbCaptions = [];
   _lbIndex = 0;
-  _lbPrefix = '';
 
   if (imgSrc) {
     const allImgs = document.querySelectorAll('#albumModalBody .album-photo-grid .album-photo-item img');
     if (allImgs.length > 1) {
       _lbPhotos = Array.from(allImgs).map(i => i.src);
-      _lbPrefix = caption.replace(/ — \d+$/, '');
+      _lbCaptions = Array.from(allImgs).map(i => i.alt || '');
       _lbIndex = _lbPhotos.findIndex(src => src === imgSrc);
       if (_lbIndex === -1) _lbIndex = 0;
     }
@@ -596,14 +601,14 @@ function _updateLightboxNav() {
 function nextPhoto() {
   if (_lbPhotos.length > 0 && _lbIndex < _lbPhotos.length - 1) {
     _lbIndex++;
-    _showLightboxImage(_lbPhotos[_lbIndex], '', _lbPrefix + ' — ' + (_lbIndex + 1));
+    _showLightboxImage(_lbPhotos[_lbIndex], '', _lbCaptions[_lbIndex] || '');
   }
 }
 
 function prevPhoto() {
   if (_lbPhotos.length > 0 && _lbIndex > 0) {
     _lbIndex--;
-    _showLightboxImage(_lbPhotos[_lbIndex], '', _lbPrefix + ' — ' + (_lbIndex + 1));
+    _showLightboxImage(_lbPhotos[_lbIndex], '', _lbCaptions[_lbIndex] || '');
   }
 }
 
@@ -611,6 +616,7 @@ function closeLightbox() {
   document.getElementById('galleryLightbox').style.display = 'none';
   document.body.style.overflow = '';
   _lbPhotos = [];
+  _lbCaptions = [];
 }
 
 document.addEventListener('keydown', e => {
