@@ -135,6 +135,36 @@ const DrivePhotoLoader = {
     });
   },
 
+  // Peek at a folder's first image (for cover thumbnails)
+  // Returns image URL string or null
+  peekFirstImage: function(folderId) {
+    var self = this;
+    var cacheKey = 'folder_' + folderId;
+
+    // If folder already cached, grab from there
+    var cached = self.getCached(cacheKey);
+    if (cached) {
+      if (cached.images && cached.images.length > 0) return Promise.resolve(cached.images[0].url);
+      // No images at top level — try first subfolder
+      if (cached.folders && cached.folders.length > 0) {
+        return self.peekFirstImage(cached.folders[0].id);
+      }
+      return Promise.resolve(null);
+    }
+
+    // Fetch folder and check
+    return self.discoverFolder(folderId).then(function(result) {
+      if (result.images && result.images.length > 0) return result.images[0].url;
+      // No images at top level — try first subfolder (one level deep only)
+      if (result.folders && result.folders.length > 0) {
+        return self.discoverFolder(result.folders[0].id).then(function(sub) {
+          return (sub.images && sub.images.length > 0) ? sub.images[0].url : null;
+        });
+      }
+      return null;
+    }).catch(function() { return null; });
+  },
+
   // Convenience: discover root folder
   discoverRoot: function() {
     return this.discoverFolder(photoConfig.rootFolderId);

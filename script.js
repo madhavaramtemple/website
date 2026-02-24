@@ -298,25 +298,29 @@ async function loadPhotosFromConfig() {
 function renderGalleryGrid(container, folderData) {
   var html = '';
   var colorIndex = 0;
+  var folderIds = []; // track folder IDs for thumbnail loading
 
   // Render a card for each subfolder
   folderData.folders.forEach(function(folder) {
     var colors = GALLERY_COLORS[colorIndex % GALLERY_COLORS.length];
-    html += '<div class="gallery-item" onclick="openDynamicAlbum(\'' + folder.id + '\',\'' + escapeHtml(folder.name).replace(/'/g, "\\'") + '\')">'
-      + '<div class="gallery-placeholder" style="background:linear-gradient(145deg,' + colors[0] + ',' + colors[1] + ')">'
-      + '<span class="gallery-img-icon">📁</span>'
-      + '<span class="gallery-img-label">' + escapeHtml(folder.name) + ' 📂</span>'
+    var safeName = escapeHtml(folder.name).replace(/'/g, "\\'");
+    html += '<div class="gallery-item" onclick="openDynamicAlbum(\'' + folder.id + '\',\'' + safeName + '\')">'
+      + '<div class="gallery-placeholder" id="gcard_' + folder.id + '" style="background:linear-gradient(145deg,' + colors[0] + ',' + colors[1] + ')">'
+      + '<span class="gallery-img-icon gallery-img-icon--fade">📷</span>'
+      + '<span class="gallery-img-label">' + escapeHtml(folder.name) + '</span>'
       + '</div></div>';
+    folderIds.push(folder.id);
     colorIndex++;
   });
 
   // If there are loose images AND also subfolders, add an "Others" card
   if (folderData.images.length > 0 && folderData.folders.length > 0) {
     var colors = GALLERY_COLORS[colorIndex % GALLERY_COLORS.length];
+    // Use first loose image as cover for "Others"
+    var othersCover = folderData.images[0].url;
     html += '<div class="gallery-item" onclick="openLooseImages()">'
-      + '<div class="gallery-placeholder" style="background:linear-gradient(145deg,' + colors[0] + ',' + colors[1] + ')">'
-      + '<span class="gallery-img-icon">🖼️</span>'
-      + '<span class="gallery-img-label">' + t('album_others') + ' 📂</span>'
+      + '<div class="gallery-placeholder gallery-cover-loaded" style="background-image:url(\'' + othersCover + '\');background-size:cover;background-position:center;">'
+      + '<span class="gallery-img-label">' + t('album_others') + '</span>'
       + '</div></div>';
   }
 
@@ -325,9 +329,9 @@ function renderGalleryGrid(container, folderData) {
     html = '';
     folderData.images.forEach(function(img, i) {
       html += '<div class="gallery-item">'
-        + '<div class="gallery-placeholder" style="background:#222;cursor:pointer;" '
+        + '<div class="gallery-placeholder gallery-cover-loaded" style="background-image:url(\'' + img.url + '\');background-size:cover;background-position:center;cursor:pointer;" '
         + 'onclick="openLightbox(\'' + img.url + '\',\'\',\'' + escapeHtml(img.name).replace(/'/g, "\\'") + '\')">'
-        + '<img src="' + img.url + '" alt="' + escapeHtml(img.name) + '" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:12px;" />'
+        + '<span class="gallery-img-label">' + escapeHtml(img.name) + '</span>'
         + '</div></div>';
     });
   }
@@ -338,6 +342,27 @@ function renderGalleryGrid(container, folderData) {
   }
 
   container.innerHTML = html;
+
+  // Progressive thumbnail loading — fetch first image for each folder
+  folderIds.forEach(function(folderId) {
+    DrivePhotoLoader.peekFirstImage(folderId).then(function(url) {
+      if (!url) return;
+      var card = document.getElementById('gcard_' + folderId);
+      if (!card) return;
+      // Preload image, then apply as cover
+      var img = new Image();
+      img.onload = function() {
+        card.style.backgroundImage = 'url(\'' + url + '\')';
+        card.style.backgroundSize = 'cover';
+        card.style.backgroundPosition = 'center';
+        card.classList.add('gallery-cover-loaded');
+        // Hide the placeholder icon
+        var icon = card.querySelector('.gallery-img-icon');
+        if (icon) icon.style.display = 'none';
+      };
+      img.src = url;
+    });
+  });
 }
 
 /* --- Dynamic album navigation (works at any nesting depth) --- */
@@ -385,14 +410,32 @@ function renderAlbumContents(body, folderData, folderName) {
 
   // Show subfolder cards
   if (hasSubfolders) {
+    var subfolderIds = [];
     html += '<div class="subalbum-grid">';
     folderData.folders.forEach(function(subfolder) {
       html += '<div class="subalbum-card" onclick="openDynamicAlbum(\'' + subfolder.id + '\',\'' + escapeHtml(subfolder.name).replace(/'/g, "\\'") + '\')">'
-        + '<div class="subalbum-thumb">📁</div>'
+        + '<div class="subalbum-thumb" id="scard_' + subfolder.id + '">📷</div>'
         + '<div class="subalbum-info"><h5>' + escapeHtml(subfolder.name) + '</h5>'
         + '</div></div>';
+      subfolderIds.push(subfolder.id);
     });
     html += '</div>';
+
+    // Progressive thumbnail loading for subalbum cards
+    setTimeout(function() {
+      subfolderIds.forEach(function(sid) {
+        DrivePhotoLoader.peekFirstImage(sid).then(function(url) {
+          if (!url) return;
+          var thumb = document.getElementById('scard_' + sid);
+          if (!thumb) return;
+          var img = new Image();
+          img.onload = function() {
+            thumb.innerHTML = '<img src="' + url + '" alt="" style="width:100%;height:100%;object-fit:cover;" />';
+          };
+          img.src = url;
+        });
+      });
+    }, 50);
   }
 
   // Show images
