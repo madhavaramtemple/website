@@ -4,6 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/jpeg" href="favicon.jpg" />
+
+  <!-- Google Analytics (GA4) — Replace G-XXXXXXXXXX with your Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
   <title data-i18n="page_title">శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయం - కొత్త మాధవరం</title>
 
   <!-- SEO Meta Tags -->
@@ -35,7 +44,7 @@
   <meta name="ICBM" content="14.406397, 79.008048" />
 
   <!-- Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://checkout.razorpay.com https://www.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://lh3.googleusercontent.com https://www.googleapis.com https://*.google.com https://*.gstatic.com; frame-src https://www.google.com https://api.razorpay.com; connect-src 'self' https://www.googleapis.com https://lumberjack.razorpay.com https://api.razorpay.com https://script.google.com https://script.googleusercontent.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://checkout.razorpay.com https://www.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://lh3.googleusercontent.com https://www.googleapis.com https://*.google.com https://*.gstatic.com https://www.googletagmanager.com https://www.google-analytics.com; frame-src https://www.google.com https://api.razorpay.com; connect-src 'self' https://www.googleapis.com https://lumberjack.razorpay.com https://api.razorpay.com https://script.google.com https://script.googleusercontent.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com;" />
 
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Telugu:wght@300;400;500;600;700;900&family=Noto+Sans+Telugu:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css?v=3" />
@@ -981,6 +990,7 @@
       <div class="form-group">
         <label data-i18n="modal_email_label">ఇమెయిల్ (ఐచ్ఛికం)</label>
         <input type="email" id="donorEmail" placeholder="receipt కోసం ఇమెయిల్" data-i18n-placeholder="modal_email_placeholder" />
+        <small class="form-hint" data-i18n="modal_email_hint">📱 ఇమెయిల్ లేకపోతే ఫోన్ నంబర్‌కు WhatsApp / SMS ద్వారా రసీదు పంపబడుతుంది</small>
       </div>
 
       <!-- Pay Button -->

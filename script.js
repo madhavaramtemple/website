@@ -273,6 +273,8 @@ function startRazorpayPayment() {
     },
     notes: {
       donor_name: name,
+      donor_phone: phone,
+      receipt_via: email !== 'donor@temple.org' ? 'email' : 'whatsapp_sms',
       temple: 'Sri Bhadravathi Bhavanarayana Swamy Temple, Kotha Madhavaram'
     },
     theme: { color: '#7B0D1E' },
