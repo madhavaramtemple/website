@@ -51,6 +51,14 @@ function updatePageContent() {
   if (metaDesc) metaDesc.setAttribute('content', t('meta_description'));
   const metaKw = document.querySelector('meta[name="keywords"]');
   if (metaKw) metaKw.setAttribute('content', t('meta_keywords'));
+  // 8. Re-render gallery grid with translated folder names
+  if (typeof _albumFolderCache !== 'undefined' && typeof photoConfig !== 'undefined') {
+    var cachedRoot = _albumFolderCache[photoConfig.rootFolderId];
+    if (cachedRoot) {
+      var galleryGrid = document.querySelector('.gallery-grid');
+      if (galleryGrid) renderGalleryGrid(galleryGrid, cachedRoot);
+    }
+  }
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -269,6 +277,17 @@ function stripExt(filename) {
   return filename.replace(/\.[^.]+$/, '');
 }
 
+/* Translate a Google Drive folder name to its localized display name.
+ * Normalizes the folder name → translation key: lowercase, spaces/hyphens → underscores,
+ * then looks up "album_<normalized>" in translations.
+ * Falls back to the original folder name if no translation exists. */
+function translateFolderName(driveName) {
+  var key = 'album_' + driveName.toLowerCase().replace(/[\s\-]+/g, '_');
+  var translated = t(key);
+  // t() returns the key itself if not found — detect that and fall back to original name
+  return (translated === key) ? driveName : translated;
+}
+
 /* Color palette for dynamic gallery cards */
 var GALLERY_COLORS = [
   ['#7B0D1E','#B02030'], ['#7B3A00','#C06020'], ['#1A5C00','#3A8C20'],
@@ -308,10 +327,11 @@ function renderGalleryGrid(container, folderData) {
   // Render a card for each subfolder
   folderData.folders.forEach(function(folder) {
     var colors = GALLERY_COLORS[colorIndex % GALLERY_COLORS.length];
-    var safeName = escapeHtml(folder.name).replace(/'/g, "\\'");
+    var displayName = translateFolderName(folder.name);
+    var safeName = escapeHtml(displayName).replace(/'/g, "\\'");
     html += '<div class="gallery-item" onclick="openDynamicAlbum(\'' + folder.id + '\',\'' + safeName + '\')">'
       + '<div class="gallery-placeholder" id="gcard_' + folder.id + '" style="background:linear-gradient(145deg,' + colors[0] + ',' + colors[1] + ')">'
-      + '<span class="gallery-img-label">' + escapeHtml(folder.name) + '</span>'
+      + '<span class="gallery-img-label">' + escapeHtml(displayName) + '</span>'
       + '</div></div>';
     folderIds.push(folder.id);
     colorIndex++;
@@ -417,9 +437,10 @@ function renderAlbumContents(body, folderData, folderName) {
     var subfolderIds = [];
     html += '<div class="subalbum-grid">';
     folderData.folders.forEach(function(subfolder) {
-      html += '<div class="subalbum-card" onclick="openDynamicAlbum(\'' + subfolder.id + '\',\'' + escapeHtml(subfolder.name).replace(/'/g, "\\'") + '\')">'
+      var subDisplayName = translateFolderName(subfolder.name);
+      html += '<div class="subalbum-card" onclick="openDynamicAlbum(\'' + subfolder.id + '\',\'' + escapeHtml(subDisplayName).replace(/'/g, "\\'") + '\')">'
         + '<div class="subalbum-thumb" id="scard_' + subfolder.id + '"></div>'
-        + '<div class="subalbum-info"><h5>' + escapeHtml(subfolder.name) + '</h5>'
+        + '<div class="subalbum-info"><h5>' + escapeHtml(subDisplayName) + '</h5>'
         + '</div></div>';
       subfolderIds.push(subfolder.id);
     });
