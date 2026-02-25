@@ -141,9 +141,9 @@ section { padding:56px 16px; }
 .deity-epithet { color:rgba(255,240,200,.7); font-size:15px; font-family:'Times New Roman','Mandali',sans-serif; margin-top:6px; }
 .about-text h3 { color:var(--crimson); font-size:clamp(19px,2.5vw,26px); font-weight:800; margin-bottom:14px; }
 .about-text p { color:var(--text-mid); font-size:17px; line-height:2; margin-bottom:14px; font-family:'Times New Roman','Mandali',sans-serif; }
-.about-kicker { background:linear-gradient(135deg, rgba(232,136,15,.1) 0%, rgba(201,151,58,.15) 100%); border-left:4px solid var(--saffron); border-radius:0 12px 12px 0; padding:18px 22px; margin:20px 0; position:relative; }
-.about-kicker p { color:var(--deep-red) !important; font-size:17px !important; font-weight:700; line-height:2; margin-bottom:0 !important; }
-.about-kicker::before { content:'🙏'; position:absolute; top:-12px; left:-2px; font-size:22px; }
+.about-kicker { background:linear-gradient(135deg, var(--deep-red) 0%, var(--crimson) 100%); border:2px solid var(--gold); border-radius:14px; padding:24px 28px; margin:24px 0; position:relative; box-shadow:0 4px 20px rgba(123,13,30,.2), inset 0 1px 0 rgba(201,151,58,.2); text-align:center; }
+.about-kicker p { color:var(--bright-gold) !important; font-size:clamp(17px,2vw,20px) !important; font-weight:700; line-height:2; margin-bottom:0 !important; font-style:italic; text-shadow:0 1px 2px rgba(0,0,0,.3); }
+.about-kicker::before { content:'✨ 🙏 ✨'; position:absolute; top:-16px; left:50%; transform:translateX(-50%); font-size:22px; background:var(--cream); padding:0 12px; border-radius:20px; }
 .about-highlights { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
 .highlight-tag { background:rgba(123,13,30,.08); border:1px solid rgba(123,13,30,.2); color:var(--crimson); padding:5px 12px; border-radius:20px; font-family:'Times New Roman','Mandali',sans-serif; font-size:14px; font-weight:600; }
 
