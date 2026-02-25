@@ -239,7 +239,7 @@ section { padding:56px 16px; }
 .bank-compact-grid .bank-value { color:#FFE8A0; font-weight:700; }
 .bank-compact-grid .bank-value-code { font-family:'Courier New',monospace; font-size:17px; letter-spacing:2.5px; color:#FFE8A0; font-weight:800; }
 .bank-compact-upi { display:flex; align-items:center; justify-content:center; gap:10px; margin-top:10px; padding-top:10px; border-top:1px dashed rgba(201,151,58,.3); }
-.bank-compact-upi .upi-logo { width:52px; height:22px; flex-shrink:0; }
+.bank-compact-upi .upi-logo { height:28px; width:auto; flex-shrink:0; }
 .bank-compact-upi .bank-value-code { font-family:'Courier New',monospace; font-size:17px; letter-spacing:2.5px; color:#FFE8A0; font-weight:800; }
 
 /* GALLERY */
