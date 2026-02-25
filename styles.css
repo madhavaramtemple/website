@@ -36,7 +36,7 @@ img  { max-width: 100%; display: block; }
 header { background:linear-gradient(160deg,var(--deep-red) 0%,var(--crimson) 50%,#A0181A 100%); position:relative; overflow:hidden; }
 header::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle at 20% 50%,rgba(201,151,58,.15) 0%,transparent 50%),radial-gradient(circle at 80% 50%,rgba(201,151,58,.10) 0%,transparent 50%); pointer-events:none; }
 .header-top { display:flex; align-items:center; justify-content:space-between; padding:20px 40px; position:relative; z-index:2; gap:20px; }
-.temple-emblem { width:84px; height:84px; min-width:84px; background:radial-gradient(circle,var(--bright-gold),var(--gold)); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:40px; box-shadow:0 0 0 3px var(--gold),0 0 0 6px rgba(201,151,58,.4),0 8px 30px rgba(0,0,0,.4); animation:glow 3s ease-in-out infinite; }
+.temple-emblem { width:71px; height:71px; min-width:71px; background:radial-gradient(circle,var(--bright-gold),var(--gold)); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:34px; box-shadow:0 0 0 3px var(--gold),0 0 0 6px rgba(201,151,58,.4),0 8px 30px rgba(0,0,0,.4); animation:glow 3s ease-in-out infinite; }
 @keyframes glow { 0%,100%{box-shadow:0 0 0 3px var(--gold),0 0 0 6px rgba(201,151,58,.4),0 8px 30px rgba(0,0,0,.4)} 50%{box-shadow:0 0 0 3px var(--gold),0 0 0 14px rgba(201,151,58,.5),0 8px 40px rgba(0,0,0,.5)} }
 .header-titles { flex:1; text-align:center; padding:0 10px; min-width:0; }
 .om-symbol { color:var(--bright-gold); font-size:clamp(12px,1.8vw,18px); letter-spacing:6px; margin-bottom:4px; font-family:'Times New Roman','Mandali',sans-serif; opacity:.9; }
@@ -508,7 +508,7 @@ footer { background:var(--deep-red); color:rgba(255,240,200,.8); padding:44px 16
 @media (max-width:768px) {
   /* Header stacks */
   .header-top { flex-direction:column; padding:16px; gap:12px; text-align:center; }
-  .temple-emblem { width:70px; height:70px; min-width:70px; font-size:34px; }
+  .temple-emblem { width:60px; height:60px; min-width:60px; font-size:29px; }
   .header-donate-btn { width:100%; text-align:center; }
 
   /* Hamburger nav */
