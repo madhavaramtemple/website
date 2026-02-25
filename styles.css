@@ -918,7 +918,7 @@ footer { background:var(--deep-red); color:rgba(255,240,200,.8); padding:44px 16
   letter-spacing:1px;
 }
 .nearby-temple-body {
-  display:flex; align-items:center; gap:24px;
+  display:flex; align-items:flex-start; gap:24px;
   padding:28px 24px;
   position:relative; z-index:1;
 }
