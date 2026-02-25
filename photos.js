@@ -22,7 +22,7 @@ const photoConfig = {
    * This is the standard approach for static sites using Google APIs.
    * The key MUST be restricted in Google Cloud Console:
    *   1. Application restrictions → HTTP referrers →
-   *      add: madhavaramtemple.github.io/* (and any custom domain)
+   *      add: bhavanarayanaswamy.com/*, www.bhavanarayanaswamy.com/*
    *   2. API restrictions → Restrict key → select only "Google Drive API"
    */
   googleDriveApiKey: 'AIzaSyAz8AKbGMR6ubpU0eSguQMSTkJJNfam7QY',
