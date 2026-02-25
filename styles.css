@@ -56,8 +56,8 @@ nav { background:var(--crimson); position:sticky; top:0; z-index:200; box-shadow
 .nav-toggle.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
 .nav-toggle.open span:nth-child(2) { opacity:0; }
 .nav-toggle.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
-.nav-links { display:flex; justify-content:center; flex-wrap:wrap; list-style:none; }
-.nav-links li a { display:block; padding:18px 14px; color:rgba(255,240,200,.9); text-decoration:none; font-family:'Times New Roman','Mandali',sans-serif; font-size:19px; font-weight:700; transition:all .25s; position:relative; white-space:nowrap; }
+.nav-links { display:flex; justify-content:center; flex-wrap:nowrap; list-style:none; }
+.nav-links li a { display:block; padding:18px 10px; color:rgba(255,240,200,.9); text-decoration:none; font-family:'Times New Roman','Mandali',sans-serif; font-size:17px; font-weight:700; transition:all .25s; position:relative; white-space:nowrap; }
 .nav-links li a::after { content:''; position:absolute; bottom:10px; left:50%; right:50%; height:2px; background:var(--bright-gold); transition:all .25s; }
 .nav-links li a:hover { color:var(--bright-gold); }
 .nav-links li a:hover::after { left:14px; right:14px; }
