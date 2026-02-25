@@ -9,7 +9,7 @@ const translations = {
     ticker_3: "🌸 శ్రీ రామ నవమి ఉత్సవాలు - మార్చి 28-29",
     ticker_4: "💛 ఆలయ నిర్మాణ నిధికి మీ విరాళం అందించండి",
     ticker_5: "📢 ప్రతి నెల పౌర్ణమి రోజు అన్నదానం నిర్వహించబడుతుంది",
-    ticker_6: "💛 నెలకు ₹99 ఆలయ సేవ — ఒక కప్పు కాఫీ కంటే తక్కువ, స్వామి సేవకు మహాబలం!",
+    ticker_6: "💛 నెలకు ₹99 ఆలయ సేవ — మీ చిన్న విరాళం, స్వామి సేవకు మహాబలం!",
 
     // ===== HEADER =====
     header_logo_alt: "శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయం లోగో",
@@ -234,7 +234,7 @@ const translations = {
     // ===== ₹99 MONTHLY DONATION =====
     monthly99_badge: "నెలవారీ సేవ",
     monthly99_per_month: "/నెల",
-    monthly99_headline: "నెలకు ₹99 — ఒక కప్పు కాఫీ కంటే తక్కువ, కానీ 125 ఏళ్ల ఆలయానికి మహా సేవ",
+    monthly99_headline: "నెలకు ₹99 — మీ చిన్న విరాళం, 125 ఏళ్ల ఆలయానికి మహా సేవ",
     monthly99_desc: "ఉద్యోగులు, వ్యాపారులు, భక్తులారా — ఒక్కసారి నమోదు చేసుకుంటే ప్రతి నెల ₹99 ఆటోమేటిక్‌గా మీ ఖాతా నుండి డెబిట్ అవుతుంది. మీరు గుర్తుంచుకోవలసిన అవసరం లేదు! మీ చిన్న మొత్తం నిత్య పూజలకు, అన్నదానానికి, ఆలయ నిర్వహణకు పెద్ద శక్తిగా మారుతుంది.",
     monthly99_benefit_1: "🛕 నిత్య పూజలు",
     monthly99_benefit_2: "🍚 అన్నదానం",
@@ -625,7 +625,7 @@ const translations = {
     ticker_3: "🌸 Sri Rama Navami festivities - March 28-29",
     ticker_4: "💛 Contribute your viraalam to the temple construction fund",
     ticker_5: "📢 Annadanam is conducted every full moon day each month",
-    ticker_6: "💛 ₹99/month Temple Seva — Less than a cup of coffee, a great service to the Swamy!",
+    ticker_6: "💛 ₹99/month Temple Seva — Your small offering, a great service to the Swamy!",
 
     // ===== HEADER =====
     header_logo_alt: "Sri Bhadravathi Bhavanarayana Swamy Temple Logo",
@@ -850,7 +850,7 @@ const translations = {
     // ===== ₹99 MONTHLY DONATION =====
     monthly99_badge: "MONTHLY SEVA",
     monthly99_per_month: "/month",
-    monthly99_headline: "₹99/month — Less than a cup of coffee, but sustains our 125-year-old temple",
+    monthly99_headline: "₹99/month — Your small offering sustains our 125-year-old temple",
     monthly99_desc: "Employees, businessmen, devotees — set up once and ₹99 will be automatically deducted from your account every month. No need to remember! Your small contribution becomes a great force for daily pujas, annadanam, and temple maintenance.",
     monthly99_benefit_1: "🛕 Daily Pujas",
     monthly99_benefit_2: "🍚 Annadanam",
