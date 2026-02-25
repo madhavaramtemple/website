@@ -87,7 +87,12 @@ nav { background:var(--crimson); position:sticky; top:0; z-index:200; box-shadow
 .hero-logo-img {
   height:clamp(120px,22vw,200px); width:auto;
   object-fit:contain; display:block; margin:0 auto;
-  filter:drop-shadow(0 4px 12px rgba(0,0,0,.4));
+  filter:drop-shadow(0 0 18px rgba(201,151,58,.5)) drop-shadow(0 4px 12px rgba(0,0,0,.4));
+  animation:heroGlow 3s ease-in-out infinite;
+}
+@keyframes heroGlow {
+  0%,100% { filter:drop-shadow(0 0 18px rgba(201,151,58,.5)) drop-shadow(0 4px 12px rgba(0,0,0,.4)); }
+  50%     { filter:drop-shadow(0 0 40px rgba(201,151,58,.7)) drop-shadow(0 0 70px rgba(255,215,0,.3)) drop-shadow(0 6px 16px rgba(0,0,0,.4)); }
 }
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
 .hero h1 { color:#FFE8A0; font-size:clamp(19px,4vw,44px); font-weight:900; text-shadow:0 2px 20px rgba(0,0,0,.5); margin-bottom:14px; position:relative; line-height:1.3; }
