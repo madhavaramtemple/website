@@ -34,13 +34,24 @@ body { background:#222; display:flex; align-items:center; justify-content:center
   pointer-events:none;
 }
 
+/* Temple front SVG in background */
+.temple-bg {
+  position:absolute;
+  right:-20px; top:50%;
+  transform:translateY(-50%);
+  height:280px; width:auto;
+  opacity:0.12;
+  filter:brightness(1.5);
+  pointer-events:none;
+}
+
 /* Radial glow behind logo */
 .glow {
   position:absolute;
   top:50%; left:130px;
   transform:translate(-50%,-50%);
   width:300px; height:300px;
-  background:radial-gradient(circle, rgba(201,151,58,0.15) 0%, transparent 70%);
+  background:radial-gradient(circle, rgba(201,151,58,0.2) 0%, transparent 70%);
   pointer-events:none;
 }
 
@@ -49,10 +60,10 @@ body { background:#222; display:flex; align-items:center; justify-content:center
   position:absolute;
   top:50%; left:130px;
   transform:translate(-50%,-50%);
-  width:140px; height:140px;
+  width:160px; height:160px;
   border-radius:50%;
   border:4px solid #C9973A;
-  box-shadow: 0 0 0 8px rgba(201,151,58,0.2), 0 8px 32px rgba(0,0,0,0.5);
+  box-shadow: 0 0 0 8px rgba(201,151,58,0.2), 0 0 40px rgba(201,151,58,0.3), 0 8px 32px rgba(0,0,0,0.5);
   overflow:hidden;
   background:#1a0005;
 }
@@ -65,7 +76,7 @@ body { background:#222; display:flex; align-items:center; justify-content:center
 /* Text content */
 .text-area {
   position:absolute;
-  top:50%; left:240px; right:40px;
+  top:50%; left:250px; right:40px;
   transform:translateY(-50%);
   text-align:left;
 }
@@ -80,7 +91,7 @@ body { background:#222; display:flex; align-items:center; justify-content:center
 
 .temple-name-te {
   color:#FFE8A0;
-  font-size:28px;
+  font-size:26px;
   font-weight:900;
   line-height:1.3;
   text-shadow:2px 2px 8px rgba(0,0,0,0.6);
@@ -89,22 +100,22 @@ body { background:#222; display:flex; align-items:center; justify-content:center
 
 .temple-name-en {
   color:rgba(255,240,200,0.7);
-  font-size:14px;
+  font-size:13px;
   font-weight:600;
   letter-spacing:1px;
-  margin-bottom:14px;
+  margin-bottom:12px;
 }
 
 .divider {
   width:80px; height:3px;
   background:linear-gradient(90deg, #C9973A, #E8880F);
   border-radius:2px;
-  margin-bottom:14px;
+  margin-bottom:12px;
 }
 
 .tagline {
   color:#FFE8A0;
-  font-size:15px;
+  font-size:14px;
   font-weight:700;
   margin-bottom:8px;
   text-shadow:1px 1px 4px rgba(0,0,0,0.5);
@@ -119,7 +130,7 @@ body { background:#222; display:flex; align-items:center; justify-content:center
 
 .detail-item {
   color:#FFE8A0;
-  font-size:13px;
+  font-size:12px;
   font-weight:700;
   display:flex;
   align-items:center;
@@ -129,7 +140,7 @@ body { background:#222; display:flex; align-items:center; justify-content:center
 
 .detail-icon {
   color:#C9973A;
-  font-size:16px;
+  font-size:14px;
 }
 
 /* Decorative corners */
@@ -147,17 +158,17 @@ body { background:#222; display:flex; align-items:center; justify-content:center
 /* Highlights strip at bottom */
 .highlights {
   position:absolute;
-  bottom:20px; left:240px; right:40px;
+  bottom:18px; left:250px; right:40px;
   display:flex;
-  gap:12px;
+  gap:10px;
 }
 .highlight-pill {
   background:rgba(201,151,58,0.15);
   border:1px solid rgba(201,151,58,0.35);
   color:#FFE8A0;
-  font-size:11px;
+  font-size:10px;
   font-weight:600;
-  padding:4px 12px;
+  padding:3px 10px;
   border-radius:20px;
   white-space:nowrap;
 }
@@ -169,29 +180,16 @@ body { background:#222; display:flex; align-items:center; justify-content:center
   height:4px;
   background:linear-gradient(90deg, #E8880F, #C9973A, #E8B84B, #C9973A, #E8880F);
 }
-
-/* Right side decorative element */
-.deco-right {
-  position:absolute;
-  right:-30px; top:50%;
-  transform:translateY(-50%);
-  width:120px; height:120px;
-  border:2px solid rgba(201,151,58,0.15);
-  border-radius:50%;
-}
-.deco-right::after {
-  content:'';
-  position:absolute;
-  inset:15px;
-  border:1px solid rgba(201,151,58,0.1);
-  border-radius:50%;
-}
 </style>
 </head>
 <body>
 
 <div class="cover">
   <div class="accent-top"></div>
+
+  <!-- Temple front as subtle background -->
+  <img src="images/temple-logo.svg" class="temple-bg" alt="" />
+
   <div class="glow"></div>
 
   <!-- Decorative corners -->
@@ -200,9 +198,7 @@ body { background:#222; display:flex; align-items:center; justify-content:center
   <div class="corner corner-bl"></div>
   <div class="corner corner-br"></div>
 
-  <div class="deco-right"></div>
-
-  <!-- Temple Logo -->
+  <!-- Temple Logo (new emblem) -->
   <div class="logo-area">
     <img src="images/image_1.jpg" alt="Temple Logo" />
   </div>
@@ -217,7 +213,7 @@ body { background:#222; display:flex; align-items:center; justify-content:center
     <div class="details">
       <span class="detail-item"><span class="detail-icon">📍</span> కొత్త మాధవరం, కడప</span>
       <span class="detail-item"><span class="detail-icon">📞</span> +91 94405 62447</span>
-      <span class="detail-item"><span class="detail-icon">🌐</span> www.bhavanarayanaswamy.com</span>
+      <span class="detail-item"><span class="detail-icon">🌐</span> bhavanarayanaswamy.com</span>
     </div>
   </div>
 
