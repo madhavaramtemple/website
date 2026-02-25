@@ -1,7 +1,7 @@
 const translations = {
   te: {
     // ===== PAGE TITLE =====
-    page_title: "శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయం - కొత్త మాధవరం",
+    page_title: "Bhavanarayanaswamy Temple | Madhavaram, Kadapa Dist, Andhra Pradesh",
 
     // ===== TICKER =====
     ticker_1: "🙏 జై శ్రీ భావనారాయణ స్వామి",
@@ -617,7 +617,7 @@ const translations = {
 
   en: {
     // ===== PAGE TITLE =====
-    page_title: "Sri Bhadravathi Bhavanarayana Swamy Temple - Kotha Madhavaram",
+    page_title: "Bhavanarayanaswamy Temple | Madhavaram, Kadapa Dist, Andhra Pradesh",
 
     // ===== TICKER =====
     ticker_1: "🙏 Jai Sri Bhavanarayana Swamy",
