@@ -36,13 +36,13 @@ img  { max-width: 100%; display: block; }
 header { background:linear-gradient(160deg,var(--deep-red) 0%,var(--crimson) 50%,#A0181A 100%); position:relative; overflow:hidden; }
 header::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle at 20% 50%,rgba(201,151,58,.15) 0%,transparent 50%),radial-gradient(circle at 80% 50%,rgba(201,151,58,.10) 0%,transparent 50%); pointer-events:none; }
 .header-top { display:flex; align-items:center; justify-content:space-between; padding:20px 40px; position:relative; z-index:2; gap:20px; }
-.temple-emblem { width:72px; height:72px; min-width:72px; background:radial-gradient(circle,var(--bright-gold),var(--gold)); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:34px; box-shadow:0 0 0 3px var(--gold),0 0 0 6px rgba(201,151,58,.4),0 8px 30px rgba(0,0,0,.4); animation:glow 3s ease-in-out infinite; }
+.temple-emblem { width:84px; height:84px; min-width:84px; background:radial-gradient(circle,var(--bright-gold),var(--gold)); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:40px; box-shadow:0 0 0 3px var(--gold),0 0 0 6px rgba(201,151,58,.4),0 8px 30px rgba(0,0,0,.4); animation:glow 3s ease-in-out infinite; }
 @keyframes glow { 0%,100%{box-shadow:0 0 0 3px var(--gold),0 0 0 6px rgba(201,151,58,.4),0 8px 30px rgba(0,0,0,.4)} 50%{box-shadow:0 0 0 3px var(--gold),0 0 0 14px rgba(201,151,58,.5),0 8px 40px rgba(0,0,0,.5)} }
 .header-titles { flex:1; text-align:center; padding:0 10px; min-width:0; }
 .om-symbol { color:var(--bright-gold); font-size:clamp(12px,1.8vw,18px); letter-spacing:6px; margin-bottom:4px; font-family:'Times New Roman','Mandali',sans-serif; opacity:.9; }
 .temple-main-title { color:#FFE8A0; font-size:clamp(17px,3.2vw,34px); font-weight:900; line-height:1.25; text-shadow:2px 2px 8px rgba(0,0,0,.5); }
 .temple-sub-title { color:var(--bright-gold); font-size:clamp(11px,1.8vw,18px); font-weight:500; margin-top:4px; }
-.temple-location { color:rgba(255,240,200,.8); font-size:clamp(13px,1.6vw,17px); margin-top:4px; font-family:'Times New Roman','Mandali',sans-serif; }
+.temple-location { color:rgba(255,240,200,.8); font-size:clamp(11px,1.4vw,15px); margin-top:4px; font-family:'Times New Roman','Mandali',sans-serif; }
 .header-donate-btn { background:linear-gradient(135deg,var(--saffron),var(--gold)); color:#fff; border:none; padding:11px 20px; border-radius:6px; font-family:'Times New Roman','Mandali',serif; font-size:15px; font-weight:700; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,.3); transition:all .3s; white-space:nowrap; text-decoration:none; display:inline-block; flex-shrink:0; animation:donatePulse 2.5s ease-in-out infinite; position:relative; overflow:hidden; }
 .header-donate-btn::after { content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent); animation:donateShimmer 3s ease-in-out infinite; }
 .header-donate-btn:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,.4); animation:none; }
@@ -508,7 +508,7 @@ footer { background:var(--deep-red); color:rgba(255,240,200,.8); padding:44px 16
 @media (max-width:768px) {
   /* Header stacks */
   .header-top { flex-direction:column; padding:16px; gap:12px; text-align:center; }
-  .temple-emblem { width:60px; height:60px; min-width:60px; font-size:28px; }
+  .temple-emblem { width:70px; height:70px; min-width:70px; font-size:34px; }
   .header-donate-btn { width:100%; text-align:center; }
 
   /* Hamburger nav */
@@ -913,14 +913,10 @@ footer { background:var(--deep-red); color:rgba(255,240,200,.8); padding:44px 16
   background:linear-gradient(135deg,var(--bright-gold),var(--gold));
   color:var(--deep-red);
   font-family:'Times New Roman','Mandali',sans-serif;
-  font-size:16px; font-weight:800;
-  padding:12px 24px;
+  font-size:13px; font-weight:800;
+  padding:10px 24px;
   text-align:center;
   letter-spacing:1px;
-  display:flex; align-items:center; justify-content:center; gap:8px;
-}
-.nearby-temple-badge .badge-icon {
-  width:20px; height:20px; flex-shrink:0;
 }
 .nearby-temple-body {
   display:flex; align-items:flex-start; gap:24px;
@@ -976,18 +972,13 @@ footer { background:var(--deep-red); color:rgba(255,240,200,.8); padding:44px 16
   background:rgba(255,255,255,.1);
   border-color:rgba(201,151,58,.4);
   color:var(--bright-gold);
-  display:inline-flex; align-items:center; gap:6px;
-  font-size:15px;
-}
-.tag-icon {
-  width:16px; height:16px; flex-shrink:0; vertical-align:middle;
 }
 .nearby-temple-link {
-  display:inline-flex; align-items:center; gap:8px;
+  display:inline-block;
   background:linear-gradient(135deg,var(--bright-gold),var(--gold));
   color:var(--deep-red);
   font-family:'Times New Roman','Mandali',sans-serif;
-  font-size:16px; font-weight:800;
+  font-size:14px; font-weight:800;
   padding:10px 24px;
   border-radius:8px;
   text-decoration:none;
