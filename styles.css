@@ -792,7 +792,7 @@ footer { background:var(--deep-red); color:rgba(255,240,200,.8); padding:44px 16
   overflow: hidden;
 }
 .committee-avatar img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  width: 100%; height: 100%; object-fit: cover; object-position: center center;
   border-radius: 50%;
 }
 .committee-card.president .committee-avatar { background: linear-gradient(135deg, var(--crimson), var(--deep-red)); box-shadow: 0 4px 12px rgba(123,13,30,0.3); }
