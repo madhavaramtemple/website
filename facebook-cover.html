@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Facebook Cover - Sri Bhavanarayana Swamy Temple</title>
+<link href="https://fonts.googleapis.com/css2?family=Mandali&display=swap" rel="stylesheet" />
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#222; display:flex; align-items:center; justify-content:center; min-height:100vh; }
+
+.cover {
+  width:820px; height:312px;
+  background: linear-gradient(135deg, #1a0005 0%, #5A0010 25%, #7B0D1E 50%, #5A0010 75%, #1a0005 100%);
+  position:relative;
+  overflow:hidden;
+  font-family:'Times New Roman','Mandali',serif;
+}
+
+/* Decorative pattern overlay */
+.cover::before {
+  content:'';
+  position:absolute; inset:0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C9973A' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events:none;
+}
+
+/* Golden border frame */
+.cover::after {
+  content:'';
+  position:absolute;
+  inset:8px;
+  border:2px solid rgba(201,151,58,0.4);
+  border-radius:4px;
+  pointer-events:none;
+}
+
+/* Radial glow behind logo */
+.glow {
+  position:absolute;
+  top:50%; left:130px;
+  transform:translate(-50%,-50%);
+  width:300px; height:300px;
+  background:radial-gradient(circle, rgba(201,151,58,0.15) 0%, transparent 70%);
+  pointer-events:none;
+}
+
+/* Temple logo */
+.logo-area {
+  position:absolute;
+  top:50%; left:130px;
+  transform:translate(-50%,-50%);
+  width:140px; height:140px;
+  border-radius:50%;
+  border:4px solid #C9973A;
+  box-shadow: 0 0 0 8px rgba(201,151,58,0.2), 0 8px 32px rgba(0,0,0,0.5);
+  overflow:hidden;
+  background:#1a0005;
+}
+.logo-area img {
+  width:100%; height:100%;
+  object-fit:cover;
+  border-radius:50%;
+}
+
+/* Text content */
+.text-area {
+  position:absolute;
+  top:50%; left:240px; right:40px;
+  transform:translateY(-50%);
+  text-align:left;
+}
+
+.om-line {
+  color:#C9973A;
+  font-size:13px;
+  letter-spacing:6px;
+  margin-bottom:8px;
+  opacity:0.8;
+}
+
+.temple-name-te {
+  color:#FFE8A0;
+  font-size:28px;
+  font-weight:900;
+  line-height:1.3;
+  text-shadow:2px 2px 8px rgba(0,0,0,0.6);
+  margin-bottom:4px;
+}
+
+.temple-name-en {
+  color:rgba(255,240,200,0.7);
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:1px;
+  margin-bottom:14px;
+}
+
+.divider {
+  width:80px; height:3px;
+  background:linear-gradient(90deg, #C9973A, #E8880F);
+  border-radius:2px;
+  margin-bottom:14px;
+}
+
+.tagline {
+  color:#FFE8A0;
+  font-size:15px;
+  font-weight:700;
+  margin-bottom:8px;
+  text-shadow:1px 1px 4px rgba(0,0,0,0.5);
+}
+
+.details {
+  display:flex;
+  gap:14px;
+  align-items:center;
+  white-space:nowrap;
+}
+
+.detail-item {
+  color:#FFE8A0;
+  font-size:13px;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  text-shadow:1px 1px 4px rgba(0,0,0,0.5);
+}
+
+.detail-icon {
+  color:#C9973A;
+  font-size:16px;
+}
+
+/* Decorative corners */
+.corner {
+  position:absolute;
+  width:40px; height:40px;
+  border-color:#C9973A;
+  opacity:0.5;
+}
+.corner-tl { top:16px; left:16px; border-top:2px solid; border-left:2px solid; }
+.corner-tr { top:16px; right:16px; border-top:2px solid; border-right:2px solid; }
+.corner-bl { bottom:16px; left:16px; border-bottom:2px solid; border-left:2px solid; }
+.corner-br { bottom:16px; right:16px; border-bottom:2px solid; border-right:2px solid; }
+
+/* Highlights strip at bottom */
+.highlights {
+  position:absolute;
+  bottom:20px; left:240px; right:40px;
+  display:flex;
+  gap:12px;
+}
+.highlight-pill {
+  background:rgba(201,151,58,0.15);
+  border:1px solid rgba(201,151,58,0.35);
+  color:#FFE8A0;
+  font-size:11px;
+  font-weight:600;
+  padding:4px 12px;
+  border-radius:20px;
+  white-space:nowrap;
+}
+
+/* Saffron accent line at top */
+.accent-top {
+  position:absolute;
+  top:0; left:0; right:0;
+  height:4px;
+  background:linear-gradient(90deg, #E8880F, #C9973A, #E8B84B, #C9973A, #E8880F);
+}
+
+/* Right side decorative element */
+.deco-right {
+  position:absolute;
+  right:-30px; top:50%;
+  transform:translateY(-50%);
+  width:120px; height:120px;
+  border:2px solid rgba(201,151,58,0.15);
+  border-radius:50%;
+}
+.deco-right::after {
+  content:'';
+  position:absolute;
+  inset:15px;
+  border:1px solid rgba(201,151,58,0.1);
+  border-radius:50%;
+}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="accent-top"></div>
+  <div class="glow"></div>
+
+  <!-- Decorative corners -->
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+
+  <div class="deco-right"></div>
+
+  <!-- Temple Logo -->
+  <div class="logo-area">
+    <img src="images/image_1.jpg" alt="Temple Logo" />
+  </div>
+
+  <!-- Text Content -->
+  <div class="text-area">
+    <div class="om-line">ఓం నమో నారాయణాయ</div>
+    <div class="temple-name-te">శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయం</div>
+    <div class="temple-name-en">SRI BHADRAVATHI BHAVANARAYANA SWAMY TEMPLE</div>
+    <div class="divider"></div>
+    <div class="tagline">125+ ఏళ్ల పవిత్ర వారసత్వం — వస్త్ర దీవెనలకు పుణ్యక్షేత్రం</div>
+    <div class="details">
+      <span class="detail-item"><span class="detail-icon">📍</span> కొత్త మాధవరం, కడప</span>
+      <span class="detail-item"><span class="detail-icon">📞</span> +91 94405 62447</span>
+      <span class="detail-item"><span class="detail-icon">🌐</span> www.bhavanarayanaswamy.com</span>
+    </div>
+  </div>
+
+  <!-- Bottom highlights -->
+  <div class="highlights">
+    <span class="highlight-pill">🛕 ప్రాచీన ఆలయం</span>
+    <span class="highlight-pill">🧵 చేనేత వారసత్వం</span>
+    <span class="highlight-pill">🙏 పద్మశాలీ ఆరాధ్య దైవం</span>
+    <span class="highlight-pill">🎊 50+ వార్షిక ఉత్సవాలు</span>
+  </div>
+</div>
+
+</body>
+</html>
