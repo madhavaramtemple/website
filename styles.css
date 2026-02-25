@@ -232,11 +232,12 @@ section { padding:56px 16px; }
 .donate-now-btn::after { content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent); animation:donateShimmer 2.5s ease-in-out infinite; }
 .donate-now-btn:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(0,0,0,.4); animation:none; }
 /* Bank details — compact grid */
-.bank-compact { background:rgba(255,255,255,.06); border:1px solid rgba(201,151,58,.25); border-radius:10px; padding:12px 16px; max-width:480px; margin:14px auto 0; position:relative; }
-.bank-compact-title { color:var(--bright-gold); font-size:16px; font-weight:700; text-align:center; margin-bottom:6px; }
-.bank-compact-grid { display:grid; grid-template-columns:auto 1fr; gap:2px 10px; font-family:'Times New Roman','Mandali',sans-serif; font-size:13px; }
-.bank-compact-grid .bank-label { color:rgba(255,240,200,.6); }
-.bank-compact-grid .bank-value { color:rgba(255,240,200,.9); font-weight:600; }
+.bank-compact { background:rgba(255,255,255,.06); border:1px solid rgba(201,151,58,.25); border-radius:10px; padding:16px 20px; max-width:520px; margin:14px auto 0; position:relative; }
+.bank-compact-title { color:var(--bright-gold); font-size:17px; font-weight:700; text-align:center; margin-bottom:10px; }
+.bank-compact-grid { display:grid; grid-template-columns:auto 1fr; gap:6px 14px; font-family:'Times New Roman','Mandali',sans-serif; font-size:15px; align-items:center; }
+.bank-compact-grid .bank-label { color:rgba(255,240,200,.6); font-size:14px; }
+.bank-compact-grid .bank-value { color:#FFE8A0; font-weight:700; }
+.bank-compact-grid .bank-value-code { font-family:'Courier New',monospace; font-size:17px; letter-spacing:2.5px; color:#FFE8A0; font-weight:800; }
 .bank-compact-upi { text-align:center; margin-top:6px; padding-top:6px; border-top:1px dashed rgba(201,151,58,.2); font-size:14px; color:rgba(255,240,200,.7); }
 .bank-compact-upi strong { color:var(--bright-gold); }
 
@@ -564,7 +565,8 @@ footer { background:var(--deep-red); color:rgba(255,240,200,.8); padding:44px 16
 
   .gallery-grid { grid-template-columns:repeat(2,1fr); gap:10px; }
 
-  .bank-compact-grid { font-size:11px; }
+  .bank-compact-grid { font-size:13px; }
+  .bank-compact-grid .bank-value-code { font-size:15px; letter-spacing:2px; }
 
   .footer-grid { grid-template-columns:1fr; }
   .footer-brand { grid-column:auto; }
