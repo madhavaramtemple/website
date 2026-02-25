@@ -141,6 +141,7 @@ section { padding:56px 16px; }
 .deity-epithet { color:rgba(255,240,200,.7); font-size:15px; font-family:'Times New Roman','Mandali',sans-serif; margin-top:6px; }
 .about-text h3 { color:var(--crimson); font-size:clamp(22px,3vw,30px); font-weight:800; margin-bottom:14px; }
 .about-text p { color:var(--text-mid); font-size:17px; line-height:2; margin-bottom:14px; font-family:'Times New Roman','Mandali',sans-serif; }
+.about-text p strong { color:var(--deep-red); font-weight:900; -webkit-text-stroke:0.3px var(--deep-red); }
 .about-kicker { background:linear-gradient(135deg, #FFF8E1 0%, #FFE0B2 50%, #FFD54F 100%); border:3px solid var(--saffron); border-radius:16px; padding:32px 32px 28px; margin:28px 0; position:relative; box-shadow:0 0 0 4px rgba(232,136,15,.12), 0 8px 32px rgba(201,151,58,.25); text-align:center; overflow:hidden; }
 .about-kicker::after { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at center, rgba(255,255,255,.4) 0%, transparent 70%); pointer-events:none; }
 .about-kicker p { color:var(--deep-red) !important; font-size:clamp(18px,2.2vw,22px) !important; font-weight:800; line-height:2.1; margin-bottom:0 !important; text-shadow:0 1px 2px rgba(255,255,255,.5); position:relative; z-index:1; }
@@ -917,26 +918,26 @@ footer { background:var(--deep-red); color:rgba(255,240,200,.8); padding:44px 16
   color:var(--deep-red);
   font-family:'Times New Roman','Mandali',sans-serif;
   font-size:13px; font-weight:800;
-  padding:10px 24px;
+  padding:8px 20px;
   text-align:center;
   letter-spacing:1px;
 }
 .nearby-temple-body {
-  display:flex; align-items:flex-start; gap:24px;
-  padding:28px 24px;
+  display:flex; align-items:flex-start; gap:16px;
+  padding:20px 18px;
   position:relative; z-index:1;
 }
 .nearby-temple-icon-area {
   flex-shrink:0; text-align:center;
 }
 .nearby-temple-emoji {
-  font-size:clamp(56px,10vw,80px); display:block;
+  font-size:clamp(40px,7vw,56px); display:block;
   filter:drop-shadow(0 0 16px rgba(201,151,58,.4));
   animation:float 4s ease-in-out infinite;
 }
 .nearby-temple-logo-img {
-  width:clamp(90px,14vw,120px);
-  height:clamp(90px,14vw,120px);
+  width:clamp(60px,10vw,80px);
+  height:clamp(60px,10vw,80px);
   object-fit:contain;
   border-radius:0;
   mix-blend-mode:screen;
@@ -957,16 +958,16 @@ footer { background:var(--deep-red); color:rgba(255,240,200,.8); padding:44px 16
 }
 .nearby-temple-info h3 {
   color:#FFE8A0;
-  font-size:clamp(20px,3.2vw,28px);
+  font-size:clamp(18px,2.8vw,24px);
   font-weight:900;
-  margin-bottom:12px;
+  margin-bottom:8px;
   text-shadow:1px 1px 6px rgba(0,0,0,.3);
 }
 .nearby-temple-info p {
   color:rgba(255,240,200,.85);
   font-family:'Times New Roman','Mandali',sans-serif;
-  font-size:14px; line-height:2;
-  margin-bottom:16px;
+  font-size:13px; line-height:1.8;
+  margin-bottom:12px;
 }
 .nearby-temple-tags {
   display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;
@@ -993,7 +994,7 @@ footer { background:var(--deep-red); color:rgba(255,240,200,.8); padding:44px 16
   box-shadow:0 6px 20px rgba(0,0,0,.35);
 }
 @media (max-width:1024px) {
-  .nearby-temple-body { flex-direction:column; text-align:center; gap:16px; padding:24px 20px; }
+  .nearby-temple-body { flex-direction:column; text-align:center; gap:12px; padding:16px 16px; }
   .nearby-temple-tags { justify-content:center; }
 }
 @media (max-width:768px) {
