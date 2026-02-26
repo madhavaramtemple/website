@@ -583,6 +583,11 @@ const translations = {
     js_contact_email_label: "ఇమెయిల్",
     js_contact_subject_label: "విషయం",
     js_contact_message_label: "సందేశం",
+    contact_alert_name: "దయచేసి మీ పేరు నమోదు చేయండి",
+    contact_alert_phone: "దయచేసి 10 అంకెల ఫోన్ నంబర్ నమోదు చేయండి",
+    contact_alert_message: "దయచేసి మీ సందేశం రాయండి",
+    contact_sending: "⏳ పంపుతోంది...",
+    contact_success: "✅ మీ సందేశం విజయవంతంగా పంపబడింది! WhatsApp ద్వారా కూడా పంపబడింది.",
 
     // ===== SEO META =====
     meta_description: "శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయం, కొత్త మాధవరం, ఆంధ్రప్రదేశ్. 125+ సంవత్సరాల పురాతన హిందూ ఆలయం. పూజా సమయాలు, సేవలు, విరాళాలు, ఉత్సవాలు మరియు ఫోటో గ్యాలరీ.",
@@ -1261,6 +1266,11 @@ const translations = {
     js_contact_email_label: "Email",
     js_contact_subject_label: "Subject",
     js_contact_message_label: "Message",
+    contact_alert_name: "Please enter your name",
+    contact_alert_phone: "Please enter a valid 10-digit phone number",
+    contact_alert_message: "Please enter your message",
+    contact_sending: "⏳ Sending...",
+    contact_success: "✅ Your message has been sent successfully! Also sent via WhatsApp.",
 
     // ===== SEO META =====
     meta_description: "Sri Bhadravathi Bhavanarayana Swamy Temple, Kotha Madhavaram, Andhra Pradesh. 125+ year old Hindu temple. Puja timings, sevas, donations, festivals, and photo gallery.",

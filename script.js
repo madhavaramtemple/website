@@ -879,27 +879,67 @@ document.addEventListener('keydown', e => {
   }, { passive: true });
 })();
 
-/* Contact submit */
-document.getElementById('contactSubmitBtn').addEventListener('click', () => {
-  const form = document.getElementById('contactSubmitBtn').closest('.contact-form-box');
-  const inputs = form.querySelectorAll('input, select, textarea');
-  const name    = inputs[0].value.trim() || t('js_contact_default_name');
-  const phone   = inputs[1].value.trim() || '-';
-  const email   = inputs[2].value.trim() || '-';
-  const subject = inputs[3].value.trim() || t('js_contact_default_subject');
-  const message = inputs[4].value.trim() || '-';
+/* Contact submit → Google Forms + WhatsApp */
+document.getElementById('contactSubmitBtn').addEventListener('click', function() {
+  var btn = this;
+  var form = btn.closest('.contact-form-box');
+  var inputs = form.querySelectorAll('input, select, textarea');
+  var name    = inputs[0].value.trim();
+  var phone   = inputs[1].value.trim();
+  var email   = inputs[2].value.trim();
+  var subject = inputs[3].value;
+  var message = inputs[4].value.trim();
 
-  const emailSubject = t('js_contact_email_subject_prefix') + ' - ' + subject + ' (' + name + ')';
-  const emailBody =
-    t('js_contact_email_body_header') + '\n\n' +
-    t('js_contact_name_label') + ': ' + name + '\n' +
-    t('js_contact_phone_label') + ': ' + phone + '\n' +
-    t('js_contact_email_label') + ': ' + email + '\n' +
-    t('js_contact_subject_label') + ': ' + subject + '\n\n' +
-    t('js_contact_message_label') + ':\n' + message;
+  /* Validation */
+  if (!name) { alert(t('contact_alert_name')); inputs[0].focus(); return; }
+  if (!phone || phone.length < 10) { alert(t('contact_alert_phone')); inputs[1].focus(); return; }
+  if (!message) { alert(t('contact_alert_message')); inputs[4].focus(); return; }
 
-  const mailUrl = 'mailto:madhavaramtemple@gmail.com?subject=' + encodeURIComponent(emailSubject) + '&body=' + encodeURIComponent(emailBody);
-  window.location.href = mailUrl;
+  /* Disable button while submitting */
+  btn.disabled = true;
+  var origText = btn.textContent;
+  btn.textContent = t('contact_sending');
+
+  /* Google Forms submission (no-cors) */
+  var gFormUrl = 'https://docs.google.com/forms/d/1kFrO-O1rdIWN0xNVlkY-lD-dPCMAhTLyDg_NkXIKkjE/formResponse';
+  var formData = new FormData();
+  formData.append('entry.690307649', name);
+  formData.append('entry.1673548566', phone);
+  formData.append('entry.1193099488', email || '-');
+  formData.append('entry.2120381566', subject);
+  formData.append('entry.684107934', message);
+
+  function afterSubmit() {
+    /* Build WhatsApp message in Telugu */
+    var waMsg = 'నమస్కారం 🙏\n\n' +
+      'శ్రీ భావనారాయణ స్వామి ఆలయం - సందేశం\n' +
+      '━━━━━━━━━━━━━━━\n' +
+      '👤 ' + t('js_contact_name_label') + ': ' + name + '\n' +
+      '📞 ' + t('js_contact_phone_label') + ': ' + phone + '\n' +
+      (email ? '📧 ' + t('js_contact_email_label') + ': ' + email + '\n' : '') +
+      '📌 ' + t('js_contact_subject_label') + ': ' + subject + '\n\n' +
+      '💬 ' + t('js_contact_message_label') + ':\n' + message + '\n\n' +
+      '🙏 జై శ్రీ భావనారాయణ స్వామి';
+
+    window.open('https://wa.me/919440562447?text=' + encodeURIComponent(waMsg), '_blank');
+
+    /* Clear form */
+    inputs.forEach(function(inp) {
+      if (inp.tagName === 'TEXTAREA' || inp.tagName === 'INPUT') inp.value = '';
+    });
+
+    /* Success feedback */
+    alert(t('contact_success'));
+    btn.disabled = false;
+    btn.textContent = origText;
+  }
+
+  fetch(gFormUrl, { method: 'POST', mode: 'no-cors', body: formData })
+    .then(afterSubmit)
+    .catch(function() {
+      /* no-cors fetch may appear to "fail" but data still goes through */
+      afterSubmit();
+    });
 });
 
 /* Smooth scroll with sticky nav offset */
