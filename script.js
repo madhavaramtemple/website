@@ -352,6 +352,119 @@ function donate99() {
 }
 
 
+/* ===== SPECIAL SEVA MODAL ===== */
+function openSpecialSevaModal() {
+  document.getElementById('specialSevaModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeSpecialSevaModal() {
+  document.getElementById('specialSevaModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('specialSevaModal').addEventListener('click', function(e) { if (e.target === e.currentTarget) closeSpecialSevaModal(); });
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && document.getElementById('specialSevaModal').classList.contains('open')) closeSpecialSevaModal(); });
+
+/* Toggle between in-person and online mode */
+function toggleSevaMode(mode, btn) {
+  document.querySelectorAll('.seva-mode-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  var addressGroup = document.getElementById('sevaAddressGroup');
+  if (addressGroup) addressGroup.style.display = (mode === 'online') ? 'block' : 'none';
+}
+
+/* Special Seva Razorpay Payment */
+function startSpecialSevaPayment() {
+  var name = document.getElementById('sevaDevoteeName').value.trim();
+  var phone = document.getElementById('sevaDevoteePhone').value.trim();
+  var occasion = document.getElementById('sevaOccasion').value;
+  var date = document.getElementById('sevaDate').value;
+
+  if (!name) { alert(t('special_seva_alert_name')); return; }
+  if (!phone || phone.length < 10) { alert(t('special_seva_alert_phone')); return; }
+  if (!date) { alert(t('special_seva_alert_date')); return; }
+
+  var gotra = document.getElementById('sevaGotra').value.trim();
+  var nakshatra = document.getElementById('sevaNakshatra').value;
+  var address = document.getElementById('sevaAddress').value.trim();
+  var requests = document.getElementById('sevaRequests').value.trim();
+  var modeBtn = document.querySelector('.seva-mode-btn.active');
+  var mode = (modeBtn && modeBtn.textContent.indexOf('ఆన్‌లైన్') !== -1) || (modeBtn && modeBtn.textContent.indexOf('Online') !== -1) ? 'online' : 'inperson';
+
+  var occasionLabels = {
+    birthday: 'Birthday / పుట్టినరోజు',
+    anniversary: 'Anniversary / వార్షికోత్సవం',
+    graduation: 'Graduation / పట్టా పొందినరోజు',
+    housewarming: 'Housewarming / గృహప్రవేశం',
+    babynaming: 'Baby Naming / నామకరణం',
+    newjob: 'New Job / కొత్త ఉద్యోగం',
+    other: 'Other / ఇతరం'
+  };
+  var occasionText = occasionLabels[occasion] || occasion;
+
+  var options = {
+    key: RAZORPAY_KEY,
+    amount: 51600, // ₹516 in paise
+    currency: 'INR',
+    name: t('razorpay_name'),
+    description: 'Special Seva: ' + occasionText + ' (' + date + ')',
+    prefill: {
+      name: name,
+      contact: '+91' + phone.replace(/^\+?91/, '')
+    },
+    notes: {
+      seva_type: 'Special Seva',
+      devotee_name: name,
+      devotee_phone: phone,
+      occasion: occasionText,
+      date: date,
+      gotra: gotra || 'N/A',
+      nakshatra: nakshatra || 'N/A',
+      mode: mode,
+      address: address || 'N/A',
+      special_requests: requests || 'N/A',
+      temple: 'Sri Bhadravathi Bhavanarayana Swamy Temple, Kotha Madhavaram'
+    },
+    theme: { color: '#4a2020' },
+    modal: { ondismiss: function() { console.log('Special seva payment dismissed'); } },
+    handler: function(response) {
+      closeSpecialSevaModal();
+      // Build WhatsApp message with booking details
+      var msg = '🙏 నమస్కారం!\n\n'
+        + '✅ Special Seva Payment Successful\n'
+        + 'Payment ID: ' + response.razorpay_payment_id + '\n\n'
+        + '👤 Name: ' + name + '\n'
+        + '📞 Phone: ' + phone + '\n'
+        + '🎉 Occasion: ' + occasionText + '\n'
+        + '📅 Date: ' + date + '\n'
+        + '📿 Gotra: ' + (gotra || 'N/A') + '\n'
+        + '⭐ Nakshatra: ' + (nakshatra || 'N/A') + '\n'
+        + '🛕 Mode: ' + (mode === 'online' ? 'Online Video Pooja' : 'In-Person') + '\n';
+      if (mode === 'online' && address) msg += '📍 Address: ' + address + '\n';
+      if (requests) msg += '📝 Requests: ' + requests + '\n';
+
+      var whatsappUrl = 'https://wa.me/919440562447?text=' + encodeURIComponent(msg);
+      window.open(whatsappUrl, '_blank');
+
+      alert(
+        '🙏 ' + name + ' గారు!\n\n'
+        + 'మీ స్పెషల్ సేవ బుకింగ్ విజయవంతంగా పూర్తయింది.\n'
+        + 'Payment ID: ' + response.razorpay_payment_id + '\n\n'
+        + 'పూజారి గారు త్వరలో WhatsApp ద్వారా మిమ్మల్ని సంప్రదిస్తారు.'
+      );
+    }
+  };
+
+  try {
+    var rzp = new Razorpay(options);
+    rzp.on('payment.failed', function(response) {
+      alert(t('razorpay_failed') + ' ' + response.error.description + '\n' + t('razorpay_retry'));
+    });
+    rzp.open();
+  } catch(e) {
+    alert(t('razorpay_load_error'));
+  }
+}
+
 /* ===== DYNAMIC ALBUM SYSTEM ===== */
 /* Albums are auto-discovered from Google Drive folder structure */
 

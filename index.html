@@ -55,7 +55,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://checkout.razorpay.com https://www.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://lh3.googleusercontent.com https://www.googleapis.com https://*.google.com https://*.gstatic.com https://www.googletagmanager.com https://www.google-analytics.com; frame-src https://www.google.com https://api.razorpay.com; connect-src 'self' https://www.googleapis.com https://lumberjack.razorpay.com https://api.razorpay.com https://script.google.com https://script.googleusercontent.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com;" />
 
   <link href="https://fonts.googleapis.com/css2?family=Mandali&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=4" />
 
   <!-- Structured Data: Hindu Temple -->
   <script type="application/ld+json">
@@ -157,6 +157,7 @@
       <li><a href="#about" onclick="closeNav()" data-i18n="nav_about">ఆలయం గురించి</a></li>
       <li><a href="#timings" onclick="closeNav()" data-i18n="nav_timings">పూజా సమయాలు</a></li>
       <li><a href="#events" onclick="closeNav()" data-i18n="nav_events">ఉత్సవాలు</a></li>
+      <li><a href="#special-seva" onclick="closeNav()" data-i18n="nav_special_seva">స్పెషల్ సేవ</a></li>
       <li><a href="#sevas" onclick="closeNav()" data-i18n="nav_sevas">సేవలు</a></li>
       <li><a href="#donation" onclick="closeNav()" data-i18n="nav_donation">విరాళాలు</a></li>
       <li><a href="#deity-history" onclick="closeNav()" data-i18n="nav_deity_history">స్వామి చరిత్ర</a></li>
@@ -328,6 +329,76 @@
   </div>
 </section>
 
+<!-- SPECIAL SEVA -->
+<section class="special-seva-section" id="special-seva">
+  <div class="container">
+    <div class="section-header">
+      <div class="small-label" data-i18n="special_seva_label">✨ ప్రత్యేక సేవ</div>
+      <h2 data-i18n="special_seva_heading">స్పెషల్ సేవ — జీవితంలో ప్రత్యేక సందర్భాలకు</h2>
+      <div class="underline"></div>
+    </div>
+
+    <div class="special-seva-hero">
+      <div class="special-seva-info">
+        <p class="special-seva-desc" data-i18n="special_seva_desc">మీ జీవితంలో ప్రత్యేక సందర్భాల్లో — పుట్టినరోజు, వివాహ వార్షికోత్సవం, గృహప్రవేశం, పట్టా పొందినరోజు — శ్రీ భావనారాయణ స్వామి ఆశీర్వాదం పొందండి. మీరు స్వయంగా ఆలయానికి వచ్చి సేవ చేయించుకోవచ్చు, లేదా ఆన్‌లైన్ ద్వారా బుక్ చేసి, పూజారి గారు పూజ చేసి వీడియో కాల్ లేదా వీడియో పంపిస్తారు.</p>
+
+        <div class="special-seva-occasions">
+          <span class="occasion-pill" data-i18n="special_seva_occ_birthday">🎂 పుట్టినరోజు</span>
+          <span class="occasion-pill" data-i18n="special_seva_occ_anniversary">💍 వివాహ వార్షికోత్సవం</span>
+          <span class="occasion-pill" data-i18n="special_seva_occ_graduation">🎓 పట్టా పొందినరోజు</span>
+          <span class="occasion-pill" data-i18n="special_seva_occ_housewarming">🏠 గృహప్రవేశం</span>
+          <span class="occasion-pill" data-i18n="special_seva_occ_babynaming">👶 నామకరణం</span>
+          <span class="occasion-pill" data-i18n="special_seva_occ_newjob">💼 కొత్త ఉద్యోగం</span>
+          <span class="occasion-pill" data-i18n="special_seva_occ_other">🙏 ఇతర శుభ సందర్భాలు</span>
+        </div>
+
+        <div class="special-seva-modes">
+          <div class="seva-mode-card">
+            <div class="seva-mode-icon">🛕</div>
+            <h4 data-i18n="special_seva_mode_inperson_title">స్వయంగా ఆలయంలో</h4>
+            <p data-i18n="special_seva_mode_inperson_desc">ఆలయానికి వచ్చి పూజారి గారి సమక్షంలో పూజ చేయించుకోండి</p>
+          </div>
+          <div class="seva-mode-card">
+            <div class="seva-mode-icon">📱</div>
+            <h4 data-i18n="special_seva_mode_online_title">ఆన్‌లైన్ వీడియో పూజ</h4>
+            <p data-i18n="special_seva_mode_online_desc">ఆన్‌లైన్ బుకింగ్ చేయండి — పూజారి వీడియో కాల్ లేదా వీడియో ద్వారా పూజ చేస్తారు</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="special-seva-pricing">
+        <div class="special-seva-price-card">
+          <div class="special-seva-price-label" data-i18n="special_seva_price_label">సేవ ధర</div>
+          <div class="special-seva-price-amount">₹516</div>
+          <div class="special-seva-price-note" data-i18n="special_seva_price_note">ఒక సందర్భానికి</div>
+          <button class="special-seva-book-btn" onclick="openSpecialSevaModal()" data-i18n="special_seva_book_btn">🎉 స్పెషల్ సేవ బుక్ చేయండి</button>
+          <div class="special-seva-whatsapp">
+            <a href="https://wa.me/919440562447?text=%F0%9F%99%8F%20%E0%B0%A8%E0%B0%AE%E0%B0%B8%E0%B1%8D%E0%B0%95%E0%B0%BE%E0%B0%B0%E0%B0%82%2C%20%E0%B0%B8%E0%B1%8D%E0%B0%AA%E0%B1%86%E0%B0%B7%E0%B0%B2%E0%B1%8D%20%E0%B0%B8%E0%B1%87%E0%B0%B5%20%E0%B0%AC%E0%B1%81%E0%B0%95%E0%B1%8D%20%E0%B0%9A%E0%B1%87%E0%B0%AF%E0%B0%BE%E0%B0%B2%E0%B0%A8%E0%B1%81%E0%B0%95%E0%B1%81%E0%B0%82%E0%B0%9F%E0%B1%81%E0%B0%A8%E0%B1%8D%E0%B0%A8%E0%B0%BE%E0%B0%A8%E0%B1%81" target="_blank" rel="noopener" data-i18n="special_seva_whatsapp_link">📱 WhatsApp ద్వారా బుక్ చేయండి</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="special-seva-steps">
+      <div class="special-seva-step">
+        <div class="step-number">1</div>
+        <h4 data-i18n="special_seva_step1_title">సందర్భం ఎంచుకోండి</h4>
+        <p data-i18n="special_seva_step1_desc">పుట్టినరోజు, వార్షికోత్సవం లేదా ఇతర శుభ సందర్భం ఎంచుకొని వివరాలు నమోదు చేయండి</p>
+      </div>
+      <div class="special-seva-step">
+        <div class="step-number">2</div>
+        <h4 data-i18n="special_seva_step2_title">₹516 చెల్లించండి</h4>
+        <p data-i18n="special_seva_step2_desc">Razorpay లేదా UPI ద్వారా సురక్షితంగా చెల్లించండి</p>
+      </div>
+      <div class="special-seva-step">
+        <div class="step-number">3</div>
+        <h4 data-i18n="special_seva_step3_title">పూజ & ఆశీర్వాదం</h4>
+        <p data-i18n="special_seva_step3_desc">పూజారి గారు పూజ చేసి, వీడియో కాల్ లేదా వీడియో రికార్డింగ్ పంపిస్తారు. WhatsApp ద్వారా సమన్వయం</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SEVAS -->
 <section class="sevas-section" id="sevas">
   <div class="container">
@@ -338,13 +409,17 @@
     </div>
     <div class="sevas-grid">
       <div class="seva-card"><span class="seva-icon"><img src="images/ashtottara-icon.ico" alt="అర్చన" loading="lazy" /></span><div class="seva-name" data-i18n="seva_1_name">అర్చన</div><div class="seva-price" data-i18n="seva_1_price">ఉచితం</div><div class="seva-desc" data-i18n="seva_1_desc">గోత్ర నామాలతో అర్చన</div></div>
-      <div class="seva-card"><span class="seva-icon"><img src="images/abhishekham.png" alt="అభిషేకం" loading="lazy" /></span><div class="seva-name" data-i18n="seva_2_name">అభిషేకం</div><div class="seva-price" data-i18n="seva_2_price">₹ 116/-</div><div class="seva-desc" data-i18n="seva_2_desc">పంచామృత అభిషేకం</div></div>
+      <!-- Abhishekam hidden per request -->
+      <!--<div class="seva-card"><span class="seva-icon"><img src="images/abhishekham.png" alt="అభిషేకం" loading="lazy" /></span><div class="seva-name" data-i18n="seva_2_name">అభిషేకం</div><div class="seva-price" data-i18n="seva_2_price">₹ 116/-</div><div class="seva-desc" data-i18n="seva_2_desc">పంచామృత అభిషేకం</div></div>-->
       <div class="seva-card"><span class="seva-icon"><img src="images/kalyaanam.png" alt="కళ్యాణోత్సవం" loading="lazy" /></span><div class="seva-name" data-i18n="seva_3_name">కళ్యాణోత్సవం</div><div class="seva-price" data-i18n="seva_3_price">₹ 2,116/-</div><div class="seva-desc" data-i18n="seva_3_desc">స్వామి కళ్యాణ సేవ</div></div>
       <div class="seva-card"><span class="seva-icon"><img src="images/satyanarayana.ico" alt="సత్యనారాయణ వ్రతం" loading="lazy" /></span><div class="seva-name" data-i18n="seva_4_name">సత్యనారాయణ వ్రతం</div><div class="seva-price" data-i18n="seva_4_price">₹ 516/-</div><div class="seva-desc" data-i18n="seva_4_desc">ప్రతి పౌర్ణమి 10:00 AM</div></div>
       <div class="seva-card"><span class="seva-icon"><img src="images/car_pooja.png" alt="వాహన పూజ" loading="lazy" /></span><div class="seva-name" data-i18n="seva_5_name">వాహన పూజ</div><div class="seva-price" data-i18n="seva_5_price">₹ 256 / ₹ 516</div><div class="seva-desc" data-i18n="seva_5_desc">Bike: ₹256 | Car: ₹516</div></div>
-      <div class="seva-card"><span class="seva-icon"><img src="images/sahasra-deepam-icon.ico" alt="సహస్ర దీపోత్సవం" loading="lazy" /></span><div class="seva-name" data-i18n="seva_6_name">సహస్ర దీపోత్సవం</div><div class="seva-price" data-i18n="seva_6_price">₹ 1,116/-</div><div class="seva-desc" data-i18n="seva_6_desc">వేయి దీపాల సేవ</div></div>
-      <div class="seva-card"><span class="seva-icon"><img src="images/pushpa_seva.png" alt="పుష్ప సేవ" loading="lazy" /></span><div class="seva-name" data-i18n="seva_7_name">పుష్ప సేవ</div><div class="seva-price" data-i18n="seva_7_price">₹ 116/-</div><div class="seva-desc" data-i18n="seva_7_desc">పువ్వుల అలంకరణ</div></div>
-      <div class="seva-card"><span class="seva-icon"><img src="images/govu_pooja.png" alt="గోవు పూజ" loading="lazy" /></span><div class="seva-name" data-i18n="seva_8_name">గోవు పూజ</div><div class="seva-price" data-i18n="seva_8_price">₹ 116/-</div><div class="seva-desc" data-i18n="seva_8_desc">గోమాత పూజ</div></div>
+      <!-- Sahasra Deepotsavam hidden per request -->
+      <!--<div class="seva-card"><span class="seva-icon"><img src="images/sahasra-deepam-icon.ico" alt="సహస్ర దీపోత్సవం" loading="lazy" /></span><div class="seva-name" data-i18n="seva_6_name">సహస్ర దీపోత్సవం</div><div class="seva-price" data-i18n="seva_6_price">₹ 1,116/-</div><div class="seva-desc" data-i18n="seva_6_desc">వేయి దీపాల సేవ</div></div>-->
+      <!-- Pushpa Seva hidden per request -->
+      <!--<div class="seva-card"><span class="seva-icon"><img src="images/pushpa_seva.png" alt="పుష్ప సేవ" loading="lazy" /></span><div class="seva-name" data-i18n="seva_7_name">పుష్ప సేవ</div><div class="seva-price" data-i18n="seva_7_price">₹ 116/-</div><div class="seva-desc" data-i18n="seva_7_desc">పువ్వుల అలంకరణ</div></div>-->
+      <!-- Govu Pooja hidden per request -->
+      <!--<div class="seva-card"><span class="seva-icon"><img src="images/govu_pooja.png" alt="గోవు పూజ" loading="lazy" /></span><div class="seva-name" data-i18n="seva_8_name">గోవు పూజ</div><div class="seva-price" data-i18n="seva_8_price">₹ 116/-</div><div class="seva-desc" data-i18n="seva_8_desc">గోమాత పూజ</div></div>-->
     </div>
   </div>
 </section>
@@ -1089,6 +1164,118 @@
   <div style="color:rgba(255,255,255,0.4);font-size:12px;margin-top:8px;font-family:sans-serif;" data-i18n="lightbox_close_hint">మూయడానికి చిత్రం మీద లేదా బయట క్లిక్ చేయండి</div>
 </div>
 
+<!-- SPECIAL SEVA MODAL -->
+<div class="modal-overlay" id="specialSevaModal" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 data-i18n="special_seva_modal_heading">🎉 స్పెషల్ సేవ బుకింగ్</h3>
+      <button class="modal-close" onclick="closeSpecialSevaModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:15px;color:var(--text-mid);margin-bottom:16px;text-align:center;" data-i18n="special_seva_modal_desc">మీ ప్రత్యేక సందర్భానికి పూజ బుక్ చేయండి. పూజారి గారు WhatsApp ద్వారా మిమ్మల్ని సంప్రదిస్తారు.</p>
+
+      <!-- Mode Toggle -->
+      <div class="seva-mode-toggle">
+        <button class="seva-mode-btn active" onclick="toggleSevaMode('inperson',this)" data-i18n="special_seva_toggle_inperson">🛕 స్వయంగా</button>
+        <button class="seva-mode-btn" onclick="toggleSevaMode('online',this)" data-i18n="special_seva_toggle_online">📱 ఆన్‌లైన్</button>
+      </div>
+
+      <!-- Form -->
+      <div class="form-group">
+        <label data-i18n="special_seva_form_name">భక్తుడి పేరు <span style="color:#c00">*</span></label>
+        <input type="text" id="sevaDevoteeName" data-i18n-placeholder="special_seva_form_name_ph" placeholder="పూర్తి పేరు" />
+      </div>
+      <div class="form-group">
+        <label data-i18n="special_seva_form_phone">ఫోన్ నంబర్ <span style="color:#c00">*</span></label>
+        <input type="tel" id="sevaDevoteePhone" maxlength="10" data-i18n-placeholder="special_seva_form_phone_ph" placeholder="10 అంకెల నంబర్" />
+      </div>
+      <div class="form-group">
+        <label data-i18n="special_seva_form_occasion">సందర్భం <span style="color:#c00">*</span></label>
+        <select id="sevaOccasion">
+          <option value="birthday" data-i18n="special_seva_opt_birthday">🎂 పుట్టినరోజు</option>
+          <option value="anniversary" data-i18n="special_seva_opt_anniversary">💍 వివాహ వార్షికోత్సవం</option>
+          <option value="graduation" data-i18n="special_seva_opt_graduation">🎓 పట్టా పొందినరోజు</option>
+          <option value="housewarming" data-i18n="special_seva_opt_housewarming">🏠 గృహప్రవేశం</option>
+          <option value="babynaming" data-i18n="special_seva_opt_babynaming">👶 నామకరణం</option>
+          <option value="newjob" data-i18n="special_seva_opt_newjob">💼 కొత్త ఉద్యోగం</option>
+          <option value="other" data-i18n="special_seva_opt_other">🙏 ఇతరం</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label data-i18n="special_seva_form_date">పూజ తేదీ <span style="color:#c00">*</span></label>
+        <input type="date" id="sevaDate" />
+      </div>
+      <div class="form-group">
+        <label data-i18n="special_seva_form_gotra">గోత్రం</label>
+        <input type="text" id="sevaGotra" data-i18n-placeholder="special_seva_form_gotra_ph" placeholder="గోత్ర నామం" />
+      </div>
+      <div class="form-group">
+        <label data-i18n="special_seva_form_nakshatra">నక్షత్రం</label>
+        <select id="sevaNakshatra">
+          <option value="" data-i18n="special_seva_nakshatra_select">-- ఎంచుకోండి --</option>
+          <option value="ashwini">అశ్విని</option>
+          <option value="bharani">భరణి</option>
+          <option value="krittika">కృత్తిక</option>
+          <option value="rohini">రోహిణి</option>
+          <option value="mrigashira">మృగశిర</option>
+          <option value="ardra">ఆర్ద్ర</option>
+          <option value="punarvasu">పునర్వసు</option>
+          <option value="pushya">పుష్యమి</option>
+          <option value="ashlesha">ఆశ్లేష</option>
+          <option value="magha">మఘ</option>
+          <option value="purvaphalguni">పూర్వ ఫల్గుణి</option>
+          <option value="uttaraphalguni">ఉత్తర ఫల్గుణి</option>
+          <option value="hasta">హస్త</option>
+          <option value="chitra">చిత్ర</option>
+          <option value="swati">స్వాతి</option>
+          <option value="vishakha">విశాఖ</option>
+          <option value="anuradha">అనూరాధ</option>
+          <option value="jyeshtha">జ్యేష్ఠ</option>
+          <option value="moola">మూల</option>
+          <option value="purvashadha">పూర్వాషాఢ</option>
+          <option value="uttarashadha">ఉత్తరాషాఢ</option>
+          <option value="shravana">శ్రవణం</option>
+          <option value="dhanishta">ధనిష్ఠ</option>
+          <option value="shatabhisha">శతభిషం</option>
+          <option value="purvabhadra">పూర్వాభాద్ర</option>
+          <option value="uttarabhadra">ఉత్తరాభాద్ర</option>
+          <option value="revati">రేవతి</option>
+        </select>
+      </div>
+
+      <!-- Address (only for online mode) -->
+      <div class="form-group" id="sevaAddressGroup" style="display:none;">
+        <label data-i18n="special_seva_form_address">ప్రసాదం పంపే చిరునామా</label>
+        <textarea id="sevaAddress" rows="2" data-i18n-placeholder="special_seva_form_address_ph" placeholder="పూర్తి చిరునామా (ప్రసాదం కోసం)"></textarea>
+      </div>
+      <div class="form-group">
+        <label data-i18n="special_seva_form_requests">ప్రత్యేక అభ్యర్థనలు</label>
+        <textarea id="sevaRequests" rows="2" data-i18n-placeholder="special_seva_form_requests_ph" placeholder="ఏదైనా ప్రత్యేక అభ్యర్థన ఉంటే..."></textarea>
+      </div>
+
+      <!-- Price Summary -->
+      <div style="background:rgba(192,135,58,.1);border:1px solid rgba(192,135,58,.3);border-radius:10px;padding:14px;text-align:center;margin:16px 0;">
+        <div style="font-size:14px;color:var(--text-mid);" data-i18n="special_seva_total_label">మొత్తం చెల్లింపు</div>
+        <div style="font-size:28px;font-weight:900;color:var(--deep-red);">₹516</div>
+      </div>
+
+      <!-- Payment Button -->
+      <button class="modal-submit" onclick="startSpecialSevaPayment()" data-i18n="special_seva_pay_btn">💳 ₹516 చెల్లించి బుక్ చేయండి</button>
+
+      <!-- UPI Fallback -->
+      <div style="background:var(--cream);border-radius:8px;padding:14px;text-align:center;margin-top:14px;">
+        <div style="font-size:14px;color:var(--text-mid);margin-bottom:4px;" data-i18n="special_seva_upi_label">UPI ద్వారా నేరుగా చెల్లించండి:</div>
+        <div style="font-weight:700;color:var(--deep-red);font-size:16px;" data-i18n="special_seva_upi_id">madhavaramtemple@sbi</div>
+      </div>
+
+      <!-- WhatsApp Note -->
+      <div style="background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.25);border-radius:10px;padding:12px;text-align:center;margin-top:14px;">
+        <div style="font-size:14px;color:#128C7E;" data-i18n="special_seva_whatsapp_note">✅ చెల్లింపు తర్వాత, పూజారి గారు వీడియో కాల్ / వీడియో రికార్డింగ్ కోసం WhatsApp ద్వారా మిమ్మల్ని సంప్రదిస్తారు</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- FLOATING DONATE (mobile) -->
 <button class="float-donate" id="floatDonate" onclick="openDonateModal()" data-i18n="float_donate">💛 విరాళం ఇవ్వండి</button>
 
@@ -1096,8 +1283,8 @@
 <button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" data-i18n-aria="scroll_top_aria" aria-label="పై కి వెళ్ళండి">▲</button>
 
 <script src="photos.js?v=3"></script>
-<script src="translations.js?v=3"></script>
-<script src="script.js?v=3"></script>
+<script src="translations.js?v=4"></script>
+<script src="script.js?v=4"></script>
 
 <!-- Razorpay SDK -->
 <!-- Razorpay SDK: SRI not added because Razorpay CDN content can change. CSP restricts to checkout.razorpay.com only. -->
