@@ -216,7 +216,7 @@ const translations = {
     donation_btn: "💛 ఇప్పుడే విరాళం ఇవ్వండి",
     donation_bank_heading: "🏛 బ్యాంక్ వివరాలు",
     donation_bank_account_label: "ఖాతా పేరు",
-    donation_bank_account_value: "శ్రీ భావనారాయణ స్వామి ఆలయ ట్రస్ట్",
+    donation_bank_account_value: "శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయ కమిటీ",
     donation_bank_number_label: "ఖాతా నంబర్",
     donation_bank_number_value: "4453 2968 082",
     donation_bank_ifsc_label: "IFSC కోడ్",
@@ -479,7 +479,7 @@ const translations = {
     footer_link_navagraha: "సత్యనారాయణ వ్రతం",
     footer_link_location: "📍 కొత్త మాధవరం",
     footer_link_donate: "💛 విరాళం ఇవ్వండి",
-    footer_copyright: "© 2025 శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయ ట్రస్ట్, కొత్త మాధవరం",
+    footer_copyright: "© 2025 శ్రీ భద్రావతీ భావనారాయణ స్వామి ఆలయ కమిటీ, కొత్త మాధవరం",
 
     // ===== DONATE MODAL =====
     modal_aria: "విరాళం ఇవ్వండి",
@@ -899,7 +899,7 @@ const translations = {
     donation_btn: "💛 Viraalam Now",
     donation_bank_heading: "🏛 Bank Details",
     donation_bank_account_label: "Account Name",
-    donation_bank_account_value: "Sri Bhadravathi Bhavanarayana Swamy Alaya Trust",
+    donation_bank_account_value: "Sri Bhadravathi Bhavanarayana Swamy Temple Committee",
     donation_bank_number_label: "Account Number",
     donation_bank_number_value: "4453 2968 082",
     donation_bank_ifsc_label: "IFSC Code",
@@ -1162,7 +1162,7 @@ const translations = {
     footer_link_navagraha: "Satyanarayana Vratham",
     footer_link_location: "📍 Kotha Madhavaram",
     footer_link_donate: "💛 Viraalam",
-    footer_copyright: "© 2025 Sri Bhadravathi Bhavanarayana Swamy Temple Trust, Kotha Madhavaram",
+    footer_copyright: "© 2025 Sri Bhadravathi Bhavanarayana Swamy Temple Committee, Kotha Madhavaram",
 
     // ===== DONATE MODAL =====
     modal_aria: "Viraalam",
