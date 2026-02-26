@@ -1,9 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
   <url>
     <loc>https://www.bhavanarayanaswamy.com/</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+
+    <!-- OG / Social sharing image -->
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/og-image.jpg</image:loc>
+      <image:title>Sri Bhadravathi Bhavanarayana Swamy Temple, Kotha Madhavaram</image:title>
+      <image:caption>Official image of Sri Bhavanarayana Swamy Temple — 125+ year old Hindu temple in Kotha Madhavaram, Kadapa District, Andhra Pradesh</image:caption>
+    </image:image>
+
+    <!-- Temple logo -->
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/temple-logo.png</image:loc>
+      <image:title>Bhavanarayana Swamy Temple Logo</image:title>
+    </image:image>
+
+    <!-- Deity image -->
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/deity-logo.jpg</image:loc>
+      <image:title>Sri Bhavanarayana Swamy Deity</image:title>
+      <image:caption>Sri Bhadravathi Bhavanarayana Swamy — Padmasali community's presiding deity</image:caption>
+    </image:image>
+
+    <!-- Founder photo -->
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/founder-photo.jpg</image:loc>
+      <image:title>Temple Founder — Sri Merugu Papayya Garu</image:title>
+    </image:image>
+
+    <!-- Gallery images -->
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/image_1.jpg</image:loc>
+      <image:title>Temple Gallery — Image 1</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/image_2.png</image:loc>
+      <image:title>Temple Gallery — Image 2</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/image_3.jpg</image:loc>
+      <image:title>Temple Gallery — Image 3</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/image_4.jpg</image:loc>
+      <image:title>Temple Gallery — Image 4</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/image_5.png</image:loc>
+      <image:title>Temple Gallery — Image 5</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/image_6.png</image:loc>
+      <image:title>Temple Gallery — Image 6</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/image_7.jpg</image:loc>
+      <image:title>Temple Gallery — Image 7</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/image_8.jpg</image:loc>
+      <image:title>Temple Gallery — Image 8</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/image_9.jpg</image:loc>
+      <image:title>Temple Gallery — Image 9</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/image_10.jpg</image:loc>
+      <image:title>Temple Gallery — Image 10</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/image_11.jpg</image:loc>
+      <image:title>Temple Gallery — Image 11</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/image_12.jpg</image:loc>
+      <image:title>Temple Gallery — Image 12</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/image_13.jpg</image:loc>
+      <image:title>Temple Gallery — Image 13</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/image_14.jpg</image:loc>
+      <image:title>Temple Gallery — Image 14</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/image_15.jpg</image:loc>
+      <image:title>Temple Gallery — Image 15</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/image_16.jpg</image:loc>
+      <image:title>Temple Gallery — Image 16</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/image_17.jpg</image:loc>
+      <image:title>Temple Gallery — Image 17</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/image_18.jpg</image:loc>
+      <image:title>Temple Gallery — Image 18</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/image_19.jpg</image:loc>
+      <image:title>Temple Gallery — Image 19</image:title>
+    </image:image>
+
+    <!-- Deity history images -->
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/Bhavanarushi.png</image:loc>
+      <image:title>Bhavanarushi — Origin of Bhavanarayana</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/markandeya.png</image:loc>
+      <image:title>Markandeya Maharshi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/padmasali.png</image:loc>
+      <image:title>Padmasali Community Heritage</image:title>
+    </image:image>
+
+    <!-- Seva images -->
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/abhishekham.png</image:loc>
+      <image:title>Abhishekam Seva</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/kalyaanam.png</image:loc>
+      <image:title>Kalyanotsavam Seva</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/pushpa_seva.png</image:loc>
+      <image:title>Pushpa Seva</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavanarayanaswamy.com/images/car_pooja.png</image:loc>
+      <image:title>Rathotsavam — Car Festival Pooja</image:title>
+    </image:image>
   </url>
+
 </urlset>
