@@ -1,4 +1,4 @@
-# robots.txt — Sri Bhavanarayana Swamy Temple
+# robots.txt — Sri Bhadravathi Bhavanarayana Swamy Temple
 # https://www.bhavanarayanaswamy.com
 
 # Allow all search engine crawlers

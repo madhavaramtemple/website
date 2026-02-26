@@ -687,7 +687,7 @@ const translations = {
     page_title: "Bhavanarayanaswamy Temple | Madhavaram, Kadapa Dist, Andhra Pradesh",
 
     // ===== TICKER =====
-    ticker_1: "🙏 Jai Sri Bhavanarayana Swamy",
+    ticker_1: "🙏 Jai Sri Bhadravathi Bhavanarayana Swamy",
     ticker_2: "🔔 Special pujas this week: Friday evening at 7:00 PM",
     ticker_3: "🌸 Sri Rama Navami festivities - March 28-29",
     ticker_4: "💛 Contribute your viraalam to the temple construction fund",
@@ -899,7 +899,7 @@ const translations = {
     donation_btn: "💛 Viraalam Now",
     donation_bank_heading: "🏛 Bank Details",
     donation_bank_account_label: "Account Name",
-    donation_bank_account_value: "Sri Bhavanarayana Swamy Alaya Trust",
+    donation_bank_account_value: "Sri Bhadravathi Bhavanarayana Swamy Alaya Trust",
     donation_bank_number_label: "Account Number",
     donation_bank_number_value: "4453 2968 082",
     donation_bank_ifsc_label: "IFSC Code",
@@ -948,7 +948,7 @@ const translations = {
     deity_story_3_title: "Padmasalis — Heirs of Divine Textile Art",
     deity_story_3_text: "\"Padma\" means lotus, \"Shali\" means weavers — <strong>Padmasalis are the divine descendants who wove cloth from lotus fiber</strong>. The Markandeya Purana, Vishnu Purana, and Vayu Purana all bear testimony to this lineage. Surya Bhagavan, pleased with their art, bestowed the <strong>Padma Veda</strong>, the fifth Veda, upon the Padmasalis. That is why Padmasalis are called \"Padma Brahmins\" — their worship practices and marriage traditions follow Brahmanical customs. The <strong>Sri Bhadravathi Bhavanarayana Swamy Temple</strong> in Kotha Madhavaram village is the center of the soul, unity, and spiritual strength of this sacred Padmasali community.",
     deity_story_4_title: "Kotha Madhavaram — Birthplace of Textiles, Sacred Land of Blessings",
-    deity_story_4_text: "Madhavaram is not just a village — it is the <strong>birthplace of handloom sarees</strong>. Behind every thread, every silk saree, and every handloom cloth born from this land lies the blessing of Sri Bhavanarayana Swamy.<br /><br />Because — <strong>the very Bhavana Maharshi who wove cloth and offered it to Lord Sriman Narayana is this deity!</strong> The divine hands that achieved the art of clothing for gods and humans alike shine forth at this kshetram.<br /><br />🎊 <strong>Bought new clothes for a wedding or engagement?</strong> Bring those garments here first — offer them at the Swamy's feet and have puja performed. <em>The very creator of textiles will personally bless those garments</em> — the brides, grooms, students, and those embarking on new beginnings who wear them will be blessed throughout their lives.<br /><br /><strong>Whether a saree bought in Madhavaram or a garment purchased in the city</strong> — bring it for a darshan of Bhavanarayana Swamy just once. That cloth will no longer be mere clothing, it becomes a <strong>garment of life woven with the Swamy's blessings</strong>. 🙏",
+    deity_story_4_text: "Madhavaram is not just a village — it is the <strong>birthplace of handloom sarees</strong>. Behind every thread, every silk saree, and every handloom cloth born from this land lies the blessing of Sri Bhadravathi Bhavanarayana Swamy.<br /><br />Because — <strong>the very Bhavana Maharshi who wove cloth and offered it to Lord Sriman Narayana is this deity!</strong> The divine hands that achieved the art of clothing for gods and humans alike shine forth at this kshetram.<br /><br />🎊 <strong>Bought new clothes for a wedding or engagement?</strong> Bring those garments here first — offer them at the Swamy's feet and have puja performed. <em>The very creator of textiles will personally bless those garments</em> — the brides, grooms, students, and those embarking on new beginnings who wear them will be blessed throughout their lives.<br /><br /><strong>Whether a saree bought in Madhavaram or a garment purchased in the city</strong> — bring it for a darshan of Bhavanarayana Swamy just once. That cloth will no longer be mere clothing, it becomes a <strong>garment of life woven with the Swamy's blessings</strong>. 🙏",
 
     // Deity Attributes
     deity_attr_1_label: "Original Form",
@@ -1035,7 +1035,7 @@ const translations = {
     // ===== MAP =====
     map_label: "Directions",
     map_heading: "How to Reach the Temple",
-    map_iframe_title: "Sri Bhavanarayana Swamy Temple - Kotha Madhavaram",
+    map_iframe_title: "Sri Bhadravathi Bhavanarayana Swamy Temple - Kotha Madhavaram",
     map_open_gmaps: "🗺️ Open in Google Maps",
     map_directions: "🚗 Get Directions",
     map_phone: "📞 +91 94405 62447",
@@ -1145,7 +1145,7 @@ const translations = {
 
     // ===== FOOTER =====
     footer_logo_alt: "Temple Logo",
-    footer_brand_title: "Sri Bhavanarayana Swamy Temple",
+    footer_brand_title: "Sri Bhadravathi Bhavanarayana Swamy Temple",
     footer_brand_desc: "A sacred kshetram dedicated to the service of the Lord in Kotha Madhavaram. This temple flourishes eternally through the faith, viraalam, and prayers of devotees.",
     footer_quick_links: "Quick Links",
     footer_sevas_col: "Sevas",
@@ -1218,7 +1218,7 @@ const translations = {
     email_default_name: "Name unknown",
     email_default_subject: "Website Message",
     email_subject_prefix: "Temple Message - ",
-    email_body_header: "Sri Bhavanarayana Swamy Temple - Website Message",
+    email_body_header: "Sri Bhadravathi Bhavanarayana Swamy Temple - Website Message",
     email_label_name: "Name:",
     email_label_phone: "Phone:",
     email_label_email: "Email:",
@@ -1260,7 +1260,7 @@ const translations = {
     js_contact_default_name: "Name not provided",
     js_contact_default_subject: "Website Message",
     js_contact_email_subject_prefix: "Temple Message",
-    js_contact_email_body_header: "Sri Bhavanarayana Swamy Temple - Website Message",
+    js_contact_email_body_header: "Sri Bhadravathi Bhavanarayana Swamy Temple - Website Message",
     js_contact_name_label: "Name",
     js_contact_phone_label: "Phone",
     js_contact_email_label: "Email",
@@ -1292,7 +1292,7 @@ const translations = {
 
     // ===== WHATSAPP GROUP =====
     whatsapp_title: "Join Our Temple WhatsApp Group",
-    whatsapp_group_name: "Sri Bhavanarayana Swamy Temple — Kotha Madhavaram",
+    whatsapp_group_name: "Sri Bhadravathi Bhavanarayana Swamy Temple — Kotha Madhavaram",
     whatsapp_desc: "Puja timings, festival photos, important announcements — all updates directly to your phone. Invite your family members and friends too!",
     whatsapp_benefit_1: "📸 Festival Photos",
     whatsapp_benefit_2: "🔔 Puja Reminders",
@@ -1305,7 +1305,7 @@ const translations = {
     // ===== SPECIAL SEVA =====
     special_seva_label: "✨ Special Seva",
     special_seva_heading: "Special Seva — For Life's Special Occasions",
-    special_seva_desc: "On your life's special occasions — birthday, wedding anniversary, housewarming, graduation — receive the blessings of Sri Bhavanarayana Swamy. You can visit the temple in person for the seva, or book online and the priest will perform the pooja via video call or send you a video recording.",
+    special_seva_desc: "On your life's special occasions — birthday, wedding anniversary, housewarming, graduation — receive the blessings of Sri Bhadravathi Bhavanarayana Swamy. You can visit the temple in person for the seva, or book online and the priest will perform the pooja via video call or send you a video recording.",
     special_seva_occ_birthday: "🎂 Birthday",
     special_seva_occ_anniversary: "💍 Wedding Anniversary",
     special_seva_occ_graduation: "🎓 Graduation Day",
