@@ -879,7 +879,53 @@ document.addEventListener('keydown', e => {
   }, { passive: true });
 })();
 
-/* Contact submit → Google Forms + WhatsApp */
+/* ===== Translate to Telugu (Google Translate free endpoint) ===== */
+function translateToTelugu(text) {
+  if (!text || !text.trim()) return Promise.resolve(text);
+  /* Already in Telugu script? Return as-is */
+  if (/[\u0C00-\u0C7F]/.test(text)) return Promise.resolve(text);
+  return fetch('https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=te&dt=t&q=' + encodeURIComponent(text))
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var result = '';
+      if (d && d[0]) d[0].forEach(function(p) { if (p[0]) result += p[0]; });
+      return result || text;
+    })
+    .catch(function() { return text; }); /* fallback to original on error */
+}
+
+/* ===== Send via WhatsApp (desktop detection + email fallback) ===== */
+function sendWhatsAppOrEmail(waMsg, emailSubject, emailBody) {
+  var isMobile = /Android|iPhone|iPad|iPod|webOS|BlackBerry/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    /* Mobile: WhatsApp is almost always available */
+    window.open('https://wa.me/15617560287?text=' + encodeURIComponent(waMsg), '_blank');
+    return;
+  }
+
+  /* Desktop: try whatsapp:// protocol, fall back to email */
+  var waOpened = false;
+  function onBlur() { waOpened = true; }
+  window.addEventListener('blur', onBlur);
+
+  /* Try opening native WhatsApp via protocol scheme */
+  var link = document.createElement('a');
+  link.href = 'whatsapp://send?phone=15617560287&text=' + encodeURIComponent(waMsg);
+  link.click();
+
+  /* After 2.5s, check if WhatsApp opened (page lost focus) */
+  setTimeout(function() {
+    window.removeEventListener('blur', onBlur);
+    if (!waOpened) {
+      /* WhatsApp not detected on desktop → send email instead */
+      window.location.href = 'mailto:madhavaramtemple@gmail.com?subject=' +
+        encodeURIComponent(emailSubject) + '&body=' + encodeURIComponent(emailBody);
+    }
+  }, 2500);
+}
+
+/* ===== Contact submit → Google Forms + Translate + WhatsApp/Email ===== */
 document.getElementById('contactSubmitBtn').addEventListener('click', function() {
   var btn = this;
   var form = btn.closest('.contact-form-box');
@@ -900,7 +946,7 @@ document.getElementById('contactSubmitBtn').addEventListener('click', function()
   var origText = btn.textContent;
   btn.textContent = t('contact_sending');
 
-  /* Google Forms submission (no-cors) */
+  /* 1. Google Forms submission (no-cors) */
   var gFormUrl = 'https://docs.google.com/forms/d/1kFrO-O1rdIWN0xNVlkY-lD-dPCMAhTLyDg_NkXIKkjE/formResponse';
   var formData = new FormData();
   formData.append('entry.690307649', name);
@@ -909,19 +955,35 @@ document.getElementById('contactSubmitBtn').addEventListener('click', function()
   formData.append('entry.2120381566', subject);
   formData.append('entry.684107934', message);
 
-  function afterSubmit() {
-    /* Build WhatsApp message in Telugu */
+  fetch(gFormUrl, { method: 'POST', mode: 'no-cors', body: formData }).catch(function() {});
+
+  /* 2. Translate name, subject & message to Telugu, then send */
+  Promise.all([
+    translateToTelugu(name),
+    translateToTelugu(subject),
+    translateToTelugu(message)
+  ]).then(function(translated) {
+    var teName    = translated[0];
+    var teSubject = translated[1];
+    var teMessage = translated[2];
+
+    /* Build Telugu WhatsApp message */
     var waMsg = 'నమస్కారం 🙏\n\n' +
       'శ్రీ భావనారాయణ స్వామి ఆలయం - సందేశం\n' +
       '━━━━━━━━━━━━━━━\n' +
-      '👤 ' + t('js_contact_name_label') + ': ' + name + '\n' +
-      '📞 ' + t('js_contact_phone_label') + ': ' + phone + '\n' +
-      (email ? '📧 ' + t('js_contact_email_label') + ': ' + email + '\n' : '') +
-      '📌 ' + t('js_contact_subject_label') + ': ' + subject + '\n\n' +
-      '💬 ' + t('js_contact_message_label') + ':\n' + message + '\n\n' +
+      '👤 పేరు: ' + teName + '\n' +
+      '📞 ఫోన్: ' + phone + '\n' +
+      (email ? '📧 ఇమెయిల్: ' + email + '\n' : '') +
+      '📌 విషయం: ' + teSubject + '\n\n' +
+      '💬 సందేశం:\n' + teMessage + '\n\n' +
       '🙏 జై శ్రీ భావనారాయణ స్వామి';
 
-    window.open('https://wa.me/15617560287?text=' + encodeURIComponent(waMsg), '_blank');
+    /* Build email fallback (also in Telugu) */
+    var emailSubject = 'ఆలయం సందేశం - ' + teSubject + ' (' + teName + ')';
+    var emailBody = waMsg;
+
+    /* 3. Try WhatsApp; fall back to email if desktop has no WhatsApp */
+    sendWhatsAppOrEmail(waMsg, emailSubject, emailBody);
 
     /* Clear form */
     inputs.forEach(function(inp) {
@@ -932,14 +994,7 @@ document.getElementById('contactSubmitBtn').addEventListener('click', function()
     alert(t('contact_success'));
     btn.disabled = false;
     btn.textContent = origText;
-  }
-
-  fetch(gFormUrl, { method: 'POST', mode: 'no-cors', body: formData })
-    .then(afterSubmit)
-    .catch(function() {
-      /* no-cors fetch may appear to "fail" but data still goes through */
-      afterSubmit();
-    });
+  });
 });
 
 /* Smooth scroll with sticky nav offset */
