@@ -921,7 +921,7 @@ document.getElementById('contactSubmitBtn').addEventListener('click', function()
       '💬 ' + t('js_contact_message_label') + ':\n' + message + '\n\n' +
       '🙏 జై శ్రీ భావనారాయణ స్వామి';
 
-    window.open('https://wa.me/919440562447?text=' + encodeURIComponent(waMsg), '_blank');
+    window.open('https://wa.me/15617560287?text=' + encodeURIComponent(waMsg), '_blank');
 
     /* Clear form */
     inputs.forEach(function(inp) {
