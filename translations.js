@@ -699,7 +699,7 @@ const translations = {
     header_om: "Om Namo Narayanaya",
     header_title: "Sri Bhadravathi Bhavanarayana Swamy Temple",
     header_subtitle: "Shri Bhadravathi Bhavanarayana Swamy Temple",
-    header_location: "📍 Kotha Madhavaram, Vontimitta Mandal, Kadapa District, Andhra Pradesh - 516247 | 📞 +91 94405 62447",
+    header_location: "📍 New Madhavaram, Vontimitta Mandal, Kadapa District, Andhra Pradesh - 516247 | 📞 +91 94405 62447",
     header_donate_btn: "💛 Viraalam",
 
     // ===== NAV =====
@@ -719,7 +719,7 @@ const translations = {
     // ===== HERO =====
     hero_aria: "Temple Welcome",
     hero_logo_alt: "Temple Gopuram",
-    hero_title: "Om Namo Bhavanarayanaya — Welcome to Kotha Madhavaram Kshetram",
+    hero_title: "Om Namo Bhadravathi Bhavanarayanaya — Welcome to New Madhavaram Kshetram",
     hero_verse: "\"Narayanaya Vidmahe Vasudevaya Dheemahi<br/>Tanno Vishnuh Prachodayat\"",
     hero_cta_timings: "🕐 View Puja Timings",
     hero_cta_donate: "💛 Viraalam to Temple Fund",
@@ -741,7 +741,7 @@ const translations = {
     about_deity_name: "Sri Bhadravathi Bhavanarayana Swamy",
     about_epithet: "Revered deity of the Padmasali community — Heirs of divine weaving<br/>125 years of sacred handloom heritage",
     about_content_heading: "🏛️ Temple History — 125 Years of Sacred Heritage",
-    about_p1: "<strong>Historic Heritage</strong> — About 125 years ago, the late <strong>Sri Meruva Papayya gari Venkatayya</strong> built this sacred temple in Old Madhavaram, becoming a spiritual guide for the Padmasali community. When the village was submerged 40 years ago due to the Somasila Project, devotees lovingly preserved their beloved Sri Bhadravathi Bhavanarayana Swamy. With unwavering faith, the temple was rebuilt at Kotha Madhavaram on a sprawling 1.36-acre site generously donated by the <strong>Sama Govindaiah &amp; Sons</strong> family, faithfully replicating the original construction style without the slightest deviation. Though the village changed and generations passed, the ancient idol from 125 years ago and the spiritual traditions continue steadfastly to this day.",
+    about_p1: "<strong>Historic Heritage</strong> — About 125 years ago, the late <strong>Sri Meruva Papayya gari Venkatayya</strong> built this sacred temple in Old Madhavaram, becoming a spiritual guide for the Padmasali community. When the village was submerged 40 years ago due to the Somasila Project, devotees lovingly preserved their beloved Sri Bhadravathi Bhavanarayana Swamy. With unwavering faith, the temple was rebuilt at New Madhavaram on a sprawling 1.36-acre site generously donated by the <strong>Sama Govindaiah &amp; Sons</strong> family, faithfully replicating the original construction style without the slightest deviation. Though the village changed and generations passed, the ancient idol from 125 years ago and the spiritual traditions continue steadfastly to this day.",
     about_p2: "<strong>Textile Art — Divine Blessings</strong> — Bhavana Maharshi, an incarnation of Sri Mannarayana himself, has the divine history of weaving cloth and offering it to the gods. That is why the village of Madhavaram became renowned as the birthplace of handloom sarees. This kshetram is not merely a temple — it is a sacred confluence of textile art and divine grace.",
     about_kicker: "🙏 Buying new clothes? About to wear them? — Visit this Swamy first and receive His blessings! This is THE sacred kshetram for textile blessings. With the Lord's grace, all auspiciousness is assured! 🙏",
     about_p3: "<strong>Visit Our Kshetram</strong> — Become recipients of the Lord's grace! We invite you and your family to visit Sri Bhadravathi Bhavanarayana Swamy at Madhavaram and receive the blessings of that divine textile heritage.",
@@ -909,7 +909,7 @@ const translations = {
     donation_bank_name_label: "Bank Name",
     donation_bank_name_value: "State Bank of India",
     donation_bank_location_label: "Bank Branch",
-    donation_bank_location_value: "Kotha Madhavaram",
+    donation_bank_location_value: "New Madhavaram",
     donation_upi_label: "UPI:",
     donation_upi_id: "<img src='images/upi.svg' alt='UPI' style='height:24px;object-fit:contain;vertical-align:middle;margin-right:8px;background:#fff;padding:3px 8px;border-radius:4px;' /> madhavaramtemple@sbi",
     donation_upi_id_short: "madhavaramtemple@sbi",
@@ -928,7 +928,7 @@ const translations = {
     donation_onetime_label: "or make a one-time donation",
     monthly99_prompt_name: "Enter your name (₹99 monthly viraalam):",
     monthly99_prompt_phone: "Your phone number (10 digits):",
-    monthly99_razorpay_desc: "₹99 Monthly Temple Seva — Kotha Madhavaram",
+    monthly99_razorpay_desc: "₹99 Monthly Temple Seva — New Madhavaram",
     monthly99_success_prefix: "🙏 Thank you ",
     monthly99_success_suffix: " garu! Your ₹99 viraalam was successful.",
     monthly99_success_reminder: "🔔 Please donate ₹99 again next month. You can set up autopay for ₹99 to madhavaramtemple@sbi on Google Pay / PhonePe.",
@@ -946,9 +946,9 @@ const translations = {
     deity_story_2_title: "Sri Bhavana Maharshi — The Progenitor of Padmasalis",
     deity_story_2_text: "From Markandeya's great yagna, <strong>Bhavana Maharshi</strong> emerged holding a lotus (padmam) in his hand. He approached Lord Sriman Narayana, who gave him the lotus fiber (padmanalam) from his navel and asked him to weave cloth from it. Bhavana Maharshi wove cloth from that divine lotus fiber and offered it to Narayana. The pleased Narayana blessed him — <strong>\"Your descendants will expand into 101 gotras and become renowned as Padmasalis.\"</strong> Bhavana Maharshi's wife was <strong>Bhadravati Devi</strong> — hence the deity is called \"Bhadravathi Bhavanarayana Swamy.\" Bhavana Maharshi had 101 sons — they are the ancestors of the 101 gotras of today's Padmasali community.",
     deity_story_3_title: "Padmasalis — Heirs of Divine Textile Art",
-    deity_story_3_text: "\"Padma\" means lotus, \"Shali\" means weavers — <strong>Padmasalis are the divine descendants who wove cloth from lotus fiber</strong>. The Markandeya Purana, Vishnu Purana, and Vayu Purana all bear testimony to this lineage. Surya Bhagavan, pleased with their art, bestowed the <strong>Padma Veda</strong>, the fifth Veda, upon the Padmasalis. That is why Padmasalis are called \"Padma Brahmins\" — their worship practices and marriage traditions follow Brahmanical customs. The <strong>Sri Bhadravathi Bhavanarayana Swamy Temple</strong> in Kotha Madhavaram village is the center of the soul, unity, and spiritual strength of this sacred Padmasali community.",
-    deity_story_4_title: "Kotha Madhavaram — Birthplace of Textiles, Sacred Land of Blessings",
-    deity_story_4_text: "Madhavaram is not just a village — it is the <strong>birthplace of handloom sarees</strong>. Behind every thread, every silk saree, and every handloom cloth born from this land lies the blessing of Sri Bhadravathi Bhavanarayana Swamy.<br /><br />Because — <strong>the very Bhavana Maharshi who wove cloth and offered it to Lord Sriman Narayana is this deity!</strong> The divine hands that achieved the art of clothing for gods and humans alike shine forth at this kshetram.<br /><br />🎊 <strong>Bought new clothes for a wedding or engagement?</strong> Bring those garments here first — offer them at the Swamy's feet and have puja performed. <em>The very creator of textiles will personally bless those garments</em> — the brides, grooms, students, and those embarking on new beginnings who wear them will be blessed throughout their lives.<br /><br /><strong>Whether a saree bought in Madhavaram or a garment purchased in the city</strong> — bring it for a darshan of Bhavanarayana Swamy just once. That cloth will no longer be mere clothing, it becomes a <strong>garment of life woven with the Swamy's blessings</strong>. 🙏",
+    deity_story_3_text: "\"Padma\" means lotus, \"Shali\" means weavers — <strong>Padmasalis are the divine descendants who wove cloth from lotus fiber</strong>. The Markandeya Purana, Vishnu Purana, and Vayu Purana all bear testimony to this lineage. Surya Bhagavan, pleased with their art, bestowed the <strong>Padma Veda</strong>, the fifth Veda, upon the Padmasalis. That is why Padmasalis are called \"Padma Brahmins\" — their worship practices and marriage traditions follow Brahmanical customs. The <strong>Sri Bhadravathi Bhavanarayana Swamy Temple</strong> in New Madhavaram village is the center of the soul, unity, and spiritual strength of this sacred Padmasali community.",
+    deity_story_4_title: "New Madhavaram — Birthplace of Textiles, Sacred Land of Blessings",
+    deity_story_4_text: "Madhavaram is not just a village — it is the <strong>birthplace of handloom sarees</strong>. Behind every thread, every silk saree, and every handloom cloth born from this land lies the blessing of Sri Bhadravathi Bhavanarayana Swamy.<br /><br />Because — <strong>the very Bhavana Maharshi who wove cloth and offered it to Lord Sriman Narayana is this deity!</strong> The divine hands that achieved the art of clothing for gods and humans alike shine forth at this kshetram.<br /><br />🎊 <strong>Bought new clothes for a wedding or engagement?</strong> Bring those garments here first — offer them at the Swamy's feet and have puja performed. <em>The very creator of textiles will personally bless those garments</em> — the brides, grooms, students, and those embarking on new beginnings who wear them will be blessed throughout their lives.<br /><br /><strong>Whether a saree bought in Madhavaram or a garment purchased in the city</strong> — bring it for a darshan of Sri Bhadravathi Bhavanarayana Swamy just once. That cloth will no longer be mere clothing, it becomes a <strong>garment of life woven with the Swamy's blessings</strong>. 🙏",
 
     // Deity Attributes
     deity_attr_1_label: "Original Form",
@@ -1035,11 +1035,11 @@ const translations = {
     // ===== MAP =====
     map_label: "Directions",
     map_heading: "How to Reach the Temple",
-    map_iframe_title: "Sri Bhadravathi Bhavanarayana Swamy Temple - Kotha Madhavaram",
+    map_iframe_title: "Sri Bhadravathi Bhavanarayana Swamy Temple - New Madhavaram",
     map_open_gmaps: "🗺️ Open in Google Maps",
     map_directions: "🚗 Get Directions",
     map_phone: "📞 +91 94405 62447",
-    map_address: "Kotha Madhavaram, Vontimitta Mandal, Kadapa District, Andhra Pradesh - 516247 | 📞 +91 94405 62447",
+    map_address: "New Madhavaram, Vontimitta Mandal, Kadapa District, Andhra Pradesh - 516247 | 📞 +91 94405 62447",
 
     // ===== CONTRIBUTE =====
     contribute_label: "Your Contribution",
@@ -1074,7 +1074,7 @@ const translations = {
     tribute_founder_photo_alt: "Late Sri Meruva Papayya gari Venkataiah",
     tribute_founder_name: "Late Sri Meruva Papayya gari Venkataiah",
     tribute_founder_title: "Temple Founder",
-    tribute_founder_desc: "A humble tribute to the founders who established this sacred temple approximately 125 years ago and paved the way for the service of Lord Bhavanarayana Swamy. It is their vision, devotion, and sacrifice that this temple stands today as a spiritual center for devotees.",
+    tribute_founder_desc: "A humble tribute to the founders who established this sacred temple approximately 125 years ago and paved the way for the service of Lord Sri Bhadravathi Bhavanarayana Swamy. It is their vision, devotion, and sacrifice that this temple stands today as a spiritual center for devotees.",
     tribute_contributors_heading: "🙏 Temple Development Pillars",
     tribute_contributor_1_name: "Late Sri M.T. Venkata Subbaiah",
     tribute_contributor_2_name: "Late Sri Jonnadula Pedda Subbarayudu",
@@ -1120,7 +1120,7 @@ const translations = {
     contact_heading: "Contact the Temple",
     contact_info_heading: "Contact Details",
     contact_address_label: "Address",
-    contact_address_value: "Sri Bhadravathi Bhavanarayana Swamy Temple<br/>Kotha Madhavaram, Vontimitta Mandal<br/>Kadapa District, Andhra Pradesh - 516247<br/>📞 Phone: +91 94405 62447",
+    contact_address_value: "Sri Bhadravathi Bhavanarayana Swamy Temple<br/>New Madhavaram, Vontimitta Mandal<br/>Kadapa District, Andhra Pradesh - 516247<br/>📞 Phone: +91 94405 62447",
     contact_phone_label: "Phone Number",
     contact_phone_value: "+91 94405 62447",
     contact_email_label: "Email",
@@ -1146,7 +1146,7 @@ const translations = {
     // ===== FOOTER =====
     footer_logo_alt: "Temple Logo",
     footer_brand_title: "Sri Bhadravathi Bhavanarayana Swamy Temple",
-    footer_brand_desc: "A sacred kshetram dedicated to the service of the Lord in Kotha Madhavaram. This temple flourishes eternally through the faith, viraalam, and prayers of devotees.",
+    footer_brand_desc: "A sacred kshetram dedicated to the service of the Lord in New Madhavaram. This temple flourishes eternally through the faith, viraalam, and prayers of devotees.",
     footer_quick_links: "Quick Links",
     footer_sevas_col: "Sevas",
     footer_contact_col: "Contact",
@@ -1160,9 +1160,9 @@ const translations = {
     footer_link_kalyanotsavam: "Kalyanotsavam",
     footer_link_annadanam: "Annadanam",
     footer_link_navagraha: "Satyanarayana Vratham",
-    footer_link_location: "📍 Kotha Madhavaram",
+    footer_link_location: "📍 New Madhavaram",
     footer_link_donate: "💛 Viraalam",
-    footer_copyright: "© 2025 Sri Bhadravathi Bhavanarayana Swamy Temple Committee, Kotha Madhavaram",
+    footer_copyright: "© 2025 Sri Bhadravathi Bhavanarayana Swamy Temple Committee, New Madhavaram",
 
     // ===== DONATE MODAL =====
     modal_aria: "Viraalam",
@@ -1212,7 +1212,7 @@ const translations = {
 
     // ===== RAZORPAY STRINGS (script.js) =====
     razorpay_name: "Sri Bhadravathi Bhavanarayana Swamy Temple",
-    razorpay_description: "Viraalam to Temple Fund — Kotha Madhavaram",
+    razorpay_description: "Viraalam to Temple Fund — New Madhavaram",
 
     // ===== EMAIL / CONTACT TEMPLATE (script.js) =====
     email_default_name: "Name unknown",
@@ -1273,8 +1273,8 @@ const translations = {
     contact_success: "✅ Your message has been sent successfully! Also sent via WhatsApp.",
 
     // ===== SEO META =====
-    meta_description: "Sri Bhadravathi Bhavanarayana Swamy Temple, Kotha Madhavaram, Andhra Pradesh. 125+ year old Hindu temple. Puja timings, sevas, donations, festivals, and photo gallery.",
-    meta_keywords: "Bhavanarayana Swamy, Kotha Madhavaram temple, Hindu temple Andhra Pradesh, Padmasali temple, Brahmotsavam, puja timings, donations, Vontimitta",
+    meta_description: "Sri Bhadravathi Bhavanarayana Swamy Temple, New Madhavaram, Andhra Pradesh. 125+ year old Hindu temple. Puja timings, sevas, donations, festivals, and photo gallery.",
+    meta_keywords: "Bhavanarayana Swamy, New Madhavaram temple, Hindu temple Andhra Pradesh, Padmasali temple, Brahmotsavam, puja timings, donations, Vontimitta",
     skip_to_content: "Skip to main content",
 
     // ===== COMMITTEE MEMBER ALT TEXTS =====
@@ -1292,7 +1292,7 @@ const translations = {
 
     // ===== WHATSAPP GROUP =====
     whatsapp_title: "Join Our Temple WhatsApp Group",
-    whatsapp_group_name: "Sri Bhadravathi Bhavanarayana Swamy Temple — Kotha Madhavaram",
+    whatsapp_group_name: "Sri Bhadravathi Bhavanarayana Swamy Temple — New Madhavaram",
     whatsapp_desc: "Puja timings, festival photos, important announcements — all updates directly to your phone. Invite your family members and friends too!",
     whatsapp_benefit_1: "📸 Festival Photos",
     whatsapp_benefit_2: "🔔 Puja Reminders",

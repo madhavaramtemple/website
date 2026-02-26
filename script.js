@@ -275,7 +275,7 @@ function startRazorpayPayment() {
       donor_name: name,
       donor_phone: phone,
       receipt_via: email !== 'donor@temple.org' ? 'email' : 'whatsapp_sms',
-      temple: 'Sri Bhadravathi Bhavanarayana Swamy Temple, Kotha Madhavaram'
+      temple: 'Sri Bhadravathi Bhavanarayana Swamy Temple, New Madhavaram'
     },
     theme: { color: '#7B0D1E' },
     modal: { ondismiss: function() { console.log('Payment dismissed'); } },
@@ -327,7 +327,7 @@ function donate99() {
     notes: {
       donor_name: name.trim(),
       donation_type: 'monthly_99',
-      temple: 'Sri Bhadravathi Bhavanarayana Swamy Temple, Kotha Madhavaram'
+      temple: 'Sri Bhadravathi Bhavanarayana Swamy Temple, New Madhavaram'
     },
     theme: { color: '#C9973A' },
     modal: { ondismiss: function() { console.log('₹99 payment dismissed'); } },
@@ -422,7 +422,7 @@ function startSpecialSevaPayment() {
       mode: mode,
       address: address || 'N/A',
       special_requests: requests || 'N/A',
-      temple: 'Sri Bhadravathi Bhavanarayana Swamy Temple, Kotha Madhavaram'
+      temple: 'Sri Bhadravathi Bhavanarayana Swamy Temple, New Madhavaram'
     },
     theme: { color: '#4a2020' },
     modal: { ondismiss: function() { console.log('Special seva payment dismissed'); } },
