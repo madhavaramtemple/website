@@ -338,62 +338,42 @@
       <div class="underline"></div>
     </div>
 
-    <div class="special-seva-hero">
-      <div class="special-seva-info">
-        <p class="special-seva-desc" data-i18n="special_seva_desc">మీ జీవితంలో ప్రత్యేక సందర్భాల్లో — పుట్టినరోజు, వివాహ వార్షికోత్సవం, గృహప్రవేశం, పట్టా పొందినరోజు — శ్రీ భావనారాయణ స్వామి ఆశీర్వాదం పొందండి. మీరు స్వయంగా ఆలయానికి వచ్చి సేవ చేయించుకోవచ్చు, లేదా ఆన్‌లైన్ ద్వారా బుక్ చేసి, పూజారి గారు పూజ చేసి వీడియో కాల్ లేదా వీడియో పంపిస్తారు.</p>
-
-        <div class="special-seva-occasions">
-          <span class="occasion-pill" data-i18n="special_seva_occ_birthday">🎂 పుట్టినరోజు</span>
-          <span class="occasion-pill" data-i18n="special_seva_occ_anniversary">💍 వివాహ వార్షికోత్సవం</span>
-          <span class="occasion-pill" data-i18n="special_seva_occ_graduation">🎓 పట్టా పొందినరోజు</span>
-          <span class="occasion-pill" data-i18n="special_seva_occ_housewarming">🏠 గృహప్రవేశం</span>
-          <span class="occasion-pill" data-i18n="special_seva_occ_babynaming">👶 నామకరణం</span>
-          <span class="occasion-pill" data-i18n="special_seva_occ_newjob">💼 కొత్త ఉద్యోగం</span>
-          <span class="occasion-pill" data-i18n="special_seva_occ_other">🙏 ఇతర శుభ సందర్భాలు</span>
-        </div>
-
-        <div class="special-seva-modes">
-          <div class="seva-mode-card">
-            <div class="seva-mode-icon">🛕</div>
-            <h4 data-i18n="special_seva_mode_inperson_title">స్వయంగా ఆలయంలో</h4>
-            <p data-i18n="special_seva_mode_inperson_desc">ఆలయానికి వచ్చి పూజారి గారి సమక్షంలో పూజ చేయించుకోండి</p>
-          </div>
-          <div class="seva-mode-card">
-            <div class="seva-mode-icon">📱</div>
-            <h4 data-i18n="special_seva_mode_online_title">ఆన్‌లైన్ వీడియో పూజ</h4>
-            <p data-i18n="special_seva_mode_online_desc">ఆన్‌లైన్ బుకింగ్ చేయండి — పూజారి వీడియో కాల్ లేదా వీడియో ద్వారా పూజ చేస్తారు</p>
-          </div>
-        </div>
+    <div class="special-seva-compact">
+      <!-- Occasion pills -->
+      <div class="special-seva-occasions">
+        <span class="occasion-pill" data-i18n="special_seva_occ_birthday">🎂 పుట్టినరోజు</span>
+        <span class="occasion-pill" data-i18n="special_seva_occ_anniversary">💍 వివాహ వార్షికోత్సవం</span>
+        <span class="occasion-pill" data-i18n="special_seva_occ_graduation">🎓 పట్టా పొందినరోజు</span>
+        <span class="occasion-pill" data-i18n="special_seva_occ_housewarming">🏠 గృహప్రవేశం</span>
+        <span class="occasion-pill" data-i18n="special_seva_occ_babynaming">👶 నామకరణం</span>
+        <span class="occasion-pill" data-i18n="special_seva_occ_newjob">💼 కొత్త ఉద్యోగం</span>
+        <span class="occasion-pill" data-i18n="special_seva_occ_other">🙏 ఇతర శుభ సందర్భాలు</span>
       </div>
 
-      <div class="special-seva-pricing">
-        <div class="special-seva-price-card">
-          <div class="special-seva-price-label" data-i18n="special_seva_price_label">సేవ ధర</div>
-          <div class="special-seva-price-amount">₹516</div>
-          <div class="special-seva-price-note" data-i18n="special_seva_price_note">ఒక సందర్భానికి</div>
+      <!-- Modes + Price + CTA strip -->
+      <div class="special-seva-strip">
+        <div class="special-seva-modes-inline">
+          <span class="seva-mode-badge"><span>🛕</span> <span data-i18n="special_seva_mode_inperson_title">స్వయంగా ఆలయంలో</span></span>
+          <span class="seva-mode-divider">లేదా</span>
+          <span class="seva-mode-badge"><span>📱</span> <span data-i18n="special_seva_mode_online_title">ఆన్‌లైన్ వీడియో పూజ</span></span>
+        </div>
+        <div class="special-seva-price-inline">
+          <span class="special-seva-price-amount">₹516</span>
+          <span class="special-seva-price-note" data-i18n="special_seva_price_note">ఒక సందర్భానికి</span>
+        </div>
+        <div class="special-seva-cta-group">
           <button class="special-seva-book-btn" onclick="openSpecialSevaModal()" data-i18n="special_seva_book_btn">🎉 స్పెషల్ సేవ బుక్ చేయండి</button>
-          <div class="special-seva-whatsapp">
-            <a href="https://wa.me/919440562447?text=%F0%9F%99%8F%20%E0%B0%A8%E0%B0%AE%E0%B0%B8%E0%B1%8D%E0%B0%95%E0%B0%BE%E0%B0%B0%E0%B0%82%2C%20%E0%B0%B8%E0%B1%8D%E0%B0%AA%E0%B1%86%E0%B0%B7%E0%B0%B2%E0%B1%8D%20%E0%B0%B8%E0%B1%87%E0%B0%B5%20%E0%B0%AC%E0%B1%81%E0%B0%95%E0%B1%8D%20%E0%B0%9A%E0%B1%87%E0%B0%AF%E0%B0%BE%E0%B0%B2%E0%B0%A8%E0%B1%81%E0%B0%95%E0%B1%81%E0%B0%82%E0%B0%9F%E0%B1%81%E0%B0%A8%E0%B1%8D%E0%B0%A8%E0%B0%BE%E0%B0%A8%E0%B1%81" target="_blank" rel="noopener" data-i18n="special_seva_whatsapp_link">📱 WhatsApp ద్వారా బుక్ చేయండి</a>
-          </div>
+          <a class="special-seva-wa-link" href="https://wa.me/919440562447?text=%F0%9F%99%8F%20%E0%B0%A8%E0%B0%AE%E0%B0%B8%E0%B1%8D%E0%B0%95%E0%B0%BE%E0%B0%B0%E0%B0%82%2C%20%E0%B0%B8%E0%B1%8D%E0%B0%AA%E0%B1%86%E0%B0%B7%E0%B0%B2%E0%B1%8D%20%E0%B0%B8%E0%B1%87%E0%B0%B5%20%E0%B0%AC%E0%B1%81%E0%B0%95%E0%B1%8D%20%E0%B0%9A%E0%B1%87%E0%B0%AF%E0%B0%BE%E0%B0%B2%E0%B0%A8%E0%B1%81%E0%B0%95%E0%B1%81%E0%B0%82%E0%B0%9F%E0%B1%81%E0%B0%A8%E0%B1%8D%E0%B0%A8%E0%B0%BE%E0%B0%A8%E0%B1%81" target="_blank" rel="noopener" data-i18n="special_seva_whatsapp_link">📱 WhatsApp ద్వారా బుక్ చేయండి</a>
         </div>
       </div>
-    </div>
 
-    <div class="special-seva-steps">
-      <div class="special-seva-step">
-        <div class="step-number">1</div>
-        <h4 data-i18n="special_seva_step1_title">సందర్భం ఎంచుకోండి</h4>
-        <p data-i18n="special_seva_step1_desc">పుట్టినరోజు, వార్షికోత్సవం లేదా ఇతర శుభ సందర్భం ఎంచుకొని వివరాలు నమోదు చేయండి</p>
-      </div>
-      <div class="special-seva-step">
-        <div class="step-number">2</div>
-        <h4 data-i18n="special_seva_step2_title">₹516 చెల్లించండి</h4>
-        <p data-i18n="special_seva_step2_desc">Razorpay లేదా UPI ద్వారా సురక్షితంగా చెల్లించండి</p>
-      </div>
-      <div class="special-seva-step">
-        <div class="step-number">3</div>
-        <h4 data-i18n="special_seva_step3_title">పూజ & ఆశీర్వాదం</h4>
-        <p data-i18n="special_seva_step3_desc">పూజారి గారు పూజ చేసి, వీడియో కాల్ లేదా వీడియో రికార్డింగ్ పంపిస్తారు. WhatsApp ద్వారా సమన్వయం</p>
+      <!-- Compact steps bar -->
+      <div class="special-seva-steps-bar">
+        <div class="step-item"><span class="step-num">1</span> <span data-i18n="special_seva_step1_title">సందర్భం ఎంచుకోండి</span></div>
+        <span class="step-arrow">→</span>
+        <div class="step-item"><span class="step-num">2</span> <span data-i18n="special_seva_step2_title">₹516 చెల్లించండి</span></div>
+        <span class="step-arrow">→</span>
+        <div class="step-item"><span class="step-num">3</span> <span data-i18n="special_seva_step3_title">పూజ & ఆశీర్వాదం</span></div>
       </div>
     </div>
   </div>
