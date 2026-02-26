@@ -894,34 +894,40 @@ function translateToTelugu(text) {
     .catch(function() { return text; }); /* fallback to original on error */
 }
 
-/* ===== Send via WhatsApp (desktop detection + email fallback) ===== */
+/* ===== Send: WhatsApp → Email → just Google Forms ===== */
 function sendWhatsAppOrEmail(waMsg, emailSubject, emailBody) {
   var isMobile = /Android|iPhone|iPad|iPod|webOS|BlackBerry/i.test(navigator.userAgent);
 
   if (isMobile) {
-    /* Mobile: WhatsApp is almost always available */
     window.open('https://wa.me/15617560287?text=' + encodeURIComponent(waMsg), '_blank');
     return;
   }
 
-  /* Desktop: try whatsapp:// protocol, fall back to email */
-  var waOpened = false;
-  function onBlur() { waOpened = true; }
+  /* Desktop: try WhatsApp → Email → silent (Google Forms already saved) */
+  var appOpened = false;
+  function onBlur() { appOpened = true; }
   window.addEventListener('blur', onBlur);
 
-  /* Try opening native WhatsApp via protocol scheme */
+  /* Step 1: Try WhatsApp protocol */
   var link = document.createElement('a');
   link.href = 'whatsapp://send?phone=15617560287&text=' + encodeURIComponent(waMsg);
   link.click();
 
-  /* After 2.5s, check if WhatsApp opened (page lost focus) */
   setTimeout(function() {
     window.removeEventListener('blur', onBlur);
-    if (!waOpened) {
-      /* WhatsApp not detected on desktop → send email instead */
-      window.location.href = 'mailto:madhavaramtemple@gmail.com?subject=' +
-        encodeURIComponent(emailSubject) + '&body=' + encodeURIComponent(emailBody);
-    }
+    if (appOpened) return; /* WhatsApp opened — done */
+
+    /* Step 2: Try email */
+    appOpened = false;
+    window.addEventListener('blur', onBlur);
+    window.location.href = 'mailto:madhavaramtemple@gmail.com?subject=' +
+      encodeURIComponent(emailSubject) + '&body=' + encodeURIComponent(emailBody);
+
+    setTimeout(function() {
+      window.removeEventListener('blur', onBlur);
+      /* Step 3: Neither WhatsApp nor email opened — no problem,
+         Google Forms already captured the data silently */
+    }, 2500);
   }, 2500);
 }
 
