@@ -83,16 +83,24 @@ nav { background:var(--deep-red); position:sticky; top:0; z-index:200; box-shado
 /* HERO */
 .hero { background:linear-gradient(180deg,#2a1510 0%,var(--deep-red) 40%,var(--deep-red) 100%); padding:60px 24px; text-align:center; position:relative; overflow:hidden; }
 .hero::before { content:''; position:absolute; inset:0; background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c0873a' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
-.hero-temple-art { line-height:1; margin-bottom:20px; position:relative; }
+.hero-temple-art { line-height:1; margin-bottom:20px; position:relative; display:flex; justify-content:center; }
+.hero-temple-art::after {
+  content:''; position:absolute; top:50%; left:50%;
+  width:clamp(200px,35vw,340px); height:clamp(200px,35vw,340px);
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle, rgba(192,135,58,.55) 0%, rgba(218,165,64,.25) 40%, transparent 70%);
+  border-radius:50%; z-index:0; pointer-events:none;
+  animation:heroGlow 3s ease-in-out infinite;
+}
 .hero-logo-img {
   height:clamp(160px,30vw,280px); width:auto;
   object-fit:contain; display:block; margin:0 auto;
-  filter:drop-shadow(0 0 24px rgba(192,135,58,.6)) drop-shadow(0 0 48px rgba(218,165,64,.3)) drop-shadow(0 4px 12px rgba(0,0,0,.4));
-  animation:heroGlow 3s ease-in-out infinite;
+  filter:drop-shadow(0 4px 12px rgba(0,0,0,.4));
+  position:relative; z-index:1;
 }
 @keyframes heroGlow {
-  0%,100% { filter:drop-shadow(0 0 24px rgba(192,135,58,.6)) drop-shadow(0 0 48px rgba(218,165,64,.3)) drop-shadow(0 4px 12px rgba(0,0,0,.4)); }
-  50%     { filter:drop-shadow(0 0 50px rgba(192,135,58,.9)) drop-shadow(0 0 90px rgba(218,165,64,.5)) drop-shadow(0 0 120px rgba(218,165,64,.3)) drop-shadow(0 6px 16px rgba(0,0,0,.4)); }
+  0%,100% { transform:translate(-50%,-50%) scale(1); opacity:.7; }
+  50%     { transform:translate(-50%,-50%) scale(1.25); opacity:1; }
 }
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
 .hero h1 { color:#daa540; font-size:clamp(19px,4vw,44px); font-weight:900; text-shadow:0 2px 20px rgba(0,0,0,.5); margin-bottom:14px; position:relative; line-height:1.3; }
@@ -1222,7 +1230,8 @@ footer { background:var(--deep-red); color:rgba(245,230,200,.8); padding:44px 16
   }
   html { scroll-behavior:auto; }
   .ticker-inner { animation:none; }
-  .hero-logo-img { animation:none; filter:drop-shadow(0 0 24px rgba(192,135,58,.6)) drop-shadow(0 0 48px rgba(218,165,64,.3)) drop-shadow(0 4px 12px rgba(0,0,0,.4)); }
+  .hero-logo-img { filter:drop-shadow(0 4px 12px rgba(0,0,0,.4)); }
+  .hero-temple-art::after { animation:none; opacity:.7; }
   .temple-emblem { animation:none; }
   .header-donate-btn,.btn-secondary,.donate-now-btn,.float-donate,.contribute-cta-box .btn-gold,.monthly99-hero,.monthly99-btn,.whatsapp-join-btn { animation:none; }
   .header-donate-btn::after,.donate-now-btn::after,.float-donate::after,.float-donate::before,.contribute-cta-box .btn-gold::after,.monthly99-hero::before,.monthly99-btn::after,.whatsapp-join-btn::after { animation:none; }
