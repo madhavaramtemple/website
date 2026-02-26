@@ -338,7 +338,10 @@
       <div class="underline"></div>
     </div>
 
-    <div class="special-seva-compact">
+    <div class="special-seva-content">
+      <!-- Brief description -->
+      <p class="special-seva-desc" data-i18n="special_seva_desc">మీ జీవితంలో ప్రత్యేక సందర్భాలలో — పుట్టినరోజు, వివాహ వార్షికోత్సవం, గృహప్రవేశం, పట్టా పొందినరోజు — శ్రీ భావనారాయణ స్వామి ఆశీర్వాదం పొందండి. స్వయంగా ఆలయానికి వచ్చి సేవ చేయించుకోవచ్చు, లేదా ఆన్‌లైన్ బుక్ చేసి పూజారి వీడియో కాల్ లేదా వీడియో రికార్డింగ్ ద్వారా పూజ చేస్తారు.</p>
+
       <!-- Occasion pills -->
       <div class="special-seva-occasions">
         <span class="occasion-pill" data-i18n="special_seva_occ_birthday">🎂 పుట్టినరోజు</span>
@@ -350,14 +353,24 @@
         <span class="occasion-pill" data-i18n="special_seva_occ_other">🙏 ఇతర శుభ సందర్భాలు</span>
       </div>
 
-      <!-- Modes + Price + CTA strip -->
-      <div class="special-seva-strip">
-        <div class="special-seva-modes-inline">
-          <span class="seva-mode-badge"><span>🛕</span> <span data-i18n="special_seva_mode_inperson_title">స్వయంగా ఆలయంలో</span></span>
-          <span class="seva-mode-divider">లేదా</span>
-          <span class="seva-mode-badge"><span>📱</span> <span data-i18n="special_seva_mode_online_title">ఆన్‌లైన్ వీడియో పూజ</span></span>
+      <!-- Two mode cards side by side -->
+      <div class="special-seva-modes">
+        <div class="seva-mode-card">
+          <span class="seva-mode-icon">🛕</span>
+          <h4 data-i18n="special_seva_mode_inperson_title">స్వయంగా ఆలయంలో</h4>
+          <p data-i18n="special_seva_mode_inperson_desc">ఆలయానికి వచ్చి పూజారి గారి సమక్షంలో పూజ చేయించుకోండి</p>
         </div>
-        <div class="special-seva-price-inline">
+        <div class="seva-mode-or" data-i18n="special_seva_mode_or">లేదా</div>
+        <div class="seva-mode-card">
+          <span class="seva-mode-icon">📱</span>
+          <h4 data-i18n="special_seva_mode_online_title">ఆన్‌లైన్ వీడియో పూజ</h4>
+          <p data-i18n="special_seva_mode_online_desc">ఆన్‌లైన్ బుకింగ్ చేయండి — పూజారి వీడియో కాల్ లేదా వీడియో ద్వారా పూజ చేస్తారు</p>
+        </div>
+      </div>
+
+      <!-- Price + CTA centered -->
+      <div class="special-seva-price-cta">
+        <div class="special-seva-price-badge">
           <span class="special-seva-price-amount">₹516</span>
           <span class="special-seva-price-note" data-i18n="special_seva_price_note">ఒక సందర్భానికి</span>
         </div>
@@ -367,13 +380,23 @@
         </div>
       </div>
 
-      <!-- Compact steps bar -->
-      <div class="special-seva-steps-bar">
-        <div class="step-item"><span class="step-num">1</span> <span data-i18n="special_seva_step1_title">సందర్భం ఎంచుకోండి</span></div>
-        <span class="step-arrow">→</span>
-        <div class="step-item"><span class="step-num">2</span> <span data-i18n="special_seva_step2_title">₹516 చెల్లించండి</span></div>
-        <span class="step-arrow">→</span>
-        <div class="step-item"><span class="step-num">3</span> <span data-i18n="special_seva_step3_title">పూజ & ఆశీర్వాదం</span></div>
+      <!-- Steps with descriptions -->
+      <div class="special-seva-steps">
+        <div class="seva-step-card">
+          <span class="step-num">1</span>
+          <h5 data-i18n="special_seva_step1_title">సందర్భం ఎంచుకోండి</h5>
+          <p data-i18n="special_seva_step1_desc">పుట్టినరోజు, వార్షికోత్సవం లేదా ఇతర శుభ సందర్భం ఎంచుకొని వివరాలు నమోదు చేయండి</p>
+        </div>
+        <div class="seva-step-card">
+          <span class="step-num">2</span>
+          <h5 data-i18n="special_seva_step2_title">₹516 చెల్లించండి</h5>
+          <p data-i18n="special_seva_step2_desc">Razorpay లేదా UPI ద్వారా సురక్షితంగా చెల్లించండి</p>
+        </div>
+        <div class="seva-step-card">
+          <span class="step-num">3</span>
+          <h5 data-i18n="special_seva_step3_title">పూజ & ఆశీర్వాదం</h5>
+          <p data-i18n="special_seva_step3_desc">పూజారి గారు పూజ చేసి, వీడియో కాల్ లేదా వీడియో రికార్డింగ్ పంపిస్తారు. WhatsApp ద్వారా సమన్వయం</p>
+        </div>
       </div>
     </div>
   </div>
@@ -732,7 +755,7 @@
   <div class="container">
     <div class="section-header" style="margin-bottom:20px;">
       <div class="small-label" style="color:var(--saffron);" data-i18n="map_label">మార్గం</div>
-      <h2 style="color:var(--crimson);" data-i18n="map_heading">ఆలయం ఎలా చేరుకోవాలి</h2>
+      <h2 style="color:var(--deep-red);" data-i18n="map_heading">ఆలయం ఎలా చేరుకోవాలి</h2>
       <div class="underline"></div>
     </div>
     <div style="border-radius:12px;overflow:hidden;border:3px solid var(--border-gold);box-shadow:0 8px 32px rgba(0,0,0,0.15);">
@@ -749,7 +772,7 @@
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:16px;justify-content:center;">
       <a href="https://www.google.com/maps?q=14.406397548669661,79.00804832679445" target="_blank" rel="noopener"
-         style="background:var(--crimson);color:#FFE8A0;padding:10px 22px;border-radius:6px;text-decoration:none;font-family:'Times New Roman','Mandali',sans-serif;font-size:14px;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:background .3s;">
+         style="background:var(--deep-red);color:#FFE8A0;padding:10px 22px;border-radius:6px;text-decoration:none;font-family:'Times New Roman','Mandali',sans-serif;font-size:14px;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:background .3s;">
         <span data-i18n="map_open_gmaps">🗺️ Google Maps లో తెరవండి</span>
       </a>
       <a href="https://www.google.com/maps/dir/?api=1&destination=14.406397548669661,79.00804832679445&destination_place_id=14.406397548669661,79.00804832679445&travelmode=driving" target="_blank" rel="noopener"
