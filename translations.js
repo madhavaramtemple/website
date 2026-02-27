@@ -36,7 +36,8 @@ const translations = {
     // ===== HERO =====
     hero_aria: "ఆలయ స్వాగతం",
     hero_logo_alt: "ఆలయ గోపురం",
-    hero_title: "ఓం నమో భావనారాయణాయ — కొత్త మాధవరం క్షేత్రానికి స్వాగతం",
+    hero_title: "ఓం నమో భద్రావతీ భావనారాయణాయ",
+    hero_tagline: "125+ ఏళ్ల పవిత్ర క్షేత్రం • కొత్త మాధవరం",
     hero_verse: "\"నారాయణాయ విద్మహే వాసుదేవాయ ధీమహి<br/>తన్నో విష్ణుః ప్రచోదయాత్\"",
     hero_cta_timings: "🕐 పూజా సమయాలు తెలుసుకోండి",
     hero_cta_donate: "💛 ఆలయ నిధికి విరాళం ఇవ్వండి",
@@ -719,7 +720,8 @@ const translations = {
     // ===== HERO =====
     hero_aria: "Temple Welcome",
     hero_logo_alt: "Temple Gopuram",
-    hero_title: "Om Namo Bhadravathi Bhavanarayanaya — Welcome to New Madhavaram Kshetram",
+    hero_title: "Om Namo Bhadravathi Bhavanarayanaya",
+    hero_tagline: "125+ Years Sacred Kshetram • New Madhavaram",
     hero_verse: "\"Narayanaya Vidmahe Vasudevaya Dheemahi<br/>Tanno Vishnuh Prachodayat\"",
     hero_cta_timings: "🕐 View Puja Timings",
     hero_cta_donate: "💛 Viraalam to Temple Fund",
