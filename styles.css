@@ -506,8 +506,6 @@ footer { background:var(--deep-red); color:rgba(245,230,200,.8); padding:44px 16
 .special-seva-cta-group { display:flex; flex-direction:column; gap:10px; align-items:center; }
 .special-seva-book-btn { background:linear-gradient(135deg,var(--saffron),var(--gold)); color:#fff; border:none; padding:14px 28px; border-radius:8px; font-family:'Times New Roman','Mandali',serif; font-size:17px; font-weight:700; cursor:pointer; box-shadow:0 4px 16px rgba(0,0,0,.3); transition:all .3s; white-space:nowrap; }
 .special-seva-book-btn:hover { transform:translateY(-2px); box-shadow:0 6px 22px rgba(0,0,0,.4); }
-.special-seva-wa-link { color:var(--bright-gold); font-size:14px; text-decoration:none; font-family:'Times New Roman','Mandali',sans-serif; font-weight:600; transition:opacity .3s; white-space:nowrap; }
-.special-seva-wa-link:hover { opacity:.8; }
 /* Steps row */
 .special-seva-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
 .seva-step-card { background:rgba(74,32,32,.05); border-radius:12px; padding:20px 16px; text-align:center; }
