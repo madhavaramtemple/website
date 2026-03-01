@@ -136,10 +136,10 @@ function initPhotoUpload() {
       btn.classList.remove('uploading');
       input.value = '';
       if (failed === 0) {
-        status.textContent = '✓ ' + completed + ' ' + t('gallery_upload_success');
+        status.textContent = completed + ' ' + t('gallery_upload_success');
         status.className = 'gallery-upload-status upload-success';
       } else if (completed > 0) {
-        status.textContent = '✓ ' + completed + ' ' + t('gallery_upload_success') + ' · ' + failed + ' ' + t('gallery_upload_error');
+        status.textContent = completed + ' ' + t('gallery_upload_success') + ' · ' + failed + ' ' + t('gallery_upload_error');
         status.className = 'gallery-upload-status upload-partial';
       } else {
         status.textContent = t('gallery_upload_error');
@@ -517,7 +517,7 @@ async function loadPhotosFromConfig() {
   } catch (err) {
     console.warn('[Gallery] Failed to discover root folder:', err);
     galleryGrid.innerHTML = '<div class="gallery-error">'
-      + '<span>📂</span><span>' + t('gallery_error') + '</span></div>';
+      + '<span class="ico ico-folder" style="font-size:24px;width:24px;height:24px;"></span><span>' + t('gallery_error') + '</span></div>';
   }
 }
 
@@ -565,7 +565,7 @@ function renderGalleryGrid(container, folderData) {
 
   if (!html && folderData.folders.length === 0 && folderData.images.length === 0) {
     html = '<div class="gallery-empty">'
-      + '<span>📂</span><span>' + t('gallery_empty') + '</span></div>';
+      + '<span class="ico ico-folder" style="font-size:24px;width:24px;height:24px;"></span><span>' + t('gallery_empty') + '</span></div>';
   }
 
   container.innerHTML = html;
@@ -595,7 +595,7 @@ function renderGalleryGrid(container, folderData) {
       if (!card) return;
       var badge = document.createElement('span');
       badge.className = 'gallery-count-badge';
-      badge.textContent = count + ' 📷';
+      badge.innerHTML = count + ' <span class="ico ico-camera"></span>';
       card.appendChild(badge);
     });
   });
@@ -700,7 +700,7 @@ function renderAlbumContents(body, folderData, folderName) {
   // Empty folder
   if (!hasSubfolders && !hasImages) {
     html = '<div class="album-empty-msg">'
-      + '<div style="font-size:48px;margin-bottom:12px;">📂</div>'
+      + '<div style="margin-bottom:12px;"><span class="ico ico-folder" style="width:48px;height:48px;"></span></div>'
       + '<strong>' + escapeHtml(folderName) + '</strong><br>'
       + t('album_photos_upload_soon') + '</div>';
   }
