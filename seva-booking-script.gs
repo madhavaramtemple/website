@@ -351,6 +351,226 @@ function setupDailyTrigger() {
   Logger.log('Daily trigger set for ~4:50 AM IST');
 }
 
+// ---- ONE-TIME SHEET SETUP ----
+// Run this ONCE: Apps Script Editor → Run → createSevaBookingSheet
+// It creates the full spreadsheet, then logs the SPREADSHEET_ID for you.
+
+function createSevaBookingSheet() {
+  var ss = SpreadsheetApp.create('Seva Booking — Sri Bhadravathi Bhavanarayana Swamy Temple');
+  var ssId = ss.getId();
+
+  // ========== BOOKINGS SHEET ==========
+  var bookings = ss.getSheetByName('Sheet1');
+  bookings.setName('Bookings');
+
+  var headers = [
+    'BookingID',          // A
+    'BookingTimestamp',    // B
+    'DevoteeName',        // C
+    'Phone',              // D
+    'Occasion',           // E
+    'PoojaMonth',         // F
+    'PoojaDay',           // G
+    'Gotra',              // H
+    'Nakshatra',          // I
+    'Mode',               // J
+    'Address',            // K
+    'SpecialRequests',    // L
+    'RazorpayPaymentID',  // M
+    'AmountPaid',         // N
+    'NextPoojaDate',      // O
+    'Status',             // P
+    'Reminder7Sent',      // Q
+    'Reminder3Sent',      // R
+    'ReminderDaySent',    // S
+    'PriestNotified',     // T
+    'LastReminderError'   // U
+  ];
+
+  // Write headers in row 1
+  var headerRange = bookings.getRange(1, 1, 1, headers.length);
+  headerRange.setValues([headers]);
+
+  // Format header row
+  headerRange.setBackground('#4a2020');
+  headerRange.setFontColor('#ffffff');
+  headerRange.setFontWeight('bold');
+  headerRange.setFontSize(10);
+  headerRange.setHorizontalAlignment('center');
+  headerRange.setWrap(true);
+
+  // Freeze header row
+  bookings.setFrozenRows(1);
+
+  // Set column widths
+  var widths = {
+    1: 160,   // A: BookingID
+    2: 170,   // B: Timestamp
+    3: 160,   // C: Name
+    4: 120,   // D: Phone
+    5: 150,   // E: Occasion
+    6: 90,    // F: PoojaMonth
+    7: 80,    // G: PoojaDay
+    8: 100,   // H: Gotra
+    9: 110,   // I: Nakshatra
+    10: 90,   // J: Mode
+    11: 200,  // K: Address
+    12: 200,  // L: SpecialRequests
+    13: 200,  // M: RazorpayPaymentID
+    14: 100,  // N: AmountPaid
+    15: 120,  // O: NextPoojaDate
+    16: 80,   // P: Status
+    17: 150,  // Q: Reminder7Sent
+    18: 150,  // R: Reminder3Sent
+    19: 150,  // S: ReminderDaySent
+    20: 150,  // T: PriestNotified
+    21: 200   // U: LastReminderError
+  };
+  for (var col in widths) {
+    bookings.setColumnWidth(parseInt(col), widths[col]);
+  }
+
+  // Add data validation for Status column (P)
+  var statusRule = SpreadsheetApp.newDataValidation()
+    .requireValueInList(['Active', 'Cancelled', 'Paused'], true)
+    .setAllowInvalid(false)
+    .build();
+  bookings.getRange('P2:P1000').setDataValidation(statusRule);
+
+  // Add data validation for Mode column (J)
+  var modeRule = SpreadsheetApp.newDataValidation()
+    .requireValueInList(['inperson', 'online'], true)
+    .setAllowInvalid(false)
+    .build();
+  bookings.getRange('J2:J1000').setDataValidation(modeRule);
+
+  // Add data validation for PoojaMonth (F: 1-12)
+  var monthRule = SpreadsheetApp.newDataValidation()
+    .requireNumberBetween(1, 12)
+    .setAllowInvalid(false)
+    .build();
+  bookings.getRange('F2:F1000').setDataValidation(monthRule);
+
+  // Add data validation for PoojaDay (G: 1-31)
+  var dayRule = SpreadsheetApp.newDataValidation()
+    .requireNumberBetween(1, 31)
+    .setAllowInvalid(false)
+    .build();
+  bookings.getRange('G2:G1000').setDataValidation(dayRule);
+
+  // Conditional formatting: highlight Active rows in light green
+  var activeRule = SpreadsheetApp.newConditionalFormatRule()
+    .whenTextEqualTo('Active')
+    .setBackground('#d9ead3')
+    .setRanges([bookings.getRange('P2:P1000')])
+    .build();
+  var cancelledRule = SpreadsheetApp.newConditionalFormatRule()
+    .whenTextEqualTo('Cancelled')
+    .setBackground('#f4cccc')
+    .setRanges([bookings.getRange('P2:P1000')])
+    .build();
+  var errorRule = SpreadsheetApp.newConditionalFormatRule()
+    .whenTextContains('error')
+    .setBackground('#f4cccc')
+    .setFontColor('#cc0000')
+    .setRanges([bookings.getRange('U2:U1000')])
+    .build();
+  bookings.setConditionalFormatRules([activeRule, cancelledRule, errorRule]);
+
+  // Add a sample row so the sheet structure is visible
+  bookings.getRange(2, 1, 1, headers.length).setValues([[
+    'SEVA-20260301-001',
+    '2026-03-01 10:30:00',
+    'Sample Devotee',
+    '9876543210',
+    'Birthday / పుట్టినరోజు',
+    6, 25,
+    'Bharadwaja',
+    'Ashwini',
+    'inperson',
+    '',
+    'Sample booking — delete this row',
+    'pay_SAMPLE123',
+    516,
+    '2026-06-25',
+    'Active',
+    '', '', '', '', ''
+  ]]);
+  bookings.getRange(2, 1, 1, headers.length).setFontStyle('italic');
+  bookings.getRange(2, 1, 1, headers.length).setFontColor('#999999');
+
+  // ========== CONFIG SHEET ==========
+  var config = ss.insertSheet('Config');
+
+  var configHeaders = ['Key', 'Value', 'Description'];
+  var configHeaderRange = config.getRange(1, 1, 1, 3);
+  configHeaderRange.setValues([configHeaders]);
+  configHeaderRange.setBackground('#4a2020');
+  configHeaderRange.setFontColor('#ffffff');
+  configHeaderRange.setFontWeight('bold');
+  configHeaderRange.setFontSize(10);
+  config.setFrozenRows(1);
+
+  // Config key-value pairs with descriptions
+  var configData = [
+    ['API_SECRET',                'REPLACE_WITH_YOUR_32_CHAR_SECRET',    'Must match SEVA_API_SECRET in script.js'],
+    ['WHATSAPP_PHONE_NUMBER_ID',  '',                                    'From Meta Business → WhatsApp → Phone Number ID'],
+    ['WHATSAPP_ACCESS_TOKEN',     '',                                    'Permanent token from Meta Business → System Users'],
+    ['PRIEST_PHONE',              '919440562447',                        'Priest WhatsApp number with country code (no +)'],
+    ['TEMPLATE_REMINDER_7DAY',    'seva_reminder_7day',                  'WhatsApp template name for 7-day reminder'],
+    ['TEMPLATE_REMINDER_3DAY',    'seva_reminder_3day',                  'WhatsApp template name for 3-day reminder'],
+    ['TEMPLATE_REMINDER_SAMEDAY', 'seva_reminder_sameday',               'WhatsApp template name for same-day reminder'],
+    ['TEMPLATE_PRIEST_NOTIFY',    'seva_priest_notification',            'WhatsApp template name for priest daily summary']
+  ];
+
+  config.getRange(2, 1, configData.length, 3).setValues(configData);
+
+  // Format Config sheet
+  config.setColumnWidth(1, 250);
+  config.setColumnWidth(2, 350);
+  config.setColumnWidth(3, 400);
+
+  // Highlight empty required values in yellow
+  var emptyValueRule = SpreadsheetApp.newConditionalFormatRule()
+    .whenCellEmpty()
+    .setBackground('#fff2cc')
+    .setRanges([config.getRange('B2:B10')])
+    .build();
+  config.setConditionalFormatRules([emptyValueRule]);
+
+  // Key column bold
+  config.getRange('A2:A10').setFontWeight('bold');
+
+  // Protect Config sheet — only owner can edit
+  var protection = config.protect().setDescription('Config — Owner Only');
+  protection.setWarningOnly(true);
+
+  // ========== FINAL SETUP ==========
+
+  // Set spreadsheet timezone to IST
+  ss.setSpreadsheetTimeZone('Asia/Kolkata');
+
+  // Move to user's root drive folder
+  var file = DriveApp.getFileById(ssId);
+  Logger.log('');
+  Logger.log('╔══════════════════════════════════════════════════════════════╗');
+  Logger.log('║  ✅  SEVA BOOKING SHEET CREATED SUCCESSFULLY!               ║');
+  Logger.log('╠══════════════════════════════════════════════════════════════╣');
+  Logger.log('║  Spreadsheet ID: ' + ssId);
+  Logger.log('║  URL: ' + ss.getUrl());
+  Logger.log('║                                                              ║');
+  Logger.log('║  NEXT STEPS:                                                 ║');
+  Logger.log('║  1. Copy the Spreadsheet ID above                           ║');
+  Logger.log('║  2. Paste it into SPREADSHEET_ID at the top of this script  ║');
+  Logger.log('║  3. Fill in Config sheet values (WhatsApp token, etc.)      ║');
+  Logger.log('║  4. Delete the sample row in Bookings sheet                 ║');
+  Logger.log('║  5. Deploy as Web App → copy URL to script.js               ║');
+  Logger.log('║  6. Run setupDailyTrigger() once                            ║');
+  Logger.log('╚══════════════════════════════════════════════════════════════╝');
+
+  return { spreadsheetId: ssId, url: ss.getUrl() };
+}
+
 // ---- UTILITIES ----
 
 function _toIST(date) {
