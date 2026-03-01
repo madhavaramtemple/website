@@ -1057,3 +1057,37 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     lastTouchY = currentY;
   }, { passive: true });
 })();
+
+// Bento grid staggered reveal
+(function() {
+  var cards = document.querySelectorAll('.sevas-grid .seva-card');
+  if (!cards.length) return;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('bento-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  cards.forEach(function(card) { observer.observe(card); });
+})();
+
+// Custom cursor (desktop only)
+(function() {
+  if (window.matchMedia('(pointer:coarse)').matches) return;
+  var cursor = document.createElement('div');
+  cursor.className = 'custom-cursor';
+  document.body.appendChild(cursor);
+  document.body.style.cursor = 'none';
+  document.addEventListener('mousemove', function(e) {
+    cursor.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px) translate(-50%,-50%)';
+  });
+  var interactives = 'a,button,.seva-card,.event-card,.donation-card,.btn-primary,.btn-secondary,.occasion-pill,.highlight-tag';
+  document.addEventListener('mouseover', function(e) {
+    if (e.target.closest(interactives)) cursor.classList.add('expanded');
+  });
+  document.addEventListener('mouseout', function(e) {
+    if (e.target.closest(interactives)) cursor.classList.remove('expanded');
+  });
+})();

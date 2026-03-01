@@ -36,6 +36,7 @@ const translations = {
     // ===== HERO =====
     hero_aria: "ఆలయ స్వాగతం",
     hero_logo_alt: "ఆలయ గోపురం",
+    hero_pill: "✨ 125+ ఏళ్ల పవిత్ర వారసత్వం",
     hero_title: "ఓం నమో భద్రావతీ భావనారాయణాయ",
     hero_tagline: "125+ ఏళ్ల పవిత్ర క్షేత్రం • కొత్త మాధవరం",
     hero_verse: "\"నారాయణాయ విద్మహే వాసుదేవాయ ధీమహి<br/>తన్నో విష్ణుః ప్రచోదయాత్\"",
@@ -714,6 +715,7 @@ const translations = {
     // ===== HERO =====
     hero_aria: "Temple Welcome",
     hero_logo_alt: "Temple Gopuram",
+    hero_pill: "✨ 125+ Years Sacred Heritage",
     hero_title: "Om Namo Bhadravathi Bhavanarayanaya",
     hero_tagline: "125+ Years Sacred Kshetram • New Madhavaram",
     hero_verse: "\"Narayanaya Vidmahe Vasudevaya Dheemahi<br/>Tanno Vishnuh Prachodayat\"",
