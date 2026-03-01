@@ -11,8 +11,9 @@ function toggleLanguage() {
 }
 
 function updatePageContent() {
-  // 1. Update all elements with data-i18n
+  // 1. Update all elements with data-i18n (skip <option> — handled in step 4)
   document.querySelectorAll('[data-i18n]').forEach(el => {
+    if (el.tagName === 'OPTION') return;
     const val = t(el.getAttribute('data-i18n'));
     if (val !== el.getAttribute('data-i18n')) el.innerHTML = val;
   });
@@ -29,7 +30,7 @@ function updatePageContent() {
   // 4. Update select options
   document.querySelectorAll('option[data-i18n]').forEach(opt => {
     const val = t(opt.getAttribute('data-i18n'));
-    if (val !== opt.getAttribute('data-i18n')) opt.textContent = val;
+    if (val !== opt.getAttribute('data-i18n')) opt.textContent = val.replace(/<[^>]*>/g, '').trim();
   });
   // 5. Update alt attributes
   document.querySelectorAll('[data-i18n-alt]').forEach(el => {
@@ -189,6 +190,12 @@ document.addEventListener('click', e => {
 // Get it from: razorpay.com → Settings → API Keys
 // ============================================================
 const RAZORPAY_KEY = 'rzp_test_REPLACE_WITH_YOUR_KEY';
+// ============================================================
+// SEVA BOOKING — Google Apps Script endpoint for storing bookings
+// Deploy your seva-booking-script.gs as a web app and paste URL here
+// ============================================================
+const SEVA_SCRIPT_URL = 'https://script.google.com/macros/s/REPLACE_WITH_DEPLOYMENT_ID/exec';
+const SEVA_API_SECRET = 'REPLACE_WITH_YOUR_32_CHAR_SECRET';
 // ============================================================
 
 function openDonateModal()  { document.getElementById('donateModal').classList.add('open'); document.body.style.overflow='hidden'; }
@@ -372,23 +379,67 @@ function toggleSevaMode(mode, btn) {
   if (addressGroup) addressGroup.style.display = (mode === 'online') ? 'block' : 'none';
 }
 
-/* Special Seva Razorpay Payment */
+/* Dynamic day dropdown based on selected month */
+function updateDayOptions() {
+  var monthSelect = document.getElementById('sevaPoojaMonth');
+  var daySelect = document.getElementById('sevaPoojaDay');
+  var feb29Note = document.getElementById('feb29Note');
+  var month = parseInt(monthSelect.value);
+  var maxDays = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  daySelect.innerHTML = '';
+  var defaultOpt = document.createElement('option');
+  defaultOpt.value = '';
+  defaultOpt.textContent = t('special_seva_day_select') || '-- Day --';
+  daySelect.appendChild(defaultOpt);
+  if (!month) { if (feb29Note) feb29Note.style.display = 'none'; return; }
+  var days = maxDays[month - 1];
+  for (var d = 1; d <= days; d++) {
+    var opt = document.createElement('option');
+    opt.value = d;
+    opt.textContent = d;
+    daySelect.appendChild(opt);
+  }
+  if (feb29Note) feb29Note.style.display = (month === 2) ? 'block' : 'none';
+}
+
+/* Calculate next pooja date (client-side, mirrors server logic) */
+function calculateNextPoojaDateClient(month, day) {
+  var now = new Date();
+  var utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+  var ist = new Date(utc + (5.5 * 3600000));
+  var year = ist.getFullYear();
+  var curMonth = ist.getMonth() + 1;
+  var curDay = ist.getDate();
+  function isLeapYear(y) { return (y % 4 === 0 && y % 100 !== 0) || (y % 400 === 0); }
+  function resolveDate(y, m, d) {
+    if (m === 2 && d === 29 && !isLeapYear(y)) return new Date(y, 2, 1);
+    return new Date(y, m - 1, d);
+  }
+  var target = resolveDate(year, month, day);
+  if (target.getMonth() + 1 < curMonth || (target.getMonth() + 1 === curMonth && target.getDate() < curDay)) {
+    target = resolveDate(year + 1, month, day);
+  }
+  return target;
+}
+
+/* Special Seva Razorpay Payment (Recurring Monthly) */
 function startSpecialSevaPayment() {
   var name = document.getElementById('sevaDevoteeName').value.trim();
   var phone = document.getElementById('sevaDevoteePhone').value.trim();
   var occasion = document.getElementById('sevaOccasion').value;
-  var date = document.getElementById('sevaDate').value;
+  var poojaMonth = document.getElementById('sevaPoojaMonth').value;
+  var poojaDay = document.getElementById('sevaPoojaDay').value;
 
   if (!name) { alert(t('special_seva_alert_name')); return; }
   if (!phone || phone.length < 10) { alert(t('special_seva_alert_phone')); return; }
-  if (!date) { alert(t('special_seva_alert_date')); return; }
+  if (!poojaMonth || !poojaDay) { alert(t('special_seva_alert_month_day')); return; }
 
   var gotra = document.getElementById('sevaGotra').value.trim();
   var nakshatra = document.getElementById('sevaNakshatra').value;
   var address = document.getElementById('sevaAddress').value.trim();
   var requests = document.getElementById('sevaRequests').value.trim();
   var modeBtn = document.querySelector('.seva-mode-btn.active');
-  var mode = (modeBtn && modeBtn.textContent.indexOf('ఆన్‌లైన్') !== -1) || (modeBtn && modeBtn.textContent.indexOf('Online') !== -1) ? 'online' : 'inperson';
+  var mode = (modeBtn && (modeBtn.textContent.indexOf('ఆన్‌లైన్') !== -1 || modeBtn.textContent.indexOf('Online') !== -1)) ? 'online' : 'inperson';
 
   var occasionLabels = {
     birthday: 'Birthday / పుట్టినరోజు',
@@ -401,26 +452,24 @@ function startSpecialSevaPayment() {
   };
   var occasionText = occasionLabels[occasion] || occasion;
 
+  var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var nextDate = calculateNextPoojaDateClient(parseInt(poojaMonth), parseInt(poojaDay));
+  var nextDateDisplay = nextDate.getDate() + ' ' + monthNames[nextDate.getMonth()] + ' ' + nextDate.getFullYear();
+
   var options = {
     key: RAZORPAY_KEY,
-    amount: 51600, // ₹516 in paise
+    amount: 51600,
     currency: 'INR',
     name: t('razorpay_name'),
-    description: 'Special Seva: ' + occasionText + ' (' + date + ')',
-    prefill: {
-      name: name,
-      contact: '+91' + phone.replace(/^\+?91/, '')
-    },
+    description: 'Special Seva: ' + occasionText + ' (Every ' + monthNames[parseInt(poojaMonth) - 1] + ' ' + poojaDay + ')',
+    prefill: { name: name, contact: '+91' + phone.replace(/^\+?91/, '') },
     notes: {
-      seva_type: 'Special Seva',
-      devotee_name: name,
-      devotee_phone: phone,
+      seva_type: 'Special Seva (Recurring)',
+      devotee_name: name, devotee_phone: phone,
       occasion: occasionText,
-      date: date,
-      gotra: gotra || 'N/A',
-      nakshatra: nakshatra || 'N/A',
-      mode: mode,
-      address: address || 'N/A',
+      pooja_month: poojaMonth, pooja_day: poojaDay,
+      gotra: gotra || 'N/A', nakshatra: nakshatra || 'N/A',
+      mode: mode, address: address || 'N/A',
       special_requests: requests || 'N/A',
       temple: 'Sri Bhadravathi Bhavanarayana Swamy Temple, New Madhavaram'
     },
@@ -428,28 +477,48 @@ function startSpecialSevaPayment() {
     modal: { ondismiss: function() { console.log('Special seva payment dismissed'); } },
     handler: function(response) {
       closeSpecialSevaModal();
-      // Build WhatsApp message with booking details
-      var msg = '🙏 నమస్కారం!\n\n'
-        + '✅ Special Seva Payment Successful\n'
-        + 'Payment ID: ' + response.razorpay_payment_id + '\n\n'
-        + '👤 Name: ' + name + '\n'
-        + '📞 Phone: ' + phone + '\n'
-        + '🎉 Occasion: ' + occasionText + '\n'
-        + '📅 Date: ' + date + '\n'
-        + '📿 Gotra: ' + (gotra || 'N/A') + '\n'
-        + '⭐ Nakshatra: ' + (nakshatra || 'N/A') + '\n'
-        + '🛕 Mode: ' + (mode === 'online' ? 'Online Video Pooja' : 'In-Person') + '\n';
-      if (mode === 'online' && address) msg += '📍 Address: ' + address + '\n';
-      if (requests) msg += '📝 Requests: ' + requests + '\n';
 
-      var whatsappUrl = 'https://wa.me/919440562447?text=' + encodeURIComponent(msg);
-      window.open(whatsappUrl, '_blank');
+      // POST booking to Google Apps Script for storage + reminders
+      var bookingData = {
+        apiSecret: SEVA_API_SECRET,
+        name: name, phone: phone, occasion: occasionText,
+        poojaMonth: parseInt(poojaMonth), poojaDay: parseInt(poojaDay),
+        gotra: gotra, nakshatra: nakshatra, mode: mode,
+        address: address, specialRequests: requests,
+        paymentId: response.razorpay_payment_id
+      };
+      fetch(SEVA_SCRIPT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(bookingData)
+      }).then(function(r) { return r.json(); })
+        .then(function(result) {
+          if (result.success) console.log('Booking saved: ' + result.bookingId);
+          else console.error('Booking save failed: ' + result.error);
+        }).catch(function(err) { console.error('Booking POST error: ' + err); });
+
+      // WhatsApp confirmation with recurring date info
+      var msg = '\uD83D\uDE4F \u0C28\u0C2E\u0C38\u0C4D\u0C15\u0C3E\u0C30\u0C02!\n\n'
+        + '\u2705 Special Seva Booking Confirmed\n'
+        + 'Payment ID: ' + response.razorpay_payment_id + '\n\n'
+        + '\uD83D\uDC64 Name: ' + name + '\n'
+        + '\uD83D\uDCDE Phone: ' + phone + '\n'
+        + '\uD83C\uDF89 Occasion: ' + occasionText + '\n'
+        + '\uD83D\uDCC5 Recurring: Every ' + monthNames[parseInt(poojaMonth) - 1] + ' ' + poojaDay + '\n'
+        + '\uD83D\uDCC5 Next Pooja: ' + nextDateDisplay + '\n'
+        + '\uD83D\uDCFF Gotra: ' + (gotra || 'N/A') + '\n'
+        + '\u2B50 Nakshatra: ' + (nakshatra || 'N/A') + '\n'
+        + '\uD83D\uDED5 Mode: ' + (mode === 'online' ? 'Online Video Pooja' : 'In-Person') + '\n';
+      if (mode === 'online' && address) msg += '\uD83D\uDCCD Address: ' + address + '\n';
+      if (requests) msg += '\uD83D\uDCDD Requests: ' + requests + '\n';
+      window.open('https://wa.me/919440562447?text=' + encodeURIComponent(msg), '_blank');
 
       alert(
-        '🙏 ' + name + ' గారు!\n\n'
-        + 'మీ స్పెషల్ సేవ బుకింగ్ విజయవంతంగా పూర్తయింది.\n'
+        '\uD83D\uDE4F ' + name + ' \u0C17\u0C3E\u0C30\u0C41!\n\n'
+        + t('special_seva_booking_success') + '\n'
         + 'Payment ID: ' + response.razorpay_payment_id + '\n\n'
-        + 'పూజారి గారు త్వరలో WhatsApp ద్వారా మిమ్మల్ని సంప్రదిస్తారు.'
+        + t('special_seva_next_pooja') + ' ' + nextDateDisplay + '\n\n'
+        + t('special_seva_whatsapp_reminder_note')
       );
     }
   };
