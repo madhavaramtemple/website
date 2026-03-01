@@ -48,36 +48,39 @@ header::before { content:''; position:absolute; inset:0; background-image:radial
 .header-donate-btn:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,.4); animation:none; }
 .gold-divider { height:4px; background:linear-gradient(90deg,transparent,var(--gold),var(--bright-gold),var(--gold),transparent); }
 
-/* NAV */
-nav { background:var(--deep-red); position:sticky; top:0; z-index:200; box-shadow:0 4px 12px rgba(0,0,0,.4); }
+/* NAV — Glassmorphic */
+nav { background:rgba(74,32,32,.72); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); position:sticky; top:0; z-index:200; border-bottom:1px solid rgba(255,255,255,.1); box-shadow:0 1px 2px rgba(0,0,0,.15),0 4px 12px rgba(0,0,0,.2),0 8px 32px rgba(0,0,0,.12); }
 .nav-container { display:flex; align-items:center; justify-content:center; padding:0 16px; max-width:1200px; margin:0 auto; }
 .nav-toggle { display:none; flex-direction:column; justify-content:center; gap:5px; width:44px; height:var(--nav-h); background:none; border:none; cursor:pointer; padding:10px 4px; flex-shrink:0; }
-.nav-toggle span { display:block; height:2px; background:#4a2020; border-radius:2px; transition:all .3s; width:100%; }
+.nav-toggle span { display:block; height:2px; background:rgba(245,230,200,.85); border-radius:2px; transition:all .3s; width:100%; }
 .nav-toggle.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
 .nav-toggle.open span:nth-child(2) { opacity:0; }
 .nav-toggle.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
 .nav-links { display:flex; justify-content:center; flex-wrap:nowrap; list-style:none; }
-.nav-links li a { display:block; padding:18px 10px; color:rgba(245,230,200,.9); text-decoration:none; font-family:'Times New Roman','Mandali',sans-serif; font-size:17px; font-weight:700; transition:all .25s; position:relative; white-space:nowrap; }
+.nav-links li a { display:block; padding:18px 10px; color:rgba(245,230,200,.92); text-decoration:none; font-family:'Times New Roman','Mandali',sans-serif; font-size:17px; font-weight:700; transition:all .25s; position:relative; white-space:nowrap; text-shadow:0 1px 3px rgba(0,0,0,.3); }
 .nav-links li a::after { content:''; position:absolute; bottom:10px; left:50%; right:50%; height:2px; background:var(--bright-gold); transition:all .25s; }
-.nav-links li a:hover { color:var(--bright-gold); }
+.nav-links li a:hover { color:var(--bright-gold); background:rgba(255,255,255,.06); border-radius:4px; }
 .nav-links li a:hover::after { left:14px; right:14px; }
 
 /* LANG TOGGLE */
 .lang-toggle {
-  background:rgba(192,135,58,.15);
-  border:1.5px solid var(--gold);
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,.12);
   color:var(--bright-gold);
   padding:8px 16px;
-  border-radius:6px;
+  border-radius:8px;
   font-family:'Times New Roman','Mandali',sans-serif;
   font-size:16px; font-weight:700;
   cursor:pointer; transition:all .3s;
   margin-left:auto; white-space:nowrap;
   flex-shrink:0;
+  text-shadow:0 1px 3px rgba(0,0,0,.3);
 }
 .lang-toggle:hover {
-  background:rgba(192,135,58,.3);
-  border-color:var(--bright-gold);
+  background:rgba(255,255,255,.15);
+  border-color:rgba(255,255,255,.2);
 }
 
 /* HERO */
@@ -549,7 +552,7 @@ footer { background:var(--deep-red); color:rgba(245,230,200,.8); padding:44px 16
   .nav-container { position:relative; min-height:var(--nav-h); justify-content:flex-start; }
   .nav-toggle { display:flex; }
   .lang-toggle { position:absolute; top:50%; transform:translateY(-50%); right:16px; padding:8px 14px; font-size:16px; }
-  .nav-links { display:none; flex-direction:column; position:absolute; top:var(--nav-h); left:0; right:0; background:var(--deep-red); z-index:300; padding:8px 0 16px; box-shadow:0 8px 24px rgba(0,0,0,.4); border-top:1px solid rgba(192,135,58,.2); }
+  .nav-links { display:none; flex-direction:column; position:absolute; top:var(--nav-h); left:0; right:0; background:rgba(74,32,32,.88); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); z-index:300; padding:8px 0 16px; box-shadow:0 4px 12px rgba(0,0,0,.2),0 12px 40px rgba(0,0,0,.15); border-top:1px solid rgba(255,255,255,.08); }
   .nav-links.open { display:flex; }
   .nav-links li { width:100%; }
   .nav-links li a { padding:18px 24px; font-size:21px; font-weight:700; border-bottom:1px solid rgba(255,255,255,.06); }
@@ -1233,35 +1236,23 @@ footer { background:var(--deep-red); color:rgba(245,230,200,.8); padding:44px 16
 }
 
 
-/* ===== WHATSAPP GROUP INVITE ===== */
-.whatsapp-invite-section { padding:32px 0; background:linear-gradient(135deg,#e8f5e9 0%,#f1f8e9 100%); }
-.whatsapp-invite-card { max-width:560px; margin:0 auto; background:#fff; border-radius:16px; box-shadow:0 4px 24px rgba(37,211,102,.15),0 1px 4px rgba(0,0,0,.06); padding:28px 24px; text-align:center; border:2px solid #25D366; position:relative; overflow:hidden; }
-.whatsapp-invite-card::before { content:''; position:absolute; top:0; left:0; right:0; height:6px; background:linear-gradient(90deg,#25D366,#128C7E,#25D366); }
-.whatsapp-invite-header { display:flex; align-items:center; gap:14px; justify-content:center; margin-bottom:16px; }
-.whatsapp-group-icon { width:56px; height:56px; min-width:56px; background:linear-gradient(135deg,#25D366,#128C7E); border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 3px 12px rgba(37,211,102,.3); }
-.whatsapp-group-icon svg { width:30px; height:30px; }
-.whatsapp-group-info { text-align:left; }
-.whatsapp-group-info h3 { font-size:clamp(19px,2.5vw,24px); font-weight:800; color:#1a1a1a; margin:0; line-height:1.3; }
-.whatsapp-group-name { font-size:14px; color:#666; font-family:'Times New Roman','Mandali',sans-serif; display:block; margin-top:2px; }
-.whatsapp-invite-desc { font-size:clamp(15px,1.7vw,16px); color:#444; line-height:1.7; margin-bottom:16px; font-family:'Times New Roman','Mandali',sans-serif; }
-.whatsapp-invite-benefits { display:flex; justify-content:center; flex-wrap:wrap; gap:6px 12px; margin-bottom:20px; }
-.whatsapp-invite-benefits span { font-size:14px; font-family:'Times New Roman','Mandali',sans-serif; background:rgba(37,211,102,.08); color:#1a7a3e; padding:4px 10px; border-radius:14px; border:1px solid rgba(37,211,102,.2); white-space:nowrap; }
-.whatsapp-join-btn { display:inline-block; background:linear-gradient(135deg,#25D366,#1da851); color:#fff; font-family:'Times New Roman','Mandali',sans-serif; font-size:clamp(15px,1.8vw,17px); font-weight:700; padding:13px 40px; border-radius:50px; text-decoration:none; box-shadow:0 4px 16px rgba(37,211,102,.35); transition:all .3s; position:relative; overflow:hidden; }
-.whatsapp-join-btn::after { content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent); animation:waShimmer 3s ease-in-out infinite; }
-.whatsapp-join-btn:hover { transform:translateY(-2px); box-shadow:0 6px 24px rgba(37,211,102,.45); background:linear-gradient(135deg,#1da851,#128C7E); }
-@keyframes waShimmer { 0%{left:-100%} 50%{left:100%} 100%{left:100%} }
-.whatsapp-invite-share { font-size:13px; color:#888; margin-top:14px; font-family:'Times New Roman','Mandali',sans-serif; line-height:1.5; }
+/* ===== WHATSAPP GROUP INVITE (compact strip) ===== */
+.whatsapp-invite-section { padding:14px 0; background:linear-gradient(135deg,#e8f5e9 0%,#f1f8e9 100%); }
+.whatsapp-invite-strip { max-width:860px; margin:0 auto; display:flex; align-items:center; gap:16px; background:#fff; border-radius:14px; padding:14px 22px; border:1.5px solid #25D366; box-shadow:0 2px 12px rgba(37,211,102,.12); }
+.wa-strip-icon { width:44px; height:44px; min-width:44px; background:linear-gradient(135deg,#25D366,#128C7E); border-radius:50%; display:flex; align-items:center; justify-content:center; }
+.wa-strip-icon svg { width:24px; height:24px; }
+.wa-strip-text { flex:1; }
+.wa-strip-text strong { display:block; font-size:16px; color:#1a1a1a; font-family:'Times New Roman','Mandali',serif; line-height:1.3; }
+.wa-strip-text span { display:block; font-size:12px; color:#666; font-family:'Times New Roman','Mandali',sans-serif; margin-top:2px; }
+.wa-strip-btn { display:inline-block; background:linear-gradient(135deg,#25D366,#1da851); color:#fff; font-family:'Times New Roman','Mandali',sans-serif; font-size:14px; font-weight:700; padding:10px 24px; border-radius:50px; text-decoration:none; white-space:nowrap; box-shadow:0 3px 10px rgba(37,211,102,.3); transition:all .3s; }
+.wa-strip-btn:hover { transform:translateY(-1px); box-shadow:0 4px 16px rgba(37,211,102,.4); }
 .whatsapp-group-cta { background:#128C7E !important; color:#fff !important; }
 .whatsapp-group-cta:hover { background:#0e7a6e !important; }
 
 @media(max-width:600px){
-  .whatsapp-invite-card { padding:20px 16px; }
-  .whatsapp-invite-header { flex-direction:column; text-align:center; gap:10px; }
-  .whatsapp-group-info { text-align:center; }
-  .whatsapp-group-icon { width:48px; height:48px; min-width:48px; }
-  .whatsapp-group-icon svg { width:26px; height:26px; }
-  .whatsapp-join-btn { padding:12px 32px; width:100%; }
-  .whatsapp-invite-benefits span { font-size:11px; }
+  .whatsapp-invite-strip { flex-wrap:wrap; justify-content:center; text-align:center; padding:14px 16px; gap:10px; }
+  .wa-strip-text { flex:unset; width:100%; }
+  .wa-strip-btn { width:100%; text-align:center; }
 }
 
 
@@ -1277,8 +1268,8 @@ footer { background:var(--deep-red); color:rgba(245,230,200,.8); padding:44px 16
   .hero-logo-img { filter:drop-shadow(0 4px 12px rgba(0,0,0,.4)); }
   .hero-temple-art::after { animation:none; opacity:.7; }
   .temple-emblem { animation:none; }
-  .header-donate-btn,.btn-secondary,.donate-now-btn,.float-donate,.contribute-cta-box .btn-gold,.monthly99-hero,.monthly99-btn,.whatsapp-join-btn { animation:none; }
-  .header-donate-btn::after,.donate-now-btn::after,.float-donate::after,.float-donate::before,.contribute-cta-box .btn-gold::after,.monthly99-hero::before,.monthly99-btn::after,.whatsapp-join-btn::after { animation:none; }
+  .header-donate-btn,.btn-secondary,.donate-now-btn,.float-donate,.contribute-cta-box .btn-gold,.monthly99-hero,.monthly99-btn { animation:none; }
+  .header-donate-btn::after,.donate-now-btn::after,.float-donate::after,.float-donate::before,.contribute-cta-box .btn-gold::after,.monthly99-hero::before,.monthly99-btn::after { animation:none; }
 }
 
 
